@@ -1,4 +1,4 @@
-baseurl = "https://iolingjapan.org"
+baseurl = "https://iolingjapan.netlify.com"
 title = "iolingjapan"
 theme = "hugo-universal-theme"
 themesDir = "./themes"
