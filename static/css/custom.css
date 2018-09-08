@@ -10,11 +10,11 @@ table {
 }
 
 table thead,th {
-  font-family: "游ゴシック";
+  font-family: "Yu Gothic", "游ゴシック";
 }
 
 h1,h2,h3,h4 {
-  font-family: "游ゴシック";
+  font-family: "Yu Gothic", "游ゴシック";
 }
 
 .navbar-brand img {
