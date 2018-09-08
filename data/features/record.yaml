@@ -1,0 +1,5 @@
+weight: 4
+name: "大会成績"
+icon: "fas fa-trophy"
+description: ""
+link: "/record/"

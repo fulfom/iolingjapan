@@ -1,0 +1,5 @@
+weight: 5
+name: "よくある質問"
+icon: "fas fa-question"
+description: ""
+link: "/faq/"

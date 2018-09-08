@@ -1,0 +1,61 @@
+﻿/* your styles go here */
+
+.box-image-text .image {
+  min-height: 200px;
+  max-height: 200px;
+}
+
+table {
+  margin-bottom: 3.5em;
+}
+
+table thead,th {
+  font-family: "游ゴシック";
+}
+
+h1,h2,h3,h4 {
+  font-family: "游ゴシック";
+}
+
+.navbar-brand img {
+  vertical-align: middle;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+@media (min-width: 768px) {
+  .yamm .container {
+    width: unset;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: relative;
+  }
+}
+
+@media (max-width: 767px) {
+  .yamm .navbar-header {
+    position: relative;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+      padding: 21px 5px;
+  }
+}
+
+@media (min-width: 844px) {
+  .navbar-nav > li > a {
+      padding: 21px 15px;
+  }
+}
+
+body {
+  margin-top: 62px;
+}
+
+.navbar-fixed-top {
+  -webkit-box-shadow: 0 0 5px #cccccc;
+  box-shadow: 0 0 5px #cccccc;
+}
