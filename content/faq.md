@@ -10,4 +10,4 @@ To be updated
 
 委員会に関するお問い合わせは  snowden@ks.kyorin-u.ac.jp へお寄せください。
 
-このサイトや問題, 有志活動に関してのお問い合わせは Twitter: [@fulfom](https://twitter.com/intent/user?user_id=713376144821608448) または la.fulfom@gmail.com へお寄せください。
+このサイトや問題, 有志活動に関してのお問い合わせは Twitter: [@fulfom](https://twitter.com/fulfom) または la.fulfom@gmail.com へお寄せください。
