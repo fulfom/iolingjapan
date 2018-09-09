@@ -4,6 +4,8 @@ description = ""
 keywords = []
 +++
 
+To be updated
+
 ## 問題の内容
 
 過去に出題された問題が [国際大会のサイト](http://www.ioling.org/) に掲載されています。初めて問題に触れるという方はまず同サイトの [Sample Problems](http://www.ioling.org/problems/samples/) または [イギリス国内大会(UKLO)のサイト](http://www.uklo.org/) をご覧になってみてください。
