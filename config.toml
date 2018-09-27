@@ -1,5 +1,5 @@
-baseurl = "https://iolingjapan.netlify.com/"
-title = "iolingjapan"
+baseurl = "https://iolingjapan.org/"
+title = "日本言語学オリンピック"
 theme = "hugo-universal-theme"
 themesDir = "./themes"
 languageCode = "ja"
@@ -42,9 +42,9 @@ enableGitInfo = false
     
 [params]
     viewMorePostLink = "/blog/"
-    author = "joling"
+    author = "日本国際言語学オリンピック委員会"
     defaultKeywords = []
-    defaultDescription = ""
+    defaultDescription = "日本言語学オリンピックの公式サイト"
 
     # Google Maps API key (if not set will default to not passing a key.)
     googleMapsApiKey = ""
