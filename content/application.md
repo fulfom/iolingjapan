@@ -91,3 +91,6 @@ IOLまでの間に合同練習会(2回)と渡航などについて説明する�
 - APLOが新設されました
 
 ## 応募はこちら
+
+<!--おしゃれなボタン-->
+https://goo.gl/forms/DStQm8ZINiNMpfRK2
