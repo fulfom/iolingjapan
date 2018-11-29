@@ -15,6 +15,12 @@
 
         {{ partial "breadcrumbs.html" . }}
 
+        <div id='Lastmod'>
+          
+          {{.Lastmod.Format "2006年1月2日 更新"}}
+
+        </div>
+
         <div id="content">
             {{ if isset .Params "id" }}
 

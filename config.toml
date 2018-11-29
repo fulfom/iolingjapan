@@ -13,7 +13,7 @@ googleAnalytics = "UA-126571045-1"
 # Define the number of posts per page
 paginate = 10
 
-enableGitInfo = false
+enableGitInfo = true
 
 [menu]
 

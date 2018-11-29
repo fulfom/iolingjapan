@@ -68,13 +68,18 @@ body {
 }
 
 .btn {
-font-weight: 700;
-font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
-font-size: 20px;
-border-radius: 0px;
-margin: 10px 0px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+  font-size: 20px;
+  border-radius: 0px;
+  margin: 10px 0px;
 }
 
 .centralize {
-text-align: center;
+  text-align: center;
+}
+
+#Lastmod {
+  text-align: right;
+  margin: 0 15px;
 }
