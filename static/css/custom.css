@@ -1,4 +1,4 @@
-﻿/* your styles go here */
+/* your styles go here */
 
 .box-image-text .image {
   min-height: 200px;
@@ -13,7 +13,14 @@ table thead,th {
   font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 }
 
-h1,h2,h3,h4 {
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #38a7bb;/*左線*/
+}
+
+h1,h3,h4 {
   font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 }
 
@@ -58,4 +65,21 @@ body {
 .navbar-fixed-top {
   -webkit-box-shadow: 0 0 5px #cccccc;
   box-shadow: 0 0 5px #cccccc;
+}
+
+.btn {
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+  font-size: 20px;
+  border-radius: 0px;
+  margin: 10px 0px;
+}
+
+.centralize {
+  text-align: center;
+}
+
+#Lastmod {
+  text-align: right;
+  margin: 0 15px;
 }
