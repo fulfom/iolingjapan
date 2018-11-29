@@ -86,7 +86,5 @@ IOLまでの間に合同練習会(2回)と渡航などについて説明する�
 - 国内大会において代表選考だけでなく賞の授与も行うようになりました
 - APLOが新設されました
 
-## 応募はこちら
-
 <br>
-<div class='centralize'><a class='btn btn-template-main' href ='https://goo.gl/forms/DStQm8ZINiNMpfRK2'>応募フォーム</a></div>
+<div class='centralize'><a class='btn btn-template-main' href ='https://goo.gl/forms/DStQm8ZINiNMpfRK2'>応募はこちら</a></div>

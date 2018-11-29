@@ -13,7 +13,14 @@ table thead,th {
   font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 }
 
-h1,h2,h3,h4 {
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #38a7bb;/*左線*/
+}
+
+h1,h3,h4 {
   font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 }
 
@@ -60,20 +67,13 @@ body {
   box-shadow: 0 0 5px #cccccc;
 }
 
-h2 {
-  padding: 0.25em 0.5em;/*上下 左右の余白*/
-  color: #38a7bb;/*文字色*/
-  background: transparent;/*背景透明に*/
-  border-left: solid 5px #7db4e6;/*左線*/
-}
-
 .btn {
 font-weight: 700;
 font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 font-size: 20px;
-border-radius: 0pm;
+border-radius: 0px;
 }
 
 .centralize {
-text-align: center
+text-align: center;
 }
