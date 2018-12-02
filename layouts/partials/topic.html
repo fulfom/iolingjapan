@@ -1,0 +1,7 @@
+<a href={{.Site.Params.topic_url}}>
+    <div class="container">
+        {{with .Site.Params.topic }}
+            <p class="topicnews">お知らせ: {{ . }}</p>
+        {{end}}
+    </div>
+</a>

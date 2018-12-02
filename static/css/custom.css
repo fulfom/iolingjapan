@@ -1,4 +1,4 @@
-/* your styles go here */
+﻿/* your styles go here */
 
 .box-image-text .image {
   min-height: 200px;
@@ -82,4 +82,14 @@ body {
 #Lastmod {
   text-align: right;
   margin: 15px;
+}
+
+.topicnews {
+  font-size: large;
+  color: #555555;
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+  padding: .75em 1em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
