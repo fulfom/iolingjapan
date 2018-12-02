@@ -8,6 +8,6 @@ To be updated
 
 ## お問い合わせ
 
-委員会に関するお問い合わせは  snowden@ks.kyorin-u.ac.jp へお寄せください。
+委員会に関するお問い合わせは  jolinguistics@gmail.com へお寄せください。
 
 このサイトや問題, 有志活動に関してのお問い合わせは Twitter: [@fulfom](https://twitter.com/fulfom) または la.fulfom@gmail.com へお寄せください。

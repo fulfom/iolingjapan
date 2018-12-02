@@ -13,7 +13,7 @@ googleAnalytics = "UA-126571045-1"
 # Define the number of posts per page
 paginate = 10
 
-enableGitInfo = false
+enableGitInfo = true
 
 [menu]
 
@@ -25,20 +25,25 @@ enableGitInfo = false
     weight = 1
 
 [[menu.main]]
-    name = "言語学オリンピックとは？"
+    name = "概要"
     url  = "/information/"
     weight = 2
+
+[[menu.main]]
+    name = "受験案内"
+    url  = "/application/"
+    weight = 3
 
 [[menu.main]]
     name = "大会成績"
     identifier = "record"
     url  = "/record/"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "よくある質問"
     url  = "/faq/"
-    weight = 4
+    weight = 5
     
 [params]
     viewMorePostLink = "/blog/"
@@ -67,7 +72,7 @@ enableGitInfo = false
     # Enable the contact form by entering your Formspree.io email
     email = ""
 
-    about_us = "特定非営利活動法人 国際教育合作協会; 委員長ポールスノードン: snowden@ks.kyorin-u.ac.jp"
+    about_us = "特定非営利活動法人 国際教育合作協会; 委員長ポールスノードン; お問い合わせはこちら jolinguistics@gmail.com"
     copyright = "© 2018 日本国際言語学オリンピック委員会"
 
     # Format dates with Go's time formatting
