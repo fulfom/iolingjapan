@@ -1,5 +1,5 @@
 +++
-title = "問題を解くために"
+title = "過去問・資料まとめ"
 description = ""
 keywords = []
 +++
