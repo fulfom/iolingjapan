@@ -8,15 +8,57 @@ keywords = []
 
 ### 問題
 
-[2016年度](https://twitter.com/fulfom/status/1097706793885589504) 暫定公開  
+[2018年度](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2)  
 [2017年度](https://drive.google.com/open?id=1DSG3MISTszSPeMeG-VmnyKA0kFe7iywZ)  
-[2018年度](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2)
+[2016年度](https://twitter.com/fulfom/status/1097706793885589504) 暫定公開
 
 ### 解答
 
 [2017年度解答](https://drive.google.com/open?id=1GSyrZ7f6hvOAQ3sc19mFAOzRlUYK0W0q)
 
 2016, 2018年度の解答は後日公開
+
+## 国際大会の過去問
+
+### 問題
+
+2014年度以降は日本語, それ以前は英語版
+
+[2018年度](http://www.ioling.org/booklets/iol-2018-indiv-prob.ja.pdf)  
+[2017年度](http://www.ioling.org/booklets/iol-2017-indiv-prob.ja.pdf)  
+[2016年度](http://www.ioling.org/booklets/iol-2016-indiv-prob.ja.pdf)  
+[2015年度](http://www.ioling.org/booklets/iol-2015-indiv-prob.ja.pdf)  
+[2014年度](http://www.ioling.org/booklets/iol-2014-indiv-prob.ja.pdf)  
+[2013年度](http://www.ioling.org/booklets/iol-2013-indiv-prob.en-us.pdf)  
+[2012年度](http://www.ioling.org/booklets/iol-2012-indiv-prob.en.pdf)  
+[2011年度](http://www.ioling.org/booklets/iol-2011-indiv-prob.en-us.pdf)  
+[2010年度](http://www.ioling.org/booklets/iol-2010-indiv-prob.en.pdf)  
+[2009年度](http://www.ioling.org/booklets/iol-2009-indiv-prob.en-us.pdf)  
+[2008年度](http://www.ioling.org/booklets/iol-2008-indiv-prob.en.pdf)  
+[2007年度](http://www.ioling.org/booklets/iol-2007-indiv-prob.en.pdf)  
+[2006年度](http://www.ioling.org/booklets/iol-2006-indiv-prob.en.pdf)  
+[2005年度](http://www.ioling.org/booklets/iol-2005-indiv-prob.en.pdf)  
+[2004年度](http://www.ioling.org/booklets/iol-2004-indiv-prob.en.pdf)  
+[2003年度](http://www.ioling.org/booklets/iol-2003-indiv-prob.en.pdf)
+
+### 解答
+
+[2018年度解答](http://www.ioling.org/booklets/iol-2018-indiv-sol.ja.pdf)  
+[2017年度解答](http://www.ioling.org/booklets/iol-2017-indiv-sol.ja.pdf)  
+[2016年度解答](http://www.ioling.org/booklets/iol-2016-indiv-sol.ja.pdf)  
+[2015年度解答](http://www.ioling.org/booklets/iol-2015-indiv-sol.ja.pdf)  
+[2014年度解答](http://www.ioling.org/booklets/iol-2014-indiv-sol.ja.pdf)  
+[2013年度解答](http://www.ioling.org/booklets/iol-2013-indiv-sol.en-us.pdf)  
+[2012年度解答](http://www.ioling.org/booklets/iol-2012-indiv-sol.en.pdf)  
+[2011年度解答](http://www.ioling.org/booklets/iol-2011-indiv-sol.en-us.pdf)  
+[2010年度解答](http://www.ioling.org/booklets/iol-2010-indiv-sol.en.pdf)  
+[2009年度解答](http://www.ioling.org/booklets/iol-2009-indiv-sol.en-us.pdf)  
+[2008年度解答](http://www.ioling.org/booklets/iol-2008-indiv-sol.en.pdf)  
+[2007年度解答](http://www.ioling.org/booklets/iol-2007-indiv-sol.en.pdf)  
+[2006年度解答](http://www.ioling.org/booklets/iol-2006-indiv-sol.en.pdf)  
+[2005年度解答](http://www.ioling.org/booklets/iol-2005-indiv-sol.en.pdf)  
+[2004年度解答](http://www.ioling.org/booklets/iol-2004-indiv-sol.en.pdf)  
+[2003年度解答](http://www.ioling.org/booklets/iol-2003-indiv-sol.en.pdf)
 
 ## 問題の内容
 
