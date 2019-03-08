@@ -35,15 +35,21 @@ enableGitInfo = true
     weight = 3
 
 [[menu.main]]
+    name = "過去問"
+    identifier = "preparation"
+    url  = "/preparation/"
+    weight = 4
+
+[[menu.main]]
     name = "大会成績"
     identifier = "record"
     url  = "/record/"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "よくある質問"
     url  = "/faq/"
-    weight = 5
+    weight = 6
     
 [params]
     viewMorePostLink = "/blog/"
