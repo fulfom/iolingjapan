@@ -4,7 +4,7 @@ description = ""
 keywords = ["募集要項", "申し込み"]
 +++
 
-<p class='lead'>(2018年12月2日(日) 2019年度版公開)</p>
+<p class='lead'>2019年3月10日(日) 2019年度の申込は終了しました。</p>
 
 ### 受験までの手順
 
@@ -98,5 +98,5 @@ IOLまでの間に合同練習会(2回)と渡航などについて説明する�
 - 国内大会において代表選考だけでなく賞の授与も行うようになりました
 - APLOが新設されました
 
-<br>
-<div class='centralize'><a class='btn btn-template-main' href ='https://goo.gl/forms/DStQm8ZINiNMpfRK2'>応募はこちら</a></div>
+<!--br>
+<div class='centralize'><a class='btn btn-template-main' href ='https://goo.gl/forms/DStQm8ZINiNMpfRK2'>応募はこちら</a></div-->
