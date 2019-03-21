@@ -26,9 +26,9 @@ keywords = []
 
 [2018年度](http://www.ioling.org/booklets/iol-2018-indiv-prob.ja.pdf)  
 [2017年度](http://www.ioling.org/booklets/iol-2017-indiv-prob.ja.pdf)  
-[2016年度](http://www.ioling.org/booklets/iol-2016-indiv-prob.ja.pdf)  
+[2016年度](http://www.ioling.org/booklets/iol-2016-indiv-prob.ja.pdf) 問題3の文3 誤「若者が」→正「若者たちが」  
 [2015年度](http://www.ioling.org/booklets/iol-2015-indiv-prob.ja.pdf)  
-[2014年度](http://www.ioling.org/booklets/iol-2014-indiv-prob.ja.pdf)  
+[2014年度](http://www.ioling.org/booklets/iol-2014-indiv-prob.ja.pdf) 問題5 誤「死ぬ」→正「死にかける」  
 [2013年度](http://www.ioling.org/booklets/iol-2013-indiv-prob.en-us.pdf)  
 [2012年度](http://www.ioling.org/booklets/iol-2012-indiv-prob.en.pdf)  
 [2011年度](http://www.ioling.org/booklets/iol-2011-indiv-prob.en-us.pdf)  
@@ -36,7 +36,7 @@ keywords = []
 [2009年度](http://www.ioling.org/booklets/iol-2009-indiv-prob.en-us.pdf)  
 [2008年度](http://www.ioling.org/booklets/iol-2008-indiv-prob.en.pdf)  
 [2007年度](http://www.ioling.org/booklets/iol-2007-indiv-prob.en.pdf)  
-[2006年度](http://www.ioling.org/booklets/iol-2006-indiv-prob.en.pdf)  
+[2006年度](http://www.ioling.org/booklets/iol-2006-indiv-prob.en.pdf) 問題3に不備有り  
 [2005年度](http://www.ioling.org/booklets/iol-2005-indiv-prob.en.pdf)  
 [2004年度](http://www.ioling.org/booklets/iol-2004-indiv-prob.en.pdf)  
 [2003年度](http://www.ioling.org/booklets/iol-2003-indiv-prob.en.pdf)
