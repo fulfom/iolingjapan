@@ -57,8 +57,8 @@ enableGitInfo = true
     defaultKeywords = []
     defaultDescription = "日本言語学オリンピックの公式サイト"
 
-    topic = "2019年度の募集は終了しました"
-    topic_url = "/application/"
+    topic = "2019年度予選結果発表"
+    topic_url = "/result2019/"
 
     # Google Maps API key (if not set will default to not passing a key.)
     googleMapsApiKey = ""
