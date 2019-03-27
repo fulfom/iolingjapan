@@ -20,8 +20,15 @@ h2 {
   border-left: solid 5px #38a7bb;/*左線*/
 }
 
-h1,h3,h4 {
+h1,h3,h4,.pager {
   font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+}
+
+.pager {
+  margin-top: 0px;
+  padding-top: 0px;
+  border-top: 0px;
+  font-weight: bold;
 }
 
 .navbar-brand img {

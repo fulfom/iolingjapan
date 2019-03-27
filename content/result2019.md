@@ -4,6 +4,13 @@ description = ""
 keywords = []
 +++
 
+<nav aria-label="...">
+  <ul class="pager">
+    <li><a href="/record/">国際大会</a></li>
+    <li class="disabled"><a href="/result2019/">国内大会/日本予選</a></li>
+  </ul>
+</nav>
+
 代表通知は3月27日(水)14:00頃に行いました。
 賞状の受け渡しについては近日中に発表します。
 
