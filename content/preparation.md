@@ -4,6 +4,18 @@ description = ""
 keywords = []
 +++
 
+言語学オリンピックの過去問をまとめてあります。国際大会と各国予選の過去問があり, 国際大会のものは良問ぞろいですが難しかったら予選からチャレンジしてみましょう。下の方に国際大会個人戦の各年度の過去問へ直接飛べるリンク集もあります。
+
+## 各サイトの過去問集へのリンク
+
+- [IOL(国際言語学オリンピック)](http://www.ioling.org/problems/)
+- [UKLO(イギリス予選)](https://www.uklo.org/past-problems#problems)
+- [OzCLO(オーストラリア予選)](https://ozclo.org.au/past-problems/)
+- [NACLO(北米予選)](https://nacloweb.org/practice.php#previous_problems)
+- [AICLO(アイルランド予選)](https://ailo.adaptcentre.ie/sample-puzzles/)
+- [Onling(オンライン言語学オリンピック)](https://onling.org/)
+- [IOLや各国予選の過去問保管庫(1000問以上; IDとパスワードは両方 guest)](http://tangra.cs.yale.edu/naclobase/)
+
 ## 国内予選の過去問
 
 ### 問題
@@ -15,6 +27,7 @@ keywords = []
 ### 解答
 
 [2017年度解答](https://drive.google.com/open?id=1GSyrZ7f6hvOAQ3sc19mFAOzRlUYK0W0q)
+[2018年度解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)
 
 2016, 2018年度の解答は後日公開
 
