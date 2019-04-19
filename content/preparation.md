@@ -12,7 +12,7 @@ keywords = []
 - [UKLO(イギリス予選)](https://www.uklo.org/past-problems#problems)
 - [OzCLO(オーストラリア予選)](https://ozclo.org.au/past-problems/)
 - [NACLO(北米予選)](https://nacloweb.org/practice.php#previous_problems)
-- [AICLO(アイルランド予選)](https://ailo.adaptcentre.ie/sample-puzzles/)
+- [AILO(アイルランド予選)](https://ailo.adaptcentre.ie/sample-puzzles/)
 - [Onling(オンライン言語学オリンピック)](https://onling.org/)
 - [IOLや各国予選の過去問保管庫(1000問以上; IDとパスワードは両方 guest)](http://tangra.cs.yale.edu/naclobase/)
 
