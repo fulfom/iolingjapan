@@ -21,7 +21,7 @@ keywords = []
 ### 問題
 
 [2019年度](https://drive.google.com/open?id=1BjNVq20Ne9LVAqGEa9nLPsF9FhuhDjAA)  
-[2018年度](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2)  スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 ivighet
+[2018年度](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2)スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet  
 [2017年度](https://drive.google.com/open?id=1DSG3MISTszSPeMeG-VmnyKA0kFe7iywZ)  
 [2016年度](https://twitter.com/fulfom/status/1097706793885589504) 暫定公開
 
