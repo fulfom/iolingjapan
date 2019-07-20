@@ -6,8 +6,9 @@ keywords = []
 
 <nav aria-label="...">
   <ul class="pager">
-    <li><a href="/record/">国際大会</a></li>
-    <li class="disabled"><a href="/result2019/">国内大会/日本予選</a></li>
+    <li><a href="/record/">IOL</a></li>
+    <li><a href="/record-aplo/">APLO</a></li>
+    <li><a href="/result2019/">国内大会/日本予選</a></li>
   </ul>
 </nav>
 

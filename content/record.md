@@ -6,14 +6,15 @@ keywords = ["成績","記録"]
 
 <nav aria-label="...">
   <ul class="pager">
-    <li class="disabled"><a href="/record/">国際大会</a></li>
-    <li><a href="/result2019/">国内大会/日本予選</a></li>
+    <li class="disabled"><a href="/record/">IOL</a></li>
+    <li><a href="/record-aplo/">APLO</a></li>
+    <li><a href="/record-jol/">国内大会/予選</a></li>
   </ul>
 </nav>
 
 ## 2018年度大会成績
 
-<p class="lead">第16回目となるプラハ大会には日本から代表8名が出場し 銅メダル1つ, 努力賞1つを獲得しました。今年で日本からの参加は7回目となります。</p>
+第16回目となるプラハ大会には日本から代表8名が出場し 銅メダル1つ, 努力賞1つを獲得しました。今年で日本からの参加は7回目となります。
 
 <table class="table" border-color="gold">
   <thead>

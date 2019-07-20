@@ -100,3 +100,143 @@ body {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
+
+.jumbotron {
+  background: center center repeat;
+  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+}
+
+.grad-white .jumbotron, .grad-yellow .jumbotron {
+  text-align: right;
+}
+
+.grad-white .jumbotron h1, .grad-white .jumbotron p {
+  color: #555555;
+}
+
+.unmot {
+  display: inline-block;
+}
+
+.grad-green {
+  background: linear-gradient(45deg, #38a7bb, #38bb81)
+}
+
+.grad-white {
+  background: linear-gradient(45deg, #eeeeee 15%, #FFF 80%)
+}
+
+.grad-pink {
+  background: linear-gradient(45deg, #d45b83, pink)
+}
+
+.grad-yellow {
+  background: linear-gradient(45deg, #c4ca72c9 15%, #c7ba15 50%)
+}
+
+.grad-blue {
+  background: linear-gradient(45deg, #337ab7, #38a7bb)
+}
+
+.grad {
+  margin-bottom: 0px;
+}
+
+.grad .btn-template-main {
+  border: 0px;
+}
+
+.grad-white .btn-template-main {
+  border: 1px solid;
+}
+
+.grad-pink .btn-template-main {
+  color: #d45b83;
+}
+
+.grad-pink .btn-template-main:hover, .grad-pink .btn-template-main:focus, .grad-pink .btn-template-main:active {
+  background: #d45b83;
+  color: #ffffff;
+}
+
+.grad-yellow .btn-template-main {
+  color: #c7ba15;
+}
+
+.grad-yellow .btn-template-main:hover, .grad-yellow .btn-template-main:focus, .grad-yellow .btn-template-main:active {
+  background: #c7ba15;
+  color: #ffffff;
+}
+
+.grad-blue .btn-template-main {
+  color: #337ab7;
+}
+
+.grad-blue .btn-template-main:hover, .grad-blue .btn-template-main:focus, .grad-blue .btn-template-main:active {
+  background: #337ab7;
+  color: #ffffff;
+}
+
+.tlhead {
+  display: inline-block;
+  border: 2px dotted #38a7bb;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 20px 5em 0;
+  position: relative;
+}
+
+.tlhead:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5em;
+  width: 2px;
+  height: 4.5em;
+  margin: auto;
+  background-color: #bbb;
+}
+
+.prog {
+  background-color: #38a7bb;
+}
+
+.done {
+  border-style: solid;
+}
+
+.tldate {
+  font-size: 24px;
+  display: inline-block;
+  position: absolute;
+}
+
+.tlbody {
+  display: inline-block;
+  position: absolute;
+  margin-top: 32px;
+  margin-right: 10px;
+}
+
+.tl1let {
+  margin-left: 1ch;
+}
+
+.tlbig .tlhead {
+  margin-bottom: 7em; 
+}
+
+.tlbig .tlhead:after {
+  bottom: -7em;
+  height: 6.5em;
+}
+
+.tlbigger .tlhead {
+  margin-bottom: 9.5em; 
+}
+
+.tlbigger .tlhead:after {
+  bottom: -9.5em;
+  height: 9em;
+}

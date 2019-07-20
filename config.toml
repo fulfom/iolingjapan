@@ -57,8 +57,8 @@ enableGitInfo = true
     defaultKeywords = []
     defaultDescription = "日本言語学オリンピックの公式サイト"
 
-    topic = "2019年度予選結果発表"
-    topic_url = "/result2019/"
+    topic = ""
+    topic_url = ""
 
     # Google Maps API key (if not set will default to not passing a key.)
     googleMapsApiKey = ""
@@ -107,9 +107,9 @@ enableGitInfo = true
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]
-    categories = true
-    tags = true
-    search = true
+    categories = false
+    tags = false
+    search = false
 
 [params.carousel]
     enable = true
