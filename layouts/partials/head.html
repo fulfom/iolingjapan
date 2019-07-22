@@ -62,6 +62,10 @@
   <meta property="og:title" content="{{ .Title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ .URL }}/" />
-  <meta property="og:image" content="{{ .Site.Params.logo }}" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.twitterImg }}" />
+  <meta property="og:description" content="{{ .Description }}"/>
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:site" content="{{ .Site.Params.twitterAccount }}"/>
 </head>

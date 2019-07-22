@@ -240,3 +240,12 @@ body {
   bottom: -9.5em;
   height: 9em;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#general {
+  padding-top: 92px;
+  margin-top: -92px;
+}

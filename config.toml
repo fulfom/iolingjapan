@@ -56,6 +56,8 @@ enableGitInfo = true
     author = "国際言語学オリンピック日本委員会"
     defaultKeywords = []
     defaultDescription = "日本言語学オリンピックの公式サイト"
+    twitterAccount = "@iolingjapan"
+    twitterImg = "img/apple-touch-icon.png"
 
     topic = ""
     topic_url = ""

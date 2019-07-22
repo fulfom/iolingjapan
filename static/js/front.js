@@ -382,3 +382,4 @@ $(window).resize(function () {
     windowWidth = newWindowWidth
   }
 })
+
