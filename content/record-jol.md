@@ -12,7 +12,7 @@ keywords = ["成績","記録"]
   </ul>
 </nav>
 
-## 2019年度国内大会結果
+## JOL2019結果
 
 応募者は135名(うち参加者115名)でした。2時間5問の筆記試験の結果を元に金, 銀, 銅, 努力賞を授与し, うち上位8名を今年度の国際言語学オリンピック日本代表に選抜しました。
 
@@ -86,6 +86,57 @@ keywords = ["成績","記録"]
         <th scope="col">18</th>
         <th scope="col">18</th>
         <th scope="col">91</th>
+      </tr>
+    </tbody>
+  </table>
+
+## JOL2018結果
+
+受験者は56名でした。2時間5問の筆記試験の結果を元に上位8名を今年度の国際言語学オリンピック日本代表に選抜しました。
+
+## データ
+
+[問題はこちら](/preparation/)
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">第1問</th>
+        <th scope="col">第2問</th>
+        <th scope="col">第3問</th>
+        <th scope="col">第4問</th>
+        <th scope="col">第5問</th>
+        <th scope="col">合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="col">平均点</th>
+        <th scope="col">15.50</th>
+        <th scope="col">18.12</th>
+        <th scope="col">7.89</th>
+        <th scope="col">4.46</th>
+        <th scope="col">12.39</th>
+        <th scope="col">58.38</th>
+      </tr>
+      <tr>
+        <th scope="col">代表最低点</th>
+        <th scope="col">20</th>
+        <th scope="col">18</th>
+        <th scope="col">12</th>
+        <th scope="col">6</th>
+        <th scope="col">8</th>
+        <th scope="col">74</th>
+      </tr>
+      <tr>
+        <th scope="col">最高点</th>
+        <th scope="col">20</th>
+        <th scope="col">20</th>
+        <th scope="col">20</th>
+        <th scope="col">12</th>
+        <th scope="col">20</th>
+        <th scope="col">92</th>
       </tr>
     </tbody>
   </table>
