@@ -249,3 +249,7 @@ html {
   padding-top: 92px;
   margin-top: -92px;
 }
+
+.table {
+  overflow-x: auto;
+}
