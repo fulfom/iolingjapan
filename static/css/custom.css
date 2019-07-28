@@ -250,6 +250,8 @@ html {
   margin-top: -92px;
 }
 
-.table {
-  overflow-x: auto;
+.scroll {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
 }

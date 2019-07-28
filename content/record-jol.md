@@ -47,6 +47,7 @@ keywords = ["成績","記録"]
 
 [問題はこちら](/preparation/)
 
+<div class="scroll">
 <table class="table">
   <thead>
     <tr>
@@ -67,7 +68,9 @@ keywords = ["成績","記録"]
     </tr>
   </tbody>
 </table>
+</div>
 
+<div class="scroll">
   <table class="table">
     <thead>
       <tr>
@@ -110,6 +113,7 @@ keywords = ["成績","記録"]
       </tr>
     </tbody>
   </table>
+</div>
 
 ## JOL2018結果
 
@@ -119,6 +123,7 @@ keywords = ["成績","記録"]
 
 [問題はこちら](/preparation/)
 
+<div class="scroll">
   <table class="table">
     <thead>
       <tr>
@@ -161,3 +166,4 @@ keywords = ["成績","記録"]
       </tr>
     </tbody>
   </table>
+</div>
