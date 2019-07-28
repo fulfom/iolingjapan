@@ -47,6 +47,27 @@ keywords = ["成績","記録"]
 
 [問題はこちら](/preparation/)
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">金</th>
+      <th scope="col">銀</th>
+      <th scope="col">銅</th>
+      <th scope="col">努力賞</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="col">各賞の最低点</th>
+      <th scope="col">79</th>
+      <th scope="col">75</th>
+      <th scope="col">70</th>
+      <th scope="col">63</th>
+    </tr>
+  </tbody>
+</table>
+
   <table class="table">
     <thead>
       <tr>
