@@ -255,3 +255,13 @@ html {
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;
 }
+
+p img {
+  width: 100%;
+  max-width: 734px;
+}
+
+.mini {
+  width: 80%;
+  max-width: 587px;
+}
