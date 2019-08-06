@@ -12,9 +12,9 @@ keywords = ["成績","記録"]
   </ul>
 </nav>
 
-## 2018年度大会成績
+## 2019年大会成績
 
-第16回目となるプラハ大会には日本から代表8名が出場し 銅メダル1つ, 努力賞1つを獲得しました。今年で日本からの参加は7回目となります。
+第17回目となる韓国大会には日本から代表8名が出場し 金メダル1つ, 銅メダル2つ, 努力賞1つを獲得しました。今年で日本からの参加は8回目となります。
 
 <table class="table" border-color="gold">
   <thead>
@@ -25,6 +25,11 @@ keywords = ["成績","記録"]
     </tr>
   </thead>
   <tbody>
+    <tr class="gold">
+      <th scope="row">金</th>
+      <td>+1</td>
+      <td>1</td>
+    </tr>
     <tr class="silver">
       <th scope="row">銀</th>
       <td></td>
@@ -32,13 +37,13 @@ keywords = ["成績","記録"]
     </tr>
     <tr class="bronze">
       <th scope="row">銅</th>
-      <td>+1</td>
-      <td>4</td>
+      <td>+2</td>
+      <td>6</td>
     </tr>
     <tr class="honorable-mention">
       <th scope="row">努力賞</th>
       <td>+1</td>
-      <td>9</td>
+      <td>10</td>
     </tr>
     <tr class="gold">
       <th scope="row">最優秀解答賞</th>
@@ -59,6 +64,11 @@ keywords = ["成績","記録"]
     </tr>
   </thead>
   <tbody>
+    <tr class="gold">
+      <th scope="row">金</th>
+      <td>2019</td>
+      <td>吉野匠</td>
+    </tr>
     <tr class="silver">
       <th scope="row">銀</th>
       <td>2017</td>
@@ -68,6 +78,16 @@ keywords = ["成績","記録"]
       <th scope="row">銀</th>
       <td>2014</td>
       <td>山田啓介</td>
+    </tr>
+    <tr class="bronze">
+      <th scope="row">銅</th>
+      <td>2019</td>
+      <td>大勢拓実</td>
+    </tr>
+    <tr class="bronze">
+      <th scope="row">銅</th>
+      <td>2019</td>
+      <td>高橋翼</td>
     </tr>
     <tr class="bronze">
       <th scope="row">銅</th>
@@ -88,6 +108,11 @@ keywords = ["成績","記録"]
       <th scope="row">銅</th>
       <td>2015</td>
       <td>西山尚樹</td>
+    </tr>
+    <tr class="honorable-mention">
+      <th scope="row">努力賞</th>
+      <td>2019</td>
+      <td>久保宮玲於奈</td>
     </tr>
     <tr class="honorable-mention">
       <th scope="row">努力賞</th>
@@ -143,6 +168,26 @@ keywords = ["成績","記録"]
 </table>
 
 ## 過去の日本代表
+
+<div class="panel panel-default col-md-6">
+  <div class="panel-heading">2019 Team Ninja</div>
+  <ul class="list-group">
+    <li class="list-group-item">大勢拓実</li>
+    <li class="list-group-item">高橋翼</li>
+    <li class="list-group-item">矢澤宗汰</li>
+    <li class="list-group-item">吉野匠</li>
+  </ul>
+</div>
+
+<div class="panel panel-default col-md-6">
+  <div class="panel-heading">2019 Team Samurai</div>
+  <ul class="list-group">
+    <li class="list-group-item">久保宮玲於奈</li>
+    <li class="list-group-item">佐藤和音</li>
+    <li class="list-group-item">原梨乃</li>
+    <li class="list-group-item">森西理温</li>
+  </ul>
+</div>
 
 <div class="panel panel-default col-md-6">
   <div class="panel-heading">2018 Team Ninja</div>
