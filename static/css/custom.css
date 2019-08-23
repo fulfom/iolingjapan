@@ -13,6 +13,14 @@ table thead,th {
   font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 }
 
+.simple-table td, .simple-table th {
+  padding-right: 2em;
+}
+
+.simple-table table {
+  margin-bottom: 1em;
+}
+
 h2 {
   font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
   padding: 0.25em 0.5em;/*上下 左右の余白*/
