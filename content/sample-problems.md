@@ -148,7 +148,7 @@ keywords = []
 </div>
 
 <summary>ヒント</summary></details>
-
+<br>
 <details>
 (1) 友達  
 (2) かいじゅう  
