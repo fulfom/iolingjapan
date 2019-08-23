@@ -21,12 +21,25 @@ table thead,th {
   margin-bottom: 1em;
 }
 
+.simple-list li {
+  font-size: large;
+  padding: 0.5em 0px;
+  border-bottom: 1px solid #ccc;  
+}
+
+.simple-list li:last-child{
+  border-bottom: 0;
+}
+
 @media screen and (max-width:450px) {
   .simple-table table {
     display: block;
     overflow-x: scroll;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+  }
+  .simple-list ol {
+    padding-left: 28px;
   }
 }
 

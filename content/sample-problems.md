@@ -7,8 +7,8 @@ keywords = []
 ## リスト
 
 1. [インドネシア語](#sample1)
-2. [アイヌ語](#sample2)
-<!-- - [トルコ語](#sample3) -->
+1. [アイヌ語](#sample2)
+1. [トルコ語](#sample3)
 
 <h2 id="sample1">1. インドネシア語</h2>
 
@@ -84,5 +84,74 @@ keywords = []
 (b) 神の・沢
 <summary>答え</summary></details>
 
-<!--h3 id="#sample3">トルコ語</h3-->
+<h2 id="sample3">3. トルコ語</h2>
 
+以下はトルコ語のお話とその日本語訳です。空欄1～4をうめてください。1～3は単語, 4には文が入ります。
+
+<div class="simple-list">
+    <ol>
+        <li>Canavar okula geldi.<br>
+          <small>かいじゅうが学校に来た。</small></li>
+        <li>Canavar arkadaş istedi.<br>
+          <small>かいじゅうは（ 1 ）を欲しがった。</small></li>
+        <li>Hoca canavara top verdi.<br>
+          <small>先生がかいじゅうにボールをあげた。</small></li>
+        <li>Canavar topa bindi.<br>
+          <small>かいじゅうはボールに乗った。</small></li>
+        <li>Top ezildi.<br>
+          <small>ボールはつぶれた。</small></li>
+        <li>Canavar okul beğenmedi.<br>
+          <small>（ 2 ）は（ 3 ）を気に入らなかった。</small></li>
+        <li>Çocuklar gelip canavara balon verdi.<br>
+          <small>（ 4 ）。</small></li>
+        <li>Canavar balona binip ezdi.<br>
+          <small>かいじゅうは風船に乗ってつぶした。</small></li>
+        <li>Çocuklar canavar beğenip arkadaş getirdi.<br>
+          <small>子どもたちはかいじゅうを気に入って友達を連れてきた。</small></li>
+        <li>Canavar okul beğendi.<br>
+          <small>かいじゅうは学校を気に入った。</small></li>
+    </ol>
+</div>
+
+<details>
+
+<div class="container simple-table">
+    <table>
+        <thead>
+            <tr><th>トルコ語</th><th>日本語訳</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>topa</td><td>ボールに</td></tr>
+            <tr><td>top</td><td>ボール(は/を)</td></tr>
+            <tr><td>okula</td><td>学校に</td></tr>
+            <tr><td>okul</td><td>学校を</td></tr>
+            <tr><td>balona</td><td>風船に</td></tr>
+            <tr><td>balon</td><td>？？？</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container simple-table">
+    <table>
+        <thead>
+            <tr><th>トルコ語</th><th>日本語訳</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>bindi</td><td>乗った</td></tr>
+            <tr><td>binip</td><td>乗って</td></tr>
+            <tr><td>beğendi</td><td>気に入った</td></tr>
+            <tr><td>beğenip</td><td>気に入って</td></tr>
+            <tr><td>geldi</td><td>来た</td></tr>
+            <tr><td>gelip</td><td>？？？</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<summary>ヒント</summary></details>
+
+<details>
+(1) 友達  
+(2) かいじゅう  
+(3) 学校  
+(4) 子どもたちが来てかいじゅうに風船をあげた
+<summary>答え</summary></details>
