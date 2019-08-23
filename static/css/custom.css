@@ -23,10 +23,11 @@ table thead,th {
 
 @media screen and (max-width:450px) {
   .simple-table table {
-  display: block;
-  overflow-x: scroll;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 h2 {
