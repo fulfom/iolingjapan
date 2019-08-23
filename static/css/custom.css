@@ -19,6 +19,10 @@ table thead,th {
 
 .simple-table table {
   margin-bottom: 1em;
+}
+
+@media screen and (max-width:450px) {
+  .simple-table table {
   display: block;
   overflow-x: scroll;
   white-space: nowrap;
