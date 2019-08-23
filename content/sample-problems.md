@@ -17,15 +17,15 @@ keywords = []
 <div class="container simple-table">
     <table>
         <thead>
-            <tr><th>インドネシア語</th><th>日本語訳</th><th></th></tr>
+            <tr><th>インドネシア語</th><th>日本語訳</th></tr>
         </thead>
         <tbody>
-            <tr><td>jalan</td><td>道</td><td></td></tr>
-            <tr><td>berjalan</td><td>歩く</td><td></td></tr>
-            <tr><td>berkeringat</td><td>汗をかく</td><td></td></tr>
-            <tr><td>keringatan</td><td>汗びっしょり</td><td></td></tr>
-            <tr><td>nafas</td><td>息</td><td></td></tr>
-            <tr><td>duri</td><td>とげ</td><td></td></tr>
+            <tr><td>jalan</td><td>道</td></tr>
+            <tr><td>berjalan</td><td>歩く</td></tr>
+            <tr><td>berkeringat</td><td>汗をかく</td></tr>
+            <tr><td>keringatan</td><td>汗びっしょり</td></tr>
+            <tr><td>nafas</td><td>息</td></tr>
+            <tr><td>duri</td><td>とげ</td></tr>
         </tbody>
     </table>
 </div>
@@ -42,7 +42,7 @@ keywords = []
 <h2 id="sample2">2. アイヌ語</h2>
 
 北海道にはアイヌ語で名づけられた地名がたくさん残っています。  
-(データは http://www.pref.hokkaido.lg.jp/ks/ass/new_timei.htm による)
+([データの出典](http://www.pref.hokkaido.lg.jp/ks/ass/new_timei.htm))
 
 <div class="container simple-table">
     <table>

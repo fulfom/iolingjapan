@@ -19,6 +19,10 @@ table thead,th {
 
 .simple-table table {
   margin-bottom: 1em;
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 h2 {
