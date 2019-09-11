@@ -9,6 +9,7 @@ keywords = []
 1. [インドネシア語](#sample1)
 1. [アイヌ語](#sample2)
 1. [トルコ語](#sample3)
+<!--1. [古代エジプトの数字](#sample4)-->
 
 <h2 id="sample1">1. インドネシア語</h2>
 
@@ -33,6 +34,26 @@ keywords = []
 (a) keringat を日本語に訳してください。  
 (b) 「息をする」「とげまみれ」をそれぞれインドネシア語に訳してください。  
 
+<details>
+(a) keringat は berkeringat 「汗をかく」と keringatan 「汗びっしょり」に共通して含まれているもの。  
+(b) 単語をパーツ(形態素)に分解して考えてみましょう。
+
+<div class="container simple-table">
+    <table>
+        <thead>
+            <tr><th>シンプルな形</th><th>ber-なんとか</th><th>なんとか-an</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>jalan<br>「道」</td><td>berjalan<br>「歩く」</td><td></td></tr>
+            <tr><td></td><td>berkeringat<br>「汗をかく」</td><td>keringatan<br>「汗びっしょり」</td></tr>
+            <tr><td>nafas<br>「息」</td><td></td><td></td></tr>
+            <tr><td>duri<br>「とげ」</td><td></td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+
+<summary>ヒント</summary></details>
+<br>
 <details>
 (a) keringat : 汗  
 (b1) 息をする : bernafas  

@@ -84,7 +84,7 @@ enableGitInfo = true
     email = ""
 
     about_us = "特定非営利活動法人 国際教育合作協会; 委員長ポールスノードン; お問い合わせはこちら jolinguistics@gmail.com"
-    copyright = "© 2019 国際言語学オリンピック日本委員会"
+    copyright = "© 2019 国際言語学オリンピック日本委員会" 
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
