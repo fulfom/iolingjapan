@@ -21,6 +21,14 @@ table thead,th {
   margin-bottom: 1em;
 }
 
+.list-like td, .list-like th {
+  padding-right: 1em;
+}
+
+.list-like table {
+  margin-bottom: 1em;
+}
+
 .simple-list li {
   font-size: large;
   padding: 0.5em 0px;
@@ -29,18 +37,6 @@ table thead,th {
 
 .simple-list li:last-child{
   border-bottom: 0;
-}
-
-@media screen and (max-width:450px) {
-  .simple-table table {
-    display: block;
-    overflow-x: scroll;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  .simple-list ol {
-    padding-left: 28px;
-  }
 }
 
 h2 {
@@ -298,4 +294,54 @@ p img {
 
 #copyright p a img{
     width: auto;
+}
+
+.simple-box {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 2px #eee;
+}
+.simple-box .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: -2px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+  color: #4f4f4f;
+  background: #eee;
+  font-weight: bold;
+  border-radius: 2px 2px 0 0;
+}
+.simple-box p {
+  margin: 0; 
+  padding: 0;
+}
+
+.list-like td:first-child {
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.list-like td:last-child {
+  padding-right: 0;
+}
+
+@media screen and (max-width:450px) {
+  .simple-table table {
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .simple-list ol {
+    padding-left: 28px;
+  }
+  .simple-box ul {
+    padding-inline-start: 10px;
+  }
 }
