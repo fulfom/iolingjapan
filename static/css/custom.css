@@ -344,4 +344,7 @@ p img {
   .simple-box ul {
     padding-inline-start: 10px;
   }
+  .home-carousel h1 {
+    font-size: 32px;
+  }
 }
