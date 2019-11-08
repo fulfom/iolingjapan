@@ -9,7 +9,7 @@ keywords = []
 1. [インドネシア語](#sample1)
 1. [アイヌ語](#sample2)
 1. [トルコ語](#sample3)
-<!--1. [古代エジプトの数字](#sample4)-->
+1. [古代エジプトの数字](#sample4)
 
 <h2 id="sample1">1. インドネシア語</h2>
 
@@ -175,4 +175,14 @@ keywords = []
 (2) かいじゅう  
 (3) 学校  
 (4) 子どもたちが来てかいじゅうに風船をあげた
+<summary>答え</summary></details>
+
+<h2 id="sample4">4. 古代エジプトの数字</h2>
+
+以下, 6つの数が2種類の数字で表されています。左側は今私たちが使っているアラビア数字, 右側が古代エジプトの数字です。  
+同じ数を表しているもの同士を結んでください。
+
+<img style="max-width: 350px;" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
+<details>
+    <img style="max-width: 350px;" src="/img/EgyptianNumeral2.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
 <summary>答え</summary></details>
