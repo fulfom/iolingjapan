@@ -105,7 +105,7 @@ keywords = ["募集要項", "申し込み"]
     <table>
         <tbody>
             <tr><td>日程:</td><td>2019年12月1日(日) 13:00～16:00</td></tr>
-            <tr><td>場所:</td><td>東京外国語大学府中キャンパス(教室未定)</td></tr>
+            <tr><td>場所:</td><td>東京外国語大学府中キャンパス(410)</td></tr>
             <tr><td>内容:</td><td>大会の沿革, 次回大会について, 国際大会経験者の体験談, 問題演習</td></tr>
         </tbody>
     </table>
@@ -114,7 +114,7 @@ keywords = ["募集要項", "申し込み"]
 <div class="simple-box">
 <span class="box-title">アクセス</span>
 <a href="http://www.tufs.ac.jp/abouttufs/contactus/access.html">詳しい交通案内はこちら</a>
-<p>どの教室を会場に使うかは決定次第本ページに掲載します。</p>
+<p>研究講義棟は西武多摩川線多磨駅側入口から校内に入って, 中央の円形広場を囲むアーケードのところまで真っ直ぐ進み, 右に曲がった先にあります。410教室は4階の真ん中あたりにあります。<strong>当日は語学系の検定試験が行われているのでお静かにお越しください。</strong></p>
 </div>
 
 <div class="simple-box">
