@@ -38,7 +38,7 @@ keywords = []
 
 - [karŋati’s diary(karngati)](https://karngati.hatenablog.com/entry/JOL2018_5)
 - [言語学わからない(tungumalanna)](https://tungumalanna.hatenablog.com/archive/category/IOL%E9%9D%9E%E5%85%AC%E5%BC%8F%E8%A7%A3%E8%AA%AC)
-- [言とインドカレー(fulfom)](https://fulfom.hatenablog.com/archive/category/IOL%E9%9D%9E%E5%85%AC%E5%BC%8F%E8%A7%A3%E8%AA%AC)
+- [言とインドカレー(fulfom)](https://fulfom.hatenablog.com/archive/category/%E8%A8%80%E3%82%AA%E3%83%AA%E8%A7%A3%E8%AA%AC)
 
 ## 国内予選の過去問
 
@@ -57,6 +57,7 @@ keywords = []
 
 ### 解説
 
+[2019第5問解説](https://fulfom.hatenablog.com/entry/2019/12/21/145615)  
 [2018第5問解説](https://karngati.hatenablog.com/entry/JOL2018_5)
 
 ## 各サイトの過去問集へのリンク

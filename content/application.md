@@ -170,7 +170,7 @@ keywords = ["募集要項", "申し込み"]
 ### 5.1. スケジュール
 
 IOLまでの間に合同練習会(2,3回)と渡航などについて説明するオリエンテーションを行います。    
-国際言語学オリンピック(IOL)へは7月19日(日)に出国し, 7月25日(土)に帰国します。
+国際言語学オリンピック(IOL)へは7月19日(日)に出国し, 7月26日(日)に帰国します。
 
 ### 5.2. IOL派遣費用
 
@@ -181,4 +181,4 @@ IOL開催国までの渡航費とIOL登録費(2.2. 受験料 を参照)がかか
 IOL2020 はラトヴィアの[ヴェンツピルス](https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A7%E3%83%B3%E3%83%84%E3%83%94%E3%83%AB%E3%82%B9)で開かれます。
 
 <br>
-<div class='centralize'><a class='btn btn-template-main' href ='https://docs.google.com/forms/d/e/1FAIpQLSfVu0UUIRp0ENGuzY6vkVtzcddNIZnsU1O4f_glv2_Xtp4w_w/viewform'>応募はこちら</a></div>
+<!--div class='centralize'><a class='btn btn-template-main' href ='https://docs.google.com/forms/d/e/1FAIpQLSfVu0UUIRp0ENGuzY6vkVtzcddNIZnsU1O4f_glv2_Xtp4w_w/viewform'>応募はこちら</a></div-->
