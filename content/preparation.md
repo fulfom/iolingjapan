@@ -44,6 +44,7 @@ keywords = []
 
 ### 問題
 
+[2020](https://drive.google.com/open?id=1FPhk59e8A0FIXgOliitzg1qU95V7fppV)  
 [2019](https://drive.google.com/open?id=1BjNVq20Ne9LVAqGEa9nLPsF9FhuhDjAA)  
 [2018](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2)スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet  
 [2017](https://drive.google.com/open?id=1DSG3MISTszSPeMeG-VmnyKA0kFe7iywZ)  
@@ -51,6 +52,7 @@ keywords = []
 
 ### 解答
 
+2020解答 は2020年1月末頃に公開  
 [2019解答](https://drive.google.com/open?id=1-lHLG82BcwZSuWnCuXD8GwTXFS2vv_Lh)  
 [2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)  
 [2017解答](https://drive.google.com/open?id=1GSyrZ7f6hvOAQ3sc19mFAOzRlUYK0W0q)
@@ -97,6 +99,7 @@ keywords = []
 
 ### 解答
 
+[2019解答](http://www.ioling.org/booklets/iol-2019-indiv-sol.ja.pdf)  
 [2018解答](http://www.ioling.org/booklets/iol-2018-indiv-sol.ja.pdf)  
 [2017解答](http://www.ioling.org/booklets/iol-2017-indiv-sol.ja.pdf)  
 [2016解答](http://www.ioling.org/booklets/iol-2016-indiv-sol.ja.pdf)  

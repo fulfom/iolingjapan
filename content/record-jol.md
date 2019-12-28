@@ -12,6 +12,105 @@ keywords = ["成績","記録"]
   </ul>
 </nav>
 
+## JOL2020結果
+
+応募者は199名(うち参加者155名)でした。
+
+以下の通り金賞11人, 銀賞17人, 銅賞27人, 努力賞25人を選抜しました。金賞または銀賞を獲得した28名を第2選抜のAPLOにご招待します。
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">賞</th>
+      <th scope="col">受験番号</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="gold">
+          <th scope="row">金</th>
+          <th scope="row">10, 26, 36, 55, 79, 95, 96, 121, 154, 196, 198</th>
+      </tr>
+      <tr class="silver">
+          <th scope="row">銀</th>
+          <th scope="row">2, 9, 45, 47, 52, 61, 72, 73, 74, 81, 89, 92, 102, 111, 160, 169, 174</th>
+      </tr>
+      <tr class="bronze">
+          <th scope="row">銅</th>
+          <th scope="row">5, 7, 20, 25, 28, 38, 53, 71, 78, 80, 86, 97, 105, 107, 112, 113, 117, 118, 127, 129, 143, 157, 166, 168, 172, 185, 188</th>
+      </tr>
+      <tr class="">
+          <th scope="row">努力賞</th>
+          <th scope="row">1, 12, 17, 22, 24, 40, 49, 50, 51, 66, 114, 115, 119, 120, 126, 140, 150, 155, 156, 159, 162, 176, 177, 190, 193</th>
+      </tr>
+    </tbody>
+  </table>
+
+(賞内部の順序は点数と関係のない受験番号順です)
+
+### データ
+
+[問題はこちら](/preparation/)  
+解答は試験1か月後に公開します。
+
+<div class="scroll">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">金</th>
+      <th scope="col">銀</th>
+      <th scope="col">銅</th>
+      <th scope="col">努力賞</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="col">各賞の最低点</th>
+      <th scope="col">90</th>
+      <th scope="col">84</th>
+      <th scope="col">73</th>
+      <th scope="col">67</th>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">第1問</th>
+        <th scope="col">第2問</th>
+        <th scope="col">第3問</th>
+        <th scope="col">第4問</th>
+        <th scope="col">第5問</th>
+        <th scope="col">合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="col">平均点</th>
+        <th scope="col">12.80</th>
+        <th scope="col">14.67</th>
+        <th scope="col">12.06</th>
+        <th scope="col">12.29</th>
+        <th scope="col">14.81</th>
+        <th scope="col">66.63</th>
+      </tr>
+      <tr>
+        <th scope="col">最高点</th>
+        <th scope="col">20</th>
+        <th scope="col">20</th>
+        <th scope="col">20</th>
+        <th scope="col">20</th>
+        <th scope="col">20</th>
+        <th scope="col">95</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 ## JOL2019結果
 
 応募者は135名(うち参加者115名)でした。2時間5問の筆記試験の結果を元に金, 銀, 銅, 努力賞を授与し, うち上位8名を今年度の国際言語学オリンピック日本代表に選抜しました。
