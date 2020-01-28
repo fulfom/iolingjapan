@@ -133,7 +133,7 @@ keywords = ["募集要項", "申し込み"]
     <table>
         <tbody>
             <tr><td>日程:</td><td>2020年2月9日(日) 13:00～16:00</td></tr>
-            <tr><td>場所:</td><td>東京外国語大学府中キャンパス</td></tr>
+            <tr><td>場所:</td><td>東京外国語大学府中キャンパス 研究講義棟4階423教室</td></tr>
             <tr><td>内容:</td><td>国際大会レベルの問題演習と記述対策</td></tr>
         </tbody>
     </table>
@@ -142,6 +142,7 @@ keywords = ["募集要項", "申し込み"]
 <div class="simple-box">
 <span class="box-title">アクセス</span>
 <a href="http://www.tufs.ac.jp/abouttufs/contactus/access.html">詳しい交通案内はこちら</a>
+<p>講義棟内はこの日テストを行っているそうですので, お静かにお越しください。</p>
 </div>
 
 [申込はこちら](https://docs.google.com/forms/d/e/1FAIpQLSd5XLw9YH70hhG6RYqNN2y5--_nPIfu0YJFJX_4GfyTmVB0DA/viewform)
