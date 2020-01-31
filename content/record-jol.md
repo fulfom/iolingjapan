@@ -50,7 +50,6 @@ keywords = ["成績","記録"]
 ### データ
 
 [問題はこちら](/preparation/)  
-解答は試験1か月後に公開します。
 
 <div class="scroll">
 <table class="table">
