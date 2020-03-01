@@ -153,3 +153,6 @@ enableGitInfo = true
     enable = false
     title = "お知らせ"
     subtitle = ""
+
+[markup.goldmark.renderer]
+unsafe = true
