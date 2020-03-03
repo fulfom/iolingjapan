@@ -165,7 +165,7 @@ keywords = ["募集要項", "申し込み"]
 <div class="simple-box">
 <span class="box-title">アクセス</span>
 <a href="http://www.tufs.ac.jp/abouttufs/contactus/access.html">詳しい交通案内はこちら</a>
-<p>お身体に気をつけてお越しください．当日体調がすぐれない場合は無理せずご静養ください．必要であれば資料を送りますのでお問い合わせください．</p>
+<p>お身体に気をつけてお越しください．念のためマスクをしてきてください．当日体調がすぐれない場合は無理せずご静養ください．必要であれば資料を送りますのでお問い合わせください．</p>
 </div>
 
 [申込はこちら](https://docs.google.com/forms/d/e/1FAIpQLSeg6c8gJXVFuaqlLMLvWXlh71rS2IbRsrAsvQYst188TxbH3w/viewform?usp=sf_link)
