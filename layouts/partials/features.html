@@ -3,40 +3,48 @@
 {{ if gt (len .Site.Data.features) 0 }}
 <section class="bar background-white">
     <div class="container">
-        {{ range $index, $element := sort .Site.Data.features "weight" }}
-		{{ if eq (mod $index 3) 0 }}
-		<div class="col-sm-12">
-            <div class="row">
-		{{ end }}
-				<div class="col-sm-4 hidden-xs"><!--Larger than xs-->
-                    <div class="box-simple">
-                    	{{with .link}}
-						<a href = {{.}}>
-						{{end}}
-                        	<div class="icon">
-                            	<i class="{{ .icon }}"></i>
-                        	</div>
-                    	    <h3>{{ $element.name }}</h3>
-							<p>{{ $element.description | markdownify }}</p>
-						</a>
-                    </div>
-                </div>
-                <div class="box-simple-xs visible-xs">
-        			{{with .link}}
-					<a href = {{.}}>
-					{{end}}
-                		<div class="icon">
-                    		<i class="{{ .icon }}"></i>
-                		</div>
-                		<h3>{{ $element.name }}</h3>
-                	</a>
-	            </div>
-		{{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
+		<div class="row">
+			<div class="col-md-6">
+				{{ range $index, $element := sort .Site.Data.features "weight" }}
+				{{ if eq (mod $index 3) 0 }}
+				<div class="col-sm-12">
+					<div class="row">
+				{{ end }}
+						<div class="col-sm-4 hidden-xs"><!--Larger than xs-->
+							<div class="box-simple">
+								{{with .link}}
+								<a href = {{.}}>
+								{{end}}
+									<div class="icon">
+										<i class="{{ .icon }}"></i>
+									</div>
+									<h3>{{ $element.name }}</h3>
+									<p>{{ $element.description | markdownify }}</p>
+								</a>
+							</div>
+						</div>
+						<div class="box-simple-xs visible-xs">
+							{{with .link}}
+							<a href = {{.}}>
+							{{end}}
+								<div class="icon">
+									<i class="{{ .icon }}"></i>
+								</div>
+								<h3>{{ $element.name }}</h3>
+							</a>
+						</div>
+				{{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
+					</div>
+				</div>
+				{{ end }}
+				{{ end }}
+			</div>
+			<div class="clearfix visible-sm-block"></div>
+			<div class="col-md-6 embedded-twitter">
+				<h3>お知らせ</h3>
+				<a class="twitter-timeline" data-width="100%" data-height="400" data-chrome="noheader nofooter" href="https://twitter.com/iolingjapan?ref_src=twsrc%5Etfw">Tweets by iolingjapan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
-		{{ end }}
-        {{ end }}
-    </div>
 </section>
 {{ end }}
 {{ end }}

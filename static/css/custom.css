@@ -91,6 +91,20 @@ h1,h3,h4,.pager {
   }
 }
 
+@media (min-width: 992px){
+  .embedded-twitter {
+    border-left: 1px solid #ddd;
+  }
+}
+
+.embedded-twitter h3{
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: #555555;
+  letter-spacing: 0.08em;
+}
+
 body {
   margin-top: 62px;
 }
