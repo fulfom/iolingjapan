@@ -100,7 +100,7 @@ keywords = []
 ### 解答
 
 [2019解答](http://www.ioling.org/booklets/iol-2019-indiv-sol.ja.pdf)  
-[2018解答](http://www.ioling.org/booklets/iol-2018-indiv-sol.ja.pdf)  
+[2018解答](http://www.ioling.org/booklets/iol-2018-indiv-sol.ja.pdf) 問題5: Yaw と Ama が逆  
 [2017解答](http://www.ioling.org/booklets/iol-2017-indiv-sol.ja.pdf)  
 [2016解答](http://www.ioling.org/booklets/iol-2016-indiv-sol.ja.pdf)  
 [2015解答](http://www.ioling.org/booklets/iol-2015-indiv-sol.ja.pdf)  
