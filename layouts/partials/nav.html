@@ -1,64 +1,48 @@
 <div class="navbar-fixed-top">
 
-    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand ml-md-3" href="{{ .Site.BaseURL }}">
+    <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-none d-md-block" style="height: 35px;">
+    <p class="d-none d-lg-block site-title">{{ $.Site.Title}}</p>
+    <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-block d-md-none" style="height: 30px;">
+    <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
+  </a>
+  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand home" href="{{ .Site.BaseURL }}">
-                    <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="hidden-xs hidden-sm" style="height: 35px;">
-                    <p class="hidden-xs hidden-sm hidden-md site-title">{{ $.Site.Title}}</p>
-                    <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="visible-xs visible-sm" style="height: 30px;">
-                    <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
-                </a>
-                <div class="navbar-buttons">
-                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
-                      <span class="sr-only">{{ i18n "navToggle" }}</span>
-                        <i class="fa fa-align-justify"></i>
-                    </button>
-                </div>
-            </div>
-            <!--/.navbar-header -->
-
-            <div class="navbar-collapse collapse" id="navigation">
-                <ul class="nav navbar-nav navbar-right">
-                  {{ range .Site.Menus.main }}
-                  <li class="dropdown">
-                    {{ if .HasChildren }}
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      {{ range .Children }}
-                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                      {{ end }}
-                    </ul>
-                    {{ else }}
-                    <a href="{{ .URL }}">{{ .Name }}</a>
-                    {{ end  }}
-                  </li>
-                  {{ end }}
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-
-            <div class="collapse clearfix" id="search">
-
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <span class="input-group-btn">
-
-                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
-
-                </span>
-                    </div>
-                </form>
-
-            </div>
-            <!--/.nav-collapse -->
-
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav navbar-nav mr-auto">
+      {{ range .Site.Menus.main }}
+      <li class="nav-item dropdown">
+        {{ if .HasChildren }}
+        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
         </div>
-    </div>
-    <!-- /#navbar -->
+        {{ else }}
+        <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+        {{ end  }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="collapse clearfix" id="search">
+
+    <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-btn">
+
+        <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+    </span>
+        </div>
+    </form>
 
 </div>
+</nav>
 
-<!-- *** NAVBAR END ***-->
+</div>

@@ -1,0 +1,1 @@
+i.fa-angle-right{transition:.2s}a[aria-expanded=true] i.fa-angle-right{transform:rotate(90deg)}.gold,.best-solution{background-color:#eee7cc}.silver{background-color:#eee}.bronze{background-color:#edc}

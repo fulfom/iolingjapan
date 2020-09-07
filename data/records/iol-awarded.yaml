@@ -1,0 +1,67 @@
+awards:
+  gold: 金賞
+  silver: 銀賞
+  bronze: 銅賞
+  honorable-mention: 努力賞
+  best-solution: 最優秀解答賞
+contestants:
+  - award: gold
+    year: 2019
+    name: 吉野匠
+  - award: silver
+    year: 2017
+    name: 吉野匠
+  - award: silver
+    year: 2014
+    name: 山田啓介
+  - award: bronze
+    year: 2019
+    name: 大勢拓実
+  - award: bronze
+    year: 2019
+    name: 高橋翼
+  - award: bronze
+    year: 2018
+    name: 西野拓巳
+  - award: bronze
+    year: 2017
+    name: 米山維斗
+  - award: bronze
+    year: 2016
+    name: 小林剛士
+  - award: bronze
+    year: 2015
+    name: 西山尚樹
+  - award: honorable-mention
+    year: 2019
+    name: 久保宮玲於奈
+  - award: honorable-mention
+    year: 2018
+    name: 山﨑貴之
+  - award: honorable-mention
+    year: 2017
+    name: 梶田純之介
+  - award: honorable-mention
+    year: 2017
+    name: 非公開
+  - award: honorable-mention
+    year: 2016
+    name: 佐藤弘崇
+  - award: honorable-mention
+    year: 2016
+    name: 八木悠斗
+  - award: honorable-mention
+    year: 2015
+    name: 八木悠斗
+  - award: honorable-mention
+    year: 2015
+    name: 佐藤弘崇
+  - award: honorable-mention
+    year: 2014
+    name: 西山尚樹
+  - award: honorable-mention
+    year: 2012
+    name: Yutaro Yamada
+  - award: best-solution
+    year: 2016
+    name: 佐藤弘崇

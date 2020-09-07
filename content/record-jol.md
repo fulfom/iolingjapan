@@ -27,15 +27,15 @@ keywords = ["成績","記録"]
   </thead>
   <tbody>
       <tr class="gold">
-          <th scope="row">金</th>
+          <th scope="row">金賞</th>
           <th scope="row">10, 26, 36, 55, 79, 95, 96, 121, 154, 196, 198</th>
       </tr>
       <tr class="silver">
-          <th scope="row">銀</th>
+          <th scope="row">銀賞</th>
           <th scope="row">2, 9, 45, 47, 52, 61, 72, 73, 74, 81, 89, 92, 102, 111, 160, 169, 174</th>
       </tr>
       <tr class="bronze">
-          <th scope="row">銅</th>
+          <th scope="row">銅賞</th>
           <th scope="row">5, 7, 20, 25, 28, 38, 53, 71, 78, 80, 86, 97, 105, 107, 112, 113, 117, 118, 127, 129, 143, 157, 166, 168, 172, 185, 188</th>
       </tr>
       <tr class="">

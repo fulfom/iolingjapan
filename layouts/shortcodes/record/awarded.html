@@ -1,0 +1,27 @@
+{{$contest := .Get 0 | default "iol"}}
+{{$data := index $.Site.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
+{{$contestants := index $data "contestants"}}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">賞</th>
+            <th scope="col">年</th>
+            <th scope="col">名前</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{$gold := sort (where $contestants "award" "gold") "year" "desc" }}
+        {{$silver := sort (where $contestants "award" "silver") "year" "desc" }}
+        {{$bronze := sort (where $contestants "award" "bronze") "year" "desc" }}
+        {{$honorableMention := sort (where $contestants "award" "honorable-mention") "year" "desc" }}
+        {{$bestSolution := sort (where $contestants "award" "best-solution") "year" "desc" }}
+        {{$contestants := $gold | append $silver | append $bronze | append $honorableMention | append $bestSolution }}
+        {{range $contestants}}
+        <tr class="{{.award}}">
+            <th scope="row">{{index $data.awards .award}}</th>
+            <td>{{.year}}</td>
+            <td>{{.name}}</td>
+        </tr>
+        {{end}}
+    </tbody>
+</table>

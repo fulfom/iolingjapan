@@ -1,0 +1,56 @@
+{{$year := .Get 0}}
+{{$contest := .Get 1 | default "iol"}}
+{{$data := index $.Site.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
+{{$contestants := index $data "contestants"}}
+{{$awardNameJpn := $data.awards}}
+{{$awardName := slice "gold" "silver" "bronze" "honorable-mention" "best-solution"}}
+{{$cumulativeAward := dict}}
+{{$thisYearsAward := dict}}
+{{range $awardName}}
+  {{$tmp := where $contestants "award" .}}
+  {{$cumulativeAward = merge $cumulativeAward (dict . (len $tmp))}}
+  {{$thisYearsAward = merge $thisYearsAward (dict . (len (where $tmp "year" $year)))}}
+{{end}}
+{{$text := ""}}
+{{range $awardName}}
+  {{if ne (index $thisYearsAward .) 0}}
+    {{$tmp := (index $awardNameJpn .)}}
+    {{$tmp = delimit (slice $tmp " " (index $thisYearsAward .) "つ" ) "" }}
+    {{$text = delimit (slice $text $tmp) ", "}}
+  {{end}}
+{{end}}
+
+<h2>{{$contest | upper}}{{$year}}結果</h2>
+
+{{if eq $contest "iol"}}
+{{$skip := slice 2020}}
+{{$time := sub $year 2002}}{{range $skip}}{{if lt . $year}}{{$time = sub $time 1}}{{end}}{{end}}
+<p>第{{$time}}回目となる韓国大会には日本から代表8名が出場し{{$text}}を獲得しました。今年で日本からの参加は{{sub $time 9}}回目となります。</p>
+{{end}}
+
+{{if eq $contest "aplo"}}
+{{$skip := slice 2020}}
+{{$time := sub $year 2002}}{{range $skip}}{{if lt . $year}}{{$time = sub $time 1}}{{end}}{{end}}
+<p>今年度から新設されたアジア太平洋言語学オリンピック(APLO)が2019年5月5日に行われました。日本からは8名が代表として参加し, {{$text}}を獲得しました。吉野匠さんは今大会の最高得点を獲得し, 一位で金賞を受賞しました．</p>
+{{end}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">賞</th>
+      <th scope="col">今年</th>
+      <th scope="col">累計</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{range $awardName}}
+  {{if ne (index $cumulativeAward .) 0}}
+  <tr class="{{.}}">
+    <th scope="row">{{index $awardNameJpn .}}</th>
+    <td>{{if ne (index $thisYearsAward .) 0}}+{{index $thisYearsAward .}}{{end}}</td>
+    <td>{{index $cumulativeAward .}}</td>
+  </tr>
+  {{end}}
+  {{end}}
+  </tbody>
+</table>

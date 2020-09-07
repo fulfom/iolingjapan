@@ -20,13 +20,13 @@
                 <div class="row">
                     <!-- *** LEFT COLUMN *** -->
 
-                    <div class="col-md-9" id="blog-listing-medium">
+                    <div class="col-lg-9" id="blog-listing-medium">
 
                         {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
                         {{ range $paginator.Pages }}
                         <section class="post">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-lg-4">
                                   <div class="image">
                                       <a href="{{ .Permalink }}">
                                           {{ if .Params.banner }}
@@ -37,7 +37,7 @@
                                       </a>
                                   </div>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-lg-8">
                                     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                                     <div class="clearfix">
                                         <p class="author-category">
@@ -77,14 +77,14 @@
                             {{ end }}
                         </ul>
                     </div>
-                    <!-- /.col-md-9 -->
+                    <!-- /.col-lg-9 -->
 
                     <!-- *** LEFT COLUMN END *** -->
 
                     <!-- *** RIGHT COLUMN ***
        _________________________________________________________ -->
 
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
 
                         <!-- *** MENUS AND WIDGETS *** -->
 
@@ -93,7 +93,7 @@
                         <!-- *** MENUS AND FILTERS END *** -->
 
                     </div>
-                    <!-- /.col-md-3 -->
+                    <!-- /.col-lg-3 -->
 
                     <!-- *** RIGHT COLUMN END *** -->
 
