@@ -1,0 +1,14 @@
+{{ $attrs := "" }}
+{{ $liattrs := "" }}
+{{ range $k, $v := .Params }}
+  {{if hasPrefix $k "li"}}
+    {{ $liattrs = printf "%s %s=\"%v\"" $liattrs (strings.TrimPrefix "li" $k) $v }}
+  {{else}}{{ $attrs = printf "%s %s=\"%v\"" $attrs $k $v }}
+  {{end}}
+{{ end }}
+
+{{ $newUl := printf "<ul %s>" $attrs }}
+{{ $newOl := printf "<ol %s>" $attrs }}
+{{ $newli := printf "<li %s>" $liattrs }}
+{{ $inner := (.Inner | markdownify) }}
+{{ (replace (replace (replace $inner "<li>" $newli) "<ol>" $newOl) "<ul>" $newUl) | safeHTML }}

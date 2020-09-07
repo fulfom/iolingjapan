@@ -16,3 +16,30 @@ i.fa-angle-right{
 .bronze {
     background-color: #edc;
 }
+
+.numbered-list.list-group{
+    padding-left: 40px;
+}
+
+.numbered-list .list-group-item{
+    display: list-item;
+}
+
+.list-fill-link{
+    .list-group-item{
+        padding: 0;
+        a{
+            display: block;
+            padding: .75rem 1.25rem;
+        }
+    }
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #555;
+}
+
+$font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+body{
+    font-family: $font-family;
+}

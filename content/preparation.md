@@ -6,39 +6,58 @@ keywords = []
 
 言語学オリンピックの過去問と広報資料をまとめてあります。過去問には各国予選と国際大会のものがあり, 国際大会のものは良問ぞろいですが難しいので各国の予選からチャレンジしてみましょう。
 
-<div class="box">
-<h3>目次</h3>
-<ul>
-<li><a href="#お試し問題">お試し問題</a>
-<li><a href="#おすすめの問題">おすすめの問題</a>
-<li><a href="#問題の解説">問題の解説</a>
-<li><a href="#国内予選の過去問">国内予選の過去問</a>
-<li><a href="#各サイトの過去問集へのリンク">各サイトの過去問集へのリンク</a>
-<li><a href="#国際大会の過去問">国際大会の過去問</a>
-<li><a href="#material">広報資料</a>
-</ul>
-</div>
+{{< card-header title="目次" >}}
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
+
+- [お試し問題](#お試し問題)
+- [おすすめの問題](#おすすめの問題)
+- [問題の解説](#問題の解説)
+- [国内予選の過去問](#国内予選の過去問)
+- [各サイトの過去問集へのリンク](#各サイトの過去問集へのリンク)
+- [国際大会の過去問](#国際大会の過去問)
+- [material](#広報資料)
+
+{{< /list >}}
+{{< /card-header >}}
 
 ## お試し問題
 
 「言語学オリンピックってどんなもの？」が分かるお試し問題集
 
+{{< card-header >}}
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
+
 - [JOLお試し問題集](/sample-problems/)
 - [IOL Sample Problems](https://ioling.org/booklets/samples.en.pdf)
+
+{{< /list >}}
+{{< /card-header >}}
 
 ## おすすめの問題
 
 過去の代表が執筆した記事にまとまっています。
 
+{{< card-header >}}
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
+
 - [3日で対策！ 日本言語学オリンピック](http://zohe.hatenablog.com/entry/2019/03/21/191555)
+
+{{< /list >}}
+{{< /card-header >}}
 
 ## 問題の解説
 
 国内予選, 国際大会の問題の解説がいくつか作られています。(敬称略)
 
+{{< card-header >}}
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
+
 - [karŋati’s diary(karngati)](https://karngati.hatenablog.com/entry/JOL2018_5)
 - [言語学わからない(tungumalanna)](https://tungumalanna.hatenablog.com/archive/category/IOL%E9%9D%9E%E5%85%AC%E5%BC%8F%E8%A7%A3%E8%AA%AC)
 - [言とインドカレー(fulfom)](https://fulfom.hatenablog.com/archive/category/%E8%A8%80%E3%82%AA%E3%83%AA%E8%A7%A3%E8%AA%AC)
+
+{{< /list >}}
+{{< /card-header >}}
 
 ## 国内予選の過去問
 

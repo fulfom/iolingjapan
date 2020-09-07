@@ -4,13 +4,16 @@ description = ""
 keywords = []
 +++
 
-## リスト
+{{< card-header title="目次" >}}
+{{% list class="list-group list-group-flush list-fill-link numbered-list" liclass="list-group-item" %}}
 
 1. [インドネシア語](#sample1)
 1. [アイヌ語](#sample2)
 1. [トルコ語](#sample3)
 1. [古代エジプトの数字](#sample4)
 1. [トンガ語](#sample5)
+{{% /list %}}
+{{< /card-header >}}
 
 ## 1. インドネシア語 {#sample1}
 
@@ -35,7 +38,7 @@ keywords = []
 (a) keringat を日本語に訳してください。  
 (b) 「息をする」「とげまみれ」をそれぞれインドネシア語に訳してください。  
 
-<details>
+{{% collapse title="ヒント" %}}
 (a) keringat は berkeringat 「汗をかく」と keringatan 「汗びっしょり」に共通して含まれているもの。  
 (b) 単語をパーツ(形態素)に分解して考えてみましょう。
 
@@ -52,14 +55,13 @@ keywords = []
         </tbody>
     </table>
 </div>
+{{% /collapse %}}
 
-<summary>ヒント</summary></details>
-<br>
-<details>
+{{% collapse title="答え" id="ans1" %}}
 (a) keringat : 汗  
 (b1) 息をする : bernafas  
 (b2) とげまみれ : durian (=ドリアンのこと)  
-<summary>答え</summary></details>
+{{% /collapse %}}
 
 ## 2. アイヌ語 {#sample2}
 
@@ -81,9 +83,9 @@ keywords = []
 
 (a) 「シペッ」の語源は何でしょう？
 
-<details>
+{{% collapse title="答え" id="ans2-1" %}}
 (a) 大きい・川
-<summary>答え</summary></details>
+{{% /collapse %}}
 
 <div class="container simple-table">
     <table>
@@ -102,9 +104,9 @@ keywords = []
 
 (b) 「カムイナイ」の語源は何でしょう？
 
-<details>
+{{% collapse title="答え" id="ans2-2" %}}
 (b) 神の・沢
-<summary>答え</summary></details>
+{{% /collapse %}}
 
 ## 3. トルコ語 {#sample3}
 
@@ -135,7 +137,7 @@ keywords = []
     </ol>
 </div>
 
-<details>
+{{% collapse title="ヒント" %}}
 
 <div class="container simple-table">
     <table>
@@ -168,25 +170,27 @@ keywords = []
         </tbody>
     </table>
 </div>
-
-<summary>ヒント</summary></details>
-<br>
-<details>
+{{% /collapse %}}
+{{% collapse title="答え" id="ans3" %}}
 (1) 友達  
 (2) かいじゅう  
 (3) 学校  
 (4) 子どもたちが来てかいじゅうに風船をあげた
-<summary>答え</summary></details>
+{{% /collapse %}}
 
 ## 4. 古代エジプトの数字 {#sample4}
 
 以下, 6つの数が2種類の数字で表されています。左側は今私たちが使っているアラビア数字, 右側が古代エジプトの数字です。  
 同じ数を表しているもの同士を結んでください。
 
-<img style="max-width: 350px;" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
-<details>
-    <img style="max-width: 350px;" src="/img/EgyptianNumeral2.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
-<summary>答え</summary></details>
+<div class="row">
+    <div class="col-sm-6 mt-sm-5">
+        <img style="max-width: 350px;" class="mb-3" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
+    </div>
+    <div class="col-sm-6">{{< collapse title="答え" id="ans4" >}}
+<img style="max-width: 350px;" src="/img/EgyptianNumeral2.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">{{< /collapse >}}
+</div>
+</div>
 
 ## 5. トンガ語 {#sample5}
 
@@ -205,12 +209,13 @@ keywords = []
 
 (b) fitu ua valu を算用数字で書いてください
 
-{{% collapse title="解説" %}}
-解答  
+{{% collapse title="答え" id="ans5" %}}
 (a) tolu ua fā  
-(b) 728  
+(b) 728
+{{% /collapse %}}
 
-解説  
+{{% collapse title="解説" id="exp5" %}}
+
 (1) 同じ数字を表す数詞はないだろう  
 (2) 全ての数詞は負でない整数を表すはず  
 
