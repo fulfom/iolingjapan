@@ -4,18 +4,18 @@ description = ""
 keywords = []
 +++
 
-言語学オリンピックの過去問と広報資料をまとめてあります。過去問には各国予選と国際大会のものがあり, 国際大会のものは良問ぞろいですが難しいので各国の予選からチャレンジしてみましょう。
+言語学オリンピックの過去問と広報資料をまとめてあります．初めての方はお試し問題をおすすめします．過去問には各国予選と国際大会のものがあり，国際大会のものは良問ぞろいですが難しいので各国の予選からチャレンジしてみましょう．
 
 {{< card-header title="目次" >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
 - [お試し問題](#お試し問題)
 - [おすすめの問題](#おすすめの問題)
-- [問題の解説](#問題の解説)
 - [国内予選の過去問](#国内予選の過去問)
+- [データベース](#データベース)
+- [問題の解説](#問題の解説)
 - [各サイトの過去問集へのリンク](#各サイトの過去問集へのリンク)
-- [国際大会の過去問](#国際大会の過去問)
-- [material](#広報資料)
+- [広報資料](#広報資料)
 
 {{< /list >}}
 {{< /card-header >}}
@@ -35,7 +35,7 @@ keywords = []
 
 ## おすすめの問題
 
-過去の代表が執筆した記事にまとまっています。
+過去の代表が執筆した記事にまとまっています
 
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
@@ -45,43 +45,55 @@ keywords = []
 {{< /list >}}
 {{< /card-header >}}
 
-## 問題の解説
+## 国内予選の過去問
 
-国内予選, 国際大会の問題の解説がいくつか作られています。(敬称略)
+{{< table class="table" >}}
+
+| 問題                                                                         | 解答  | 備考  |
+| -------------------------------------------------------------------------- | --- | --- |
+| [2020](https://drive.google.com/open?id=1FPhk59e8A0FIXgOliitzg1qU95V7fppV) | [2020解答](https://drive.google.com/open?id=1EWBp7YEriz4L6cCEkiqeDwo5ku-qh-ic)    |     |
+| [2019](https://drive.google.com/open?id=1BjNVq20Ne9LVAqGEa9nLPsF9FhuhDjAA) |  [2019解答](https://drive.google.com/open?id=1-lHLG82BcwZSuWnCuXD8GwTXFS2vv_Lh)   |     |
+| [2018](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2) |   [2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)  |  スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet   |
+| [2017](https://drive.google.com/open?id=1DSG3MISTszSPeMeG-VmnyKA0kFe7iywZ) |  [2017解答](https://drive.google.com/open?id=1GSyrZ7f6hvOAQ3sc19mFAOzRlUYK0W0q)   |     |
+| [2016](https://twitter.com/fulfom/status/1097706793885589504)         |     |   暫定公開  |
+
+{{< /table >}}
+
+## データベース
+
+もっと他の問題を見たい方は，こちらの有志作成の問題データベースを参考にしてください．国内予選，国際大会，海外予選などの問題が一覧になっています．問題集の方はジャンルや難易度で検索もできる優れものです．
+
+取り急ぎ過去問を見たい方は大会一覧を，自分にあった問題を探している方は問題集をご覧ください．
 
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
-- [karŋati’s diary(karngati)](https://karngati.hatenablog.com/entry/JOL2018_5)
-- [言語学わからない(tungumalanna)](https://tungumalanna.hatenablog.com/archive/category/IOL%E9%9D%9E%E5%85%AC%E5%BC%8F%E8%A7%A3%E8%AA%AC)
-- [言とインドカレー(fulfom)](https://fulfom.hatenablog.com/archive/category/%E8%A8%80%E3%82%AA%E3%83%AA%E8%A7%A3%E8%AA%AC)
+- [大会一覧 - ことはじ](https://kotohazi.netlify.app/problems/contests)
+- [問題集 - ことはじ](https://kotohazi.netlify.app/problems/)
 
 {{< /list >}}
 {{< /card-header >}}
 
-## 国内予選の過去問
+## 問題の解説
 
-### 問題
+国内予選，国際大会の問題の解説がいくつか作られています．ここに挙がっているのは一部なので，データベース(ことはじ)の方もチェックしてみてください．
 
-[2020](https://drive.google.com/open?id=1FPhk59e8A0FIXgOliitzg1qU95V7fppV)  
-[2019](https://drive.google.com/open?id=1BjNVq20Ne9LVAqGEa9nLPsF9FhuhDjAA)  
-[2018](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2)スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet  
-[2017](https://drive.google.com/open?id=1DSG3MISTszSPeMeG-VmnyKA0kFe7iywZ)  
-[2016](https://twitter.com/fulfom/status/1097706793885589504) 暫定公開
+{{< card-header >}}
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
-### 解答
-
-[2020解答](https://drive.google.com/open?id=1EWBp7YEriz4L6cCEkiqeDwo5ku-qh-ic)  
-[2019解答](https://drive.google.com/open?id=1-lHLG82BcwZSuWnCuXD8GwTXFS2vv_Lh)  
-[2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)  
-[2017解答](https://drive.google.com/open?id=1GSyrZ7f6hvOAQ3sc19mFAOzRlUYK0W0q)
-
-### 解説
-
-[2019第5問解説](https://fulfom.hatenablog.com/entry/2019/12/21/145615)  
-[2018第5問解説](https://karngati.hatenablog.com/entry/JOL2018_5)
+- [2019第5問解説](https://fulfom.hatenablog.com/entry/2019/12/21/145615)  
+- [2018第5問解説](https://karngati.hatenablog.com/entry/JOL2018_5)
+- [karŋati’s diary(karngati)](https://karngati.hatenablog.com/entry/JOL2018_5)
+- [言語学わからない(tungumalanna)](https://tungumalanna.hatenablog.com/archive/category/IOL%E9%9D%9E%E5%85%AC%E5%BC%8F%E8%A7%A3%E8%AA%AC)
+- [言とインドカレー(fulfom)](https://fulfom.hatenablog.com/archive/category/%E8%A8%80%E3%82%AA%E3%83%AA%E8%A7%A3%E8%AA%AC)
+- [その他の解説をことはじで探す](https://kotohazi.netlify.app/problems/?s=6Kej6Kqs44Gu44GC44KL5ZWP6aGM&v=1&c=0B1)
+{{< /list >}}
+{{< /card-header >}}
 
 ## 各サイトの過去問集へのリンク
+
+{{< card-header >}}
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
 - [IOL(国際言語学オリンピック)](http://www.ioling.org/problems/)
 - [UKLO(イギリス予選)](https://www.uklo.org/past-problems#problems)
@@ -92,56 +104,15 @@ keywords = []
 - [Onling(オンライン言語学オリンピック)](https://onling.org/)
 - [IOLや各国予選の過去問保管庫(1000問以上; IDとパスワードは両方 guest)](http://tangra.cs.yale.edu/naclobase/)
 
-## 国際大会の過去問
-
-### 問題
-
-2014以降は日本語, それ以前は英語版
-
-[2019](http://www.ioling.org/booklets/iol-2019-indiv-prob.ja.pdf)  
-[2018](http://www.ioling.org/booklets/iol-2018-indiv-prob.ja.pdf)  
-[2017](http://www.ioling.org/booklets/iol-2017-indiv-prob.ja.pdf)  
-[2016](http://www.ioling.org/booklets/iol-2016-indiv-prob.ja.pdf) 問題3の文3 誤「若者が」→正「若者たちが」  
-[2015](http://www.ioling.org/booklets/iol-2015-indiv-prob.ja.pdf)  
-[2014](http://www.ioling.org/booklets/iol-2014-indiv-prob.ja.pdf) 問題5 誤「死ぬ」→正「死にかける」  
-[2013](http://www.ioling.org/booklets/iol-2013-indiv-prob.en-us.pdf)  
-[2012](http://www.ioling.org/booklets/iol-2012-indiv-prob.en.pdf)  
-[2011](http://www.ioling.org/booklets/iol-2011-indiv-prob.en-us.pdf)  
-[2010](http://www.ioling.org/booklets/iol-2010-indiv-prob.en.pdf)  
-[2009](http://www.ioling.org/booklets/iol-2009-indiv-prob.en-us.pdf)  
-[2008](http://www.ioling.org/booklets/iol-2008-indiv-prob.en.pdf)  
-[2007](http://www.ioling.org/booklets/iol-2007-indiv-prob.en.pdf)  
-[2006](http://www.ioling.org/booklets/iol-2006-indiv-prob.en.pdf) 問題3に不備有り  
-[2005](http://www.ioling.org/booklets/iol-2005-indiv-prob.en.pdf)  
-[2004](http://www.ioling.org/booklets/iol-2004-indiv-prob.en.pdf)  
-[2003](http://www.ioling.org/booklets/iol-2003-indiv-prob.en.pdf)
-
-### 解答
-
-[2019解答](http://www.ioling.org/booklets/iol-2019-indiv-sol.ja.pdf)  
-[2018解答](http://www.ioling.org/booklets/iol-2018-indiv-sol.ja.pdf) 問題5: Yaw と Ama が逆  
-[2017解答](http://www.ioling.org/booklets/iol-2017-indiv-sol.ja.pdf)  
-[2016解答](http://www.ioling.org/booklets/iol-2016-indiv-sol.ja.pdf)  
-[2015解答](http://www.ioling.org/booklets/iol-2015-indiv-sol.ja.pdf)  
-[2014解答](http://www.ioling.org/booklets/iol-2014-indiv-sol.ja.pdf)  
-[2013解答](http://www.ioling.org/booklets/iol-2013-indiv-sol.en-us.pdf)  
-[2012解答](http://www.ioling.org/booklets/iol-2012-indiv-sol.en.pdf)  
-[2011解答](http://www.ioling.org/booklets/iol-2011-indiv-sol.en-us.pdf)  
-[2010解答](http://www.ioling.org/booklets/iol-2010-indiv-sol.en.pdf)  
-[2009解答](http://www.ioling.org/booklets/iol-2009-indiv-sol.en-us.pdf)  
-[2008解答](http://www.ioling.org/booklets/iol-2008-indiv-sol.en.pdf)  
-[2007解答](http://www.ioling.org/booklets/iol-2007-indiv-sol.en.pdf)  
-[2006解答](http://www.ioling.org/booklets/iol-2006-indiv-sol.en.pdf)  
-[2005解答](http://www.ioling.org/booklets/iol-2005-indiv-sol.en.pdf)  
-[2004解答](http://www.ioling.org/booklets/iol-2004-indiv-sol.en.pdf)  
-[2003解答](http://www.ioling.org/booklets/iol-2003-indiv-sol.en.pdf)
+{{< /list >}}
+{{< /card-header >}}
 
 <!--## 問題の内容
 
-過去に出題された問題が [国際大会のサイト](http://www.ioling.org/) に掲載されています。初めて問題に触れるという方はまず同サイトの [Sample Problems](http://www.ioling.org/problems/samples/) または [イギリス国内大会(UKLO)のサイト](http://www.uklo.org/) をご覧になってみてください。
+過去に出題された問題が [国際大会のサイト](http://www.ioling.org/) に掲載されています．初めて問題に触れるという方はまず同サイトの [Sample Problems](http://www.ioling.org/problems/samples/) または [イギリス国内大会(UKLO)のサイト](http://www.uklo.org/) をご覧になってみてください．
 
-問題は実際の言語研究で行われる分析に似ていて, 未知の言語のデータからその言語の仕組みを解き明かすというものです。現在有志によって問題の解説や入門サイトを作る計画が進んでいます。詳しくは [有志サイト](http://ioling.jp/) をご覧ください。-->
+問題は実際の言語研究で行われる分析に似ていて，未知の言語のデータからその言語の仕組みを解き明かすというものです．現在有志によって問題の解説や入門サイトを作る計画が進んでいます．詳しくは [有志サイト](http://ioling.jp/) をご覧ください．-->
 
-<h2 id="material">広報資料</h2>
+## 広報資料
 
 To be updated

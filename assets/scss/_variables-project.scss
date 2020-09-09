@@ -37,9 +37,11 @@ i.fa-angle-right{
 
 .navbar-light .navbar-nav .nav-link{
     color: #555;
+    font-weight: 700;
 }
 
 $font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 body{
     font-family: $font-family;
+    font-weight: 500;
 }
