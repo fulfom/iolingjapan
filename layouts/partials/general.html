@@ -1,36 +1,11 @@
-<section class="bar grad grad-green">
+{{$data := $.Site.Data.general}}
+{{range $data}}
+<section class="bar bar-zigzag grad grad-{{.color}}">
     <div class="jumbotron">
-        <a href="/information/"><h1 id="general"><span class="unmot">言語の不思議に</span><span class="unmot">触れてみませんか？</span></h1></a>
-        <p>言語学オリンピックは<span class="unmot">言語を分析する能力を競う</span><span class="unmot">科学オリンピックの一大会です</span></p>
-        <a class="btn btn-template-main" href="/information/">もっとよむ</a>
+        <a href="{{.link | safeURL}}"><h1{{with .id}} id="{{.}}"{{end}}>{{range .title}}<span class="unmot">{{.}}</span>{{end}}</h1></a>
+        <p>{{range .desc}}<span class="unmot">{{.}}</span>{{end}}</p>
+        <a class="btn btn-template-main" href="{{.link | safeURL}}">もっとよむ</a>{{with .more}}{{range .}}
+        <a class="btn btn-template-main" href="{{.link | safeURL}}">{{.inner | safeHTML}}</a>{{end}}{{end}}
     </div>
 </section>
-<section class="bar grad grad-white">
-    <div class="jumbotron">
-        <a href="/preparation/"><h1><span class="unmot">過去問を</span><span class="unmot">解いてみよう</span></h1></a>
-        <p><span class="unmot">出題されるのは</span><span class="unmot">論理力と探求心で</span><span class="unmot">0から</span><span class="unmot">言語のしくみを解明する</span><span class="unmot">謎解きチックな</span><span class="unmot">言語分析パズル！</span></p>
-        <a class="btn btn-template-main" href="/preparation/">もっとよむ</a>
-    </div>
-</section>
-<section class="bar grad grad-pink">
-    <div class="jumbotron">
-        <a href="/iol2019/"><h1><span class="unmot">日本代表を</span><span class="unmot">応援しよう</span></h1></a>
-        <p><span class="unmot">IOL2019には世界から209人の代表が参加しました。</span><span class="unmot">来年はラトビアです</span></p>
-        <a class="btn btn-template-main" href="/iol2019/">もっとよむ</a>
-    </div>
-</section>
-<section class="bar grad grad-yellow">
-    <div class="jumbotron">
-        <a href="/application/"><h1><span class="unmot">代表選抜に</span><span class="unmot">あなたも挑戦！</span></h1></a>
-        <p><span class="unmot">20歳未満で大学未入学なら</span><span class="unmot">誰でも応募できます</span></p>
-        <a class="btn btn-template-main" href="/application/">もっとよむ</a>
-    </div>
-</section>
-<section class="bar grad grad-blue">
-    <div class="jumbotron">
-        <a href="/preparation/#material"><h1><span class="unmot">未来の代表に</span><span class="unmot">広めよう</span></h1></a>
-        <p>学校やSNSで言語学オリンピックを<span class="unmot">広めてください！</span></p>
-        <a class="btn btn-template-main" href="/preparation/#material">もっとよむ</a>
-        <a class="btn btn-template-main" href="https://twitter.com/iolingjapan"><i class="fab fa-twitter"></i></a>
-    </div>
-</section>
+{{end}}

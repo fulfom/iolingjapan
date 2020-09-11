@@ -1,0 +1,53 @@
+- id: general
+  link: "/information/"
+  color: green
+  title: 
+    - 言語の不思議に
+    - 触れてみませんか？
+  desc: 
+    - 言語学オリンピックは
+    - 言語を分析する能力を競う
+    - 科学オリンピックの一大会です
+- id: ""
+  link: "/preparation/"
+  color: white
+  title: 
+    - 過去問を
+    - 解いてみよう
+  desc: 
+    - 出題されるのは
+    - 論理力と探求心で
+    - 0から
+    - 言語のしくみを解明する
+    - 謎解きチックな
+    - 言語分析パズル！
+- id: ""
+  link: "/iol2019/"
+  color: pink
+  title: 
+    - 日本代表を
+    - 応援しよう
+  desc: 
+    - IOL2019には世界から209人の代表が参加しました．
+    - 次回開催地はラトビアです
+- id: ""
+  link: "/application/"
+  color: yellow
+  title: 
+    - 代表選抜に
+    - あなたも挑戦！
+  desc: 
+    - 20歳未満で大学未入学なら
+    - 誰でも応募できます
+- id: ""
+  link: "/preparation/#material"
+  color: blue
+  title: 
+    - 未来の代表に
+    - 広めよう
+  desc: 
+    - 学校やSNSで言語学オリンピックを
+    - 広めてください！
+  more: 
+  - link: "https://twitter.com/iolingjapan"
+    inner: <i class="fab fa-twitter"></i>

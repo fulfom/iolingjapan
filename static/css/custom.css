@@ -162,10 +162,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 }
 
-.grad-white .jumbotron, .grad-yellow .jumbotron {
-  text-align: right;
-}
-
 .grad-white .jumbotron h1, .grad-white .jumbotron p {
   color: #555555;
 }
