@@ -1,0 +1,8 @@
+{{$id := .Get 0}}
+{{$this := .Page.Permalink}}
+{{$data := index ($.Site.Data.nav) $id}}
+<nav aria-label="{{$id}}">
+    <ul class="pager">{{range $data}}
+        <li{{if eq (.link | absURL) ($this | absURL) }} class="disabled"{{end}}><a href="{{.link}}">{{.title}}</a></li>{{end}}
+    </ul>
+</nav>

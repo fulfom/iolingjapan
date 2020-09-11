@@ -156,3 +156,24 @@ enableGitInfo = true
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[[params.awards]]
+key = "gold"
+name = "金賞"
+weight = 1
+[[params.awards]]
+key = "silver"
+name = "銀賞"
+weight = 2
+[[params.awards]]
+key = "bronze"
+name = "銅賞"
+weight = 3
+[[params.awards]]
+key = "honorable-mention"
+name = "努力賞"
+weight = 4
+[[params.awards]]
+key = "best-solution"
+name = "最優秀解答賞"
+weight = 5

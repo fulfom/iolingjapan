@@ -1,21 +1,18 @@
 {{$year := .Get 0}}
 {{$contest := .Get 1 | default "iol"}}
 {{$data := index $.Site.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
-{{$contestants := index $data "contestants"}}
-{{$awardNameJpn := $data.awards}}
-{{$awardName := slice "gold" "silver" "bronze" "honorable-mention" "best-solution"}}
 {{$cumulativeAward := dict}}
 {{$thisYearsAward := dict}}
-{{range $awardName}}
-  {{$tmp := where $contestants "award" .}}
-  {{$cumulativeAward = merge $cumulativeAward (dict . (len $tmp))}}
-  {{$thisYearsAward = merge $thisYearsAward (dict . (len (where $tmp "year" $year)))}}
+{{range sort $.Site.Params.awards "weight"}}
+  {{$tmp := where $data "award" .key}}
+  {{$cumulativeAward = merge $cumulativeAward (dict .key (len $tmp))}}
+  {{$thisYearsAward = merge $thisYearsAward (dict .key (len (where $tmp "year" $year)))}}
 {{end}}
 {{$text := ""}}
-{{range $awardName}}
-  {{if ne (index $thisYearsAward .) 0}}
-    {{$tmp := (index $awardNameJpn .)}}
-    {{$tmp = delimit (slice $tmp " " (index $thisYearsAward .) "つ" ) "" }}
+{{range sort $.Site.Params.awards "weight"}}
+  {{if ne (index $thisYearsAward .key) 0}}
+    {{$tmp := .name}}
+    {{$tmp = delimit (slice $tmp " " (index $thisYearsAward .key) "つ" ) "" }}
     {{$text = delimit (slice $text $tmp) ", "}}
   {{end}}
 {{end}}
@@ -42,13 +39,12 @@
       <th scope="col">累計</th>
     </tr>
   </thead>
-  <tbody>
-  {{range $awardName}}
-  {{if ne (index $cumulativeAward .) 0}}
-  <tr class="{{.}}">
-    <th scope="row">{{index $awardNameJpn .}}</th>
-    <td>{{if ne (index $thisYearsAward .) 0}}+{{index $thisYearsAward .}}{{end}}</td>
-    <td>{{index $cumulativeAward .}}</td>
+  <tbody>{{range sort $.Site.Params.awards "weight"}}
+  {{if ne (index $cumulativeAward .key) 0}}
+  <tr class="{{.key}}">
+    <th scope="row">{{.name}}</th>
+    <td>{{if ne (index $thisYearsAward .key) 0}}+{{index $thisYearsAward .key}}{{end}}</td>
+    <td>{{index $cumulativeAward .key}}</td>
   </tr>
   {{end}}
   {{end}}

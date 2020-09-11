@@ -1,31 +1,24 @@
-awards:
-  gold: 金賞
-  silver: 銀賞
-  bronze: 銅賞
-  honorable-mention: 努力賞
-  best-solution: 最優秀解答賞
-contestants:
-  - award: gold      
-    year: 2019
-    name: 吉野匠
-  - award: silver      
-    year: 2019
-    name: 高橋翼
-  - award: silver      
-    year: 2019
-    name: 森西理温
-  - award: silver      
-    year: 2019
-    name: 久保宮玲於奈
-  - award: bronze      
-    year: 2019
-    name: 大勢拓実
-  - award: bronze      
-    year: 2019
-    name: 原梨乃
-  - award: bronze      
-    year: 2019
-    name: 佐藤和音
-  - award: honorable-mention      
-    year: 2019
-    name: 矢澤宗汰
+- award: gold      
+  year: 2019
+  name: 吉野匠
+- award: silver      
+  year: 2019
+  name: 高橋翼
+- award: silver      
+  year: 2019
+  name: 森西理温
+- award: silver      
+  year: 2019
+  name: 久保宮玲於奈
+- award: bronze      
+  year: 2019
+  name: 大勢拓実
+- award: bronze      
+  year: 2019
+  name: 原梨乃
+- award: bronze      
+  year: 2019
+  name: 佐藤和音
+- award: honorable-mention      
+  year: 2019
+  name: 矢澤宗汰

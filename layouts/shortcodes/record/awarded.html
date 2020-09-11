@@ -1,6 +1,5 @@
 {{$contest := .Get 0 | default "iol"}}
 {{$data := index $.Site.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
-{{$contestants := index $data "contestants"}}
 <table class="table">
     <thead>
         <tr>
@@ -9,19 +8,15 @@
             <th scope="col">名前</th>
         </tr>
     </thead>
-    <tbody>
-        {{$gold := sort (where $contestants "award" "gold") "year" "desc" }}
-        {{$silver := sort (where $contestants "award" "silver") "year" "desc" }}
-        {{$bronze := sort (where $contestants "award" "bronze") "year" "desc" }}
-        {{$honorableMention := sort (where $contestants "award" "honorable-mention") "year" "desc" }}
-        {{$bestSolution := sort (where $contestants "award" "best-solution") "year" "desc" }}
-        {{$contestants := $gold | append $silver | append $bronze | append $honorableMention | append $bestSolution }}
+    <tbody>{{range sort $.Site.Params.awards "weight"}}
+        {{$name := .name}}
+        {{$contestants := sort (where $data "award" .key) "year" "desc" }}
         {{range $contestants}}
         <tr class="{{.award}}">
-            <th scope="row">{{index $data.awards .award}}</th>
+            <th scope="row">{{$name}}</th>
             <td>{{.year}}</td>
             <td>{{.name}}</td>
         </tr>
-        {{end}}
+        {{end}}{{end}}
     </tbody>
 </table>

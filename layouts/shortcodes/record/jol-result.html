@@ -1,0 +1,16 @@
+{{$year := .Get 0}}
+{{$data := index (index $.Site.Data.records "jol-result") (string (delimit (slice "jol" $year) "")) }}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">賞</th>
+        <th scope="col">受験番号</th>
+      </tr>
+    </thead>
+    <tbody>{{range sort $.Site.Params.awards "weight"}}{{if isset $data .key}}
+        <tr class="{{.key}}">
+            <th scope="row">{{.name}}</th>
+            <th scope="row">{{delimit (index $data .key) ", "}}</th>
+        </tr>{{end}}{{end}}
+    </tbody>
+</table>
