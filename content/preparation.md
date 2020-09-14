@@ -70,6 +70,7 @@ keywords = []
 
 - [大会一覧 - ことはじ](https://kotohazi.netlify.app/problems/contests)
 - [問題集 - ことはじ](https://kotohazi.netlify.app/problems/)
+- [日本語で解ける問題 - ことはじ](https://kotohazi.netlify.app/problems/?v=1&t=SU9MMjAoMVs1LTldfFteMDFdXGQpfEpPTHxBUExPfOaXpeacrOiqnuiosw&s=5pel5pys6Kqe44Gn6Kej44GR44KL5ZWP6aGM)
 
 {{< /list >}}
 {{< /card-header >}}
