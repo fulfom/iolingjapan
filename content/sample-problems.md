@@ -185,7 +185,7 @@ keywords = []
 
 <div class="row">
     <div class="col-sm-6 mt-sm-5">
-        <img style="max-width: 350px;" class="mb-3" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
+        <img style="max-width: 350px; width: 100%" class="mb-3" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
     </div>
     <div class="col-sm-6">{{< collapse title="答え" id="ans4" >}}
 <img style="max-width: 350px;" src="/img/EgyptianNumeral2.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">{{< /collapse >}}

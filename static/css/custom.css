@@ -364,6 +364,9 @@ p img {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+  .simple-table td, .simple-table th {
+    padding-right: 0em;
+  }
   .simple-list ol {
     padding-left: 28px;
   }
