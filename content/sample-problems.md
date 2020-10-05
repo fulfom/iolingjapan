@@ -18,7 +18,7 @@ mathjax = true
 
 ## 1. インドネシア語 {#sample1}
 
-以下はインドネシア語の単語とその日本語訳です。
+以下はインドネシア語の単語とその日本語訳です．
 
 <div class="container simple-table">
     <table>
@@ -36,12 +36,12 @@ mathjax = true
     </table>
 </div>
 
-(a) keringat を日本語に訳してください。  
-(b) 「息をする」「とげまみれ」をそれぞれインドネシア語に訳してください。  
+(a) keringat を日本語に訳してください．  
+(b) 「息をする」「とげまみれ」をそれぞれインドネシア語に訳してください．  
 
 {{% collapse title="ヒント" id="hint1" %}}
-(a) keringat は berkeringat 「汗をかく」と keringatan 「汗びっしょり」に共通して含まれているもの。  
-(b) 単語をパーツ(形態素)に分解して考えてみましょう。
+(a) keringat は berkeringat 「汗をかく」と keringatan 「汗びっしょり」に共通して含まれているもの．  
+(b) 単語をパーツ(形態素)に分解して考えてみましょう．
 
 <div class="container simple-table">
     <table>
@@ -66,7 +66,7 @@ mathjax = true
 
 ## 2. アイヌ語 {#sample2}
 
-北海道にはアイヌ語で名づけられた地名がたくさん残っています。  
+北海道にはアイヌ語で名づけられた地名がたくさん残っています．  
 ([データの出典](http://www.pref.hokkaido.lg.jp/ks/ass/new_timei.htm))
 
 <div class="container simple-table">
@@ -111,30 +111,30 @@ mathjax = true
 
 ## 3. トルコ語 {#sample3}
 
-以下はトルコ語のお話とその日本語訳です。空欄1～4をうめてください。1～3は単語, 4には文が入ります。
+以下はトルコ語のお話とその日本語訳です．空欄1～4をうめてください．1～3は単語, 4には文が入ります．
 
 <div class="simple-list">
     <ol>
         <li>Canavar okula geldi.<br>
-          <small>かいじゅうが学校に来た。</small></li>
+          <small>かいじゅうが学校に来た．</small></li>
         <li>Canavar arkadaş istedi.<br>
-          <small>かいじゅうは（ 1 ）を欲しがった。</small></li>
+          <small>かいじゅうは（ 1 ）を欲しがった．</small></li>
         <li>Hoca canavara top verdi.<br>
-          <small>先生がかいじゅうにボールをあげた。</small></li>
+          <small>先生がかいじゅうにボールをあげた．</small></li>
         <li>Canavar topa bindi.<br>
-          <small>かいじゅうはボールに乗った。</small></li>
+          <small>かいじゅうはボールに乗った．</small></li>
         <li>Top ezildi.<br>
-          <small>ボールはつぶれた。</small></li>
+          <small>ボールはつぶれた．</small></li>
         <li>Canavar okul beğenmedi.<br>
-          <small>（ 2 ）は（ 3 ）を気に入らなかった。</small></li>
+          <small>（ 2 ）は（ 3 ）を気に入らなかった．</small></li>
         <li>Çocuklar gelip canavara balon verdi.<br>
-          <small>（ 4 ）。</small></li>
+          <small>（ 4 ）．</small></li>
         <li>Canavar balona binip ezdi.<br>
-          <small>かいじゅうは風船に乗ってつぶした。</small></li>
+          <small>かいじゅうは風船に乗ってつぶした．</small></li>
         <li>Çocuklar canavar beğenip arkadaş getirdi.<br>
-          <small>子どもたちはかいじゅうを気に入って友達を連れてきた。</small></li>
+          <small>子どもたちはかいじゅうを気に入って友達を連れてきた．</small></li>
         <li>Canavar okul beğendi.<br>
-          <small>かいじゅうは学校を気に入った。</small></li>
+          <small>かいじゅうは学校を気に入った．</small></li>
     </ol>
 </div>
 
@@ -181,7 +181,7 @@ mathjax = true
 
 ## 4. 古代エジプトの数字 {#sample4}
 
-以下, 6つの数が2種類の数字で表されています。上側が古代エジプトの数字, 下側が今私たちが使っているアラビア数字です。同じ数を表しているもの同士を結んでください。
+以下, 6つの数が2種類の数字で表されています．上側が古代エジプトの数字, 下側が今私たちが使っているアラビア数字です．同じ数を表しているもの同士を結んでください．
 
 {{% table class="hieroglyph mb-5 mx-auto" %}}
 |     |     |     |     |     |     |      |     |      |     |     |     |
@@ -303,7 +303,7 @@ $$
 
 ## 5. トンガ語 {#sample5}
 
-以下はトンガ語で書かれた数式です。  
+以下はトンガ語で書かれた数式です．  
 
 {{% table class="simple-table mb-2" %}}
 |                      |     |               |
@@ -314,50 +314,85 @@ $$
 | ua nima × fā         | =   | taha noa noa  |
 {{% /table %}}
 
-(a) 324 をトンガ語で表してください
+(a) 324, 1228 をそれぞれトンガ語で表してください
 
 (b) fitu ua valu を算用数字で書いてください
 
+{{% collapse title="ヒント1" id="hint5-1" %}}
+
+単語が並ぶとどういう数を表すのだろうか？valu ono = 86 なのだから，valu ono = valu + ono や valu ono = valu × ono というのは考えにくい．
+
+たとえば日本語だと「じゅう さん」は 10 + 3，「に じゅう」は 2 × 10．
+
+{{% collapse title="ヒント2" id="hint5-2" %}}
+
+この3つは前提にして問題ない↓
+
+1. 同じ数を表す表現はない
+1. マイナスは出てこない
+1. データから課題a に出てくる 324, 1228 の表し方が導ける
+
+たとえば tolu = 1 とすると, tolu × tolu tolu = hiva hiva より tolu tolu = hiva hiva になってしまうのでダメ．
+
+{{% collapse title="ヒント3" id="hint5-3" %}}
+
+tolu × tolu tolu = hiva hiva に注目．tolu と hiva の候補はかなり限定できる．taha tolu × fitu noa = hiva taha noa にあてはめてみて試行錯誤してみよう．特に noa に着目すると解きやすい．
+
+{{% collapse title="ヒント4" id="hint5-4" %}}
+noa の候補が限定できたら，ua nima × fā = taha noa noa にあてはめてみる．noa はこれじゃなきゃ変，というのが分かるはず．後は出てこない数を上手く組み合わせてこの式を成り立たせよう．
+
+{{% /collapse %}}
+{{% /collapse %}}
+{{% /collapse %}}
+{{% /collapse %}}
+
 {{% collapse title="答え" id="ans5" %}}
-(a) tolu ua fā  
+(a) 324: tolu ua fā  
+1228: taha ua ua valu  
 (b) 728
 {{% /collapse %}}
 
 {{% collapse title="解説" id="exp5" %}}
 
-(1) 同じ数字を表す数詞はないだろう  
+(1) 同じ数を表す数詞はないだろう  
 (2) 全ての数詞は負でない整数を表すはず  
+(3) 課題a の 324 と 1228 の表し方がデータから導けるはず  
+
+**疑問1.** 単語が並ぶとどういう数を表すのか？
+
+valu ono = 86 より，valu ono = valu + ono や valu ono = valu × ono は考えにくい．valu ono = valu + ono × n か valu ono = valu × n + ono のどちらかだと考えよう．
+
+**疑問2.** 一の位は最初に言うのか, 最後に言うのか？  
+例) valu ono は valu + ono × n か valu × n + ono か？  
+
+taha tolu × fitu noa = hiva taha noa に注目して一の位最初説(valu + ono × n; 小から大)を考える．
+
+左辺の最も大きな位(taha **tolu** × fitu **noa** = hiva taha noa)を掛け合わせただけで noa + 1 以上になってしまう場合数式が成り立たないので
+
+tolu × noa < noa +1  
+tolu < 1+ 1/noa (noa は最も大きな位に出るので0ではない)  
+tolu = 1
+
+しかし tolu = 1 とすると, tolu × tolu tolu = hiva hiva より tolu tolu = hiva hiva になり，同じ数を表す数詞が出てきてしまうのでダメ．よって一の位最初説はダメ．一の位最後説(valu × n + ono; 大から小)が正しい
+
+**疑問3.** n はいくつか？
+
+日本語や英語は n=10 なので，この言語も n=10 ではないか，と仮定する．
 
 tolu × tolu tolu = hiva hiva に注目  
-tolu tolu の解釈を考える  
-tolu × n + tolu (位取り)  
-
-86 が2桁で表されることから, 10進数以上であると分かる。n = 10, 20 と予想。  
 
 tolu^2 × (n+1) = hiva × (n+1)  
-\> tolu^2 = hiva  
-よって tolu = 2, 3, 4  
-hiva = 4, 9, 16  
+tolu^2 = hiva  
+hiva というように一語で表されるということは，hiva < n
+tolu < √n  
+n=10とすると，tolu = 2, 3
 
-taha tolu × fitu noa = hiva taha noa に注目  
+taha **tolu** × fitu **noa** = hiva taha **noa** の 1の位だけに注目する  
+左辺の1の位の積の1の位は noa (筆算を書くと分かりやすい)．言い換えると, tolu × noa ≡ noa (mod n)
 
-一の位は最初に言うのか, 最後に言うのか  
-例) taha tolu は tolu × n + taha か taha × n + tolu か？  
+tolu の候補をこの tolu × noa ≡ noa (mod n) に当てはめてみる．
 
-最初説(tolu × n + taha; 小から大)  
-最も大きな位を掛け合わせただけで noa + 1 以上になってしまう場合数式が成り立たないので  
-noa × tolu < noa +1  
-tolu < 1+ 1/noa (noa は最高位に出るので0ではない)  
-tolu = 1  
-tolu は 2, 3, 4だったので矛盾  
-よって最後説(taha × n + tolu; 大から小)が正しい  
-
-省略するが n = 20 とすると矛盾するのでこの言語は10進数  
-言語の側面から見ることも可能で, 20進数にしては数詞が少なく, 派生接辞もないので10進数だろうと言える。  
-
-taha tolu × fitu noa = hiva taha noa の 1の位だけに注目する  
-左辺の1の位の積の1の位は noa (言い換えると, tolu × noa ≡ noa (mod 10))  
-tolu に候補の数をあてはめてみる  
+n=10とすると，  
 tolu = 2 のとき noa = 0  
 tolu = 3 のとき noa = 0, 5  
 
@@ -368,9 +403,26 @@ taha noa noa = 55 + 100 × taha
 255 = 3×5×17  
 455 = 5×7×13  
 755 = 5×151  
-全て(1)に反するので矛盾 noa = 0  
-同様に taha noa noa = 100 × taha について taha に色々数字をあてはめると, 25×4 = 100 以外は数字被りがあるのでこれが正しい  
+全て(1)に反するので noa = 0  
+右辺の taha noa noa (= 100 × taha) について taha に色々数字をあてはめる．左辺は 25×4 = 100 以外は数字被りがある．ということはこれだけが正しい．  
 
 13 × fitu × 10 = 910 となるので  
-fitu = 7  
+fitu = 7
+
+これで矛盾なく説明できた．
+
+valu = 8, ono = 6, tolu = 3, hiva = 9, taha = 1, fitu = 7, noa = 0, ua = 2, nima = 5, fā = 4
+
+324: tolu ua fā  
+1228: taha ua ua valu
+fitu ua valu: 728
+
+**参考**
+
+世の中には n=10 じゃない言語もまあまあある．本来なら検証が必要だ．ただしこの問題の検証は人力では難しい．
+
+プログラムで検証してみると，(1), (2), (3) を満たす n は 10 以外にない(はず)．しかしたとえば 1228 の表し方が分からなくて良ければ5つ別解がある．一例は:
+
+n = 77, valu = 1, ono = 9, tolu = 4, hiva = 16, taha = 8, fitu = 2, noa = 0, ua = 12, nima = 44, fā = 49, 324 = tolu hiva, fitu ua valu = 12783
+
 {{% /collapse %}}
