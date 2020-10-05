@@ -49,3 +49,20 @@ body{
 .bar-zigzag:nth-child(even){
     text-align: right;
 }
+
+.hieroglyph{
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.5rem;
+    td{
+        text-align: center;
+        min-width: 18px;
+        @media (min-width: 576px) {
+            min-width: 38px;
+        }
+    }
+    .fn{
+        font-size: medium;
+        font-weight: 500;
+    }
+}

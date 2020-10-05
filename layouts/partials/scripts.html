@@ -6,6 +6,21 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+{{if .Params.charts}}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+{{ $databaseCharts := resources.Get "js/database-charts.js" }}
+<script src="{{ $databaseCharts.RelPermalink }}"></script>
+{{end}}
+{{if .Params.mathjax}}
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{{end}}
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
 {{ if .Site.Params.googleMapsApiKey }}
 <script src="//maps.googleapis.com/maps/api/js?key={{.Site.Params.googleMapsApiKey}}&v=3.exp"></script>

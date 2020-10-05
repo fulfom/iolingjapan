@@ -2,6 +2,7 @@
 title = "JOLお試し問題集"
 description = ""
 keywords = []
+mathjax = true
 +++
 
 {{< card-header title="目次" >}}
@@ -38,7 +39,7 @@ keywords = []
 (a) keringat を日本語に訳してください。  
 (b) 「息をする」「とげまみれ」をそれぞれインドネシア語に訳してください。  
 
-{{% collapse title="ヒント" %}}
+{{% collapse title="ヒント" id="hint1" %}}
 (a) keringat は berkeringat 「汗をかく」と keringatan 「汗びっしょり」に共通して含まれているもの。  
 (b) 単語をパーツ(形態素)に分解して考えてみましょう。
 
@@ -137,7 +138,7 @@ keywords = []
     </ol>
 </div>
 
-{{% collapse title="ヒント" %}}
+{{% collapse title="ヒント" id="hint3" %}}
 
 <div class="container simple-table">
     <table>
@@ -180,17 +181,125 @@ keywords = []
 
 ## 4. 古代エジプトの数字 {#sample4}
 
-以下, 6つの数が2種類の数字で表されています。左側は今私たちが使っているアラビア数字, 右側が古代エジプトの数字です。  
-同じ数を表しているもの同士を結んでください。
+以下, 6つの数が2種類の数字で表されています。上側が古代エジプトの数字, 下側が今私たちが使っているアラビア数字です。同じ数を表しているもの同士を結んでください。
 
-<div class="row">
-    <div class="col-sm-6 mt-sm-5">
-        <img style="max-width: 350px; width: 100%" class="mb-3" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
-    </div>
-    <div class="col-sm-6">{{< collapse title="答え" id="ans4" >}}
-<img style="max-width: 350px;" src="/img/EgyptianNumeral2.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">{{< /collapse >}}
-</div>
-</div>
+{{% table class="hieroglyph mb-5 mx-auto" %}}
+|     |     |     |     |     |     |      |     |      |     |     |     |
+| --- | --- | --- | --- | --- | --- | ---- | --- | ---- | --- | --- | --- |
+|     |     |     |     | 𓂋  |     |      |     | 𓂋   |     | 𓂋  | 𓂋  |
+| 𓏺  |     | 𓏾  |     | 𓏾  |     | 𓎆𓏾 |     | 𓎆𓏾 |     | 𓎆  | 𓎈  |
+{{% /table %}}
+
+$$
+\frac{1}{15},\frac{2}{15},\frac{1}{5},1,5,15
+$$
+
+{{% collapse title="ヒント1" id="hint4-1" %}}
+
+少し違う数字同士を見比べると3種類くらいのパターンが見えてくる．これを手がかりに，数字をパーツに分解し，各パーツがどんな役割なのか考えてみよう．
+
+{{% table class="hieroglyph mb-0" %}}
+|     |     |     |     |
+| --- | --- | --- | --- |
+|   <span class="fn">1.</span>  | 𓏺  | →   | 𓏾  |
+{{% /table %}}
+
+{{% table class="hieroglyph mb-0" %}}
+|                            |     |     |     |     |      |     |      |
+| -------------------------- | --- | --- | --- | --- | ---- | --- | ---- |
+|                            |     |   | 𓂋    |     |      |   | 𓂋     |
+| <span class="fn">2.</span> | 𓏾  | →   | 𓏾  |     | 𓎆𓏾 | →   | 𓎆𓏾 |
+{{% /table %}}
+
+{{% table class="hieroglyph mb-0" %}}
+|                            |     |     |      |     |     |     |      |
+| -------------------------- | --- | --- | ---- | --- | --- | --- | ---- |
+|                            |     |     |      |   | 𓂋    |   | 𓂋     |
+| <span class="fn">3.</span> | 𓏾  | →   | 𓎆𓏾 |     | 𓏾  | →   | 𓎆𓏾 |
+{{% /table %}}
+
+{{% collapse title="ヒント2" id="hint4-2" %}}
+
+こんなパーツが取り出せたはず．
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |     |
+| --- | --- | --- |
+| 𓏺  | 𓎆  | 𓂋  |
+{{% /table %}}
+
+<span class="hieroglyph">𓎆 𓂋</span>の役割は色々考えられる．ヒント1だけでは決め手に欠ける．そこで最後に残ったもう一つの数字を見てみよう．
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |
+| --- | --- |
+| 𓂋  | 𓂋  |
+| 𓎆  | 𓎈  |
+{{% /table %}}
+
+<span class="hieroglyph">𓎆 𓂋</span>がどんな役割だと考えると，この数字の表す数が $\frac{1}{15},\frac{2}{15},\frac{1}{5},1,5,15$ のいずれかになるだろうか？
+
+{{% collapse title="ヒント3" id="hint4-3" %}}
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |
+| --- | --- |
+| 𓂋  | 𓂋  |
+| 𓎆  | 𓎈  |
+{{% /table %}}
+
+この数字は大きく言って2つの数字を横に並べて作られている．2つの数字を横に並べるとどういう数を表すことになるのだろうか？
+
+<span class="hieroglyph">𓎆 𓏾 → 𓎆𓏾</span>
+
+<span class="hieroglyph">𓏺 𓏺 𓏺 𓏺 𓏺 → 𓏾</span>
+
+{{% /collapse %}}
+{{% /collapse %}}
+{{% /collapse %}}
+
+{{% collapse title="答え" id="ans4" %}}
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |                                                                      |
+| --- | --- | -------------------------------------------------------------------- |
+| 𓏺  |     | <span class="fn">$1$</span> |
+{{% /table %}}
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |                                                                      |
+| --- | --- | -------------------------------------------------------------------- |
+| 𓏾  |     | <span class="fn">$5$</span> |
+{{% /table %}}
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |                                                                      |
+| --- | --- | -------------------------------------------------------------------- |
+| 𓂋  |     |                                                                      |
+| 𓏾  |     | <span class="fn">$\frac{1}{5}$</span> |
+{{% /table %}}
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |                                                                      |
+| --- | --- | -------------------------------------------------------------------- |
+| 𓎆𓏾  |     | <span class="fn">$15$</span> |
+{{% /table %}}
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |                                                                      |
+| --- | --- | -------------------------------------------------------------------- |
+| 𓂋  |     |                                                                      |
+| 𓎆𓏾  |     | <span class="fn">$\frac{1}{15}$</span> |
+{{% /table %}}
+
+{{% table class="hieroglyph mb-2" %}}
+|     |     |     |     |
+| --- | --- | --- | --- |
+| 𓂋  | 𓂋  |     |     |
+| 𓎆  | 𓎈  |     |  <span class="fn">$\frac{2}{15} (=\frac{1}{10}+\frac{1}{30})$</span>   |
+{{% /table %}}
+
+{{% /collapse %}}
 
 ## 5. トンガ語 {#sample5}
 
