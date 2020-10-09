@@ -183,16 +183,40 @@ mathjax = true
 
 以下, 6つの数が2種類の数字で表されています．上側が古代エジプトの数字, 下側が今私たちが使っているアラビア数字です．同じ数を表しているもの同士を結んでください．
 
-{{% table class="hieroglyph mb-5 mx-auto" %}}
-|     |     |     |     |     |     |      |     |      |     |     |     |
-| --- | --- | --- | --- | --- | --- | ---- | --- | ---- | --- | --- | --- |
-|     |     |     |     | 𓂋  |     |      |     | 𓂋   |     | 𓂋  | 𓂋  |
-| 𓏺  |     | 𓏾  |     | 𓏾  |     | 𓎆𓏾 |     | 𓎆𓏾 |     | 𓎆  | 𓎈  |
+{{% wrap tag="div" class="row" %}}
+{{% wrap tag="div" class="col-12 col-sm-6" %}}
+{{% table class="hieroglyph mb-0 mx-auto mr-sm-0" %}}
+|     |     |     |     |     |
+| --- | --- | --- | --- | --- |
+|     |     |     |     | 𓂋  |
+| 𓏺  |     | 𓏾  |     | 𓏾  |
 {{% /table %}}
+{{% /wrap %}}
+
+{{% wrap tag=div class="col-12 col-sm-6" %}}
+{{% table class="hieroglyph mb-5 mx-auto ml-sm-0" %}}
+|      |     |      |     |     |     |
+| ---- | --- | ---- | --- | --- | --- |
+|      |     | 𓂋   |     | 𓂋  | 𓂋  |
+| 𓎆𓏾 |     | 𓎆𓏾 |     | 𓎆  | 𓎈  |
+{{% /table %}}
+{{% /wrap %}}
+{{% /wrap %}}
 
 $$
 \frac{1}{15},\frac{2}{15},\frac{1}{5},1,5,15
 $$
+
+{{% collapse title="文字化けする場合" id="prob4-2" %}}
+<div class="row">
+    <div class="col-sm-6 mt-sm-5">
+        <img style="max-width: 350px; width: 100%" class="mb-3" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
+    </div>
+    <div class="col-sm-6">{{< collapse title="答え" id="ans4" >}}
+<img style="max-width: 350px;" src="/img/EgyptianNumeral2.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">{{< /collapse >}}
+</div>
+</div>
+{{% /collapse %}}
 
 {{% collapse title="ヒント1" id="hint4-1" %}}
 
@@ -419,9 +443,9 @@ fitu ua valu: 728
 
 **参考**
 
-世の中には n=10 じゃない言語もまあまあある．本来なら検証が必要．ただしこの問題の検証は人力では難しい．
+世の中には n=10 じゃない言語も結構あります．本来なら検証が必要です．
 
-プログラムで検証してみると，(1), (2), (3) を満たす n は 10 以外にない(はず)．しかしたとえば 1228 の表し方が分からなくて良ければ5つ別解がある．一例は:
+プログラムで検証してみると，(1), (2), (3) を満たす n は 10 以外にない(はず)です．しかしたとえば 1228 の表し方が分からなくて良ければ5つ別解があります．一例は:
 
 n = 77, valu = 1, ono = 9, tolu = 4, hiva = 16, taha = 8, fitu = 2, noa = 0, ua = 12, nima = 44, fā = 49, 324 = tolu hiva, fitu ua valu = 12783
 

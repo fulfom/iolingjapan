@@ -53,6 +53,7 @@ body{
 .hieroglyph{
     font-size: 38px;
     font-weight: 700;
+    font-family: 'Segoe UI Historic';
     line-height: 1.5rem;
     td{
         text-align: center;
@@ -64,5 +65,6 @@ body{
     .fn{
         font-size: medium;
         font-weight: 500;
+        font-family: $font-family;
     }
 }
