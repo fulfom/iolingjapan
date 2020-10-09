@@ -207,13 +207,13 @@ $$
 \frac{1}{15},\frac{2}{15},\frac{1}{5},1,5,15
 $$
 
-{{% collapse title="文字化けする場合" id="prob4-2" %}}
+{{% collapse title="文字化けする場合" id="prob4-pol" %}}
 <div class="row">
     <div class="col-sm-6 mt-sm-5">
         <img style="max-width: 350px; width: 100%" class="mb-3" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">
     </div>
-    <div class="col-sm-6">{{< collapse title="答え" id="ans4" >}}
-<img style="max-width: 350px;" src="/img/EgyptianNumeral2.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">{{< /collapse >}}
+    <div class="col-sm-6">{{< collapse title="答え" id="ans4-pol" >}}
+<img style="max-width: 350px; width: 100%" src="/img/EgyptianNumeral2.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">{{< /collapse >}}
 </div>
 </div>
 {{% /collapse %}}
