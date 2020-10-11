@@ -1,24 +1,48 @@
-- award: gold      
+- award: gold
+  year: 2020
+  name: 非公開
+- award: silver
+  year: 2020
+  name: 久保宮玲於奈
+- award: silver
+  year: 2020
+  name: 片岡晋作
+- award: silver
+  year: 2020
+  name: 渡部魁人
+- award: bronze
+  year: 2020
+  name: 森西理温
+- award: bronze
+  year: 2020
+  name: 田村鴻乃介
+- award: bronze
+  year: 2020
+  name: 髙橋祐樹
+- award: bronze
+  year: 2020
+  name: 石井誠子
+- award: gold
   year: 2019
   name: 吉野匠
-- award: silver      
+- award: silver
   year: 2019
   name: 高橋翼
-- award: silver      
+- award: silver
   year: 2019
   name: 森西理温
-- award: silver      
+- award: silver
   year: 2019
   name: 久保宮玲於奈
-- award: bronze      
+- award: bronze
   year: 2019
   name: 大勢拓実
-- award: bronze      
+- award: bronze
   year: 2019
   name: 原梨乃
-- award: bronze      
+- award: bronze
   year: 2019
   name: 佐藤和音
-- award: honorable-mention      
+- award: honorable-mention
   year: 2019
   name: 矢澤宗汰

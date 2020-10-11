@@ -26,9 +26,9 @@
 {{end}}
 
 {{if eq $contest "aplo"}}
-{{$skip := slice 2020}}
-{{$time := sub $year 2002}}{{range $skip}}{{if lt . $year}}{{$time = sub $time 1}}{{end}}{{end}}
-<p>今年度から新設されたアジア太平洋言語学オリンピック(APLO)が2019年5月5日に行われました．日本からは8名が代表として参加し{{$text}}を獲得しました．吉野匠さんは今大会の最高得点を獲得し, 一位で金賞を受賞しました．</p>
+{{$skip := slice}}
+{{$time := sub $year 2018}}{{range $skip}}{{if lt . $year}}{{$time = sub $time 1}}{{end}}{{end}}
+<p>第{{$time}}回アジア太平洋言語学オリンピック(APLO)が2020年9月27日に行われました．日本からは20名が参加し{{$text}}を獲得しました．</p><p><a href="https://drive.google.com/file/d/1ulF7RIkDkkdJ03jvJxHRLzPbwUa-8GRW/view?usp=sharing">詳しい結果はこちら</a></p>
 {{end}}
 
 <table class="table">
