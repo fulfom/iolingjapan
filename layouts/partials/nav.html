@@ -23,8 +23,12 @@
           {{ end }}
         </div>
         {{ else }}
+        {{if eq .Name ""}}
+        <a class="nav-link" onclick="login()" id="navbarlogin"><i class="fas fa-user-circle"></i>{{ .Name }}</a>
+        {{else}}
         <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
-        {{ end  }}
+        {{end}}
+        {{ end }}
       </li>
       {{ end }}
     </ul>

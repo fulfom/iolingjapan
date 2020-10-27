@@ -68,3 +68,91 @@ body{
         font-family: $font-family;
     }
 }
+
+h3{
+    margin-top: -92px;
+    padding-top: 92px;
+}
+
+//appSys
+
+$success: #28a745;
+
+.success{
+    color: $success;
+}
+
+#app-step{
+    .app-step-title:nth-child(2){
+        display: none;
+    }
+    &.app-done{
+        .app-step-title:nth-child(1){
+            display: none;
+        }
+        .app-step-title:nth-child(2){
+            display: block;
+        }
+    }
+}
+
+.step-card{
+    padding: 0.5em 1em;
+    background: rgba(158,158,158, 0.20);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    &.step-done{
+        background: none;
+        box-shadow: none;
+        border: 1px solid $success;
+    }
+}
+
+.step-status, .step-name{
+    display: table-cell;
+}
+
+.step-status{
+    font-size: 30px;
+    color: gray;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    i{
+        line-height: 50px;
+    }
+    i:nth-child(2){
+        display: none;
+    }
+    .step-done &{
+        i:nth-child(1){
+            display: none;
+        }
+        i:nth-child(2){
+            display: block;
+            color: $success;
+        }
+    }
+}
+
+.step-name{
+    font-size: larger;
+    font-weight: bold;
+}
+
+a{
+    &.spread{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+.form-group{
+    label{
+        font-weight: 500;
+    }
+}
