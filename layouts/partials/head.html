@@ -46,11 +46,11 @@
   <!-- Custom stylesheet - for your changes -->
   <link href="{{ .Site.BaseURL }}css/custom.css" rel="stylesheet">
   {{ $style := resources.Get "scss/_variables-project.scss" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
   {{if (.Params.logoutredirect | or .Params.loginredirect)}}
   {{ $loaded := resources.Get "scss/loaded.scss" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $loaded.Permalink }}">
+  <link rel="stylesheet" href="{{ $loaded.RelPermalink }}">
   {{end}}
 
   <!-- Responsivity for older IE -->
