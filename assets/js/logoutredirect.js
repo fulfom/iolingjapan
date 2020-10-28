@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                             APP_PAY.classList.add('hidden');
                         }
                     }
-                    if(paid && checkRequired()){
+                    var info = checkRequired();
+                    if(info && paid){
                         APP_STEP.classList.add('app-done');
                     }
                     document.getElementsByTagName('body').item(0).style.opacity = 1;
