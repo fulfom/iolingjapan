@@ -40,14 +40,9 @@ table thead,th {
 }
 
 h2 {
-  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
   padding: 0.25em 0.5em;/*上下 左右の余白*/
   background: transparent;/*背景透明に*/
   border-left: solid 5px #38a7bb;/*左線*/
-}
-
-h1,h3,h4,.pager {
-  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 }
 
 .pager {

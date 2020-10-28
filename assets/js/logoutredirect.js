@@ -111,6 +111,7 @@ function updateEntry(){
 function disableForm(){
     EDIT_INFO.disabled = false;
     UPDATE_INFO.disabled = true;
+    UPDATE_INFO.style.opacity = 0;
     Array.prototype.map.call(
     document.querySelectorAll("#app-cont-info input:not(#input-email)"),
         function(i){
@@ -124,6 +125,8 @@ function disableForm(){
 function enableForm(){
     EDIT_INFO.disabled = true;
     UPDATE_INFO.disabled = false;
+    UPDATE_INFO.style.opacity = 1;
+    APP_CONT_INFO_STATUS.innerText = "編集中";
     Array.prototype.map.call(
     document.querySelectorAll("#app-cont-info input:not(#input-email)"),
         function(i){
