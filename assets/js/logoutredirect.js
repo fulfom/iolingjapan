@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     INPUT_SCHOOL_NAME.value = val.schoolName || '';
                     INPUT_GRADE.value = val.grade || null;
                     INPUT_PUBLISH.checked = val.publish;
+                    if(val.cancel){
+                        APPCANCELCANCEL.style.display = 'block';
+                        BTNCANCEL.style.display = 'none';
+                    }
                 }
                 else{
                     firebase.database().ref('/users/' + user.uid).set({
@@ -54,6 +58,8 @@ function logout(){
 
 //form
 
+const APPCANCELCANCEL = document.getElementById('app-cancel-cancel');
+const BTNCANCEL = document.getElementById('btncancel');
 const APP_STEP = document.getElementById('app-step');
 const STEP_INFO = document.getElementById('step-info');
 const STEP_PAY = document.getElementById('step-pay');
@@ -158,4 +164,42 @@ var formAlert = function() {
 for(var i = 0; i < checkValue.length; i++) {
     checkValue[i].addEventListener('input', formAlert);
     checkValue[i].addEventListener('change', formAlert);
+}
+
+function cancel(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if(user){
+            firebase.database().ref('/users/' + user.uid).update({
+                cancel: true
+            }, (error) => {
+                if(error){
+                    alert('キャンセルできませんでした')
+                }
+                else{
+                    alert('応募がキャンセルされました')
+                    APPCANCELCANCEL.style.display = 'block';
+                    BTNCANCEL.style.display = 'none';
+                }
+            });
+        }
+    });
+}
+
+function cancelcancel(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if(user){
+            firebase.database().ref('/users/' + user.uid).update({
+                cancel: false
+            }, (error) => {
+                if(error){
+                    alert('有効化できませんでした')
+                }
+                else{
+                    alert('応募が有効化されました')
+                    APPCANCELCANCEL.style.display = 'none';
+                    BTNCANCEL.style.display = 'block';
+                }
+            });
+        }
+    });
 }

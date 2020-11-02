@@ -1,5 +1,11 @@
 {{ $data := $.Site.Data.appSys.account}}
 {{ $steps := $data.steps }}
+
+<div id="app-cancel-cancel" class="mb-4">
+    <p>応募はキャンセル済みです．再度応募を有効にするためには以下のボタンを押してください．</p>
+    <button id="btncancelcancel" onclick="cancelcancel()" class="btn btn-template-main">応募を有効化</button>
+</div>
+
 <div id="app-step" class="mb-4">
 <h3 class="app-step-title">すること</h3>
 <h3 class="app-step-title"><i class="fas fa-check-circle fa-fw success"></i>応募完了！</h3>

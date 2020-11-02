@@ -86,6 +86,10 @@ $success: #28a745;
     color: $success;
 }
 
+#app-cancel-cancel{
+    display: none;
+}
+
 #app-step{
     .app-step-title:nth-child(2){
         display: none;
