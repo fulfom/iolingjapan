@@ -1,0 +1,12 @@
+account:
+  steps:
+  - weight: 1
+    name: 受験者情報の入力
+    id: step-info
+    ref: '#header-info'
+    icon: user-edit
+  - weight: 2
+    name: 受験料の支払い
+    id: step-pay
+    ref: '#header-pay'
+    icon: yen-sign

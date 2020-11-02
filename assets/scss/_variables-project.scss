@@ -46,6 +46,10 @@ body{
     font-weight: 500;
 }
 
+h1,h2,h3,h4,h5,h6,.pager{
+    font-family: $font-family;
+}
+
 .bar-zigzag:nth-child(even){
     text-align: right;
 }
@@ -69,7 +73,7 @@ body{
     }
 }
 
-h3{
+#header-info, #header-pay{
     margin-top: -92px;
     padding-top: 92px;
 }
@@ -80,6 +84,10 @@ $success: #28a745;
 
 .success{
     color: $success;
+}
+
+#app-cancel-cancel{
+    display: none;
 }
 
 #app-step{

@@ -50,6 +50,11 @@ enableGitInfo = true
     name = "よくある質問"
     url  = "/faq/"
     weight = 6
+
+[[menu.main]]
+    name = ""
+    url  = "/account/"
+    weight = 7
     
 [params]
     viewMorePostLink = "/blog/"
