@@ -15,6 +15,9 @@ paginate = 10
 
 enableGitInfo = true
 
+media_folder = "static/pdf/"
+public_folder = "/pdf/"
+
 [menu]
 
 # Main menu
