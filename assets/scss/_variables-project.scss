@@ -1,3 +1,387 @@
+// custom.css から移行中
+
+/* your styles go here */
+
+.box-image-text .image {
+    min-height: 200px;
+    max-height: 200px;
+  }
+  
+  table {
+    margin-bottom: 3.5em;
+  }
+  
+  table thead,th {
+    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+  }
+  
+  .simple-table td, .simple-table th {
+    padding-right: 2em;
+  }
+  
+  .simple-table table{
+    margin-bottom: 1em;
+  }
+  
+  .list-like td, .list-like th {
+    padding-right: 1em;
+  }
+  
+  .list-like{
+    margin-bottom: 1em;
+  }
+  
+  .simple-list li {
+    font-size: large;
+    padding: 0.5em 0px;
+    border-bottom: 1px solid #ccc;  
+  }
+  
+  .simple-list li:last-child{
+    border-bottom: 0;
+  }
+  
+  h2 {
+    padding: 0.25em 0.5em;/*上下 左右の余白*/
+    background: transparent;/*背景透明に*/
+    border-left: solid 5px #38a7bb;/*左線*/
+  }
+  
+  .pager {
+    margin-top: 0px;
+    padding-top: 0px;
+    border-top: 0px;
+    font-weight: bold;
+  }
+  
+  .site-title{
+    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    position: absolute;
+    top: 0;
+    margin: 26px 0px 0px 100px;
+  }
+  
+  @media (min-width: 768px) {
+    .yamm .container {
+      width: unset;
+      padding-left: 24px;
+      padding-right: 24px;
+      position: relative;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .yamm .navbar-header {
+      position: relative;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding: 21px 5px;
+    }
+  }
+  
+  @media (min-width: 844px) {
+    .navbar-nav > li > a {
+        padding: 21px 15px;
+    }
+  }
+  
+  @media (min-width: 992px){
+    .embedded-twitter {
+      border-left: 1px solid #ddd;
+    }
+  }
+  
+  .embedded-twitter h3{
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    color: #555555;
+    letter-spacing: 0.08em;
+  }
+  
+  body {
+    margin-top: 62px;
+  }
+  
+  .navbar-fixed-top {
+    -webkit-box-shadow: 0 0 5px #cccccc;
+    box-shadow: 0 0 5px #cccccc;
+  }
+  
+  .navbar {
+    padding: 0 1rem;
+  }
+  
+  .navbar-toggler {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    margin-right: 5px;
+  }
+  
+  .bar{
+    padding: 0;
+  }
+  
+  .btn {
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    font-size: 20px;
+    border-radius: 0px;
+    margin: 10px 0px;
+  }
+  
+  .centralize {
+    text-align: center;
+  }
+  
+  #Lastmod {
+    text-align: right;
+    margin: 15px;
+  }
+  
+  .topicnews {
+    font-size: large;
+    color: #555555;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    padding: .75em 1em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .jumbotron {
+    background: center center repeat;
+    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+  }
+  
+  .grad-white .jumbotron h1, .grad-white .jumbotron p {
+    color: #555555;
+  }
+  
+  .unmot {
+    display: inline-block;
+  }
+  
+  .grad-green {
+    background: linear-gradient(45deg, #38a7bb, #38bb81)
+  }
+  
+  .grad-white {
+    background: linear-gradient(45deg, #eeeeee 15%, #FFF 80%)
+  }
+  
+  .grad-pink {
+    background: linear-gradient(45deg, #d45b83, pink)
+  }
+  
+  .grad-yellow {
+    background: linear-gradient(45deg, #c4ca72c9 15%, #c7ba15 50%)
+  }
+  
+  .grad-blue {
+    background: linear-gradient(45deg, #337ab7, #38a7bb)
+  }
+  
+  .grad {
+    margin-bottom: 0px;
+  }
+  
+  .grad .btn-template-main {
+    border: 0px;
+  }
+  
+  .grad-white .btn-template-main {
+    border: 1px solid;
+  }
+  
+  .grad-pink .btn-template-main {
+    color: #d45b83;
+  }
+  
+  .grad-pink .btn-template-main:hover, .grad-pink .btn-template-main:focus, .grad-pink .btn-template-main:active {
+    background: #d45b83;
+    color: #ffffff;
+  }
+  
+  .grad-yellow .btn-template-main {
+    color: #c7ba15;
+  }
+  
+  .grad-yellow .btn-template-main:hover, .grad-yellow .btn-template-main:focus, .grad-yellow .btn-template-main:active {
+    background: #c7ba15;
+    color: #ffffff;
+  }
+  
+  .grad-blue .btn-template-main {
+    color: #337ab7;
+  }
+  
+  .grad-blue .btn-template-main:hover, .grad-blue .btn-template-main:focus, .grad-blue .btn-template-main:active {
+    background: #337ab7;
+    color: #ffffff;
+  }
+  
+  .tlhead {
+    display: inline-block;
+    border: 2px dotted #38a7bb;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 20px 5em 0;
+    position: relative;
+  }
+  
+  .tlhead:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5em;
+    width: 2px;
+    height: 4.5em;
+    margin: auto;
+    background-color: #bbb;
+  }
+  
+  .prog {
+    background-color: #38a7bb;
+  }
+  
+  .done {
+    border-style: solid;
+  }
+  
+  .tldate {
+    font-size: 24px;
+    display: inline-block;
+    position: absolute;
+  }
+  
+  .tlbody {
+    display: inline-block;
+    position: absolute;
+    margin-top: 32px;
+    margin-right: 10px;
+  }
+  
+  .tl1let {
+    margin-left: 1ch;
+  }
+  
+  .tlbig .tlhead {
+    margin-bottom: 7em; 
+  }
+  
+  .tlbig .tlhead:after {
+    bottom: -7em;
+    height: 6.5em;
+  }
+  
+  .tlbigger .tlhead {
+    margin-bottom: 9.5em; 
+  }
+  
+  .tlbigger .tlhead:after {
+    bottom: -9.5em;
+    height: 9em;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  #general {
+    padding-top: 92px;
+    margin-top: -92px;
+  }
+  
+  .scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  
+  p img {
+    width: 100%;
+    max-width: 734px;
+  }
+  
+  .mini {
+    width: 80%;
+    max-width: 587px;
+  }
+  
+  #copyright p a img{
+      width: auto;
+  }
+  
+  .simple-box {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 2px #eee;
+  }
+  .simple-box .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -2px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    color: #4f4f4f;
+    background: #eee;
+    font-weight: bold;
+    border-radius: 2px 2px 0 0;
+  }
+  .simple-box p {
+    margin: 0; 
+    padding: 0;
+  }
+  
+  .list-like td:first-child {
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+  
+  .list-like td:last-child {
+    padding-right: 0;
+  }
+  
+  @media screen and (max-width:450px) {
+    .simple-table table {
+      display: block;
+      overflow-x: scroll;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    .simple-table td, .simple-table th {
+      padding-right: 0em;
+    }
+    .simple-list ol {
+      padding-left: 28px;
+    }
+    .simple-box ul {
+      padding-inline-start: 10px;
+    }
+    .home-carousel h1 {
+      font-size: 32px;
+    }
+  }
+
+// custom.css から移行中以上
+
+#content img{
+    max-width: 100%;
+    height: auto;
+}
+
 i.fa-angle-right{
     transition: .2s;
     a[aria-expanded="true"] &{
