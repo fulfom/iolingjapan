@@ -140,12 +140,15 @@ APLOは筆記試験のみですが，JOLと異なり「見つけた規則を説�
 2003年から年に1度行われている言語学オリンピックの国際大会です．例年世界中の代表が会場に集まり，競技のほかにも観光やクイズ大会など親睦を深めるためのイベントが行われます．   
 
 [IOLの公式Facebook](http://www.facebook.com/international.linguistics.olympiad)にIOL2019のようすをまとめた動画がアップロードされています．
-<div class="embedded-video">
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Finternational.linguistics.olympiad%2Fvideos%2F653567755048784%2F&show_text=0&width=560"  style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+
+<div class="embed-responsive embed-responsive-16by9 mb-3" style="max-width:700px">
+<iframe class="embed-responsive-item" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Finternational.linguistics.olympiad%2Fvideos%2F653567755048784%2F&show_text=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
 </div>
+
 こちらは2017年のダブリン大会の動画です．
-<div class="embedded-video">
-<iframe  src="https://www.youtube.com/embed/KeThEGttUBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="embed-responsive embed-responsive-16by9 mb-3" style="max-width:700px">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KeThEGttUBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ##### 競技内容
@@ -239,7 +242,7 @@ APLO 2019の問題は[こちらから](https://aplo.asia/problems-by-year/)．
 
 会場はヨンインにある韓国外国語大学グローバルキャンパスで，みんなそこの寮に宿泊しました．部屋は二人部屋で，日本以外の代表と相部屋になっているひともいました．けっこうきれいな部屋で安心でした．    
 
-{{< figure src="/img/orientation2021/1.JPG" >}}
+{{< figure src="/img/orientation2021/1.jpg" >}}
 
 
 大学は思っていたよりもかなり自然の豊かなところにありました．敷地もかなり広く，今思うとけっこう羨ましいです．  
