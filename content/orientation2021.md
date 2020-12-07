@@ -140,10 +140,13 @@ APLOは筆記試験のみですが，JOLと異なり「見つけた規則を説�
 2003年から年に1度行われている言語学オリンピックの国際大会です．例年世界中の代表が会場に集まり，競技のほかにも観光やクイズ大会など親睦を深めるためのイベントが行われます．   
 
 [IOLの公式Facebook](http://www.facebook.com/international.linguistics.olympiad)にIOL2019のようすをまとめた動画がアップロードされています．
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Finternational.linguistics.olympiad%2Fvideos%2F653567755048784%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+<div class="embedded-video">
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Finternational.linguistics.olympiad%2Fvideos%2F653567755048784%2F&show_text=0&width=560"  style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+</div>
 こちらは2017年のダブリン大会の動画です．
-<iframe width="623" height="480" src="https://www.youtube.com/embed/KeThEGttUBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<div class="embedded-video">
+<iframe  src="https://www.youtube.com/embed/KeThEGttUBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ##### 競技内容
 ###### 個人戦    
