@@ -377,11 +377,6 @@
 
 // custom.css から移行中以上
 
-#content img{
-    max-width: 100%;
-    height: auto;
-}
-
 i.fa-angle-right{
     transition: .2s;
     a[aria-expanded="true"] &{
@@ -549,11 +544,10 @@ a{
     }
 }
 
-#content{
-  figure,p{
-    img{
-      max-width: 700px;
-    }
+figure,p{
+  img{
+    width: 100%;
+    max-width: 700px;
   }
 }
 
