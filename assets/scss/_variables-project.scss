@@ -549,6 +549,14 @@ a{
     }
 }
 
+#content{
+  figure,p{
+    img{
+      max-width: 700px;
+    }
+  }
+}
+
 .embedded-video {
   position: relative;
   padding-top: 56.25%;
