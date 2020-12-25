@@ -6,7 +6,7 @@ logoutredirect = true
 
 {{< card-header >}}
 
-こちらからアクセス
+競技用ページへのアクセスはこちら
 
 {{< list class="list-group list-fill-link" liclass="list-group-item" id="links">}}
 
