@@ -4,17 +4,6 @@ description = ""
 logoutredirect = true
 +++
 
-{{< card-header >}}
-
-こちらからアクセス
-
-{{< list class="list-group list-fill-link" liclass="list-group-item" id="links">}}
-
-- [JOL2021事前準備](/demo2021)
-
-{{< /list >}}
-{{< /card-header >}}
-
 {{< appSys/account >}}
 
 ### 受験料の支払い {#header-pay}
