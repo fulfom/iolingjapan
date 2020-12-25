@@ -6,7 +6,7 @@ logoutredirect = true
 
 {{< card-header >}}
 
-こちらからアクセス
+問題閲覧・提出の練習用ページを公開しました．事前準備や当日の流れに関する情報も掲載しています．
 
 {{< list class="list-group list-fill-link" liclass="list-group-item" id="links">}}
 
