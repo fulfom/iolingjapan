@@ -1,7 +1,7 @@
 const ELEM_LINKS = document.getElementById('links').getElementsByTagName('a');
 const ELEM_LINKSLI = document.getElementById('links').getElementsByTagName('li');
 
-var demolinks;
+var contestlinks;
 
 //
 
@@ -11,8 +11,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
         links.once('value', (snapshot) =>{
             const data = snapshot.val();
-            demolinks = data;
+            contestlinks = data;
+            updateLinks(contestlinks);
             if(!data.done) links.update({done: true})
+            startTimer(7203)
         });
     }
     else{
@@ -20,15 +22,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
-function startTimer(){
-    document.getElementById('timerbtn').disabled = true;
-    var data = 7206;
+function startTimer(data){
     var timer = setInterval(() => {
         data--;
         updateTimer(data)
-        if(data == 7200){
-            updateLinks(demolinks);
-        }
         if(data <= 0){
             clearInterval(timer);
         }
