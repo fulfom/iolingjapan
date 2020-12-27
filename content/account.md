@@ -6,11 +6,12 @@ logoutredirect = true
 
 {{< card-header >}}
 
-問題閲覧・提出の練習用ページを公開しました．事前準備や当日の流れに関する情報も掲載しています．
+競技会場ページを公開しました．
 
 {{< list class="list-group list-fill-link" liclass="list-group-item" id="links">}}
 
-- [JOL2021事前準備](/demo2021)
+- [JOL2021競技会場](/contest/)
+- [JOL2021事前準備](/demo2021/)
 
 {{< /list >}}
 {{< /card-header >}}

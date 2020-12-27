@@ -1,6 +1,7 @@
 {{$title := .Get 0}}
 {{$class := .Get 1}}
-<div class="simple-box{{with $class}} {{.}}{{end}}">
+{{$id := .Get 2}}
+<div class="simple-box{{with $class}} {{.}}{{end}}"{{with $id}}id="{{.}}"{{end}}>
     <span class="box-title">{{$title}}</span>
     {{.Inner | markdownify}}
 </div>
