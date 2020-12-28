@@ -35,11 +35,11 @@ import = ["js/result2021.js"]
 
 ### 個人の結果
 
+大会参加者はログインしているとここに自分の結果が表示されます．
+
 {{< simplebox "個人結果" >}}
 
-大会参加者はログインしているとここに自分の結果が表示されます．[ログイン](/login/)
-
-<span id="contest-result"></span>
+<span id="contest-result"><a href="/login/">ログイン</a></span>
 
 {{< /simplebox >}}
 ### {{< icon flag 選抜参加>}}データ
