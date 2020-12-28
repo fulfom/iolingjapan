@@ -27,7 +27,7 @@ import = ["js/result2021.js"]
 {{< /table >}}
 {{< /wrap >}}
 
-[当日使った問題はこちら](https://drive.google.com/drive/folders/1ZBw_J_C7Od-GpoU1mw8lFENGINsuJeSu)
+[当日使った問題はこちら](https://drive.google.com/file/d/163gpBwsSRzll_bHagabeA0OJYlEPx0it/view?usp=sharing)
 
 訂正: 9ページ目，第4問（ウ） r) の後ろから二文字目の í は太字の **í** が正しい．
 
