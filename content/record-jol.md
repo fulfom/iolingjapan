@@ -2,6 +2,7 @@
 title = "大会成績"
 description = ""
 keywords = ["成績","記録"]
+import = ["js/result2021.js"]
 +++
 
 {{< nav record >}}
@@ -25,6 +26,22 @@ keywords = ["成績","記録"]
 | / 参加者 | / 178人               | / 67人                 |
 {{< /table >}}
 {{< /wrap >}}
+
+[当日使った問題はこちら](https://drive.google.com/drive/folders/1ZBw_J_C7Od-GpoU1mw8lFENGINsuJeSu)
+
+訂正: 9ページ目，第4問（ウ） r) の後ろから二文字目の í は太字の **í** が正しい．
+
+後日，言語名などを明らかにしたスペシャルエディションを公開します．
+
+### 個人の結果
+
+{{< simplebox "個人結果" >}}
+
+大会参加者はログインしているとここに自分の結果が表示されます．[ログイン](/login/)
+
+<span id="contest-result"></span>
+
+{{< /simplebox >}}
 
 ### 選抜参加データ
 

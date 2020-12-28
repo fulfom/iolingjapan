@@ -6,12 +6,11 @@ logoutredirect = true
 
 {{< card-header >}}
 
-競技会場ページを公開しました．
+結果を公開しました．
 
 {{< list class="list-group list-fill-link" liclass="list-group-item" id="links">}}
 
-- [JOL2021競技会場](/contest/)
-- [JOL2021事前準備](/demo2021/)
+- [JOL大会成績](/record-jol/)
 
 {{< /list >}}
 {{< /card-header >}}
