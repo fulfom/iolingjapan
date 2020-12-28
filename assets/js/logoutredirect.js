@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if(user){
             INPUT_EMAIL.value = user.email;
             document.getElementById('user-email').innerText = user.email;
+
             firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
                 if(snapshot.val()){
                     var val = snapshot.val();

@@ -396,6 +396,23 @@ i.fa-angle-right{
     background-color: #edc;
 }
 
+.table-award-gsbh{
+  tbody tr{
+    &:nth-child(1){
+      @extend .gold;
+    }
+    &:nth-child(2){
+      @extend .silver;
+    }
+    &:nth-child(3){
+      @extend .bronze;
+    }
+    &:nth-child(4){
+
+    }
+  }
+}
+
 .numbered-list.list-group{
     padding-left: 40px;
 }
