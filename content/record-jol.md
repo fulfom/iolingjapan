@@ -13,7 +13,7 @@ import = ["js/record-jol2021.js"]
 
 応募者は 245人でした．うち，選抜参加者は 178人，競技参加者は 67人でした．
 
-上位25名をAPLO2021に招待します．
+選抜参加者のうち，上位25名をAPLO2021に招待します．
 
 {{< wrap tag=div class="scroll" >}}
 {{< table class="table table-award-gsbh" >}}
