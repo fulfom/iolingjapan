@@ -2,7 +2,6 @@
 title = "大会成績"
 description = ""
 keywords = ["成績","記録"]
-import = ["js/record-jol2021.js"]
 +++
 
 {{< nav record >}}
