@@ -21,6 +21,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                     ELEM_RESULT.innerText = text;
                 }
             }
+            else{
+                ELEM_RESULT.innerText = "あなたはJOL2021に出席していません．";
+            }
         })
     }
 });
