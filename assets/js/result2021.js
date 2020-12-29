@@ -6,7 +6,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             const data = snapshot.val();
             const ELEM_RESULT = document.getElementById('contest-result');
 
-            if(data.award){
+            if(data && data.award){
                 if("無" == data.award){
                     ELEM_RESULT.innerText = "残念ながらあなたは賞を獲得することができませんでした．" //賞獲得ならず
                 }
