@@ -89,16 +89,6 @@ ui.start('#firebaseui-auth-container', uiConfig);
 {{end}}
 {{end}}
 
-{{if .Params.logoutredirect}}
-{{ $logoutredirect := resources.Get "js/logoutredirect.js" }}
-<script src="{{ $logoutredirect.RelPermalink }}"></script>
-{{else}}
-{{if .Params.loginredirect}}
-{{ $loginredirect := resources.Get "js/loginredirect.js" }}
-<script src="{{ $loginredirect.RelPermalink }}"></script>
-{{end}}
-{{end}}
-
 {{ $login := resources.Get "js/login.js" }}
 <script src="{{ $login.RelPermalink }}"></script>
 

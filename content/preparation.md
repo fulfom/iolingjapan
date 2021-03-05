@@ -49,15 +49,25 @@ keywords = []
 
 {{< table class="table" >}}
 
-| 問題                                                                         | 解答  | 備考  |
-| -------------------------------------------------------------------------- | --- | --- |
-| [2020](https://drive.google.com/open?id=1FPhk59e8A0FIXgOliitzg1qU95V7fppV) | [2020解答](https://drive.google.com/open?id=1EWBp7YEriz4L6cCEkiqeDwo5ku-qh-ic)    |     |
-| [2019](https://drive.google.com/open?id=1BjNVq20Ne9LVAqGEa9nLPsF9FhuhDjAA) |  [2019解答](https://drive.google.com/open?id=1-lHLG82BcwZSuWnCuXD8GwTXFS2vv_Lh)   |     |
-| [2018](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2) |   [2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)  |  スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet   |
-| [2017](https://drive.google.com/open?id=1DSG3MISTszSPeMeG-VmnyKA0kFe7iywZ) |  [2017解答](https://drive.google.com/open?id=1GSyrZ7f6hvOAQ3sc19mFAOzRlUYK0W0q)   |     |
-| [2016](https://twitter.com/fulfom/status/1097706793885589504)         |     |   暫定公開  |
+| 問題                                                                                         | 解答                                                                                           | 備考                                                                                             |
+| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [2021SE](https://drive.google.com/file/d/10ZjQaznmDk51Iy1OID2mKHnrff4JR-RY/view?usp=sharing) | [2021解答](https://drive.google.com/file/d/1sOahvs8QypYyEckuH6NDBga_pijffWq-/view?usp=sharing) | [問題当日版](https://drive.google.com/file/d/163gpBwsSRzll_bHagabeA0OJYlEPx0it/view?usp=sharing) ※1 |
+| [2020](https://drive.google.com/open?id=1FPhk59e8A0FIXgOliitzg1qU95V7fppV)                   | [2020解答](https://drive.google.com/open?id=1EWBp7YEriz4L6cCEkiqeDwo5ku-qh-ic)                 |                                                                                                  |
+| [2019](https://drive.google.com/open?id=1BjNVq20Ne9LVAqGEa9nLPsF9FhuhDjAA)                   | [2019解答](https://drive.google.com/open?id=1-lHLG82BcwZSuWnCuXD8GwTXFS2vv_Lh)                 |                                                                                                  |
+| [2018](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2)                   | [2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)                           | 問題誤植※2                                                                                       |
+| [2017](https://drive.google.com/open?id=1DSG3MISTszSPeMeG-VmnyKA0kFe7iywZ)                   | [2017解答](https://drive.google.com/open?id=1GSyrZ7f6hvOAQ3sc19mFAOzRlUYK0W0q)                 |                                                                                                  |
+| [2016](https://twitter.com/fulfom/status/1097706793885589504)                                |                                                                                                | 暫定公開                                                                                         |
 
 {{< /table >}}
+
+{{< table class="list-like" >}}
+|※1|                                                             |
+| ---------- | ----------------------------------------------------------- |
+| 2021SE     | 過去問として解きやすいよう編集したバージョン                |
+| 問題当日版 | JOL2021で実際に使用された，不正抑制措置が施されたバージョン |
+{{< /table >}}
+
+※2: スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet
 
 ## データベース
 

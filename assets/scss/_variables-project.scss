@@ -7,7 +7,7 @@
     max-height: 200px;
   }
   
-  table {
+  table, .table {
     margin-bottom: 3.5em;
   }
   
@@ -42,9 +42,10 @@
   }
   
   h2 {
-    padding: 0.25em 0.5em;/*上下 左右の余白*/
+    padding: .25em .5em;/*上下 左右の余白*/
     background: transparent;/*背景透明に*/
-    border-left: solid 5px #38a7bb;/*左線*/
+    border-left: 5px solid #38a7bb;
+    border-bottom: 3px solid #eee;
   }
   
   .pager {
@@ -106,6 +107,10 @@
   
   body {
     margin-top: 62px;
+  }
+
+  html, body{
+    scroll-padding-top: 77px;
   }
   
   .navbar-fixed-top {
@@ -321,9 +326,12 @@
   
   .simple-box {
     position: relative;
-    margin: 2em 0;
+    margin: 3em 0 2em 0;
     padding: 0.5em 1em;
     border: solid 2px #eee;
+    ul:last-child{
+      margin-bottom: 0;
+    }
   }
   .simple-box .box-title {
     position: absolute;
@@ -469,11 +477,6 @@ h1,h2,h3,h4,h5,h6,.pager{
     }
 }
 
-#header-info, #header-pay{
-    margin-top: -92px;
-    padding-top: 92px;
-}
-
 //appSys
 
 $success: #28a745;
@@ -500,14 +503,54 @@ $success: #28a745;
     }
 }
 
+.spot-card{
+  padding: .5em 1em;
+  height: calc(100% - 20px);
+  background: rgba(158,158,158,.2);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  cursor: pointer;
+  .spot-status{
+    @extend .step-status;
+  }
+  .card-body{
+    padding: 0;
+  }
+  .spot-name{
+    padding-left: 1rem;
+    font-size: larger;
+    font-weight: 700;
+    display: table-cell;
+  }
+}
+
+input:checked + .spot-card{
+  background: none;
+  box-shadow: none;
+  border: 1px solid $success;
+  .spot-status{
+    color: $success;
+  }
+}
+
 .step-card{
-    padding: 0.5em 1em;
+    // padding: 0.5em 1em;
+    padding: 0 15px;
+    @media (max-width: 767px) {
+      padding: 0 10px;
+    }
     background: rgba(158,158,158, 0.20);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    // box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
     &.step-done{
         background: none;
-        box-shadow: none;
+        // box-shadow: none;
         border: 1px solid $success;
+        .step-name i{
+          display: inline-block;
+        }
+    }
+    .card-body{
+      position: relative;
+      padding: 0;
     }
 }
 
@@ -516,31 +559,28 @@ $success: #28a745;
 }
 
 .step-status{
-    font-size: 30px;
-    color: gray;
-    width: 50px;
-    height: 50px;
-    text-align: center;
+    font-size: 50px;
+    color: #ccc;
+    width: 80px;
+    height: 80px;
     i{
         line-height: 50px;
-    }
-    i:nth-child(2){
-        display: none;
-    }
-    .step-done &{
-        i:nth-child(1){
-            display: none;
-        }
-        i:nth-child(2){
-            display: block;
-            color: $success;
-        }
     }
 }
 
 .step-name{
     font-size: larger;
+    @media (max-width: 767px) {
+      font-size: smaller;
+    }
     font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    i{
+      display: none;
+      color: $success;
+    }
 }
 
 a{
@@ -553,6 +593,43 @@ a{
         height: 100%;
         z-index: 1;
     }
+}
+
+.btn-small{
+  font-size: small;
+  padding: 4px 8px;
+  height: 28px;
+}
+
+#account-contests{
+  .list-group-item{
+    padding-right: 0;
+    max-width: 540px;
+  }
+  .btn{
+      @extend .btn-small;
+  }
+}
+
+$font-color: #555555;
+
+.custom-control-input.is-valid~.custom-control-label, .was-validated .custom-control-input:valid~.custom-control-label{
+  color: $font-color;
+}
+.custom-control-input.is-invalid~.custom-control-label, .was-validated .custom-control-input:invalid~.custom-control-label{
+  color: $font-color;
+}
+
+.list-group-flush>.list-group-item{
+  &.bl-success{
+    border-left: 5px solid $success;
+    padding-left: 15px;
+  }
+}
+
+.btn-primary:disabled{
+  color: #007bff;
+  background-color: transparent;
 }
 
 .form-group{

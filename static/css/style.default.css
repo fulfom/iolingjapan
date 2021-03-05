@@ -3265,7 +3265,7 @@ hr {
 }
 /* forms.less */
 label {
-  font-weight: normal;
+  /* font-weight: normal; */
 }
 .form-control {
   -webkit-box-shadow: none;

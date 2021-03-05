@@ -1,12 +1,39 @@
 account:
+  selectspot: 
+  - weight: 0
+    name: 選抜参加
+    desc: 「次のIOL個人戦の時点で20歳未満かつ大学教育を受けていないこと」
+    desc2: 対象
+    id: spot-flag
+    icon: flag
+  - weight: 1
+    name: 競技参加
+    desc: 不問
+    desc2: 非対象
+    id: spot-award
+    icon: award
   steps:
   - weight: 1
-    name: 受験者情報の入力
+    name: 情報入力
     id: step-info
-    ref: '#header-info'
     icon: user-edit
   - weight: 2
-    name: 受験料の支払い
+    name: 支払い
     id: step-pay
-    ref: '#header-pay'
     icon: yen-sign
+features:
+- weight: 1
+  name: 大会
+  id: features-contests
+  icon: puzzle-piece
+  link: "#contests"
+- weight: 2
+  name: 結果
+  id: features-results
+  icon: trophy
+  link: "#results"
+- weight: 3
+  name: 設定
+  id: features-info
+  icon: user-edit
+  link: "/settings/"
