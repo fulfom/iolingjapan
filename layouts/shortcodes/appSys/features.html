@@ -1,0 +1,49 @@
+{{ $data := $.Site.Data.appSys.features}}
+{{ if gt (len $data) 0 }}
+<section class="bar background-white">
+    <div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				{{$.Inner | markdownify}}
+			</div>
+			<div class="clearfix visible-md-block"></div>
+			<div class="col-lg-6">
+				{{ range $index, $element := sort $data "weight" }}
+				<div class="box-simple-xs d-block d-sm-none">
+					{{with .link}}
+					<a href = {{.}}>
+					{{end}}
+						<div class="icon">
+							<i class="fas fa-{{ .icon }}"></i>
+						</div>
+						<h3>{{ $element.name }}</h3>
+					</a>
+				</div>
+				{{ end }}
+				{{ range $index, $element := sort $data "weight" }}
+				{{ if eq (mod $index 3) 0 }}
+				<div class="col-sm-12">
+					<div class="row">
+				{{ end }}
+						<div class="col-sm-4 d-none d-sm-block"><!--Larger than sm-->
+							<div class="box-simple">
+								{{with .link}}
+								<a href = {{.}}>
+								{{end}}
+									<div class="icon">
+										<i class="fas fa-{{ .icon }}"></i>
+									</div>
+									<h3>{{ $element.name }}</h3>
+									<p>{{ $element.description | markdownify }}</p>
+								</a>
+							</div>
+						</div>
+				{{ if or (eq (mod $index 3) 2) (eq $index (sub (len $data) 1 )) }}
+					</div>
+				</div>
+				{{ end }}
+				{{ end }}
+			</div>
+		</div>
+</section>
+{{ end }}

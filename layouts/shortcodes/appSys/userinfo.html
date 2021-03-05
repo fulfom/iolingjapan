@@ -1,0 +1,63 @@
+<div id="app-cont-info" class="mb-4">
+    <h2 id="userinfo"><i class="fas fa-user-edit fa-fw"></i>既定の個人情報</h2>
+    <p>既定の個人情報は各大会応募時に応募情報としてデフォルトで設定される情報です．以下を書き換えることで今後の大会応募をスムーズにすることができます．ただし応募済の大会の応募情報は変更されません．応募情報は大会ごとに別途記録されるので，確認・変更したい際は応募者ページにて各大会の <i class="fas fa-user-edit fa-fw"></i>確認 から応募ページに進んで確認・変更してください．</p>
+    <button id="edit-info" onclick="enableForm('#app-cont-info')" class="btn btn-primary">編集</button>
+    <form onsubmit="infoSubmit(); return false;" class="needs-validation">
+        <div class="form-group">
+          <label for="input-email">メールアドレス</label>
+          <input disabled type="email" class="form-control-plaintext" id="input-email" aria-describedby="input-emailHelp">
+          <small id="input-emailHelp" class="form-text text-muted">変更不可</small>
+        </div>
+        <div class="form-group was-validated">
+          <label for="input-name">氏名(フルネーム)</label>
+          <input disabled required class="form-control-plaintext" id="input-name">
+        </div>
+        <div class="form-group was-validated">
+            <label for="input-name-roman">氏名(ローマ字)</label>
+            <input disabled required pattern="^[0-9A-Za-z\s]+$" class="form-control-plaintext" id="input-name-roman" aria-describedby="input-name-roman-help">
+            <small id="input-name-roman-help" class="form-text text-muted">半角英数</small>
+        </div>
+        <div id="form-birthdate" class="form-group was-validated">
+            <label for="input-birthdate">生年月日</label>
+            <input disabled required type="date" class="form-control-plaintext" id="input-birthdate">
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input required disabled type="radio" id="input-spot-flag" name="spot" class="custom-control-input" value="flag" onclick="return selectSpot('flag')">
+                <label class="custom-control-label" for="input-spot-flag">選抜参加</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input required disabled type="radio" id="input-spot-award" name="spot" class="custom-control-input" value="award" onclick="return selectSpot('award')">
+                <label class="custom-control-label" for="input-spot-award">競技参加</label>
+            </div>
+        </div>
+        <div class="form-group was-validated spot-award-delete">
+            <label for="input-school-name">現在の所属学校名</label>
+            <input disabled required type="text" class="form-control-plaintext" id="input-school-name" aria-describedby="input-school-name-help">
+            <small id="input-school-name-help" class="form-text text-muted">正式名称を略さずに記入．所属していなければ「なし」</small>
+        </div>
+        <div class="form-group was-validated spot-award-delete">
+            <label for="input-grade">現在の学年</label>
+            <input disabled required type="number" class="form-control-plaintext" id="input-grade" aria-describedby="input-grade-help">
+            <small id="input-grade-help" class="form-text text-muted">数字．所属していなければ-1</small>
+        </div>
+        <div class="form-group was-validated">
+            <label for="input-zipcode">郵便番号</label>
+            <input disabled required pattern="^[0-9\-]+$" class="form-control-plaintext" id="input-zipcode" aria-describedby="input-zipcode-help">
+            <small id="input-zipcode-help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group was-validated">
+            <label for="input-address">住所</label>
+            <input disabled required class="form-control-plaintext" id="input-address" aria-describedby="input-address-help">
+            <small id="input-address-help" class="form-text text-muted">賞状の送付に使用します．</small>
+        </div>
+        <div class="form-group spot-award-delete nr">
+            <div class="custom-control custom-checkbox">
+                <input disabled type="checkbox" class="custom-control-input" id="input-publish" aria-describedby="input-publish-help">
+                <label class="custom-control-label" for="input-publish">ウェブページへの氏名の掲載を希望しない</label>
+                <small id="input-publish-help" class="form-text text-muted">掲載を希望しない場合はチェックする</small>
+            </div>
+        </div>
+        <button id="update-info" type="submit" class="btn btn-primary" style="opacity: 0;">更新</button>
+      </form>
+</div>

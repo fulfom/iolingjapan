@@ -49,14 +49,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 function startTimer(rug){
     clearInterval(handleTimer)
     var end = new Date(Date.UTC(2020,11,28,6,0,0))
-    var now = new Date();
-    var diff = end.getTime() - now.getTime();
-    var data = Math.max(Math.floor(diff/1000) + rug, 0);
+    // var now = new Date();
+    // var diff = end.getTime() - now.getTime();
+    // var data = Math.max(Math.floor(diff/1000) + rug, 0);
     //現在時刻から試験終了までの秒数を取得
-    console.log(end,now,diff,data)
+    // console.log(end,now,diff,data)
 
     handleTimer = setInterval(() => {
-        data--;
+        var now = new Date();
+        var diff = end.getTime() - now.getTime();
+        var data = Math.max(Math.floor(diff/1000) + rug, 0);
+        // data--;
         updateTimer(data)
         if(data <= 0){
             clearInterval(handleTimer);

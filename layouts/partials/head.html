@@ -48,9 +48,8 @@
   {{ $style := resources.Get "scss/_variables-project.scss" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-  {{if (.Params.logoutredirect | or .Params.loginredirect)}}
-  {{ $loaded := resources.Get "scss/loaded.scss" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $loaded.RelPermalink }}">
+  {{range .Params.importCSS}}
+  <link rel="stylesheet" href="{{ (resources.Get . | toCSS | minify | fingerprint).RelPermalink }}">
   {{end}}
 
   <!-- Responsivity for older IE -->
