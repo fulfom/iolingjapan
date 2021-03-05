@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     const contVal = snapshot2.val();
                     if(contVal){
                         INPUT_NAME.value = contVal.name;
-                        INPUT_NAME_ROMAN.value = contVal.name;
+                        INPUT_NAME_ROMAN.value = contVal.nameRoman;
                         INPUT_ZIPCODE.value = contVal.zipcode;
                         INPUT_ADDRESS.value = contVal.address;
                     }
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         const userVal = snapshot3.val();
                         if(userVal){
                             INPUT_NAME.value = userVal.name;
-                            INPUT_NAME_ROMAN.value = userVal.name;
+                            INPUT_NAME_ROMAN.value = userVal.nameRoman;
                             INPUT_ZIPCODE.value = userVal.zipcode;
                             INPUT_ADDRESS.value = userVal.address;
                         }
