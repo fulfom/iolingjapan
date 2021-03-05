@@ -17,12 +17,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     }
                     ELEM_RESULT.innerText = text;
 
-                    const INPUT_ZIPCODE = document.getElementById("input-zipcode");
-                    const INPUT_ADDRESS = document.getElementById("input-address");
-
                     const snapshot2 = await firebase.database().ref("/contests/jol2021/users/" + user.uid).once("value");
                     const contVal = snapshot2.val();
                     if(contVal){
+                        INPUT_NAME.value = contVal.name;
+                        INPUT_NAME_ROMAN.value = contVal.name;
                         INPUT_ZIPCODE.value = contVal.zipcode;
                         INPUT_ADDRESS.value = contVal.address;
                     }
@@ -30,6 +29,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         const snapshot3 = await firebase.database().ref("/users/" + user.uid).once("value");
                         const userVal = snapshot3.val();
                         if(userVal){
+                            INPUT_NAME.value = userVal.name;
+                            INPUT_NAME_ROMAN.value = userVal.name;
                             INPUT_ZIPCODE.value = userVal.zipcode;
                             INPUT_ADDRESS.value = userVal.address;
                         }
@@ -59,6 +60,8 @@ function infoSubmit(){
     let user = firebase.auth().currentUser;
     if(user){
         let data = {
+            name: INPUT_NAME.value,
+            nameRoman: INPUT_NAME_ROMAN.value,
             zipcode: INPUT_ZIPCODE.value,
             address: INPUT_ADDRESS.value,
             timestamp: Date.now()
