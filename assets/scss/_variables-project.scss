@@ -1,3 +1,7 @@
+// $font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+$font-family: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
+$font-family-bold: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic", "Segoe UI", Verdana, Meiryo, sans-serif;
+
 // custom.css から移行中
 
 /* your styles go here */
@@ -12,7 +16,7 @@
   }
   
   table thead,th {
-    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    font-family: $font-family-bold;
   }
   
   .simple-table td, .simple-table th {
@@ -48,15 +52,20 @@
     border-bottom: 3px solid #eee;
   }
   
+  .text-moderate{
+    font-weight: 600;
+  }
+
   .pager {
     margin-top: 0px;
     padding-top: 0px;
     border-top: 0px;
     font-weight: bold;
+    font-family: $font-family-bold;
   }
   
   .site-title{
-    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    font-family: $font-family-bold;
     font-weight: bold;
     font-size: x-large;
     position: absolute;
@@ -99,6 +108,7 @@
   
   .embedded-twitter h3{
     font-weight: bold;
+    font-family: $font-family-bold;
     text-transform: uppercase;
     line-height: 1.5;
     color: #555555;
@@ -134,7 +144,7 @@
   
   .btn {
     font-weight: 700;
-    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    font-family: $font-family-bold;
     font-size: 20px;
     border-radius: 0px;
     margin: 10px 0px;
@@ -153,7 +163,7 @@
     font-size: large;
     color: #555555;
     font-weight: bold;
-    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    font-family: $font-family-bold;
     padding: .75em 1em;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -161,7 +171,7 @@
   
   .jumbotron {
     background: center center repeat;
-    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    font-family: $font-family-bold;
   }
   
   .grad-white .jumbotron h1, .grad-white .jumbotron p {
@@ -342,7 +352,7 @@
     height: 25px;
     line-height: 25px;
     font-size: 15px;
-    font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
+    font-family: $font-family-bold;
     color: #4f4f4f;
     background: #eee;
     font-weight: bold;
@@ -442,16 +452,19 @@ i.fa-angle-right{
 .navbar-light .navbar-nav .nav-link{
     color: #555;
     font-weight: 700;
+    font-family: $font-family-bold;
 }
 
-$font-family: -apple-system, BlinkMacSystemFont, YuGothic, "游ゴシック", sans-serif;
 body{
     font-family: $font-family;
-    font-weight: 500;
+    b, strong, .bold{
+      font-family: $font-family-bold;
+    }
+    font-weight: 400;
 }
 
 h1,h2,h3,h4,h5,h6,.pager{
-    font-family: $font-family;
+    font-family: $font-family-bold;
 }
 
 .bar-zigzag:nth-child(even){
@@ -519,6 +532,7 @@ $success: #28a745;
     padding-left: 1rem;
     font-size: larger;
     font-weight: 700;
+    font-family: $font-family-bold;
     display: table-cell;
   }
 }
@@ -574,6 +588,7 @@ input:checked + .spot-card{
       font-size: smaller;
     }
     font-weight: bold;
+    font-family: $font-family-bold;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -630,12 +645,6 @@ $font-color: #555555;
 .btn-primary:disabled{
   color: #007bff;
   background-color: transparent;
-}
-
-.form-group{
-    label{
-        font-weight: 500;
-    }
 }
 
 figure,p{
