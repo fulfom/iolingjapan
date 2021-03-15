@@ -32,11 +32,13 @@ let results = {
 }
 const TSUMS = {
     tr: document.querySelectorAll("#t-sums > tbody > tr"),
-    td: document.querySelectorAll("#t-sums > tbody > tr > td:nth-child(2)")
+    td1: document.querySelectorAll("#t-sums > tbody > tr > td:nth-child(1)"),
+    td2: document.querySelectorAll("#t-sums > tbody > tr > td:nth-child(2)")
 };
 const TSCORES = {
     tr: document.querySelectorAll(".t-scores > tbody > tr"),
-    td: document.querySelectorAll(".t-scores > tbody > tr > td:nth-child(2)")
+    td1: document.querySelectorAll(".t-scores > tbody > tr > td:nth-child(1)"),
+    td2: document.querySelectorAll(".t-scores > tbody > tr > td:nth-child(2)")
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -296,25 +298,24 @@ function drawSums(mode = "") {
 }
 
 function drawTable(mode, T, spot = "") {
-    const TD = T.td;
     const scores = results.result[mode];
     let avgs = mode == "scores" ? results[mode].avgs : results[mode].avgs[spot || "all"]["whole"];
     let maxs = results[mode].maxs;
     let mins = results[mode].mins;
     for (let i = 0; i < scores.length; i++) {
-        TD[i].innerText = scores[i];
-        TD[i].parentElement.firstElementChild.setAttribute("data-value", mins[i]);
-        TD[i].parentElement.lastElementChild.setAttribute("data-value", maxs[i]);
+        T.td2[i].innerText = scores[i];
+        T.td2[i].setAttribute("data-min", mins[i]);
+        T.td2[i].setAttribute("data-max", maxs[i]);
         let avg = {
             color: "#eee",
             range: "0px",
             value: Math.round((avgs[i] - mins[i]) / (maxs[i] - mins[i]) * 100)
         };
         let score = {
-            color: scores[i] >= maxs[i] ? color.border.success : color.border.jolred,
             range: "5px",
             value: Math.round((scores[i] - mins[i]) / (maxs[i] - mins[i]) * 100)
         };
+        score.color = scores[i] >= maxs[i] ? color.border.success : 75 < score.value && score.value < 90 ? color.bg.jolred : color.border.jolred;
         let scoreLine = [
             "to right",
             `rgba(0,0,0,0) min(${score.value}%, calc(100% - ${score.range}))`,
@@ -342,7 +343,8 @@ function drawTable(mode, T, spot = "") {
                 `#fff ${avg.value}%`
             ]
         }
-        T.tr[i].style.background = `linear-gradient(${scoreLine.join(", ")}), linear-gradient(${grad.join(", ")})`;
+        // T.td1[i].style.background = `linear-gradient(${scoreLine.join(", ")}), linear-gradient(${grad.join(", ")})`;
+        T.td2[i].style.background = `linear-gradient(${scoreLine.join(", ")}), linear-gradient(${grad.join(", ")})`;
     }
 }
 
