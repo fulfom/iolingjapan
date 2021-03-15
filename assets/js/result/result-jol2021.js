@@ -30,8 +30,14 @@ let results = {
         mins: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, -1, 0, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
 }
-const TSUMS = document.querySelectorAll("#t-sums > tbody > tr > td:nth-child(2)");
-const TSCORES = document.querySelectorAll(".t-scores > tbody > tr > td:nth-child(2)");
+const TSUMS = {
+    tr: document.querySelectorAll("#t-sums > tbody > tr"),
+    td: document.querySelectorAll("#t-sums > tbody > tr > td:nth-child(2)")
+};
+const TSCORES = {
+    tr: document.querySelectorAll(".t-scores > tbody > tr"),
+    td: document.querySelectorAll(".t-scores > tbody > tr > td:nth-child(2)")
+};
 
 document.addEventListener("DOMContentLoaded", (event) => {
     firebase.auth().onAuthStateChanged(async (user) => {
@@ -289,7 +295,8 @@ function drawSums(mode = "") {
     }
 }
 
-function drawTable(mode, TD, spot = "") {
+function drawTable(mode, T, spot = "") {
+    const TD = T.td;
     const scores = results.result[mode];
     let avgs = mode == "scores" ? results[mode].avgs : results[mode].avgs[spot || "all"]["whole"];
     let maxs = results[mode].maxs;
@@ -335,7 +342,7 @@ function drawTable(mode, TD, spot = "") {
                 `#fff ${avg.value}%`
             ]
         }
-        TD[i].parentElement.style.background = `linear-gradient(${scoreLine.join(", ")}), linear-gradient(${grad.join(", ")})`;
+        T.tr[i].style.background = `linear-gradient(${scoreLine.join(", ")}), linear-gradient(${grad.join(", ")})`;
     }
 }
 
