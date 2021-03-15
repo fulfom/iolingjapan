@@ -312,10 +312,10 @@ function drawTable(mode, T, spot = "") {
             value: Math.round((avgs[i] - mins[i]) / (maxs[i] - mins[i]) * 100)
         };
         let score = {
-            color: scores[i] >= maxs[i] ? color.border.success : color.border.jolred,
             range: "5px",
             value: Math.round((scores[i] - mins[i]) / (maxs[i] - mins[i]) * 100)
         };
+        score.color = scores[i] >= maxs[i] ? color.border.success : 75 < score.value && score.value < 90 ? color.bg.jolred : color.border.jolred;
         let scoreLine = [
             "to right",
             `rgba(0,0,0,0) min(${score.value}%, calc(100% - ${score.range}))`,

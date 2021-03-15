@@ -686,6 +686,14 @@ $danger: #dc3545;
   @extend .table-tdfirst-bold;
   td, th{
     padding: .4rem .75rem;
+    &:first-child{
+      width: 1px;
+      white-space: nowrap;
+    }
+    &:last-child{
+      text-align: right;
+      padding-right: 10%;
+    }
   }
   & > tbody > tr{
     & > td:first-child{
