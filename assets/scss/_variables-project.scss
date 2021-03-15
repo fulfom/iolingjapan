@@ -690,9 +690,12 @@ $danger: #dc3545;
   & > tbody > tr{
     & > td:first-child{
       position: relative;
-      background: none !important;
+    }
+    & > td:last-child{
+      position: relative;
+      font-size: large;
       &::before{
-        content: attr(data-value);
+        content: attr(data-min);
         position: absolute;
         left: 7px;
         bottom: -2px;
@@ -701,12 +704,8 @@ $danger: #dc3545;
         font-size: x-small;
         color: #888;
       }
-    }
-    & > td:last-child{
-      position: relative;
-      font-size: large;
       &::after{
-        content: attr(data-value);
+        content: attr(data-max);
         position: absolute;
         right: 7px;
         bottom: -2px;

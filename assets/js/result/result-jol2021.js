@@ -32,11 +32,13 @@ let results = {
 }
 const TSUMS = {
     tr: document.querySelectorAll("#t-sums > tbody > tr"),
-    td: document.querySelectorAll("#t-sums > tbody > tr > td:nth-child(2)")
+    td1: document.querySelectorAll("#t-sums > tbody > tr > td:nth-child(1)"),
+    td2: document.querySelectorAll("#t-sums > tbody > tr > td:nth-child(2)")
 };
 const TSCORES = {
     tr: document.querySelectorAll(".t-scores > tbody > tr"),
-    td: document.querySelectorAll(".t-scores > tbody > tr > td:nth-child(2)")
+    td1: document.querySelectorAll(".t-scores > tbody > tr > td:nth-child(1)"),
+    td2: document.querySelectorAll(".t-scores > tbody > tr > td:nth-child(2)")
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -296,15 +298,14 @@ function drawSums(mode = "") {
 }
 
 function drawTable(mode, T, spot = "") {
-    const TD = T.td;
     const scores = results.result[mode];
     let avgs = mode == "scores" ? results[mode].avgs : results[mode].avgs[spot || "all"]["whole"];
     let maxs = results[mode].maxs;
     let mins = results[mode].mins;
     for (let i = 0; i < scores.length; i++) {
-        TD[i].innerText = scores[i];
-        TD[i].parentElement.firstElementChild.setAttribute("data-value", mins[i]);
-        TD[i].parentElement.lastElementChild.setAttribute("data-value", maxs[i]);
+        T.td2[i].innerText = scores[i];
+        T.td2[i].setAttribute("data-min", mins[i]);
+        T.td2[i].setAttribute("data-max", maxs[i]);
         let avg = {
             color: "#eee",
             range: "0px",
@@ -342,7 +343,8 @@ function drawTable(mode, T, spot = "") {
                 `#fff ${avg.value}%`
             ]
         }
-        T.tr[i].style.background = `linear-gradient(${scoreLine.join(", ")}), linear-gradient(${grad.join(", ")})`;
+        // T.td1[i].style.background = `linear-gradient(${scoreLine.join(", ")}), linear-gradient(${grad.join(", ")})`;
+        T.td2[i].style.background = `linear-gradient(${scoreLine.join(", ")}), linear-gradient(${grad.join(", ")})`;
     }
 }
 
