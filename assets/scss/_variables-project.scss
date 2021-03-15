@@ -690,6 +690,7 @@ $danger: #dc3545;
   & > tbody > tr{
     & > td:first-child{
       position: relative;
+      background: none !important;
       &::before{
         content: attr(data-value);
         position: absolute;
