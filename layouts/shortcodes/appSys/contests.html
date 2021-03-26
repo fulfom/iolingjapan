@@ -7,7 +7,7 @@
           <button id="pre-{{.id}}" disabled class="btn btn-outline-dark float-right" style="display: none;">{{if .limited}}<i class="fas fa-flag fa-fw"></i>要選抜{{else}}開催予定{{end}}</button>
           {{if isset . "entry"}}<a id="entryopen-{{.id}}" href="{{.entry | safeHTML}}" class="btn btn-primary float-right" role="button" style="display: none;">{{if .limited}}<i class="fas fa-file-alt fa-fw"></i>応募{{end}}</a>{{end}}
           <button id="entried-{{.id}}" disabled class="btn btn-outline-success float-right" style="display: none;"><i class="fas fa-check-circle fa-fw"></i>応募済</button>
-          {{if isset . "site"}}<a id="siteopen-{{.id}}" href="{{.site | safeHTML}}" class="btn btn-primary float-right" role="button" style="display: none;"><i class="fas fa-puzzle-piece fa-fw"></i>会場へ</a>{{end}}
+          {{if isset . "site"}}<a id="siteopen-{{.id}}" href="{{.site | safeHTML}}" class="btn btn-primary float-right" role="button" style="display: none;"><i class="fas fa-puzzle-piece fa-fw"></i>大会ページ</a>{{end}}
           <div>
             <small>{{.desc1}}</small>
             <small>{{range split .desc2 "|"}}<span class="unmot">{{.}}</span>{{end}}</small>

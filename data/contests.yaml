@@ -5,6 +5,7 @@ upcomingContests:
   desc2: リモート
   detail: "/application/#32-アジア太平洋言語学オリンピック"
   entry: "/entry/aplo2021/"
+  site: "/contest/aplo2021/"
   limited: true
 - id: iol2021
   title: IOL2021
