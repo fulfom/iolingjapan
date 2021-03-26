@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 {
                     name: "aplo2021",
                     // status: "pre", //代表決定前
-                    status: "entryopen", //代表決定後
+                    // status: "entryopen", //代表決定後
+                    status: "siteopen", //会場オープン
                     visible: (badge) => {
                         // return badge["jol2021"] == "flag"; //jol選抜参加だけ
                         return badge["aplo2021"]; //出る人だけ
