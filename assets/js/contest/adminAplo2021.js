@@ -1,7 +1,37 @@
 const namelist = document.getElementById("namelist");
 const portal = document.getElementById("portal");
 
-let cachedLink;
+const DOCNAME = "img";
+
+var db = new Dexie("imgDB");
+db.version(1).stores({
+    img: '&key,url,blob'
+});
+
+          //
+          // Put some data into it
+          //
+        //   db.img.put({name: "Nicolas", shoeSize: 8}).then (function(){
+        //       //
+        //       // Then when data is stored, read from it
+        //       //
+        //       return db.id.get('Nicolas');
+        //   }).then(function (friend) {
+        //       //
+        //       // Display the result
+        //       //
+        //       alert ("Nicolas has shoe size " + friend.shoeSize);
+        //   }).catch(function(error) {
+        //      //
+        //      // Finally don't forget to catch any error
+        //      // that could have happened anywhere in the
+        //      // code blocks above.
+        //      //
+        //      alert ("Ooops: " + error);
+        //   });
+
+let cachedLink = [];
+let handlers = [];
 
 document.addEventListener("DOMContentLoaded", (event) => {
     firebase.auth().onAuthStateChanged(async (user) => {
@@ -61,15 +91,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             name: "アンケート"
                         },].forEach((titles)=>{
                             div.innerHTML += `<div>
-                            <p class="d-inline-block">${titles.name}</p><button id="btn-${titles.key}" class="ml-3 btn btn-primary btn-small" onclick="inputCheck(this)" data-uid="${uid}" data-key="${titles.key}">確認する</button>
+                            <p class="d-inline-block">${titles.name}</p><button id="btn-${uid + titles.key}" class="ml-3 btn btn-primary btn-small" onclick="inputCheck(this)" data-uid="${uid}" data-key="${titles.key}">確認する</button>
                             <div id="${uid + titles.key}" class="prob-preview">
                             </div>`;
                         })
                         portal.appendChild(div);
-                        adminPortal(v, uid, div);
+                        handlers[uid] = adminPortal(v, uid, div);
                         if(v.checks){
                             Object.keys(v.checks).forEach((key) => {
-                                document.getElementById("btn-" + key).disabled = true;
+                                document.getElementById("btn-" + uid + key).disabled = true;
                             })
                         }
                     }
@@ -82,52 +112,76 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-const adminPortal = (cont, uid, div) => {
+function adminPortal(cont, uid, div) {
     const name = cont.name;
     const num = cont.num;
-    firebase.database().ref("/contests/aplo2021/storage/" + uid).on("value", (sn) => {
+    return firebase.database().ref("/contests/aplo2021/storage/" + uid).on("value", (sn) => {
         const val2 = sn.val();
-        if(val2){
-            Object.keys(val2).forEach((key) => {
+        if (val2) {
+            Object.keys(val2).forEach((key) => { //key == FILE_PRE1 など
                 let value = val2[key];
                 let section = document.getElementById(uid + key);
-                Object.keys(value).forEach((key2) => {
+                Object.keys(value).forEach((key2) => { //key2 == ファイルごとの key
                     console.log(value[key2]);
-                    if(!cachedLink || !cachedLink[key] || !cachedLink[key][key2]){
-                        addImg(value[key2], key, key2, section);
+                    if (!cachedLink || !cachedLink[key] || !cachedLink[key][key2]) {
+                        addImg(value[key2], uid, key, key2, section);
                     }
                 }, value);
             }, val2);
-            if(cachedLink){
-                Object.keys(cachedLink).forEach((key) => {
-                    let value = cachedLink[key];
+            if (cachedLink[uid]) {
+                Object.keys(cachedLink[uid]).forEach((key) => {
+                    let value = cachedLink[uid][key];
                     Object.keys(value).forEach((key2) => {
                         console.log(value[key2]);
-                        if(!val2 || !val2[key] || !val2[key][key2]){
+                        if (!val2 || !val2[key] || !val2[key][key2]) {
                             const toberomoved = document.getElementById(key2);
                             toberomoved.parentNode.removeChild(toberomoved);
                         }
                     }, value);
-                }, cachedLink);
+                }, cachedLink[uid]);
             }
 
-            cachedLink = val2;
+            cachedLink[uid] = val2;
         }
     });
 }
 
-async function addImg(imageUrl, elemId, key2, elem = null){
+async function addImg(imageUrl, uid, elemId, key2, elem = null){
     const preview = elem || document.getElementById("preview-" + elemId);
     const div = document.createElement("div");
     const a = document.createElement("a");
     const img = document.createElement("img"); // img要素を作成
     div.id = key2;
-    a.href = imageUrl;
-    img.src = imageUrl; // URLをimg要素にセット
-    a.setAttribute("data-lightbox", elemId);
     preview.appendChild(div); // #previewの中に追加
-    div.appendChild(a);
-    a.appendChild(img);
+    if(filetype(imageUrl, "heic")){
+        const cachedImg = await db.img.get(key2);
+        if(cachedImg){
+            console.log("cached", cachedImg);
+            let reader = new FileReader();
+            reader.readAsDataURL(cachedImg.blob);
+            reader.onload = function(evt) {
+                let srcurl = reader.result;
+                a.href = srcurl;
+                img.src = srcurl;
+                a.setAttribute("data-lightbox", uid + elemId);
+                div.appendChild(a);
+                a.appendChild(img);
+                console.log("converted" + srcurl);
+            }
+        }
+        else{
+            div.innerHTML = `<button class="btn btn-info btn-small" onclick="showHeic()" data-url="${imageUrl}" data-key="${key2}" data-uid="${uid}">要変換</button>`;
+            // fetching the heic image
+            
+        }
+    }
+    else{
+        a.href = imageUrl;
+        img.src = imageUrl; // URLをimg要素にセット
+        a.setAttribute("data-lightbox", uid + elemId);
+        div.appendChild(a);
+        a.appendChild(img);
+    }
 }
 
 lightbox.option({
@@ -144,4 +198,60 @@ async function inputCheck(e){
         e.disabled = true;
         await firebase.database().ref("/adminValue/" + user.uid + "/conts/" + uid + "/checks/").update({[key]: true});
     }
+}
+
+function getExt(filename){
+	let pos = filename.lastIndexOf('.');
+	if (pos === -1) return '';
+	return filename.slice(pos + 1);
+}
+
+function filetype(url, type){
+    const reg = new RegExp(`\.${type}`,"i");
+    return url.match(reg);
+}
+
+// async function get(db, id) { // NOTE: if not found, resolves with undefined.
+//     return new Promise((resolve, reject) => {
+//       const docs = db.transaction([DOCNAME, ]).objectStore(DOCNAME);
+//       const req = docs.get(id);
+//       req.onsuccess = () => resolve(req.result);
+//       req.onerror = reject;
+//     });
+//   }
+
+function showHeic(e){
+    var e = e || window.event;
+    var elem = e.target || e.srcElement;
+    var elemId = elem.id;
+    const imageUrl = elem.getAttribute("data-url");
+    const key = elem.getAttribute("data-key");
+    const uid = elem.getAttribute("data-uid");
+    const div = elem.parentNode;
+    const a = document.createElement("a");
+    const img = document.createElement("img"); // img要素を作成
+    fetch(imageUrl)
+    .then((res) => res.blob())
+    .then((blob) => heic2any({ blob }))
+    .then((conversionResult) => {
+        // conversionResult is a BLOB
+        // of the PNG formatted image
+        db.img.put({key: key, blob: conversionResult, url: imageUrl});
+        let reader = new FileReader();
+        reader.readAsDataURL(conversionResult);
+        reader.onload = function(evt) {
+            elem.parentNode.removeChild(elem);
+            let srcurl = reader.result;
+            a.href = srcurl;
+            img.src = srcurl;
+            a.setAttribute("data-lightbox", uid + elemId);
+            div.appendChild(a);
+            a.appendChild(img);
+            console.log("converted" + srcurl);
+        }
+    })
+    .catch((e) => {
+        // see error handling section
+        alert("変換エラー（間を置く）");
+    });
 }

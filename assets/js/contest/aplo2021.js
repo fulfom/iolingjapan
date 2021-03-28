@@ -171,6 +171,11 @@ lightbox.option({
     "disableScrolling": true
 })
 
+function filetype(url, type){
+    const reg = new RegExp(`\.${type}`,"i");
+    return url.match(reg);
+}
+
 // 削除ボタン OK 
 // cloud storage との通信 OK 
 // 監督者ポータル（realtime database?）
