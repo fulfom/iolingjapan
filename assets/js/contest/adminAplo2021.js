@@ -1,4 +1,4 @@
-const log = document.getElementById("log");
+const namelist = document.getElementById("namelist");
 const portal = document.getElementById("portal");
 
 let cachedLink;
@@ -13,10 +13,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     const uid = e[0];
                     const v = e[1];
                     if(v){
+                        let li = document.createElement("li");
+                        li.classList.add("list-group-item");
+                        li.innerHTML = `<a href="#${uid}">${v.name}</a>`;
+                        namelist.appendChild(li);
                         let div = document.createElement("div");
                         div.id = uid;
                         div.innerHTML = `<h5>${v.name} / ${v.num}</h5>`;
                         [{
+                            key: "blank",
+                            name: "白紙"
+                        },
+                        {
                             key: "FILE_PRE1",
                             name: "身分証"
                         },

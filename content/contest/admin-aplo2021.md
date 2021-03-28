@@ -7,6 +7,11 @@ cdn = ["https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.
 cdnCSS = ["https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css"]
 +++
 
-<div id="log"></div>
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">リスト</h5>
+    </div>
+    <ul id="namelist" class="list-group list-group-flush list-fill-link"></ul>
+</div>
 
 <div id="portal"></div>
