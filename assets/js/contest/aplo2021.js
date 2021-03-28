@@ -71,8 +71,19 @@ const handleFileSelect = async (event) => {
     const files = input.files;
     for (let i = 0; i < files.length; i++) {
         // previewFile(files[i], elemId);
-        await uploadFile(files[i], elemId);
-        console.log(files[i]);　// 1つ1つのファイルデータはfiles[i]で取得できる
+        let file;
+        
+        const label = document.getElementById(elemId).parentNode.getElementsByTagName("label")[0];
+        if(filetype(files[i].name, "heic")){
+            label.innerText = "変換中"
+            let blob = files[i];
+            let result = await heic2any({blob});
+            file = result;
+        }
+        else file = files[i];
+
+        await uploadFile(file, elemId, label);
+        // console.log(files[i]);　// 1つ1つのファイルデータはfiles[i]で取得できる
     }
     // window.removeEventListener('beforeunload', onBeforeunloadHandler);
 }
@@ -111,7 +122,7 @@ async function addImg(imageUrl, elemId, key){
 // Create a root reference
 const storageRef = firebase.storage().ref().child("/contests/aplo2021/users/");
 
-async function uploadFile(file, id){
+async function uploadFile(file, id, label){
     let user = firebase.auth().currentUser;
     if(user){
         const rootRef = storageRef.child(user.uid);
@@ -121,6 +132,7 @@ async function uploadFile(file, id){
             // Observe state change events such as progress, pause, and resume
             // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
             var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            label.innerText = `${progress}%完了`;
             console.log('Upload is ' + progress + '% done');
             switch (snapshot.state) {
               case firebase.storage.TaskState.PAUSED: // or 'paused'
@@ -174,6 +186,21 @@ lightbox.option({
 function filetype(url, type){
     const reg = new RegExp(`\.${type}`,"i");
     return url.match(reg);
+}
+
+function showBlob(blob, div, uid, elemId){
+    const a = document.createElement("a");
+    const img = document.createElement("img"); // img要素を作成
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onload = function(evt) {
+        let srcurl = reader.result;
+        a.href = srcurl;
+        img.src = srcurl;
+        a.setAttribute("data-lightbox", uid + elemId);
+        div.appendChild(a);
+        a.appendChild(img);
+    }
 }
 
 // 削除ボタン OK 
