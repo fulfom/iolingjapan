@@ -1,7 +1,8 @@
 const namelist = document.getElementById("namelist");
 const portal = document.getElementById("portal");
 
-let cachedLink;
+let cachedLink = [];
+let handlers = [];
 
 document.addEventListener("DOMContentLoaded", (event) => {
     firebase.auth().onAuthStateChanged(async (user) => {
@@ -61,15 +62,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             name: "アンケート"
                         },].forEach((titles)=>{
                             div.innerHTML += `<div>
-                            <p class="d-inline-block">${titles.name}</p><button id="btn-${titles.key}" class="ml-3 btn btn-primary btn-small" onclick="inputCheck(this)" data-uid="${uid}" data-key="${titles.key}">確認する</button>
+                            <p class="d-inline-block">${titles.name}</p><button id="btn-${uid + titles.key}" class="ml-3 btn btn-primary btn-small" onclick="inputCheck(this)" data-uid="${uid}" data-key="${titles.key}">確認する</button>
                             <div id="${uid + titles.key}" class="prob-preview">
                             </div>`;
                         })
                         portal.appendChild(div);
-                        adminPortal(v, uid, div);
+                        handlers[uid] = adminPortal(v, uid, div);
                         if(v.checks){
                             Object.keys(v.checks).forEach((key) => {
-                                document.getElementById("btn-" + key).disabled = true;
+                                document.getElementById("btn-" + uid + key).disabled = true;
                             })
                         }
                     }
@@ -82,36 +83,36 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-const adminPortal = (cont, uid, div) => {
+function adminPortal(cont, uid, div) {
     const name = cont.name;
     const num = cont.num;
-    firebase.database().ref("/contests/aplo2021/storage/" + uid).on("value", (sn) => {
+    return firebase.database().ref("/contests/aplo2021/storage/" + uid).on("value", (sn) => {
         const val2 = sn.val();
-        if(val2){
-            Object.keys(val2).forEach((key) => {
+        if (val2) {
+            Object.keys(val2).forEach((key) => { //key == FILE_PRE1 など
                 let value = val2[key];
                 let section = document.getElementById(uid + key);
-                Object.keys(value).forEach((key2) => {
+                Object.keys(value).forEach((key2) => { //key2 == ファイルごとの key
                     console.log(value[key2]);
-                    if(!cachedLink || !cachedLink[key] || !cachedLink[key][key2]){
+                    if (!cachedLink || !cachedLink[key] || !cachedLink[key][key2]) {
                         addImg(value[key2], key, key2, section);
                     }
                 }, value);
             }, val2);
-            if(cachedLink){
-                Object.keys(cachedLink).forEach((key) => {
-                    let value = cachedLink[key];
+            if (cachedLink[uid]) {
+                Object.keys(cachedLink[uid]).forEach((key) => {
+                    let value = cachedLink[uid][key];
                     Object.keys(value).forEach((key2) => {
                         console.log(value[key2]);
-                        if(!val2 || !val2[key] || !val2[key][key2]){
+                        if (!val2 || !val2[key] || !val2[key][key2]) {
                             const toberomoved = document.getElementById(key2);
                             toberomoved.parentNode.removeChild(toberomoved);
                         }
                     }, value);
-                }, cachedLink);
+                }, cachedLink[uid]);
             }
 
-            cachedLink = val2;
+            cachedLink[uid] = val2;
         }
     });
 }
@@ -122,6 +123,7 @@ async function addImg(imageUrl, elemId, key2, elem = null){
     const a = document.createElement("a");
     const img = document.createElement("img"); // img要素を作成
     div.id = key2;
+    if(filetype(imageUrl, "heic")) console.log("heic");
     a.href = imageUrl;
     img.src = imageUrl; // URLをimg要素にセット
     a.setAttribute("data-lightbox", elemId);
@@ -144,4 +146,15 @@ async function inputCheck(e){
         e.disabled = true;
         await firebase.database().ref("/adminValue/" + user.uid + "/conts/" + uid + "/checks/").update({[key]: true});
     }
+}
+
+function getExt(filename){
+	let pos = filename.lastIndexOf('.');
+	if (pos === -1) return '';
+	return filename.slice(pos + 1);
+}
+
+function filetype(url, type){
+    const reg = new RegExp(`\.${type}`,"i");
+    return url.match(reg);
 }
