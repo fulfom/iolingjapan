@@ -1,8 +1,6 @@
 const namelist = document.getElementById("namelist");
 const portal = document.getElementById("portal");
 
-const DOCNAME = "img";
-
 var db = new Dexie("imgDB");
 db.version(1).stores({
     img: '&key,url,blob'
@@ -149,35 +147,36 @@ function adminPortal(cont, uid, div) {
 async function addImg(imageUrl, uid, elemId, key2, elem = null){
     const preview = elem || document.getElementById("preview-" + elemId);
     const div = document.createElement("div");
-    const a = document.createElement("a");
-    const img = document.createElement("img"); // img要素を作成
     div.id = key2;
     preview.appendChild(div); // #previewの中に追加
-    if(filetype(imageUrl, "heic")){
-        const cachedImg = await db.img.get(key2);
-        if(cachedImg){
-            console.log("cached", cachedImg);
-            let reader = new FileReader();
-            reader.readAsDataURL(cachedImg.blob);
-            reader.onload = function(evt) {
-                let srcurl = reader.result;
-                a.href = srcurl;
-                img.src = srcurl;
-                a.setAttribute("data-lightbox", uid + elemId);
-                div.appendChild(a);
-                a.appendChild(img);
-                console.log("converted" + srcurl);
-            }
-        }
-        else{
-            div.innerHTML = `<button class="btn btn-info btn-small" onclick="showHeic()" data-url="${imageUrl}" data-key="${key2}" data-uid="${uid}">要変換</button>`;
-            // fetching the heic image
-            
-        }
+    const cachedImg = await db.img.get(key2);
+    if(cachedImg){
+        showBlob(cachedImg.blob, div, uid, elemId);
     }
     else{
-        a.href = imageUrl;
-        img.src = imageUrl; // URLをimg要素にセット
+        if(filetype(imageUrl, "heic")){
+            div.innerHTML = `<button class="btn btn-info btn-small" onclick="showHeic()" data-url="${imageUrl}" data-key="${key2}" data-uid="${uid}">要変換</button>`;
+        }
+        else{
+            await fetch(imageUrl)
+            .then((res) => res.blob())
+            .then((blob) => {
+                db.img.put({key: key2, blob: blob, url: imageUrl});
+                showBlob(blob, div, uid, elemId);
+            })
+        }
+    }
+}
+
+function showBlob(blob, div, uid, elemId){
+    const a = document.createElement("a");
+    const img = document.createElement("img"); // img要素を作成
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onload = function(evt) {
+        let srcurl = reader.result;
+        a.href = srcurl;
+        img.src = srcurl;
         a.setAttribute("data-lightbox", uid + elemId);
         div.appendChild(a);
         a.appendChild(img);
