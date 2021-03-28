@@ -87,7 +87,7 @@ const adminPortal = (cont, div) => {
                     let value = cachedLink[key];
                     Object.keys(value).forEach((key2) => {
                         console.log(value[key2]);
-                        if(!val2 || !val2[key][key2]){
+                        if(!val2 || !val2[key] || !val2[key][key2]){
                             const toberomoved = document.getElementById(key2);
                             toberomoved.parentNode.removeChild(toberomoved);
                         }
