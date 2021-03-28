@@ -729,3 +729,20 @@ $danger: #dc3545;
 .dottedUnderline {
   border-bottom: 1px dotted;
 }
+
+.prob-preview{
+  div{
+    position: relative;
+    display: inline-block;
+  }
+  img{
+    width: 50px;
+    margin: .5rem;
+  }
+  i{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
