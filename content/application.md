@@ -145,7 +145,7 @@ aliases = ["/past-applications/"]
 | 競技内容: | 5時間5問                                                                 |
 | 賞:       | 金賞・銀賞・銅賞・努力賞                                                 |
 | 選抜:     | 上位8名をIOL日本代表として選抜                                           |
-| 結果通知: | ウェブページに掲載・応募時に登録されたメールアドレス宛てに通知           |
+| 結果通知: | トラブルが無ければ 4月12日にウェブページに掲載・応募時に登録されたメールアドレス宛てに通知           |
 {{% /table %}}
 
 ## 4. IOL代表に選ばれたら
@@ -164,7 +164,7 @@ IOL2021 はラトヴィアの[ヴェンツピルス](https://ja.wikipedia.org/wi
 
 ---
 
-<div class='centralize'><a class='btn btn-template-main' onclick="login()">応募はこちら</a></div>
+<div class="centralize"><a class="btn btn-template-main" onclick="login()">応募はこちら</a></div>
 
 {{< card-header title="以前の受験案内">}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}

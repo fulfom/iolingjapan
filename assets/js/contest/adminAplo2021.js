@@ -144,8 +144,8 @@ function adminPortal(cont, uid, div) {
     });
 }
 
-async function addImg(imageUrl, uid, elemId, key2, elem = null){
-    const preview = elem || document.getElementById("preview-" + elemId);
+async function addImg(imageUrl, uid, elemId, key2, elem){
+    const preview = elem;
     const div = document.createElement("div");
     div.id = key2;
     preview.appendChild(div); // #previewの中に追加

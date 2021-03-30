@@ -71,16 +71,16 @@ const handleFileSelect = async (event) => {
     const files = input.files;
     for (let i = 0; i < files.length; i++) {
         // previewFile(files[i], elemId);
-        let file;
-        
+        let file = files[i];
+        // let file;
         const label = document.getElementById(elemId).parentNode.getElementsByTagName("label")[0];
-        if(filetype(files[i].name, "heic")){
-            label.innerText = "変換中"
-            let blob = files[i];
-            let result = await heic2any({blob});
-            file = result;
-        }
-        else file = files[i];
+        // if(filetype(files[i].name, "heic")){
+        //     label.innerText = "変換中"
+        //     let blob = files[i];
+        //     let result = await heic2any({blob});
+        //     file = result;
+        // }
+        // else file = files[i];
 
         await uploadFile(file, elemId, label);
         // console.log(files[i]);　// 1つ1つのファイルデータはfiles[i]で取得できる
