@@ -3,6 +3,7 @@ $font-family: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic Medium", "
 $font-family-bold: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic", "Segoe UI", Verdana, Meiryo, sans-serif;
 $primary: #38a7bb;
 $secondary: #fe624d;
+$success: #28a745;
 
 // custom.css から移行中
 
@@ -493,8 +494,6 @@ h1,h2,h3,h4,h5,h6,.pager{
 }
 
 //appSys
-
-$success: #28a745;
 
 .success{
     color: $success;
