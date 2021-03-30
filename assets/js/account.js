@@ -6,81 +6,51 @@ document.addEventListener("DOMContentLoaded", (event) => {
             for(let i = 0; i < USER_EMAILs.length; i++){
                 USER_EMAILs[i].innerText = user.email;
             }
-            // statusの説明 = {
-            //     "pre": "開催予定 or 要選抜",
-            //     "entryopen": "応募開始(only for JOL), 代表決定(else)",
-            //     "siteopen": "オンライン限定．会場オープン中",
-            //     "marking": "コンテスト（含面接）終了～結果待ち",
-            //     "resultopen": "結果公開"
-            // }
-                
-            const contests = [
-                {
-                    name: "jol2021",
-                    // status: "pre", //応募開始前
-                    // status: "entryopen", //応募開始後
-                    // status: "siteopen", //会場オープン
-                    // status: "marking", //会場閉鎖
-                    status: "resultopen", //結果公開
-                    visible:  (badge) => { // 応募期間終了後
-                        return badge["jol2021"];
-                    }
-                },
-                {
-                    name: "aplo2021",
-                    // status: "pre", //代表決定前
-                    // status: "entryopen", //代表決定後
-                    status: "siteopen", //会場オープン
-                    visible: (badge) => {
-                        // return badge["jol2021"] == "flag"; //jol選抜参加だけ
-                        return badge["aplo2021"]; //出る人だけ
-                    },
-                },
-                {
-                    name: "iol2021",
-                    status: "pre",
-                    // status: "entryopen", //代表決定後
-                    visible: (badge) => {
-                        // return badge["jol2021"] == "flag"; //jol選抜参加だけ
-                        return badge["aplo2021"]; //APLO代表だけ
-                        // return badge["iol2021"]; //出る人だけ
-                    },
-                }
-            ];
 
             const promiseBadge = (async () => {
                 const snapshot = await firebase.database().ref("/badges/" + user.uid).once("value")
-                let badges = snapshot.val();
+                const badges = snapshot.val();
+                const contests = document.getElementsByClassName("appSys-contest");
+                let toberemoved = [];
                 for(let j = 0; j < contests.length; j++){
-                    let cont = contests[j];
-                    
-                    let isvisible = false;
-                    if("visible" in cont){
-                        isvisible = cont.visible(badges);
-                    }
-                    else isvisible = true;
-                    if(isvisible){
-                        document.getElementById("contest-" + cont.name).style.display = "block";
+                    const cont = contests[j];
+                    const badge = cont.getAttribute("data-visible-badge");
+                    const eq = cont.getAttribute("data-visible-eq");
 
-                        if(cont.status == "entryopen" && badges[cont.name]){
-                            const snapshot2 = await firebase.database().ref("/contests/" + cont.name + "/users/" + user.uid).once("value");
-                            let contestantInfo = snapshot2.val();
+                    const isvisible = badge ? eq ? badges[badge] == eq : badges[badge] : true;
+                    if(isvisible){
+                        if(cont.getAttribute("data-status") == "entryopen"){
+                            const contId = cont.getAttribute("data-id");
+                            const snapshot2 = await firebase.database().ref("/contests/" + contId + "/users/" + user.uid).once("value");
+                            const contestantInfo = snapshot2.val();
                             if(contestantInfo){
-                                document.getElementById("entried-" + cont.name).style.display = "block";
-                                document.getElementById("entried-" + cont.name + "-link").style.display = "inline-block";
+                                document.getElementById("entried-" + contId).style.display = "block";
                             }
-                            else document.getElementById("entryopen-" + cont.name).style.display = "block";
+                            else document.getElementById("entryopen-" + contId).style.display = "block";
                         }
-                        else document.getElementById(cont.status + "-" + cont.name).style.display = "block";
                     }
-                    else document.getElementById("contest-" + cont.name).remove();
+                    else toberemoved.push(cont);
                 }
+                toberemoved.forEach((cont)=>{cont.remove()});
             })();
             const promiseUser = (async () => {
                 const snapshot = await firebase.database().ref("/users/" + user.uid).once("value");
                 let isnewuser = true;
                 if(snapshot.val()){
                     var val = snapshot.val();
+                    if(val.admin){
+                        const adminRef = await firebase.database().ref("/admin/" + user.uid).once("value");
+                        if(adminRef.val()){
+                            isnewuser = false;
+                            const a = document.createElement("a");
+                            a.href = "/admin-portal/";
+                            a.innerText = "管理者ポータル";
+                            a.classList.add("btn", "btn-info", "btn-small");
+                            const refNode = document.querySelector("#content section");
+                            refNode.parentNode.insertBefore(a,refNode);
+                        }
+                        else await firebase.database().ref("/users/" + user.uid).update({admin: false});
+                    }
                     if(val.existing){
                         isnewuser = false;
                     }
@@ -97,7 +67,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 if(isnewuser) location.href = "/newuser/";
             })();
             
-            await Promise.all([promiseBadge, promiseUser]);
+            await Promise.all([promiseBadge, promiseUser]).catch((e) => {
+                console.error(e);
+                alert("エラー");
+            });
             document.getElementsByTagName("body").item(0).style.opacity = 1;
         }
         else{

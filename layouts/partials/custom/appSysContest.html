@@ -1,0 +1,19 @@
+<div id="contest-{{.id}}" class="list-group-item appSys-contest" data-id="{{.id}}"{{range $key,$v := .visible}} data-visible-{{$key}}="{{$v}}"{{end}}{{with .status}} data-status="{{.}}"{{end}}>
+    <div class="">
+      {{if eq .status "pre"}}<button id="pre-{{.id}}" disabled class="btn btn-outline-dark float-right">{{if .limited}}<i class="fas fa-flag fa-fw"></i>要選抜{{else}}開催予定{{end}}</button>{{end}}
+      {{if eq .status "entryopen"}}<a id="entryopen-{{.id}}" href="{{.entry | safeHTML}}" class="btn btn-primary float-right" role="button" style="display: none;"><i class="fas fa-file-alt fa-fw"></i>応募</a>
+      <button id="entried-{{.id}}" disabled class="btn btn-outline-success float-right" style="display: none;"><i class="fas fa-check-circle fa-fw"></i>応募済</button>{{end}}
+      {{if eq .status "siteopen"}}<a id="siteopen-{{.id}}" href="{{.site | safeHTML}}" class="btn btn-primary float-right" role="button"><i class="fas fa-puzzle-piece fa-fw"></i>大会ページ</a>{{end}}
+      {{if eq .status "marking"}}<button id="marking-{{.id}}" disabled class="btn btn-outline-dark float-right">採点中</button>{{end}}
+      {{if eq .status "resultopen"}}<a id="resultopen-{{.id}}" href="{{.result | safeHTML}}" class="btn btn-info float-right" role="button"><i class="fas fa-trophy fa-fw"></i>結果公開</a>{{end}}
+      <div>
+        <small>{{.desc1}}</small>
+        <small>{{range split .desc2 "|"}}<span class="unmot">{{.}}</span>{{end}}</small>
+      </div>
+    </div>
+    <p class="mb-1"></p>
+    <h5 class="text-moderate">{{.title}}</h5>
+    {{with .detail}}<a class="card-link" href="{{. | safeHTML}}">詳細</a>{{end}}
+    {{if isset . "entry"}}<a id="entried-{{.id}}-link" class="card-link" href="{{.entry | safeHTML}}"><i class="fas fa-user-edit fa-fw"></i>確認</a>{{end}}
+    {{with .record}}<a class="card-link" href="{{.}}">統計</a>{{end}}
+</div>
