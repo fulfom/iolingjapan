@@ -2,9 +2,9 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-light">
   <a class="navbar-brand ml-md-3" href="{{ .Site.BaseURL }}">
-    <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-none d-md-block" style="height: 35px;">
+    <img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-none d-md-block" style="height: 35px;">
     <p class="d-none d-lg-block site-title">{{ $.Site.Title}}</p>
-    <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-block d-md-none" style="height: 30px;">
+    <img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-block d-md-none" style="height: 30px;">
     <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
   </a>
   <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
