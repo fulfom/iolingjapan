@@ -1,22 +1,41 @@
+  # status: "pre" #応募開始前
+  # status: "entryopen" #応募開始後
+  # status: "siteopen" #会場オープン
+  # status: "marking" #採点中
+  # status: "resultopen" #結果公開
+hideContests:
+pastContests: 
+- id: jol2021
+  title: JOL2021
+  desc1: 2020年12月28日(月) 
+  date: 2020-12-28
+  desc2: オンライン
+  detail: "/application/#31-日本言語学オリンピック"
+  result: "/result/jol2021/"
+  record: "/record-jol/#jol2021結果"
+  status: "resultopen" #結果公開
+  visible: 
+    badge: "jol2021"
 upcomingContests:
 - id: aplo2021
   title: APLO2021
   desc1: 2021年3月28日(日)
+  date: 2021-03-28
   desc2: リモート
   detail: "/application/#32-アジア太平洋言語学オリンピック"
   entry: "/entry/aplo2021/"
   site: "/contest/aplo2021/"
   limited: true
+  status: "marking" #採点中
+  visible:
+    badge: "aplo2021"
 - id: iol2021
   title: IOL2021
   desc1: 2021年7月19日(月)～23日(金) 
+  date: 2021-07-19
   desc2: ラトビア・ヴェンツピルス|またはリモート
   limited: true
-pastContests: 
-- id: jol2021
-  title: JOL2021
-  desc1: 2020年12月28日(月) 
-  desc2: オンライン
-  detail: "/application/#31-日本言語学オリンピック"
-  result: "/result/jol2021/"
-  record: "/record-jol/#jol2021結果"
+  status: "pre" #応募開始前
+  visible:
+    badge: "aplo2021"
+    # badge: "iol2021"
