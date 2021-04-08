@@ -33,7 +33,7 @@ upcomingContests:
   title: IOL2021
   desc1: 2021年7月19日(月)～23日(金) 
   date: 2021-07-19
-  desc2: ラトビア・ヴェンツピルス|またはリモート
+  desc2: リモート
   limited: true
   status: "pre" #応募開始前
   visible:
