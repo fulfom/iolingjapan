@@ -37,6 +37,7 @@ upcomingContests:
   date: 2021-07-19
   desc2: リモート
   entry: "/entry/iol2021/"
+  detail: "/detail/iol2021/"
   limited: true
   status: "entryopen" #応募開始後
   visible:
