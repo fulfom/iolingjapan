@@ -9,7 +9,8 @@ importCSS = ["scss/loaded.scss"]
 
 {{< simplebox お知らせ >}}
 
-- JOL2021賞状順次発送しています．
+- APLO2021結果公開
+- IOL参加希望確認中
 
 {{< /simplebox >}}
 

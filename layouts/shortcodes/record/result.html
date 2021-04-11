@@ -17,20 +17,6 @@
   {{end}}
 {{end}}
 
-<h2>{{$contest | upper}}{{$year}}結果</h2>
-
-{{if eq $contest "iol"}}
-{{$skip := slice 2020}}
-{{$time := sub $year 2002}}{{range $skip}}{{if lt . $year}}{{$time = sub $time 1}}{{end}}{{end}}
-<p>第{{$time}}回目となる韓国大会には日本から代表8名が出場し{{$text}}を獲得しました．今年で日本からの参加は{{sub $time 9}}回目となります．</p>
-{{end}}
-
-{{if eq $contest "aplo"}}
-{{$skip := slice}}
-{{$time := sub $year 2018}}{{range $skip}}{{if lt . $year}}{{$time = sub $time 1}}{{end}}{{end}}
-<p>第{{$time}}回アジア太平洋言語学オリンピック(APLO)が2020年9月27日に行われました．日本からは21名が参加し{{$text}}を獲得しました．</p><p><a href="https://aplo.asia/wp-content/uploads/2020/10/APLO2020_results.pdf">詳しい結果はこちら</a></p>
-{{end}}
-
 <table class="table">
   <thead>
     <tr>
