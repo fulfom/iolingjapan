@@ -15,5 +15,5 @@
     <h5 class="text-moderate">{{.title}}</h5>
     {{with .detail}}<a class="card-link" href="{{. | safeHTML}}">詳細</a>{{end}}
     {{if isset . "entry"}}<a id="entried-{{.id}}-link" class="card-link" href="{{.entry | safeHTML}}"><i class="fas fa-user-edit fa-fw"></i>確認</a>{{end}}
-    {{with .record}}<a class="card-link" href="{{.}}">統計</a>{{end}}
+    {{with .record}}<a class="card-link" href="{{.}}">データ</a>{{end}}
 </div>

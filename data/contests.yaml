@@ -16,7 +16,6 @@ pastContests:
   status: "resultopen" #結果公開
   visible: 
     badge: "jol2021"
-upcomingContests:
 - id: aplo2021
   title: APLO2021
   desc1: 2021年3月28日(日)
@@ -25,17 +24,22 @@ upcomingContests:
   detail: "/application/#32-アジア太平洋言語学オリンピック"
   entry: "/entry/aplo2021/"
   site: "/contest/aplo2021/"
+  result: "/result/aplo2021/"
+  record: "/record-aplo/#aplo2021結果"
   limited: true
-  status: "marking" #採点中
+  status: "resultopen" #結果公開
   visible:
     badge: "aplo2021"
+upcomingContests:
 - id: iol2021
   title: IOL2021
   desc1: 2021年7月19日(月)～23日(金) 
   date: 2021-07-19
-  desc2: ラトビア・ヴェンツピルス|またはリモート
+  desc2: リモート
+  entry: "/entry/iol2021/"
+  detail: "/detail/iol2021/"
   limited: true
-  status: "pre" #応募開始前
+  status: "entryopen" #応募開始後
   visible:
-    badge: "aplo2021"
+    badge: "iol2021"
     # badge: "iol2021"

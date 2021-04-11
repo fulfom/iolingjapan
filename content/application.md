@@ -7,7 +7,7 @@ aliases = ["/past-applications/"]
 
 {{% simplebox "お知らせ" %}}
 [説明会代替資料](/orientation2021)に言語学オリンピックの概要説明、国際大会体験談などが掲載されました
-{{% /simplebox %}}    
+{{% /simplebox %}}
 
 ### することリスト
 
