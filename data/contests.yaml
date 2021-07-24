@@ -30,16 +30,29 @@ pastContests:
   status: "resultopen" #結果公開
   visible:
     badge: "aplo2021"
-upcomingContests:
 - id: iol2021
   title: IOL2021
   desc1: 2021年7月19日(月)～23日(金) 
   date: 2021-07-19
   desc2: リモート
   entry: "/entry/iol2021/"
-  detail: "/detail/iol2021/"
+  # detail: "/detail/iol2021/"
+  result: "/result/iol2021/"
+  record: "/record/#iol2021結果"
   limited: true
-  status: "entryopen" #応募開始後
+  status: "resultopen" #結果公開
   visible:
     badge: "iol2021"
     # badge: "iol2021"
+upcomingContests:
+- id: jol2022
+  title: JOL2022
+  desc1: 2021年12月29日(水) 
+  date: 2021-12-29
+  desc2: オンライン
+  detail: "/application/"
+  # result: "/result/jol2022/"
+  # record: "/record-jol/#jol2022結果"
+  status: "pre" #応募開始前
+  visible: 
+    badge: "jol2022"

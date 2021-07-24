@@ -22,14 +22,14 @@
     - 謎解きチックな
     - 言語分析パズル！
 - id: ""
-  link: "/iol2019/"
+  link: "/record/"
   color: pink
   title: 
     - 日本代表を
     - 応援しよう
   desc: 
-    - IOL2019には世界から209人の代表が参加しました．
-    - 次回開催地はラトビアです
+    - IOL2021には世界34か国/地域から216人の代表が参加しました．
+    - 次回開催地はカナダです
 - id: ""
   link: "/application/"
   color: yellow
@@ -51,3 +51,5 @@
   more: 
   - link: "https://twitter.com/iolingjapan"
     inner: <i class="fab fa-twitter"></i>
+  - link: "https://www.instagram.com/iolingjapan/"
+    inner: <i class="fab fa-instagram colored-instagram"></i>
