@@ -207,7 +207,7 @@ $$
 \frac{1}{15},\frac{2}{15},\frac{1}{5},1,5,15
 $$
 
-{{% collapse title="文字化けする場合" id="prob4-pol" %}}
+{{% collapse title="文字化け・フォント違いの場合" id="prob4-pol" %}}
 <div class="row">
     <div class="col-sm-6 mt-sm-5">
         <img style="max-width: 350px; width: 100%" class="mb-3" src="/img/EgyptianNumeral.JPG" alt="古代エジプトの数字" title="古代エジプトの数字">

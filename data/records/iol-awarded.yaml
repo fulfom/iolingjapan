@@ -1,4 +1,19 @@
 - award: gold
+  year: 2021
+  name: 菅原響生
+- award: gold
+  year: 2021
+  name: 星井崇道
+- award: silver
+  year: 2021
+  name: 小川理緒
+- award: honorable-mention
+  year: 2021
+  name: 田中醇之介
+- award: honorable-mention
+  year: 2021
+  name: 諸星達貴
+- award: gold
   year: 2019
   name: 吉野匠
 - award: silver
@@ -58,3 +73,9 @@
 - award: best-solution
   year: 2016
   name: 佐藤弘崇
+- award: best-solution
+  year: 2021
+  name: 菅原響生
+- award: best-solution
+  year: 2021
+  name: 小川理緒

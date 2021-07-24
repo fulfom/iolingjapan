@@ -221,27 +221,19 @@ $success: #28a745;
     color: #d45b83;
   }
   
-  .grad-pink .btn-template-main:hover, .grad-pink .btn-template-main:focus, .grad-pink .btn-template-main:active {
-    background: #d45b83;
-    color: #ffffff;
-  }
-  
   .grad-yellow .btn-template-main {
     color: #c7ba15;
-  }
-  
-  .grad-yellow .btn-template-main:hover, .grad-yellow .btn-template-main:focus, .grad-yellow .btn-template-main:active {
-    background: #c7ba15;
-    color: #ffffff;
   }
   
   .grad-blue .btn-template-main {
     color: #337ab7;
   }
-  
-  .grad-blue .btn-template-main:hover, .grad-blue .btn-template-main:focus, .grad-blue .btn-template-main:active {
-    background: #337ab7;
-    color: #ffffff;
+
+  .grad-blue,.grad-green,.grad-pink,.grad-yellow{
+    .btn-template-main:hover{  
+      background: transparent;
+      color: white;
+    }
   }
   
   .tlhead {
@@ -491,6 +483,14 @@ h1,h2,h3,h4,h5,h6,.pager{
         font-weight: 500;
         font-family: $font-family;
     }
+}
+
+a:not(:hover) > .colored-instagram {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: .6s;
 }
 
 //appSys

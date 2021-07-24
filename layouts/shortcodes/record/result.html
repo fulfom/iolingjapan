@@ -3,6 +3,7 @@
 {{$data := index $.Site.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
 {{$cumulativeAward := dict}}
 {{$thisYearsAward := dict}}
+{{$thisYearsAwardedContestants := where $data "year" $year}}
 {{range sort $.Site.Params.awards "weight"}}
   {{$tmp := where $data "award" .key}}
   {{$cumulativeAward = merge $cumulativeAward (dict .key (len $tmp))}}
@@ -17,6 +18,23 @@
   {{end}}
 {{end}}
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">賞</th>
+      <th scope="col">受賞者</th>
+    </tr>
+  </thead>
+  <tbody>{{range sort $.Site.Params.awards "weight"}}{{$name := .name}}
+  {{range where $thisYearsAwardedContestants "award" .key}}
+  <tr class="{{.award}}">
+    <th scope="row">{{$name}}</th>
+    <td>{{.name}}</td>
+  </tr>
+  {{end}}
+  {{end}}
+  </tbody>
+</table>
 <table class="table">
   <thead>
     <tr>

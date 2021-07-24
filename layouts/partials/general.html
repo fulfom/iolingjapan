@@ -1,11 +1,13 @@
 {{$data := $.Site.Data.general}}
 {{range $data}}
 <section class="bar bar-zigzag grad grad-{{.color}}">
-    <div class="jumbotron">
+    <div class="jumbotron">{{if .link}}
         <a href="{{.link | safeURL}}"><h1{{with .id}} id="{{.}}"{{end}}>{{range .title}}<span class="unmot">{{.}}</span>{{end}}</h1></a>
         <p>{{range .desc}}<span class="unmot">{{.}}</span>{{end}}</p>
         <a class="btn btn-template-main" href="{{.link | safeURL}}">もっとよむ</a>{{with .more}}{{range .}}
-        <a class="btn btn-template-main" href="{{.link | safeURL}}">{{.inner | safeHTML}}</a>{{end}}{{end}}
+        <a class="btn btn-template-main" href="{{.link | safeURL}}">{{.inner | safeHTML}}</a>{{end}}{{end}}{{else}}
+        <h1{{with .id}} id="{{.}}"{{end}}>{{range .title}}<span class="unmot">{{.}}</span>{{end}}</h1>
+        <p>{{range .desc}}<span class="unmot">{{.}}</span>{{end}}</p>{{end}}
     </div>
 </section>
 {{end}}
