@@ -51,11 +51,11 @@ keywords = []
 
 | 問題                                                                                         | 解答                                                                                           | 備考                                                                                             |
 | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| [2021SE](https://drive.google.com/file/d/10ZjQaznmDk51Iy1OID2mKHnrff4JR-RY/view?usp=sharing) | [2021解答](https://drive.google.com/file/d/1sOahvs8QypYyEckuH6NDBga_pijffWq-/view?usp=sharing) | [問題当日版](https://drive.google.com/file/d/163gpBwsSRzll_bHagabeA0OJYlEPx0it/view?usp=sharing) ※1 |
-| [2020](https://drive.google.com/open?id=1FPhk59e8A0FIXgOliitzg1qU95V7fppV)                   | [2020解答](https://drive.google.com/open?id=1EWBp7YEriz4L6cCEkiqeDwo5ku-qh-ic)                 |                                                                                                  |
-| [2019](https://drive.google.com/open?id=1BjNVq20Ne9LVAqGEa9nLPsF9FhuhDjAA)                   | [2019解答](https://drive.google.com/open?id=1-lHLG82BcwZSuWnCuXD8GwTXFS2vv_Lh)                 |                                                                                                  |
-| [2018](https://drive.google.com/open?id=17anbddEBxNaZe_kDGRQPxvpzlR1lMYb2)                   | [2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)                           | 問題誤植※2                                                                                       |
-| [2017](https://drive.google.com/open?id=1DSG3MISTszSPeMeG-VmnyKA0kFe7iywZ)                   | [2017解答](https://drive.google.com/open?id=1GSyrZ7f6hvOAQ3sc19mFAOzRlUYK0W0q)                 |                                                                                                  |
+| [2021SE](/pdf/jol2021-se.pdf) | [2021解答](/pdf/jol2021-sol.pdf) | [問題当日版](/pdf/jol2021.pdf) ※1 |
+| [2020](/pdf/jol2020.pdf)                   | [2020解答](/pdf/jol2020-sol.pdf)                 |                                                                                                  |
+| [2019](/pdf/jol2019.pdf)                   | [2019解答](/pdf/jol2019-sol.pdf)                 |                                                                                                  |
+| [2018](/pdf/jol2018.pdf)                   | [2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)                           | 問題誤植※2                                                                                       |
+| [2017](/pdf/jol2017.pdf)                   | [2017解答](/pdf/jol2017-sol.pdf)                 |                                                                                                  |
 | [2016](https://twitter.com/fulfom/status/1097706793885589504)                                |                                                                                                | 暫定公開                                                                                         |
 
 {{< /table >}}
