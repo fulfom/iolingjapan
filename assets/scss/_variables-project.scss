@@ -21,6 +21,10 @@ $success: #28a745;
   table thead,th {
     font-family: $font-family-bold;
   }
+
+  .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: inherit;
+  }
   
   .simple-table td, .simple-table th {
     padding-right: 2em;
@@ -646,6 +650,17 @@ $font-color: #555555;
 .btn-primary:disabled{
   color: #007bff;
   background-color: transparent;
+}
+
+.btn-info{
+  color: white;
+  background-color: $primary;
+  border-color: $primary;
+  &:hover{
+    color: white;
+    background-color: darken($primary, 10%);
+    border-color: $primary;
+  }
 }
 
 figure,p{
