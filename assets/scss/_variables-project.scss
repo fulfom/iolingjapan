@@ -401,7 +401,7 @@ i.fa-angle-right{
     }
 }
 
-.gold, .best-solution{
+.gold{
     background-color: #eee7cc;
 }
 
@@ -411,6 +411,10 @@ i.fa-angle-right{
 
 .bronze {
     background-color: #edc;
+}
+
+.best-solution{
+ background-color: #0076ba30;
 }
 
 .table-award-gsbh{
@@ -666,7 +670,8 @@ $font-color: #555555;
 figure,p{
   img{
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
+    margin-bottom: 3.5em;
   }
 }
 
@@ -758,5 +763,13 @@ $danger: #dc3545;
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+.box-simple-xs{
+  p{
+    margin-left: 61px;
+    font-size: small;
+    margin-top: -12px;
   }
 }

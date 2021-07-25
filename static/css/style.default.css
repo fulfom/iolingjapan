@@ -1,4 +1,4 @@
-.clearfix:before,
+/* .clearfix:before,
 .clearfix:after,
 .navbar:before,
 .navbar:after,
@@ -6,7 +6,7 @@
 .navbar-header:after {
   content: " ";
   display: table;
-}
+} */
 .clearfix:after,
 .navbar:after,
 .navbar-header:after {
