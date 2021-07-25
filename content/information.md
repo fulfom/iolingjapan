@@ -19,7 +19,7 @@ keywords = []
 
 日本が初めて国際大会に出場したのはスロベニア リュブリャナで行われた2012年度大会です．以来日本は毎年度国際大会に代表を送り続けています．
 
-<small>出典: http://www.ioling.org/history/</small>
+<small>出典: https://ioling.org/history/</small>
 
 ## 日本国内の活動
 
@@ -27,9 +27,15 @@ keywords = []
 
 ## 問題の内容
 
-過去に出題された問題が [国際大会のサイト](http://www.ioling.org/) に掲載されています．初めて問題に触れるという方はまず同サイトの [Sample Problems](http://www.ioling.org/problems/samples/) または [イギリス国内大会(UKLO)のサイト](http://www.uklo.org/) をご覧になってみてください．
+[{{< icon door-open お試し問題集>}}](/sample-problems)が言語学オリンピックがどういうものかをつかむのに最適です．
+
+日本予選の過去問は [国際大会のサイト](https://ioling.org/problems/by_year) に掲載されています．
 
 問題は実際の言語研究で行われる分析に似ていて，未知の言語のデータからその言語の仕組み，隠れた法則を解き明かすというものです．英語やその他特定の言語の知識は特に必要ありません．
+
+## 広報資料
+
+To be updated
 
 <!---## 支援のお願い-->
 
@@ -37,3 +43,5 @@ keywords = []
 function drawCharts(){
 }
 </script-->
+
+<!-- このページにも過去大会の成績を小さくのせる -->

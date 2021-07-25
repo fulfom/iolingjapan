@@ -4,7 +4,7 @@ description = ""
 keywords = []
 +++
 
-言語学オリンピックの過去問と広報資料をまとめてあります．初めての方はお試し問題をおすすめします．過去問には各国予選と国際大会のものがあり，国際大会のものは良問ぞろいですが難しいので各国の予選からチャレンジしてみましょう．
+言語学オリンピックの過去問をまとめてあります．初めての方はお試し問題をおすすめします．過去問には各国予選と国際大会のものがあり，国際大会のものは良問ぞろいですが難しいので各国の予選からチャレンジしてみましょう．
 
 {{< features "preparation.features" 4 >}}
 
@@ -16,7 +16,6 @@ keywords = []
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
 - [JOLお試し問題集](/sample-problems/)
-- [IOL Sample Problems](https://ioling.org/booklets/samples.en.pdf)
 
 {{< /list >}}
 {{< /card-header >}}
@@ -59,16 +58,23 @@ keywords = []
 
 ## データベース
 
-もっと他の問題を見たい方は，こちらの有志作成の問題データベースを参考にしてください．国内予選，国際大会，海外予選などの問題が一覧になっています．問題集の方はジャンルや難易度で検索もできる優れものです．
-
-取り急ぎ過去問を見たい方は大会一覧，自分にあった問題を探している方は問題集がおすすめです．
+<div class="d-flex">
+  <div class="flex-shrink-0">
+    <a href="https://kotohazi.netlify.app/problems/">
+        <img class="hover-zoom" style="height: 64px" src="/img/kotohazi-logo.svg">
+    </a>
+  </div>
+  <div class="flex-grow-1 ms-3">
+  「ことはじ問題集」には国際大会，海外予選などの問題が一覧になっています．ジャンルや難易度で検索もできる優れものです．
+  </div>
+</div>
 
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
-- [大会一覧 - ことはじ](https://kotohazi.netlify.app/problems/contests)
-- [問題集 - ことはじ](https://kotohazi.netlify.app/problems/)
-- [日本語で解ける問題 - ことはじ](https://kotohazi.netlify.app/problems/?v=1&t=SU9MMjAoMVs1LTldfFteMDFdXGQpfEpPTHxBUExPfOaXpeacrOiqnuiosw&s=5pel5pys6Kqe44Gn6Kej44GR44KL5ZWP6aGM)
+- [取り急ぎ過去問を見たい → 大会一覧](https://kotohazi.netlify.app/problems/contests)
+- [ことはじ問題集](https://kotohazi.netlify.app/problems/)
+- [日本語で解ける問題一覧](https://kotohazi.netlify.app/problems/?v=1&t=SU9MMjAoMVs1LTldfFteMDFdXGQpfEpPTHxBUExPfOaXpeacrOiqnuiosw&s=5pel5pys6Kqe44Gn6Kej44GR44KL5ZWP6aGM)
 
 {{< /list >}}
 {{< /card-header >}}
@@ -89,18 +95,19 @@ keywords = []
 {{< /list >}}
 {{< /card-header >}}
 
-## 各サイトの過去問集へのリンク
+## 他の言語学オリンピック
 
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
-- [IOL(国際言語学オリンピック)](http://www.ioling.org/problems/)
+- [IOL(国際言語学オリンピック)](https://ioling.org/problems/by_year)
+- [APLO(アジア太平洋言語学オリンピック)](https://aplo.asia/problems-by-year/)
+- [Onling(オンライン言語学オリンピック)](https://onling.org/)
 - [UKLO(イギリス予選)](https://www.uklo.org/past-problems#problems)
 - [OzCLO(オーストラリア予選)](https://ozclo.org.au/past-problems/)
 - [NACLO(北米予選)](https://nacloweb.org/practice.php#previous_problems)
 - [AILO(アイルランド予選)](https://ailo.adaptcentre.ie/sample-puzzles/)
 - [LLO(ラトビア予選)](http://loling.lv/en/past.html)
-- [Onling(オンライン言語学オリンピック)](https://onling.org/)
 - [IOLや各国予選の過去問保管庫(1000問以上; IDとパスワードは両方 guest)](http://tangra.cs.yale.edu/naclobase/)
 
 {{< /list >}}
@@ -111,7 +118,3 @@ keywords = []
 過去に出題された問題が [国際大会のサイト](http://www.ioling.org/) に掲載されています．初めて問題に触れるという方はまず同サイトの [Sample Problems](http://www.ioling.org/problems/samples/) または [イギリス国内大会(UKLO)のサイト](http://www.uklo.org/) をご覧になってみてください．
 
 問題は実際の言語研究で行われる分析に似ていて，未知の言語のデータからその言語の仕組みを解き明かすというものです．現在有志によって問題の解説や入門サイトを作る計画が進んでいます．詳しくは [有志サイト](http://ioling.jp/) をご覧ください．-->
-
-## 広報資料
-
-To be updated

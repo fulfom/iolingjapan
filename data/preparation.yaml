@@ -1,13 +1,13 @@
 features: 
   - title: お試し問題
-    link: "#お試し問題"
+    link: /sample-problems/
     icon: "fas fa-door-open"
     desc: 「言語学オリンピックってどんなもの？」
   - title: おすすめの問題
     link: "#おすすめの問題"
     icon: fas fa-star
   - title: JOL過去問
-    link: "#JOL過去問"
+    link: "#国内予選の過去問"
     icon: fas fa-paperclip
   - title: データベース
     link: "#データベース"
@@ -16,9 +16,9 @@ features:
   - title: 問題の解説
     link: "#問題の解説"
     icon: fas fa-compass
-  - title: 各サイトの過去問集へのリンク
-    link: "#各サイトの過去問集へのリンク"
+  - title: 他の言語学オリンピック
+    link: "#他の言語学オリンピック"
     icon: "fas fa-globe"
   - title: 広報資料
-    link: "#広報資料"
+    link: "/information/#広報資料"
     icon: fas fa-paper-plane

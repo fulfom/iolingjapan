@@ -5,6 +5,8 @@ keywords = []
 mathjax = true
 +++
 
+「言語学オリンピックってどんなもの？」が分かるお試し問題集
+
 {{< card-header title="目次" >}}
 {{% list class="list-group list-group-flush list-fill-link numbered-list" liclass="list-group-item" %}}
 

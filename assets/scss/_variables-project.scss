@@ -671,7 +671,6 @@ figure,p{
   img{
     width: 100%;
     max-width: 500px;
-    margin-bottom: 3.5em;
   }
 }
 
@@ -771,5 +770,12 @@ $danger: #dc3545;
     margin-left: 61px;
     font-size: small;
     margin-top: -12px;
+  }
+}
+
+.hover-zoom{
+  transition: all 0.2s ease-out;
+  &:hover{
+    transform: scale(1.1, 1.1);
   }
 }
