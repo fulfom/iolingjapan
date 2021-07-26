@@ -10,7 +10,7 @@ aliases = ["/past-applications/"]
 {{% /simplebox %}} -->
 
 <div class="alert alert-primary" role="alert">
-  暫定情報を掲載してあります
+  暫定情報を掲載してあります．応募開始はもう少し先になります．
 </div>
 
 ## JOL2022について
@@ -31,7 +31,7 @@ aliases = ["/past-applications/"]
 
 ---
 
-<div class="centralize"><a class="btn btn-template-main" onclick="login()">応募はこちら</a></div>
+<!-- <div class="centralize"><a class="btn btn-template-main" onclick="login()">応募はこちら</a></div> -->
 
 {{< card-header title="以前の受験案内">}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
