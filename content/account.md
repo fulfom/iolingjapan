@@ -9,7 +9,7 @@ importCSS = ["scss/loaded.scss"]
 
 {{< simplebox お知らせ >}}
 
-- IOL2021日本代表確定．原則今後の繰り上げはありません．
+- JOL2022応募開始
 
 {{< /simplebox >}}
 

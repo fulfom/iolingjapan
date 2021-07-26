@@ -6,7 +6,7 @@
 			<div class="col-lg-6">
 				{{$.Inner | markdownify}}
 			</div>
-			<div class="clearfix visible-md-block"></div>
+			<!-- <div class="clearfix visible-md-block"></div> -->
 			<div class="col-lg-6">
 				{{ range $index, $element := sort $data "weight" }}
 				<div class="box-simple-xs d-block d-sm-none">

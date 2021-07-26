@@ -1,15 +1,36 @@
 - title: 日本言語学オリンピック
+  year: 2021
+  abbr: JOL
+  img: /img/logo.png
+  desc1: 2021年12月29日(水) リモート
+  desc2: 数十名程度選抜 → APLO
+- title: アジア太平洋言語学オリンピック
+  year: 2021
+  abbr: APLO
+  img: https://aplo.asia/wp-content/uploads/2019/12/APLO-LOGO.png
+  desc1: 2022年3月?
+  desc2: 8名選抜 → IOL
+- title: 国際言語学オリンピック
+  year: 2021
+  abbr: IOL
+  img: https://aplo.asia/wp-content/uploads/2021/04/iol@2x-300x225.png
+  desc1: 2022年夏 マン島
+  desc2: 
+- title: 日本言語学オリンピック
+  year: 2020
   abbr: JOL
   img: /img/logo.png
   desc1: 2020年12月28日(月) オンライン
   desc2: 20名程度選抜 → APLO
 - title: アジア太平洋言語学オリンピック
+  year: 2020
   abbr: APLO
   img: https://aplo.asia/wp-content/uploads/2019/12/APLO-LOGO.png
   desc1: 2021年3月28日（日）リモート
   desc2: 8名選抜 → IOL
 - title: 国際言語学オリンピック
+  year: 2020
   abbr: IOL
-  img: https://ioling.org/images/logo.png
+  img: https://aplo.asia/wp-content/uploads/2021/04/iol@2x-300x225.png
   desc1: 2021年7月19日(月)～2021年7月23日(金) ラトビア・ヴェンツピルス
   desc2: 

@@ -1,0 +1,24 @@
+features: 
+  - title: お試し問題
+    link: /sample-problems/
+    icon: "fas fa-door-open"
+    desc: 「言語学オリンピックってどんなもの？」
+  - title: おすすめの問題
+    link: "#おすすめの問題"
+    icon: fas fa-star
+  - title: JOL過去問
+    link: "#国内予選の過去問"
+    icon: fas fa-paperclip
+  - title: データベース
+    link: "#データベース"
+    src: "/img/kotohazi-logo.svg"
+    desc: 国際大会の過去問も
+  - title: 問題の解説
+    link: "#問題の解説"
+    icon: fas fa-compass
+  - title: 他の言語学オリンピック
+    link: "#他の言語学オリンピック"
+    icon: "fas fa-globe"
+  - title: 広報資料
+    link: "/information/#広報資料"
+    icon: fas fa-paper-plane

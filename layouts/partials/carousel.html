@@ -17,6 +17,7 @@
 	                            {{ .description | safeHTML }}
 	                        </div>
 	                        <div class="col-md-7">
+                                {{with .more}}{{. | safeHTML}}{{end}}
                                 <!-- <img class="img-responsive" src="{{ .image }}" alt="" style="height: 100px"> -->
 	                        </div>
 	                    </div>

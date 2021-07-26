@@ -5,6 +5,8 @@ keywords = []
 mathjax = true
 +++
 
+「言語学オリンピックってどんなもの？」が分かるお試し問題集
+
 {{< card-header title="目次" >}}
 {{% list class="list-group list-group-flush list-fill-link numbered-list" liclass="list-group-item" %}}
 
@@ -12,7 +14,7 @@ mathjax = true
 1. [アイヌ語](#sample2)
 1. [トルコ語](#sample3)
 1. [古代エジプトの数字](#sample4)
-1. [トンガ語](#sample5)
+1. [トンガ語（難）](#sample5)
 {{% /list %}}
 {{< /card-header >}}
 
@@ -61,7 +63,10 @@ mathjax = true
 {{% collapse title="答え" id="ans1" %}}
 (a) keringat : 汗  
 (b1) 息をする : bernafas  
-(b2) とげまみれ : durian (=ドリアンのこと)  
+(b2) とげまみれ : durian (=ドリアンのこと)
+
+ber- をつけると動詞になる．-an をつけると「～だらけ」という意味になる．
+
 {{% /collapse %}}
 
 ## 2. アイヌ語 {#sample2}

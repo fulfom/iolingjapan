@@ -21,6 +21,10 @@ $success: #28a745;
   table thead,th {
     font-family: $font-family-bold;
   }
+
+  .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: inherit;
+  }
   
   .simple-table td, .simple-table th {
     padding-right: 2em;
@@ -397,7 +401,7 @@ i.fa-angle-right{
     }
 }
 
-.gold, .best-solution{
+.gold{
     background-color: #eee7cc;
 }
 
@@ -407,6 +411,10 @@ i.fa-angle-right{
 
 .bronze {
     background-color: #edc;
+}
+
+.best-solution{
+ background-color: #0076ba30;
 }
 
 .table-award-gsbh{
@@ -648,10 +656,21 @@ $font-color: #555555;
   background-color: transparent;
 }
 
+.btn-info{
+  color: white;
+  background-color: $primary;
+  border-color: $primary;
+  &:hover{
+    color: white;
+    background-color: darken($primary, 10%);
+    border-color: $primary;
+  }
+}
+
 figure,p{
   img{
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
   }
 }
 
@@ -743,5 +762,20 @@ $danger: #dc3545;
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+.box-simple-xs{
+  p{
+    margin-left: 61px;
+    font-size: small;
+    margin-top: -12px;
+  }
+}
+
+.hover-zoom{
+  transition: all 0.2s ease-out;
+  &:hover{
+    transform: scale(1.1, 1.1);
   }
 }

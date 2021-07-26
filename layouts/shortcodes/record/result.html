@@ -9,14 +9,6 @@
   {{$cumulativeAward = merge $cumulativeAward (dict .key (len $tmp))}}
   {{$thisYearsAward = merge $thisYearsAward (dict .key (len (where $tmp "year" $year)))}}
 {{end}}
-{{$text := ""}}
-{{range sort $.Site.Params.awards "weight"}}
-  {{if ne (index $thisYearsAward .key) 0}}
-    {{$tmp := .name}}
-    {{$tmp = delimit (slice $tmp " " (index $thisYearsAward .key) "つ" ) "" }}
-    {{$text = delimit (slice $text $tmp) ", "}}
-  {{end}}
-{{end}}
 
 <table class="table">
   <thead>
