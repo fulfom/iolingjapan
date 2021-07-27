@@ -74,7 +74,7 @@ keywords = []
 
 - [取り急ぎ過去問を見たい → 大会一覧](https://kotohazi.netlify.app/problems/contests)
 - [ことはじ問題集](https://kotohazi.netlify.app/problems/)
-- [日本語で解ける問題一覧](https://kotohazi.netlify.app/problems/?v=1&t=SU9MMjAoMVs1LTldfFteMDFdXGQpfEpPTHxBUExPfOaXpeacrOiqnuiosw&s=5pel5pys6Kqe44Gn6Kej44GR44KL5ZWP6aGM)
+- <a href="https://kotohazi.netlify.app/problems/?v=1&t=SU9MMjAoMVs1LTldfFteMDFdXGQpfEpPTHxBUExPfOaXpeacrOiqnuiosw&s=5pel5pys6Kqe44Gn6Kej44GR44KL5ZWP6aGM" target="_blank">日本語で解ける問題一覧</a>
 
 {{< /list >}}
 {{< /card-header >}}
@@ -86,12 +86,12 @@ keywords = []
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
-- [2019第5問解説](https://fulfom.hatenablog.com/entry/2019/12/21/145615)  
-- [2018第5問解説](https://karngati.hatenablog.com/entry/JOL2018_5)
+- [JOL2019第5問解説](https://fulfom.hatenablog.com/entry/2019/12/21/145615)  
+- [JOL2018第5問解説](https://karngati.hatenablog.com/entry/JOL2018_5)
 - [karŋati’s diary(karngati)](https://karngati.hatenablog.com/entry/JOL2018_5)
 - [言語学わからない(tungumalanna)](https://tungumalanna.hatenablog.com/archive/category/IOL%E9%9D%9E%E5%85%AC%E5%BC%8F%E8%A7%A3%E8%AA%AC)
 - [言とインドカレー(fulfom)](https://fulfom.hatenablog.com/archive/category/%E8%A8%80%E3%82%AA%E3%83%AA%E8%A7%A3%E8%AA%AC)
-- [その他の解説をことはじで探す](https://kotohazi.netlify.app/problems/?s=6Kej6Kqs44Gu44GC44KL5ZWP6aGM&v=1&c=0B1)
+- <a href="https://kotohazi.netlify.app/problems/?s=6Kej6Kqs44Gu44GC44KL5ZWP6aGM&v=1&c=0B4" target="_blank">その他の解説をことはじで探す</a>
 {{< /list >}}
 {{< /card-header >}}
 
@@ -112,9 +112,3 @@ keywords = []
 
 {{< /list >}}
 {{< /card-header >}}
-
-<!--## 問題の内容
-
-過去に出題された問題が [国際大会のサイト](http://www.ioling.org/) に掲載されています．初めて問題に触れるという方はまず同サイトの [Sample Problems](http://www.ioling.org/problems/samples/) または [イギリス国内大会(UKLO)のサイト](http://www.uklo.org/) をご覧になってみてください．
-
-問題は実際の言語研究で行われる分析に似ていて，未知の言語のデータからその言語の仕組みを解き明かすというものです．現在有志によって問題の解説や入門サイトを作る計画が進んでいます．詳しくは [有志サイト](http://ioling.jp/) をご覧ください．-->

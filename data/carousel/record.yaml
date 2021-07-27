@@ -1,5 +1,5 @@
 weight: 1
 title: "IOL2021結果"
 description: "<p>第18回 ラトビア大会 日本代表8名が参加</p><p>金2 銀1 努力賞2 最優秀解答賞2つを獲得！</p>"
-more: '<img src="/img/iol2021r.jpeg" style="height: 200px;">'
+more: '<img src="/img/iol2021r.jpeg" style="max-height: 200px; max-width: 100%;">'
 link: "/record/"
