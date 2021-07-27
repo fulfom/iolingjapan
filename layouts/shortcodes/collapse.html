@@ -1,7 +1,7 @@
-{{ $title := .Get "title" }}{{ $id := .Get "id" | default $title }}
+{{ $title := .Get "title" }}{{ $id := .Get "id" | default $title }}{{$open := .Get "open" | default false}}
 
 <div></div>
-<p class="m-0 mt-3"><a data-bs-toggle="collapse" href data-bs-target="#collapse{{$id}}" role="button" aria-expanded="false" aria-controls="collapse{{$id}}"><i class="fas fa-angle-right fa-fw"></i>{{$title}}</a></p>
-<div class="collapse" id="collapse{{$id}}">
+<p class="m-0 mt-3"><a data-bs-toggle="collapse" href data-bs-target="#collapse{{$id}}" role="button" aria-expanded="{{$open}}" aria-controls="collapse{{$id}}"><i class="fas fa-angle-right fa-fw"></i>{{$title}}</a></p>
+<div class="collapse{{if $open}} show{{end}}" id="collapse{{$id}}">
     <div class="p-2">{{ .Inner | markdownify }}</div>
 </div>

@@ -1,0 +1,68 @@
+- id: home
+  translation: "Home"
+
+- id: templateBy
+  translation: " "
+
+- id: portedBy
+  translation: " "
+
+- id: contactGoTo
+  translation: "Go to contact page"
+
+- id: contactAddrTitle
+  translation: "Address"
+
+- id: contactTitle
+  translation: "Contact"
+
+- id: contactForm
+  translation: "Contact form"
+
+- id: contactName
+  translation: "Your Name"
+
+- id: contactMail
+  translation: "Your Email"
+
+- id: contactMessage
+  translation: "Your Message"
+
+- id: contactSend
+  translation: "Send Message"
+
+- id: navHome
+  translation: "go to homepage"
+
+- id: navToggle
+  translation: "Toggle Navigation"
+
+- id: categoriesTitle
+  translation: "Categories"
+
+- id: searchTitle
+  translation: "Search"
+
+- id: tagsTitle
+  translation: "Tags"
+
+- id: continueReading
+  translation: "Continue reading"
+
+- id: readMore
+  translation: "Read more"
+
+- id: authorBy
+  translation: "By"
+
+- id: recentPosts
+  translation: "Recent posts"
+
+- id: aboutUs
+  translation: " "
+
+- id: about_us
+  translation: "NPO International Educational Collaboration Association; Chair Prof. Paul Snowden; Contact us at jolinguistics@gmail.com"
+
+- id: copyright
+  translation: "International Linguistics Olympiad Committee of Japan "

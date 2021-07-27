@@ -4,7 +4,7 @@
         {{ if isset .Site.Params "about_us" }}
         <h4>{{ i18n "aboutUs" }}</h4>
 
-        {{ .Site.Params.about_us | markdownify }}
+        {{ ((i18n "about_us") | default $.Site.Params.about_us) | markdownify }}
 
     {{ end }}
     </div>
@@ -22,7 +22,7 @@ _________________________________________________________ -->
     <div class="container">
         <div class="col-md-12">
             {{ if isset .Site.Params "copyright" }}
-            <p>{{ .Site.Params.copyright | safeHTML }}
+            <p>© {{now.Format "2006"}} {{ ((i18n "copyright") | default $.Site.Params.copyright) | safeHTML }}
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
             </p>
             {{ end }}

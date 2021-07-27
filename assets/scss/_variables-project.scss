@@ -9,6 +9,10 @@ $success: #28a745;
 
 /* your styles go here */
 
+strong{
+  background: linear-gradient(#fff 70%, #fe624d44 0%);
+}
+
 .box-image-text .image {
     min-height: 200px;
     max-height: 200px;

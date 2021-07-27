@@ -1,5 +1,6 @@
 - id: general
   link: "/information/"
+  linktext: "→概要"
   color: green
   title: 
     - 言語の不思議に
@@ -10,6 +11,7 @@
     - 科学オリンピックの一大会です
 - id: ""
   link: "/preparation/"
+  linktext: "→過去問など"
   color: white
   title: 
     - 過去問を
@@ -23,6 +25,7 @@
     - 言語分析パズル！
 - id: ""
   link: "/record/"
+  linktext: "→大会成績"
   color: pink
   title: 
     - 日本代表を
@@ -34,6 +37,7 @@
     - 次回開催地はマン島です
 - id: ""
   link: "/application/"
+  linktext: "→受験案内"
   color: yellow
   title: 
     - 代表選抜に
@@ -42,7 +46,8 @@
     - 20歳未満で大学未入学なら
     - 誰でも代表選抜に応募できます
 - id: ""
-  link: "/preparation/#material"
+  link: "/information/#material"
+  linktext: "→広報資料"
   color: blue
   title: 
     - 未来の代表に

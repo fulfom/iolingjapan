@@ -12,11 +12,11 @@
                 	<a href="{{.}}">
                 	{{ end }}
 	                    <div class="row">
-	                        <div class="col-md-5 right">
+	                        <div class="col-md col-lg-5 right">
 	                            <h1>{{ .title }}</h1>
 	                            {{ .description | safeHTML }}
 	                        </div>
-	                        <div class="col-md-7">
+	                        <div class="col-md centralize">
                                 {{with .more}}{{. | safeHTML}}{{end}}
                                 <!-- <img class="img-responsive" src="{{ .image }}" alt="" style="height: 100px"> -->
 	                        </div>
