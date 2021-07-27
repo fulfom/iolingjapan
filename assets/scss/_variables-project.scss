@@ -9,10 +9,6 @@ $success: #28a745;
 
 /* your styles go here */
 
-strong{
-  background: linear-gradient(#fff 70%, #fe624d44 0%);
-}
-
 .box-image-text .image {
     min-height: 200px;
     max-height: 200px;
@@ -55,7 +51,7 @@ strong{
   .simple-list li:last-child{
     border-bottom: 0;
   }
-  
+
   h2 {
     padding: .25em .5em;/*上下 左右の余白*/
     background: transparent;/*背景透明に*/
@@ -781,5 +777,28 @@ $danger: #dc3545;
   transition: all 0.2s ease-out;
   &:hover{
     transform: scale(1.1, 1.1);
+  }
+}
+
+strong{
+  background: linear-gradient(#fff 70%, #fe624d44 0%);
+}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@each $bp, $breakpoint in $grid-breakpoints {
+  @media (max-width: $breakpoint) {
+    .foldable-table-upto-#{$bp} {
+      td:not(:first-child) {
+        display: block;
+      } 
+    }
   }
 }
