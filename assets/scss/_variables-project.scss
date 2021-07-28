@@ -796,6 +796,11 @@ $grid-breakpoints: (
 @each $bp, $breakpoint in $grid-breakpoints {
   @media (max-width: $breakpoint) {
     .foldable-table-upto-#{$bp} {
+      td {
+        display: block;
+      } 
+    }
+    .foldable-table-without-first-col-upto-#{$bp} {
       td:not(:first-child) {
         display: block;
       } 

@@ -178,30 +178,37 @@ a-li-jenga （彼は-～した-建てる）
 
 以下はトルコ語のお話とその日本語訳です．空欄1～4をうめてください．1～3は単語, 4には文が入ります．
 
-<div class="simple-list">
-    <ol>
-        <li>Canavar okula geldi.<br>
-          <small>かいじゅうが学校に来た．</small></li>
-        <li>Canavar arkadaş istedi.<br>
-          <small>かいじゅうは（ 1 ）を欲しがった．</small></li>
-        <li>Hoca canavara top verdi.<br>
-          <small>先生がかいじゅうにボールをあげた．</small></li>
-        <li>Canavar topa bindi.<br>
-          <small>かいじゅうはボールに乗った．</small></li>
-        <li>Top ezildi.<br>
-          <small>ボールはつぶれた．</small></li>
-        <li>Canavar okul beğenmedi.<br>
-          <small>（ 2 ）は（ 3 ）を気に入らなかった．</small></li>
-        <li>Çocuklar gelip canavara balon verdi.<br>
-          <small>（ 4 ）．</small></li>
-        <li>Canavar balona binip ezdi.<br>
-          <small>かいじゅうは風船に乗ってつぶした．</small></li>
-        <li>Çocuklar canavar beğenip arkadaş getirdi.<br>
-          <small>子どもたちはかいじゅうを気に入って友達を連れてきた．</small></li>
-        <li>Canavar okul beğendi.<br>
-          <small>かいじゅうは学校を気に入った．</small></li>
-    </ol>
-</div>
+{{< table id="sample3-data" class="simple-table foldable-table-upto-md mb-0">}}
+
+|||
+| ----------------------------------------- | ---------------------------------------------------- |
+| Canavar okula geldi.                      | かいじゅうが学校に来た．                             |
+| Canavar arkadaş istedi.                   | かいじゅうは（ 1 ）を欲しがった．                    |
+| Hoca canavara top verdi.                  | 先生がかいじゅうにボールをあげた．                   |
+| Canavar topa bindi.                       | かいじゅうはボールに乗った．                         |
+| Top ezildi.                               | ボールはつぶれた．                                   |
+| Canavar okul beğenmedi.                   | （ 2 ）は（ 3 ）を気に入らなかった．                 |
+| Çocuklar gelip canavara balon verdi.      | （ 4 ）．                                            |
+| Canavar balona binip ezdi.                | かいじゅうは風船に乗ってつぶした．                   |
+| Çocuklar canavar beğenip arkadaş getirdi. | 子どもたちはかいじゅうを気に入って友達を連れてきた． |
+| Canavar okul beğendi.                     | かいじゅうは学校を気に入った．                       |
+
+{{< /table >}}
+
+<style>
+#sample3-data {
+  counter-reset: rowCount;
+}
+
+#sample3-data > tbody > tr {
+  counter-increment: rowCount;
+}
+
+#sample3-data > tbody > tr::before {
+  content: counter(rowCount) ". ";
+  text-align: end;
+}
+</style>
 
 {{% collapse title="ヒント" id="hint3" %}}
 
