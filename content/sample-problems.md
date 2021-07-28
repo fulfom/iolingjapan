@@ -522,3 +522,24 @@ fitu ua valu: 728
 n = 77, valu = 1, ono = 9, tolu = 4, hiva = 16, taha = 8, fitu = 2, noa = 0, ua = 12, nima = 44, fā = 49, 324 = tolu hiva, fitu ua valu = 12783
 
 {{% /collapse %}}
+
+---
+
+今後の追加をお楽しみに．
+
+{{< collapse title="問題番号注記" >}}
+
+互換性のため，問題番号とラベルがずれている．
+
+{{< table class="simple-table" >}}
+|問題番号|ラベル|タイトル|
+| - | ----------- | ------------------ |
+| 1 | JOLsample-1 | インドネシア語     |
+| 2 | JOLsample-2 | アイヌ語           |
+| 3 | JOLsample-6 | スワヒリ語         |
+| 4 | JOLsample-3 | トルコ語           |
+| 5 | JOLsample-4 | 古代エジプトの数字 |
+| 6 | JOLsample-5 | トンガ語           |
+
+{{< /table >}}
+{{< /collapse >}}
