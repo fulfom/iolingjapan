@@ -118,7 +118,7 @@ JOLは2時間，APLOは5時間，IOL（個人戦）は6時間かけて5問から
 
 ## 変遷
 
-{{< table class="table foldable-table-upto-md">}}
+{{< table class="table foldable-table-without-first-col-upto-md">}}
 
 |      |                                      |                        |
 | ---- | ------------------------------------ | ---------------------- |
