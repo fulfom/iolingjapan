@@ -9,7 +9,7 @@ importCSS = ["scss/loaded.scss"]
 
 {{< simplebox お知らせ >}}
 
-- JOL2022応募開始
+<!-- - JOL2022応募開始 -->
 
 {{< /simplebox >}}
 
