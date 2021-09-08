@@ -1,4 +1,4 @@
 {{ $title := .Get "title" }}
-<div class="card">
+<div class="card{{with .Get "class"}} {{.}}{{end}}">
     {{with $title}}<div class="card-header"><h4 class="mb-0">{{.}}</h4></div>{{end}}{{.Inner | markdownify}}
 </div>

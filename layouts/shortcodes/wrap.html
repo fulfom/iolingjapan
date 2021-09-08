@@ -1,3 +1,10 @@
-{{(delimit (slice "<" (.Get "tag") " class=" "\"" (.Get "class") "\"" ">") "") | safeHTML}}
+{{$tag := ""}}{{ $attrs := "" }}
+{{ range $k, $v := .Params }}
+  {{if eq $k "tag"}}{{$tag = $v}}{{else}}
+  {{ $attrs = printf "%s %s=\"%v\"" $attrs $k $v }}{{end}}
+{{ end }}
+{{ $new := printf "<%s %s>" $tag $attrs }}
+
+{{$new | safeHTML}}
 {{.Inner | markdownify}}
 {{(delimit (slice "</" (.Get "tag") ">") "") | safeHTML}}

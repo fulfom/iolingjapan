@@ -807,3 +807,86 @@ $grid-breakpoints: (
     }
   }
 }
+
+//toc
+
+.ArticleToc{
+  font-size: 16px;
+  line-height: 1.5;
+  ol{
+    position: relative;
+    padding: 0;
+    list-style: none;
+  }
+  li{
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+  }
+  &>ol{
+    &::before{
+      position: absolute;
+      content: "";
+      width: 2px;
+      background: #e7f5f8;
+      top: 17px;
+      bottom: 8px;
+      left: 5px;
+      border-radius: 0 0 5px 5px;
+    }
+    li{
+      position: relative;
+      font-weight: 700;
+      font-family: $font-family-bold;
+      margin-top: 5px;
+      padding-left: 21px;
+      &,a{
+        color: #77838c;
+        position: relative;
+        transition: none;
+        overflow: hidden;
+        display: block;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        max-height: 3.05em;
+      }
+      &::before{
+        left: 0;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        // background: #aadde6;
+        // border: 2px solid #fff;
+        background: white;
+        border: 2px solid #aadde6;
+      }
+      &.active::before{
+        background: $primary;
+        border: none;
+      }
+    }
+  }
+  &>ol ol{
+    li{
+      font-weight: 400;
+      &::before{
+        border-radius: 50%;
+        left: -19px;
+        top: 6px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #fff;
+        background: #aadde6;
+      }
+    }
+  }
+  a{
+    &.active,&:hover{
+      color: inherit;
+    }
+  }
+}
