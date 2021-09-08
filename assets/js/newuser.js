@@ -1,17 +1,20 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     firebase.auth().onAuthStateChanged(async (user) => {
         if(user){
+            //メールアドレスを取得して表示
             for(let i = 0; i < USER_EMAILs.length; i++){
                 USER_EMAILs[i].innerText = user.email;
             }
 
             const promiseUser = (async () => {
                 const snapshot = await firebase.database().ref("/users/" + user.uid).once("value");
-                let val = snapshot.val();
+                const val = snapshot.val();
                 let isnewuser = true;
                 if(val){
-                    if(val.existing){
-                        isnewuser = false;
+                    //JOL2022未登録なら
+                    if(val.birthdate){
+                        document.getElementById("mainmenu").style.display = "inline-block"
+                        // isnewuser = false;
                     }
                 }
                 else{

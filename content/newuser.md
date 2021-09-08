@@ -5,16 +5,21 @@ import = ["js/appsys.js", "js/newuser.js"]
 importCSS = ["scss/loaded.scss"]
 +++
 
-<div class="simple-box" id="switchaccount">
-    <span class="box-title"><a data-toggle="collapse" href data-target="#collapse-switchaccount" role="button" aria-expanded="true" aria-controls="collapse-switchaccount"><i class="fas fa-angle-right fa-fw"></i>Q. 登録済なのになぜ新規登録？</a></span>
-    <div class="collapse show" id="collapse-switchaccount">
-        <p>別のアカウントやメールアドレスでログインしているかもしれません．</p>
-        <p>使用中のメールアドレス: <span class="user-email"></span></p>
-        <button id="logout" onclick="logout()" class="btn btn-danger">ログアウト</button>
-    </div>
-</div>
+## JOL2022応募
 
-現在新規登録は受け付けておりません．
+日本言語学オリンピック（JOL）へご興味を持ってくださり，ありがとうございます．
+
+[最新の{{< icon file-alt " " >}}受験案内をお読みの上，ご応募ください](/application/)．
+
+<a id="proceed" href="/entry/jol2022/" role="button" class="btn btn-template-primary text-decoration-none">JOL2022応募に進む</a>
+
+<a id="mainmenu" href="/account/" role="button" class="btn btn-primary text-decoration-none" style="display: none;">成績参照</a>
+
+{{< simplebox "Q. 登録済なのになぜ新規登録？" >}}
+別のアカウントやメールアドレスでログインしているかもしれません．  
+使用中のメールアドレス: <span class="user-email"></span>  
+<button id="logout" onclick="logout()" class="btn btn-danger">ログアウト</button>
+{{< /simplebox >}}
 
 <style>
     #heading-breadcrumbs{
