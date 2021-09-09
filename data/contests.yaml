@@ -52,7 +52,9 @@ upcomingContests:
   detail: "/application/"
   # result: "/result/jol2022/"
   # record: "/record-jol/#jol2022結果"
-  status: "pre" #応募開始前
+  # status: "pre" #応募開始前
+  status: "entryopen" #応募開始後
+  entry: "/entry/jol2022/"
   # visible: 
   #   badge: "jol2022"
 - id: aplo2022
@@ -67,7 +69,7 @@ upcomingContests:
   limited: true
   status: "pre" #応募開始前
   visible:
-    badge: "jol2021"
+    spot: "flag"
 - id: iol2022
   title: IOL2022
   desc1: 2022年夏
@@ -80,4 +82,4 @@ upcomingContests:
   limited: true
   status: "pre" #応募開始前
   visible:
-    badge: "jol2021"
+    spot: "flag"

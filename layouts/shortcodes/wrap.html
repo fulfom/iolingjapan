@@ -5,6 +5,4 @@
 {{ end }}
 {{ $new := printf "<%s %s>" $tag $attrs }}
 
-{{$new | safeHTML}}
-{{.Inner | markdownify}}
-{{(delimit (slice "</" (.Get "tag") ">") "") | safeHTML}}
+{{$new | safeHTML}}{{.Inner | markdownify}}{{(delimit (slice "</" (.Get "tag") ">") "") | safeHTML}}

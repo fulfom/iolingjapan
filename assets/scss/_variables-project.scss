@@ -820,6 +820,7 @@ $grid-breakpoints: (
   }
   li{
     position: relative;
+    cursor: pointer;
     &::before{
       content: "";
       position: absolute;
@@ -843,8 +844,8 @@ $grid-breakpoints: (
       font-family: $font-family-bold;
       margin-top: 5px;
       padding-left: 21px;
+      color: #999;
       &,a{
-        color: #77838c;
         position: relative;
         transition: none;
         overflow: hidden;
@@ -853,6 +854,11 @@ $grid-breakpoints: (
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         max-height: 3.05em;
+      }
+      &.toc-active{
+        &,a{
+          color: $font-color;
+        }
       }
       &::before{
         left: 0;
@@ -864,9 +870,13 @@ $grid-breakpoints: (
         background: white;
         border: 2px solid #aadde6;
       }
-      &.active::before{
+      &.toc-active::before{
         background: $primary;
         border: none;
+      }
+      &.toc-done::before{
+        background: $primary;
+        border: 2px solid white;
       }
     }
   }
@@ -884,9 +894,10 @@ $grid-breakpoints: (
       }
     }
   }
-  a{
-    &.active,&:hover{
-      color: inherit;
+  li:not(.toc-active) a{
+    color: #999;
+    &:hover{
+      color: $font-color;
     }
   }
 }
