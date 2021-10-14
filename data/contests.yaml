@@ -59,8 +59,8 @@ upcomingContests:
   #   badge: "jol2022"
 - id: aplo2022
   title: APLO2022
-  desc1: 2022年3月?
-  date: 2022-03-28
+  desc1: 2022年4月10日(日)
+  date: 2022-04-10
   detail: "/application/"
   # entry: "/entry/aplo2022/"
   # site: "/contest/aplo2022/"
@@ -72,8 +72,8 @@ upcomingContests:
     spot: "flag"
 - id: iol2022
   title: IOL2022
-  desc1: 2022年夏
-  date: 2022-07-19
+  desc1: 2022年7月25-29日
+  date: 2022-07-25
   desc2: マン島
   # entry: "/entry/iol2022/"
   # detail: "/detail/iol2021/"
