@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 else{
                     await writeData(val);
                     updateSpot(val.spot);
-                    await proceed(0,1);
+                    await proceed(0,2);
                 }
             }
             else{
