@@ -1,38 +1,11 @@
 +++
-title = "JOL2022応募"
+title = "JOL2022応募情報確認"
 type = "page"
-import = ["js/appsys.js", "js/entry/common.js", "js/entry/jol2022.js"]
+import = ["js/appsys.js", "js/entry/common.js", "js/entry/jol2022ui.js"]
 importCSS = ["scss/loaded.scss"]
 +++
 
-{{< wrap tag=div class="ArticleToc" id="stepList" >}}
-
-1. 最新の{{< icon file-alt " " >}}受験案内をよく読む
-1. 参加枠の選択 & 個人情報の入力
-1. 受験料の支払い
-1. 応募完了
-
-{{< /wrap >}}
-
-{{< wrap tag=div id="step0" class="" style="display: none;" >}}
-日本言語学オリンピック（JOL）へご興味を持ってくださり，ありがとうございます．
-
-[最新の{{< icon file-alt " " >}}受験案内をお読みの上，ご応募ください](/application/)．
-
-<button onclick="proceed(0, 1)" id="proceed" class="btn btn-template-primary">JOL2022応募に進む</button>
-
-<button id="mainmenu" onclick="transitionToMainmenu()" class="btn btn-primary text-decoration-none" style="display: none;">過去の成績参照</button>
-
-{{< simplebox "Q. 応募済なのにこの画面が出ます" >}}
-応募時とは別のアカウントやメールアドレスでログインしているかもしれません．  
-使用中のメールアドレス: <span class="user-email"></span>  
-<button id="logout" onclick="logout()" class="btn btn-danger">ログアウト</button>
-{{< /simplebox >}}
-{{< /wrap >}}
-
-{{< wrap tag=div id="step1" style="display: none;" >}}
-
-### 参加枠の選択
+### 参加枠
 
 {{< wrap tag=div class="row" id="app-selecct-spot" >}}
 {{< wrap tag=div class="card col-6" >}}
@@ -47,11 +20,8 @@ importCSS = ["scss/loaded.scss"]
 - 参加資格: 不問
 - 日本代表選抜の対象ではない
 {{< /wrap >}}
-{{< /wrap >}}
 
-{{< wrap tag=div id="step1-2" style="display: none;" >}}
-
-### {{< icon user-edit 個人情報の入力 >}} {#h-cont-info}
+### {{< icon user-edit 個人情報 >}} {#h-cont-info}
 
 <div id="app-cont-info" class="mb-4">
     <form onsubmit="infoSubmit(); return false;" class="needs-validation">
@@ -110,83 +80,7 @@ importCSS = ["scss/loaded.scss"]
                 <label class="form-check-label" for="input-pa">JOL2022への参加にあたって私は保護者に有効な同意を得ています</label>
             </div>
         </div>
-        <button id="update-info" type="submit" class="btn btn-template-primary w-100">更新して次へ</button>
+        <button id="update-info" type="submit" class="btn btn-template-primary w-100">更新する</button>
       </form>
 </div>
-<button class="btn btn-template-main" onclick="proceed(1,0)">戻る</button>
 {{< /wrap >}}
-{{< /wrap >}}
-
-{{< wrap tag=div id="step2" style="display: none;" >}}
-
-### 受験料の支払い
-
-以下の手順にしたがって進めてください．
-
-1\. 受験料支払い用のサイト（Stores）にアクセス  
-2\. 「日本言語学オリンピック2022受験料」をカートに入れる
-
-{{< figure src="/img/jol2022/stores1.png" >}}
-
-3\. 注文画面へ進む
-
-{{< figure src="/img/jol2022/stores2.png" >}}
-
-4\. 購入者情報を入力
-
-{{< figure src="/img/jol2022/stores3.png" >}}
-
-{{< wrap tag=div class="alert alert-primary" role="alert" >}}
-{{< icon "exclamation-triangle text-muted" "↓メールアドレスの欄には必ず応募に使用しているメールアドレスをご入力ください．以下をコピー&ペーストすることをおすすめします．" >}}
-{{< /wrap >}}
-
-お使いのメールアドレス: <span class="unmot"><span class="user-email"></span><button id="copy" class="btn btn-template-primary d-inline-block btn-small ms-3" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fas fa-clipboard fa-fw"></i>コピー</button></span>
-
-{{< figure src="/img/jol2022/stores4.png" >}}
-
-5\. 指示に従って支払いを済ませる
-
-<a class='btn btn-template-primary text-decoration-none' href="https://iolingjapan.stores.jp/items/5f8bb7180850a00ec7c6a0bd" target="_blank">受験料支払い用のサイトへ</a>
-
-6\. 支払いが確認されるまで本ページ上でお待ちください．
-
-{{< simplebox "進まない場合" >}}
-
-- 支払いの確認に数分かかります．電波状況などによってはもう少しかかります．
-- 応募と支払いで異なるメールアドレスを使用した場合，支払いの確認が取れません．その場合は，**支払いで使用したメールアドレス**から委員会に以下の内容を含むメールを送信してください．
-  - 氏名
-  - 応募で使用したメールアドレス
-  - 受験料振替の旨
-  - 支払いで使用したメールアドレスが分からない，間違えた場合は，代わりにオーダー番号
-- メールアドレスに不備もなく，20分経ったが進まない場合は，委員会に問い合わせてください．
-
-{{< /simplebox >}}
-<button class="btn btn-template-main" onclick="proceed(2,1)">戻る</button>
-{{< /wrap >}}
-
-{{< wrap tag=div id="step3" style="display: none;" >}}
-
-### 応募完了
-
-ご応募ありがとうございます．無事，JOL2022への応募が完了しました．
-
-{{< simplebox "メールアドレスの記録" >}}
-
-今後別の Google アカウント/メールアドレスで間違えてログインしないよう，応募で使用したメールアドレスをメモやスクリーンショットで記録することをおすすめします．
-
-JOL2022の応募に使用したメールアドレス: <span class="user-email"></span>
-
-{{< /simplebox >}}
-
-{{< simplebox "個人情報の確認，訂正" >}}
-
-個人情報の確認，訂正は応募者ページのJOL2022の{{< icon user-edit "確認" >}}から行えます．
-
-{{< figure src="/img/jol2022/edituserinfo.png" >}}
-{{< /simplebox >}}
-
-<a class="btn btn-template-primary text-decoration-none" role="button" href="/account">→ 応募者ページへ</a>
-
-{{< /wrap >}}
-
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>

@@ -55,6 +55,7 @@ upcomingContests:
   # status: "pre" #応募開始前
   status: "entryopen" #応募開始後
   entry: "/entry/jol2022/"
+  entryui: "/entry/jol2022ui/"
   # visible: 
   #   badge: "jol2022"
 - id: aplo2022

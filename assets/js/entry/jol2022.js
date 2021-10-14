@@ -32,9 +32,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
             const snapshot = await firebase.database().ref("/contests/jol2022/users/" + user.uid).once("value");
             let val = snapshot.val();
             if(val){
-                await writeData(val);
-                updateSpot(val.spot);
-                await proceed(0,1);
+                if(val.entry){
+                    await proceed(0,3);
+                }
+                else{
+                    await writeData(val);
+                    updateSpot(val.spot);
+                    await proceed(0,1);
+                }
             }
             else{
                 const snapshot2 = await firebase.database().ref("/users/" + user.uid).once("value");
@@ -53,6 +58,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 if(val2){
                     paid = true;
                     await firebase.database().ref("/users/" + user.uid).update({entry: "jol2022"});
+                    await firebase.database().ref("/contests/jol2022/users/" + user.uid).update({entry: true});
                     if(currentStep == 2){
                         await proceed(currentStep, 3);
                     }
