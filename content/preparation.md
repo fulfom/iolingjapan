@@ -27,12 +27,13 @@ keywords = []
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
+- [言オリ初心者に解いてほしいおすすめ過去問7選](https://fulfom.hatenablog.com/entry/2021/07/31/074102)
 - [3日で対策！ 日本言語学オリンピック](http://zohe.hatenablog.com/entry/2019/03/21/191555)
 
 {{< /list >}}
 {{< /card-header >}}
 
-## 国内予選の過去問
+## 国内予選の過去問 {#pastproblem}
 
 {{< table class="table" >}}
 
@@ -86,6 +87,7 @@ keywords = []
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
+- [（全般的な）問題対策](/tutorial/)
 - [JOL2019第5問解説](https://fulfom.hatenablog.com/entry/2019/12/21/145615)  
 - [JOL2018第5問解説](https://karngati.hatenablog.com/entry/JOL2018_5)
 - [karŋati’s diary(karngati)](https://karngati.hatenablog.com/entry/JOL2018_5)
