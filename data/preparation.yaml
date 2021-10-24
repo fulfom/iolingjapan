@@ -7,7 +7,7 @@ features:
     link: "#おすすめの問題"
     icon: fas fa-star
   - title: JOL過去問
-    link: "#国内予選の過去問"
+    link: "#pastproblem"
     icon: fas fa-paperclip
   - title: データベース
     link: "#データベース"
@@ -19,6 +19,9 @@ features:
   - title: 他の言語学オリンピック
     link: "#他の言語学オリンピック"
     icon: "fas fa-globe"
+  - title: 体験談
+    link: "/experiences/"
+    icon: fas fa-walking
   - title: 広報資料
     link: "/information/#material"
     icon: fas fa-paper-plane

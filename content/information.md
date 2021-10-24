@@ -52,7 +52,7 @@ JOLは主に日本国内に向けた大会で，国際本部から認可を受�
 - 問題は実際の言語研究で行われる分析に似ていて，「**初めて見る言語のデータから隠れた法則を解き明かす**」というものです．謎解きやパズルのように，分析力，情報処理能力，論理的思考，試行錯誤する力が求められます．この点で，数学やプログラミングと根本となる能力が似ていると思われます．
 - 言語学オリンピックの問題の特筆すべき点は，問題の**自己完結性**です．答案を書くために必要な情報はすべて問題の中に隠されています．したがって「暗記力」は必要ありません．語学試験や弁論大会とは異なり，英語やその他特定の言語を話したり書いたりするための運用能力は求められません．言語の知識はむしろ，言語分析にとって重要な「相対的な世界観」を構築するのに役立ちます．
 - 明かすべき法則は必ず不透明な形で提示されます．したがって，頭の中にある知識をそのまま使ったり，問題のどこかからコピー&ペーストするだけでは良い点を取ることができません．良い評価を得るには，データを元に帰納的推論を用いて法則の仮説を一般化し，仮説演繹法で法則の仮説の検証を行う，という**試行錯誤**のプロセスが求められます．
-- APLO, IOLではさらに，見つけた法則を**文章や表で説明する**ことが採点の対象になります．主体的な思考力・表現力が求められます．
+- APLO，IOLではさらに，見つけた**法則を文章や表で説明する**ことが採点の対象になります．主体的な思考力・表現力が求められます．
 - 以上の求められる能力というのは，言語学オリンピックの問題を解くことで鍛えられる能力でもあると考えられます．
 
 ### 例題
@@ -112,9 +112,16 @@ ber- をつけると動詞になる．-an をつけると「～だらけ」と�
 
 ## 競技の基本的なレギュレーション
 
-JOLは2時間，APLOは5時間，IOL（個人戦）は6時間かけて5問からなる問題セットを解きます（ただしJOLは5問とは限らない）．
+{{< table class="list-like" >}}
 
-特筆すべきは，IOLでは個人戦の他に4人チームで解く団体戦が存在することです．IOL団体戦は3-4時間で行われ，大量のデータを手分けして分析します．各々の問題を解く力に加えて，4人のチームワークが求められます．
+|||
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 競技時間 | JOLは2時間，APLOは5時間，IOL（個人戦）は6時間かけて5問からなる問題セットを解きます（ただしJOLは5問とは限らない）．                                                                                      |
+| 解答形式  | JOLでは問題への解答のみが採点対象ですが，APLO，IOLではさらに，見つけた**法則を文章や表で説明する**ことが採点の対象になります．                                                                          |
+| 作業言語 | 問題と答案執筆に使う言語は，JOLでは日本語のみですが，APLO，IOLでは日本語を含むいくつかの言語から選べます．国際大会でも日本語を使うことができます．
+| 団体戦 | 特筆すべきは，IOLでは個人戦の他に4人チームで解く団体戦が存在することです．IOL団体戦は3-4時間で行われ，大量のデータを手分けして分析します．各々の問題を解く力に加えて，4人のチームワークが求められます． |
+
+{{< /table >}}
 
 ## 変遷
 
@@ -181,13 +188,29 @@ JOLは例年9月末から募集を開始し，11月中旬に説明会（また�
 {{% /list %}}
 {{< /card-header >}}
 
+[IOLの公式Facebook](http://www.facebook.com/international.linguistics.olympiad)にIOL2019のようすをまとめた動画がアップロードされています．
+
+<div class="embed-responsive embed-responsive-16by9 mb-3" style="max-width:700px">
+<iframe class="embed-responsive-item" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Finternational.linguistics.olympiad%2Fvideos%2F653567755048784%2F&show_text=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+</div>
+
+こちらは2017年のダブリン大会の動画です．
+
+<div class="embed-responsive embed-responsive-16by9 mb-3" style="max-width:700px">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KeThEGttUBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+## 体験談
+
+過去，言語学オリンピックに参加された方の体験談を掲載しています．
+
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item">}}
+
+- [IOL2021代表（{{< icon pen >}}2021）](/experiences/iol2021-1/)
+- [IOL2019代表（{{< icon pen >}}2020 {{< icon undo >}}2021）](/experiences/iol2019-1/)
+
+{{< /list >}}
+
 ## 広報資料 {#material}
 
 To be updated
-
-<!---## 支援のお願い-->
-
-<!--script type="text/javascript">
-function drawCharts(){
-}
-</script-->

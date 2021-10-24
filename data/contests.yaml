@@ -52,13 +52,16 @@ upcomingContests:
   detail: "/application/"
   # result: "/result/jol2022/"
   # record: "/record-jol/#jol2022結果"
-  status: "pre" #応募開始前
+  # status: "pre" #応募開始前
+  status: "entryopen" #応募開始後
+  entry: "/entry/jol2022/"
+  entryui: "/entry/jol2022ui/"
   # visible: 
   #   badge: "jol2022"
 - id: aplo2022
   title: APLO2022
-  desc1: 2022年3月?
-  date: 2022-03-28
+  desc1: 2022年4月10日(日)
+  date: 2022-04-10
   detail: "/application/"
   # entry: "/entry/aplo2022/"
   # site: "/contest/aplo2022/"
@@ -67,11 +70,11 @@ upcomingContests:
   limited: true
   status: "pre" #応募開始前
   visible:
-    badge: "jol2021"
+    spot: "flag"
 - id: iol2022
   title: IOL2022
-  desc1: 2022年夏
-  date: 2022-07-19
+  desc1: 2022年7月25-29日
+  date: 2022-07-25
   desc2: マン島
   # entry: "/entry/iol2022/"
   # detail: "/detail/iol2021/"
@@ -80,4 +83,4 @@ upcomingContests:
   limited: true
   status: "pre" #応募開始前
   visible:
-    badge: "jol2021"
+    spot: "flag"

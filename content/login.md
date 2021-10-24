@@ -14,4 +14,4 @@ import = ["js/loginredirect.js"]
 
 どの Google アカウント/メールアドレスでログインしていたか忘れた，そんな場合は当委員会（ jolinguistics@gmail.com ）からのメールを検索し，メールを受け取ったことのあるメールアドレス（またはそのメールアドレスに紐づいている Google アカウント）でログインしてみてください．
 
-{{</simplebox >}}
+{{< /simplebox >}}

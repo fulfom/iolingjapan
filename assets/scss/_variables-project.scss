@@ -807,3 +807,97 @@ $grid-breakpoints: (
     }
   }
 }
+
+//toc
+
+.ArticleToc{
+  font-size: 16px;
+  line-height: 1.5;
+  ol{
+    position: relative;
+    padding: 0;
+    list-style: none;
+  }
+  li{
+    position: relative;
+    cursor: pointer;
+    &::before{
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+  }
+  &>ol{
+    &::before{
+      position: absolute;
+      content: "";
+      width: 2px;
+      background: #e7f5f8;
+      top: 17px;
+      bottom: 8px;
+      left: 5px;
+      border-radius: 0 0 5px 5px;
+    }
+    li{
+      position: relative;
+      font-weight: 700;
+      font-family: $font-family-bold;
+      margin-top: 5px;
+      padding-left: 21px;
+      color: #999;
+      &,a{
+        position: relative;
+        transition: none;
+        overflow: hidden;
+        display: block;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        max-height: 3.05em;
+      }
+      &.toc-active{
+        &,a{
+          color: $font-color;
+        }
+      }
+      &::before{
+        left: 0;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        // background: #aadde6;
+        // border: 2px solid #fff;
+        background: white;
+        border: 2px solid #aadde6;
+      }
+      &.toc-active::before{
+        background: $primary;
+        border: none;
+      }
+      &.toc-done::before{
+        background: $primary;
+        border: 2px solid white;
+      }
+    }
+  }
+  &>ol ol{
+    li{
+      font-weight: 400;
+      &::before{
+        border-radius: 50%;
+        left: -19px;
+        top: 6px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #fff;
+        background: #aadde6;
+      }
+    }
+  }
+  li:not(.toc-active) a{
+    color: #999;
+    &:hover{
+      color: $font-color;
+    }
+  }
+}

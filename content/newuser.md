@@ -5,16 +5,13 @@ import = ["js/appsys.js", "js/newuser.js"]
 importCSS = ["scss/loaded.scss"]
 +++
 
-<div class="simple-box" id="switchaccount">
-    <span class="box-title"><a data-toggle="collapse" href data-target="#collapse-switchaccount" role="button" aria-expanded="true" aria-controls="collapse-switchaccount"><i class="fas fa-angle-right fa-fw"></i>Q. 登録済なのになぜ新規登録？</a></span>
-    <div class="collapse show" id="collapse-switchaccount">
-        <p>別のアカウントやメールアドレスでログインしているかもしれません．</p>
-        <p>使用中のメールアドレス: <span class="user-email"></span></p>
-        <button id="logout" onclick="logout()" class="btn btn-danger">ログアウト</button>
-    </div>
-</div>
+<a id="proceed" href="/entry/jol2022/" role="button" class="btn btn-template-primary text-decoration-none">JOL2022応募に進む</a>
 
-現在新規登録は受け付けておりません．
+{{< simplebox "Q. 登録済なのになぜ新規登録？" >}}
+別のアカウントやメールアドレスでログインしているかもしれません．  
+使用中のメールアドレス: <span class="user-email"></span>  
+<button id="logout" onclick="logout()" class="btn btn-danger">ログアウト</button>
+{{< /simplebox >}}
 
 <style>
     #heading-breadcrumbs{

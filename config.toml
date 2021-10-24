@@ -47,7 +47,7 @@ public_folder = "/pdf/"
     weight = 3
 
 [[menu.main]]
-    name = "過去問"
+    name = "過去問と資料"
     identifier = "preparation"
     url  = "/preparation/"
     weight = 4
@@ -100,7 +100,7 @@ public_folder = "/pdf/"
     # Enable the contact form by entering your Formspree.io email
     email = ""
 
-    about_us = "特定非営利活動法人 国際教育合作協会; 委員長ポールスノードン; お問い合わせはこちら jolinguistics@gmail.com"
+    about_us = "特定非営利活動法人 国際教育合作協会; 委員長 風間伸次郎; お問い合わせはこちら jolinguistics@gmail.com"
     copyright = "国際言語学オリンピック日本委員会" 
 
     # Format dates with Go's time formatting

@@ -27,23 +27,24 @@ keywords = []
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
+- [言オリ初心者に解いてほしいおすすめ過去問7選](https://fulfom.hatenablog.com/entry/2021/07/31/074102)
 - [3日で対策！ 日本言語学オリンピック](http://zohe.hatenablog.com/entry/2019/03/21/191555)
 
 {{< /list >}}
 {{< /card-header >}}
 
-## 国内予選の過去問
+## 国内予選の過去問 {#pastproblem}
 
 {{< table class="table" >}}
 
-| 問題                                                                                         | 解答                                                                                           | 備考                                                                                             |
-| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| [2021SE](/pdf/jol2021-se.pdf) | [2021解答](/pdf/jol2021-sol.pdf) | [問題当日版](/pdf/jol2021.pdf) ※1 |
-| [2020](/pdf/jol2020.pdf)                   | [2020解答](/pdf/jol2020-sol.pdf)                 |                                                                                                  |
-| [2019](/pdf/jol2019.pdf)                   | [2019解答](/pdf/jol2019-sol.pdf)                 |                                                                                                  |
-| [2018](/pdf/jol2018.pdf)                   | [2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808)                           | 問題誤植※2                                                                                       |
-| [2017](/pdf/jol2017.pdf)                   | [2017解答](/pdf/jol2017-sol.pdf)                 |                                                                                                  |
-| [2016](https://twitter.com/fulfom/status/1097706793885589504)                                |                                                                                                | 暫定公開                                                                                         |
+| 問題                          | 解答                                                                 | 備考                              |
+| ----------------------------- | -------------------------------------------------------------------- | --------------------------------- |
+| [2021SE](/pdf/jol2021-se.pdf) | [2021解答](/pdf/jol2021-sol.pdf)                                     | [問題当日版](/pdf/jol2021.pdf) ※1 |
+| [2020](/pdf/jol2020.pdf)      | [2020解答](/pdf/jol2020-sol.pdf)                                     |                                   |
+| [2019](/pdf/jol2019.pdf)      | [2019解答](/pdf/jol2019-sol.pdf)                                     |                                   |
+| [2018](/pdf/jol2018.pdf)      | [2018解答(参考)](http://zohe.hatenablog.com/entry/2019/03/04/145808) | 問題誤植※2                        |
+| [2017](/pdf/jol2017.pdf)      | [2017解答](/pdf/jol2017-sol.pdf)                                     |                                   |
+| [2016](/pdf/jol2016.pdf)      |  公開予定                                                                    |                                   |
 
 {{< /table >}}
 
@@ -86,6 +87,7 @@ keywords = []
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
+- [（全般的な）問題対策](/tutorial/)
 - [JOL2019第5問解説](https://fulfom.hatenablog.com/entry/2019/12/21/145615)  
 - [JOL2018第5問解説](https://karngati.hatenablog.com/entry/JOL2018_5)
 - [karŋati’s diary(karngati)](https://karngati.hatenablog.com/entry/JOL2018_5)

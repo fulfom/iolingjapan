@@ -13,7 +13,7 @@
     </div>
     <p class="mb-1"></p>
     <h5 class="text-moderate">{{.title}}</h5>
-    {{with .detail}}<a class="card-link" href="{{. | safeHTML}}">詳細</a>{{end}}
-    {{if isset . "entry"}}<a id="entried-{{.id}}-link" class="card-link" href="{{.entry | safeHTML}}"><i class="fas fa-user-edit fa-fw"></i>確認</a>{{end}}
+    {{with .detail}}<a class="card-link" href="{{. | safeHTML}}">詳細</a>{{end}}{{$entry := .entryui | default .entry}}
+    {{if $entry}}<a id="entried-{{.id}}-link" class="card-link" href="{{$entry | safeHTML}}"><i class="fas fa-user-edit fa-fw"></i>確認</a>{{end}}
     {{with .record}}<a class="card-link" href="{{.}}">データ</a>{{end}}
 </div>

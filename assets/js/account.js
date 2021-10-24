@@ -6,12 +6,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
             for(let i = 0; i < USER_EMAILs.length; i++){
                 USER_EMAILs[i].innerText = user.email;
             }
-
+            const contests = document.getElementsByClassName("appSys-contest");
+            let toberemoved = [];
             const promiseBadge = (async () => {
                 const snapshot = await firebase.database().ref("/badges/" + user.uid).once("value")
                 const badges = snapshot.val();
-                const contests = document.getElementsByClassName("appSys-contest");
-                let toberemoved = [];
                 for(let j = 0; j < contests.length; j++){
                     const cont = contests[j];
                     const badge = cont.getAttribute("data-visible-badge");
@@ -19,19 +18,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                     const isvisible = badge ? eq ? badges[badge] == eq : badges[badge] : true;
                     if(isvisible){
-                        if(cont.getAttribute("data-status") == "entryopen"){
-                            const contId = cont.getAttribute("data-id");
-                            const snapshot2 = await firebase.database().ref("/contests/" + contId + "/users/" + user.uid).once("value");
-                            const contestantInfo = snapshot2.val();
-                            if(contestantInfo){
-                                document.getElementById("entried-" + contId).style.display = "block";
-                            }
-                            else document.getElementById("entryopen-" + contId).style.display = "block";
-                        }
                     }
                     else toberemoved.push(cont);
                 }
-                toberemoved.forEach((cont)=>{cont.remove()});
             })();
             const promiseUser = (async () => {
                 const snapshot = await firebase.database().ref("/users/" + user.uid).once("value");
@@ -39,6 +28,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 if(snapshot.val()){
                     var val = snapshot.val();
                     if(val.admin){
+                        toberemoved.splice(0);
                         const adminRef = await firebase.database().ref("/admin/" + user.uid).once("value");
                         if(adminRef.val()){
                             isnewuser = false;
@@ -51,7 +41,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         }
                         else await firebase.database().ref("/users/" + user.uid).update({admin: false});
                     }
-                    if(val.existing){
+                    else{
+                        for(let j = 0; j < contests.length; j++){
+                            const cont = contests[j];
+                            const spot = cont.getAttribute("data-visible-spot");
+
+                            const isvisible = val.spot ? spot ? spot == val.spot : true : true;
+                            if(isvisible){
+                            }
+                            else toberemoved.push(cont);
+                        }
+                    }
+                    if(val.entry == "jol2022"){
+                        isnewuser = false;
+                    }
+                    else if(val.entry == "mainmenu2022"){
                         isnewuser = false;
                     }
                     // if(val.cancel){
@@ -64,13 +68,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         email: user.email
                     });
                 }
-                if(isnewuser) location.href = "/newuser/";
+                if(isnewuser) location.href = "/entry/jol2022/";
             })();
             
             await Promise.all([promiseBadge, promiseUser]).catch((e) => {
                 console.error(e);
                 alert("エラー");
             });
+            toberemoved.forEach((cont)=>{cont.remove()});
+            for(let j = 0; j < contests.length; j++){
+                const cont = contests[j];
+                if(cont.getAttribute("data-status") == "entryopen"){
+                    const contId = cont.getAttribute("data-id");
+                    const snapshot2 = await firebase.database().ref("/contests/" + contId + "/users/" + user.uid).once("value");
+                    const contestantInfo = snapshot2.val();
+                    if(contestantInfo && contestantInfo.entry){
+                        document.getElementById("entried-" + contId).style.display = "block";
+                    }
+                    else document.getElementById("entryopen-" + contId).style.display = "block";
+                }
+            }
             document.getElementsByTagName("body").item(0).style.opacity = 1;
         }
         else{
