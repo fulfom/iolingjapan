@@ -82,6 +82,7 @@ async function writeData(val){
     INPUT_SCHOOL_NAME.value = val.schoolName || "";
     INPUT_GRADE.value = val.grade || null;
     INPUT_PA.checked = val.pa;
+    INPUT_PRE_UNIV.checked = val.preUniv;
     INPUT_ADDRESS.value = val.address || "";
     INPUT_ZIPCODE.value = val.zipcode || "";
 }
@@ -116,6 +117,7 @@ async function infoSubmit(){
         schoolName: INPUT_SCHOOL_NAME.value || '',
         grade: INPUT_GRADE.value || 0,
         pa: INPUT_PA.checked,
+        preUniv: INPUT_PRE_UNIV.checked,
         zipcode: INPUT_ZIPCODE.value,
         address: INPUT_ADDRESS.value,
         timestamp: Date.now()
