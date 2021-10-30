@@ -16,7 +16,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     const badge = cont.getAttribute("data-visible-badge");
                     const eq = cont.getAttribute("data-visible-eq");
 
-                    const isvisible = badge ? eq ? badges[badge] == eq : badges[badge] : true;
+                    // const isvisible = badge ? eq ? badges[badge] == eq : badges[badge] : true;
+                    let isvisible = true;
+                    if(badge){
+                        if(badges){
+                            if(eq){
+                                isvisible = badges[badge] && badges[badge] == eq;
+                            }
+                            else{
+                                isvisible = badges[badge];
+                            }
+                        }
+                        else{
+                            isvisible = false;
+                        }
+                    }
                     if(isvisible){
                     }
                     else toberemoved.push(cont);
@@ -26,7 +40,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 const snapshot = await firebase.database().ref("/users/" + user.uid).once("value");
                 let isnewuser = true;
                 if(snapshot.val()){
-                    var val = snapshot.val();
+                    const val = snapshot.val();
                     if(val.admin){
                         toberemoved.splice(0);
                         const adminRef = await firebase.database().ref("/admin/" + user.uid).once("value");

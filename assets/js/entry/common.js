@@ -21,7 +21,7 @@ function updateSpot(spot){
         for(let i = 0; i < FORM_GROUPs.length; i++){
             if(FORM_GROUPs[i].classList.contains("spot-award-delete")){
                 FORM_GROUPs[i].style.display = "none";
-                FORM_GROUPs[i].getElementsByTagName("input")[0].value = null;
+                // FORM_GROUPs[i].getElementsByTagName("input")[0].value = null;
                 if(!FORM_GROUPs[i].classList.contains("nr")){
                     // console.log(i);
                     FORM_GROUPs[i].getElementsByTagName("input")[0].required = false;
