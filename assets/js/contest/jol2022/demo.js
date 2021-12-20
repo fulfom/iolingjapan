@@ -26,8 +26,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 const snapshot2 = await firebase.database().ref('/contests/jol2022/publish/demo/').once("value");
                 const publish = snapshot2.val();
                 if(publish){
-                    demolinks = publish;
+                    demolinks = Object.assign({}, demolinks, publish);
                     // updateLinks(publish);
+                }
+                const snapshot3 = await firebase.database().ref('/contests/jol2022/demo/' + user.uid).once("value");
+                const answerSheet = snapshot3.val();
+                if(answerSheet){
+                    demolinks = Object.assign({}, demolinks, answerSheet);
                 }
             }
             else{
