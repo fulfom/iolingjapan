@@ -1,7 +1,7 @@
 +++
 title = "JOL2022競技会場"
 # import = ["js/contest/jol2022/contest.js"]
-# draft = true
+draft = true
 type="page"
 +++
 
