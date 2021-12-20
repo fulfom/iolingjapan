@@ -54,7 +54,7 @@ function enableForm(formSelecter){
 const modify_updateSpot = updateSpot;
 updateSpot = (spot) => {
     const neg = spot == "flag" ? "award" : "flag";
-    enableForm("#app-cont-info");
+    // enableForm("#app-cont-info");
     document.getElementById("input-spot").value = spot;
     document.getElementById("select-spot-"+spot).classList.add("active");
     document.getElementById("select-spot-"+neg).classList.remove("active");
