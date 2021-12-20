@@ -60,6 +60,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //     }, 1000);
 // }
 
+let flag = false;
+
 function startTimer(rug){
     clearInterval(handleTimer)
     var end = new Date();
@@ -75,7 +77,9 @@ function startTimer(rug){
         var diff = end.getTime() - now.getTime();
         var data = Math.max(Math.floor(diff/1000) + rug, 0);
         updateTimer(data)
-        if(data == 7200){
+        if(data == 7200 && !flag){
+            console.log("start!", flag)
+            flag = true;
             updateLinks(demolinks);
         }
         if(data <= 0){
