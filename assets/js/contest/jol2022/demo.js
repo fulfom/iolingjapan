@@ -60,9 +60,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //     }, 1000);
 // }
 
-let flag = false;
-
 function startTimer(rug){
+    let flag = false;
     clearInterval(handleTimer)
     var end = new Date();
     end.setTime(end.getTime() + 7206000);
