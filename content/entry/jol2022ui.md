@@ -9,13 +9,16 @@ importCSS = ["scss/loaded.scss"]
 
 {{< wrap tag=div class="row" id="app-selecct-spot" >}}
 {{< wrap tag=div class="card col-6" >}}
-<button id="select-spot-flag" onclick="updateSpot('flag')" class="btn btn-template-main w-100"><i class="fas fa-flag fa-fw"></i>選抜</button>
+<!-- <button id="select-spot-flag" onclick="updateSpot('flag')" class="btn btn-template-main w-100"><i class="fas fa-flag fa-fw"></i>選抜</button> -->
+<button id="select-spot-flag" class="btn btn-template-main w-100"><i class="fas fa-flag fa-fw"></i>選抜</button>
 
 - 参加資格: 20歳未満かつ大学未入学
 - 日本代表選抜の対象
 {{< /wrap >}}
 {{< wrap tag=div class="card col-6" >}}
-<button id="select-spot-award" onclick="updateSpot('award')" class="btn btn-template-main w-100"><i class="fas fa-circle-notch fa-fw"></i>オープン</button>
+<!-- <button id="select-spot-award" onclick="updateSpot('award')" class="btn btn-template-main w-100"><i class="fas fa-circle-notch fa-fw"></i>オープン</button> -->
+
+<button id="select-spot-award" class="btn btn-template-main w-100"><i class="fas fa-circle-notch fa-fw"></i>オープン</button>
 
 - 参加資格: 不問
 - 日本代表選抜の対象ではない
@@ -80,7 +83,7 @@ importCSS = ["scss/loaded.scss"]
                 <label class="form-check-label" for="input-pa">JOL2022への参加にあたって私は保護者に有効な同意を得ています</label>
             </div>
         </div>
-        <button id="update-info" type="submit" class="btn btn-template-primary w-100">更新する</button>
+        <!-- <button id="update-info" type="submit" disabled class="btn btn-template-primary w-100">更新する</button> -->
       </form>
 </div>
 {{< /wrap >}}

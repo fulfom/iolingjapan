@@ -7,9 +7,22 @@ importCSS = ["scss/loaded.scss"]
 
 {{< appSys/features >}}
 
-{{< simplebox お知らせ >}}
+{{< wrap tag=div class="alert alert-warning" role="alert" id="alert" style="display: none;">}}
+{{< icon exclamation-triangle あなたは >}}JOL2022に応募していません．
 
-<!-- - JOL2022応募開始 -->
+もしも，ログインするアカウントを間違えた場合は，正しいアカウントでログインしなおしてください．
+
+今お使いのメールアドレス: <span class=user-email></span>
+
+<button id="logout" onclick="logout()" class="btn btn-danger btn-small">ログアウト</button>
+
+{{< /wrap >}}
+
+{{< simplebox お知らせ "" "info" >}}
+
+「JOL2022事前準備」ページを公開いたしました．
+
+<a role="button" class="btn btn-info text-decoration-none" href="/contest/jol2022/demo/">JOL2022事前準備</a>
 
 {{< /simplebox >}}
 
