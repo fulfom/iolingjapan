@@ -1,7 +1,8 @@
 +++
 title = "JOL2022競技会場"
 # import = ["js/contest/jol2022/contest.js"]
-draft = true
+# draft = true
+type="page"
 +++
 
 {{< simplebox "個人連絡" "d-none" "comment-box" >}}
@@ -38,11 +39,13 @@ draft = true
 
 {{< wrap tag=span class="meetinglink d-none">}}
 
-面接会場には[こちらのリンクからアクセスしてください](https://u-tokyo-ac-jp.zoom.us/j/89586763257?pwd=Y0o4YkxMS3FNSkJDN0U5UWhFbjJQQT09)．<!---面接用zoomのurl--->
+面接会場には[こちらのリンクからアクセスしてください](https://u-tokyo-ac-jp.zoom.us/j/89586763257?pwd=Y0o4YkxMS3FNSkJDN0U5UWhFbjJQQT09)．
 
 または下のQRコードからアクセスできます．
 
-<img src=""><!---面接用zoomのurlのQRコード--->
+{{< wrap tag=div style="max-width: 200px" >}}
+{{< figure src="/img/jol2022/qrcode.svg" >}}
+{{< / wrap >}}
 
 {{< / wrap >}}
 {{< /simplebox >}}

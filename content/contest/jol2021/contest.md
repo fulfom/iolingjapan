@@ -1,7 +1,7 @@
 +++
 title = "JOL2021競技会場"
 # import = ["js/contest/jol2021/contest2021.js"]
-draft = true
+# draft = true
 +++
 
 {{< simplebox "個人連絡" "d-none" "comment-box" >}}
