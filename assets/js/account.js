@@ -1,10 +1,18 @@
 //require appsys.js
 
+const ELEM_alert = document.getElementById("alert");
+const ELEM_info = document.getElementById("info");
+
 document.addEventListener("DOMContentLoaded", (event) => {
     firebase.auth().onAuthStateChanged(async (user) => {
         if(user){
             for(let i = 0; i < USER_EMAILs.length; i++){
                 USER_EMAILs[i].innerText = user.email;
+            }
+            const paid = await firebase.database().ref('/orders/jol2022/' + user.email.replaceAll('.','=').toLowerCase()).once("value");
+            if(!paid.val()){
+                ELEM_alert.style.display = "block";
+                ELEM_info.style.display = "none";
             }
             const contests = document.getElementsByClassName("appSys-contest");
             let toberemoved = [];
@@ -66,15 +74,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             else toberemoved.push(cont);
                         }
                     }
-                    if(val.entry == "jol2022"){
-                        isnewuser = false;
-                    }
-                    else if(val.entry == "mainmenu2022"){
-                        isnewuser = false;
-                    }
-                    // if(val.cancel){
-                    //     APPCANCELCANCEL.style.display = "block";
-                    //     BTNCANCEL.style.display = "none";
+                    // if(val.entry == "jol2022"){
+                    //     isnewuser = false;
+                    // }
+                    // else if(val.entry == "mainmenu2022"){
+                    //     isnewuser = false;
                     // }
                 }
                 else{
@@ -82,7 +86,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         email: user.email
                     });
                 }
-                if(isnewuser) location.href = "/entry/jol2022/";
+                // if(isnewuser) location.href = "/entry/jol2022/";
             })();
             
             await Promise.all([promiseBadge, promiseUser]).catch((e) => {
