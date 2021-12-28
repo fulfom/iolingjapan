@@ -4,6 +4,14 @@ import = ["js/contest/jol2022/demo.js"]
 type="page"
 +++
 
+{{< simplebox "JOL2022競技会場公開" >}}
+
+本ページは練習用のページです．本番に参加する際は，「JOL2022競技会場」ページを開いておいてください．
+
+<a role="button" class="btn btn-info text-decoration-none" href="/contest/jol2022/contest/">JOL2022競技会場</a>
+
+{{< /simplebox >}}
+
 {{< simplebox "本ページでできること" >}}
 
 本ページでは，JOL2022本番とほぼ同様の方法で問題閲覧・解答提出ができます．お使いの端末できちんと問題が閲覧でき，解答が記入できるか，動作の確認と練習ができるようになっています．何か質問がある場合は，[こちらにアクセスして質問をお願いします](https://app.sli.do/event/7jJkYyMZ5L53kjDZYnYC9o)．ただし個人情報を含む質問は，委員会にメールでお問い合わせください: {{< email >}}．
@@ -12,11 +20,7 @@ type="page"
 
 {{< /simplebox >}}
 
-{{< wrap tag=div vlass=card >}}
-{{< wrap tag=div vlass=card-body >}}
-{{< wrap tag=h5 class=card-title >}}
-{{< icon user "競技者情報" >}}
-{{< /wrap >}}
+##### {{< icon user "競技者情報" >}}
 
 {{% table class="list-like ms-3" %}}
 
@@ -27,8 +31,6 @@ type="page"
 | 参加枠:         | <span id="contestant-spot"></span>  |
 
 {{% /table %}}
-{{< /wrap >}}
-{{< /wrap >}}
 
 <button type="button" class="btn btn-primary" onclick="startTimer(0)" id="timerbtn">練習用タイマー</button>
 

@@ -1,54 +1,77 @@
 const ELEM_LINKS = document.getElementById('links').getElementsByTagName('a');
 const ELEM_LINKSLI = document.getElementById('links').getElementsByTagName('li');
+const ELEM_LINKS2 = document.getElementById('links2').getElementsByTagName('a');
+const ELEM_LINKSLI2 = document.getElementById('links2').getElementsByTagName('li');
 const ELEM_MEETING = document.getElementById('notice-meeting');
 const ELEM_MEETINGLINK = document.getElementsByClassName('meetinglink')[0];
-const ELEM_COMMENT_BOX = document.getElementById('comment-box');
-const ELEM_COMMENT_BODY = document.getElementById('comment-body');
+// const ELEM_COMMENT_BOX = document.getElementById('comment-box');
+// const ELEM_COMMENT_BODY = document.getElementById('comment-body');
 const ELEM_RUGTIME = document.getElementById('rugtime');
 
-var contestlinks;
-var handleTimer;
+const ELEM_email = document.getElementById("contestant-email");
+const ELEM_name = document.getElementById("contestant-name");
+const ELEM_meetingname = document.getElementById("meeting-name");
+const ELEM_spot = document.getElementById("contestant-spot");
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if(user){
-        var links = firebase.database().ref('/contest/' + user.uid);
-        var currentMeetingGroup = firebase.database().ref('/currentmeetinggroup/');
-        var rug = firebase.database().ref('/rug/');
-        var comment = firebase.database().ref('/comment/' + user.uid);
+let handleTimer;
+let userdata = {};
 
-        links.on('value', (snapshot) =>{
-            const data = snapshot.val();
-            contestlinks = data;
-            updateLinks(contestlinks);
-            if(data.undone) links.update({undone: false})
-        });
-        comment.on('value', (snapshot) =>{
-            const data = snapshot.val();
-            if(data){
-                ELEM_COMMENT_BODY.innerText = data;
-                ELEM_COMMENT_BOX.classList.remove('d-none');
+document.addEventListener("DOMContentLoaded", (event) => {
+    firebase.auth().onAuthStateChanged(async (user) =>{
+        if(user){
+            const paid = await firebase.database().ref('/orders/jol2022/' + user.email.replaceAll('.','=').toLowerCase()).once("value");
+            if(paid.val()){
+                const ref = firebase.database().ref('/contests/jol2022/users/' + user.uid);
+                const snapshot1 = await ref.once("value");
+                const userInfo = snapshot1.val()
+                if(userInfo){
+                    ELEM_email.innerText = userInfo.email;
+                    ELEM_name.innerText = userInfo.name;
+                    ELEM_meetingname.innerText = userInfo.name;
+                    ELEM_spot.innerText = userInfo.spot == "flag" ? "選抜": "オープン";
+                    Object.assign(userdata, userInfo)
+                }
+                firebase.database().ref('/contests/jol2022/publish/contest/').on("value", async (snapshot) =>{
+                    const data = snapshot.val();
+                    if(data){
+                        Object.assign(userdata, data);
+                        updateLinks(data);
+                        if(!userdata.problemSeen){
+                            await ref.update({problemSeen: firebase.database.ServerValue.TIMESTAMP});
+                            Object.assign(userdata, {problemSeen: true});
+                        }
+                        ELEM_RUGTIME.innerText = data.rug == 0 ? "" : toHms(data.rug) + "遅れで競技開始（タイマーには加算済み）"
+                        startTimer(data.rug || 0);
+                    }
+                    else{
+                        startTimer(0);
+                    }
+                });
+                firebase.database().ref('/contests/jol2022/contest/' + user.uid).on("value", async (snapshot) =>{
+                    const data = snapshot.val();
+                    if(data){
+                        Object.assign(userdata, data);
+                        updateLinks(data);
+                        if(!userdata.answerSeen){
+                            await ref.update({answerSeen: firebase.database.ServerValue.TIMESTAMP});
+                            Object.assign(userdata, {answerSeen: true});
+                        }
+                    }
+                });
             }
-            else ELEM_COMMENT_BOX.classList.add('d-none');
-
-        });
-        currentMeetingGroup.on('value', (snapshot) =>{
-            const data = snapshot.val();
-            updateMeetingLink(data);
-        });
-        rug.on('value', (snapshot) =>{
-            const data = snapshot.val();
-            ELEM_RUGTIME.innerText = data == 0 ? "" : data + "秒遅れで競技開始（タイマーには加算済み）"
-            startTimer(data);
-        });
-    }
-    else{
-        location.href = "/login/"
-    }
+            else{
+                location.href = "/account/";
+            }
+        }
+        else{
+            location.href = "/login/";
+        }
+    });
 });
 
 function startTimer(rug){
     clearInterval(handleTimer)
-    var end = new Date(Date.UTC(2020,11,28,6,0,0))
+    var end = new Date(Date.UTC(2021,11,29,6,0,0))
     // var now = new Date();
     // var diff = end.getTime() - now.getTime();
     // var data = Math.max(Math.floor(diff/1000) + rug, 0);
@@ -59,53 +82,54 @@ function startTimer(rug){
         var now = new Date();
         var diff = end.getTime() - now.getTime();
         var data = Math.max(Math.floor(diff/1000) + rug, 0);
-        // data--;
         updateTimer(data)
         if(data <= 0){
+            document.getElementById('notice-contest-participation').classList.remove('d-none');
             clearInterval(handleTimer);
         }
-    }, 1000);
+    }, 100);
 }
 
 function updateLinks(data){
     if(data.answerSheet){
         ELEM_LINKS[1].href = data.answerSheet;
         ELEM_LINKSLI[1].classList.add('list-group-item-success')
-        if(data.undone) window.open(data.answerSheet, '_blank');
+        if(!userdata.answerSeen) window.open(data.answerSheet, '_blank');
     }
     if(data.problem){
         ELEM_LINKS[0].href = data.problem;
         ELEM_LINKSLI[0].classList.add('list-group-item-success')
-        if(data.undone) window.open(data.problem, '_blank');
+        if(!userdata.problemSeen) window.open(data.problem, '_blank');
     }
-
+    if(data.answerSheet2){
+        ELEM_LINKS2[1].href = data.answerSheet2;
+        ELEM_LINKSLI2[1].classList.add('list-group-item-success')
+    }
+    if(data.problem2){
+        ELEM_LINKS2[0].href = data.problem2;
+        ELEM_LINKSLI2[0].classList.add('list-group-item-success')
+    }
     if(data.pwd){
         document.getElementById('pwd').innerText = data.pwd;
     };
-
-    if(0 < data.meetinggroup){            
-        document.getElementById('meeting-name').innerText = data.meetingname;
+    if(0 < data.meetinggroup){
         document.getElementById('meeting-start').innerText = data.meetingstart;
         document.getElementById('meeting-gather').innerText = data.meetinggather;
-        var gather = new Date("2020 12 28 " + data.meetinggather);
-        gather.setMinutes(gather.getMinutes() - 20);
-        document.getElementById('meeting-open').innerText = gather.getHours() + ":" + gather.getMinutes();
+        document.getElementById('meeting-open').innerText = data.meetingopen;
         ELEM_MEETING.classList.remove('d-none');
     }
-    else if(0 > data.meetinggroup){
-        if(data.isqualified){
+    if(userdata.currentMeetingGroup){
+        if(userdata.meetinggroup){
+            document.getElementById('notice-notselected').classList.add('d-none');
+            if(userdata.currentMeetingGroup == userdata.meetinggroup){
+                ELEM_MEETINGLINK.classList.remove('d-none');
+            }
+            else ELEM_MEETINGLINK.classList.add('d-none');
+        }
+        else{
             document.getElementById('notice-notselected').classList.remove('d-none');
         }
-        else document.getElementById('notice-contest-participation').classList.remove('d-none');
     }
-}
-
-function updateMeetingLink(currentMeetingGroup){
-    if(currentMeetingGroup == contestlinks.meetinggroup){
-        ELEM_MEETINGLINK.classList.remove('d-none');
-    }
-    else ELEM_MEETINGLINK.classList.add('d-none');
-
 }
 
 function updateTimer(data){
