@@ -20,9 +20,9 @@ importCSS = ["scss/loaded.scss"]
 
 {{< simplebox お知らせ "" "info" >}}
 
-「JOL2022事前準備」ページを公開いたしました．
+「JOL2022競技会場」ページを公開いたしました．
 
-<a role="button" class="btn btn-info text-decoration-none" href="/contest/jol2022/demo/">JOL2022事前準備</a>
+<a role="button" class="btn btn-info text-decoration-none" href="/contest/jol2022/contest/">JOL2022競技会場</a>
 
 {{< /simplebox >}}
 

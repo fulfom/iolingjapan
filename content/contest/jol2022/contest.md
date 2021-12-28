@@ -1,25 +1,23 @@
 +++
 title = "JOL2022競技会場"
-# import = ["js/contest/jol2022/contest.js"]
-draft = true
+import = ["js/contest/jol2022/contest.js"]
+# draft = true
 type="page"
 +++
 
-{{< simplebox "個人連絡" "d-none" "comment-box" >}}
+{{< simplebox "競技終了" "d-none" "notice-contest-participation" >}}
 
-<div id="comment-body"></div>
+お疲れさまでした．
+
+{{< icon flag 選抜 >}}枠の方は，面接対象かどうかを16:30頃に本ページ上で発表いたします．それまで，休憩です．
+
+{{< icon circle-notch オープン >}}枠の方は，これで競技は終了となります．30日の結果発表をお待ちください．本ページは閉じても構いません．
 
 {{< /simplebox >}}
 
 {{< simplebox "競技終了" "d-none" "notice-notselected" >}}
 
-お疲れさまでした．あなたは面接対象者には選ばれませんでした．これで競技は終了となります．結果発表をお待ちください．本ページは閉じても構いません．
-
-{{< /simplebox >}}
-
-{{< simplebox "競技終了" "d-none" "notice-contest-participation" >}}
-
-お疲れさまでした．これで競技は終了となります．結果発表をお待ちください．本ページは閉じても構いません．
+あなたは面接対象者には選ばれませんでした．これで競技は終了となります．30日の結果発表をお待ちください．本ページは閉じても構いません．
 
 {{< /simplebox >}}
 
@@ -27,7 +25,7 @@ type="page"
 
 - あなたは面接対象者です．
 
-- **<span id="meeting-open"></span>** になったら，Zoom ミーティングのリンクが以下に表示されます．リンクが表示されたら早めに入室し，**<span id="meeting-gather"></span>** には面接会場の Zoom ミーティングで待機していてください．この時間に遅れた場合，あなたの面接時間が再調整され大幅に遅れるか，場合によっては失格となります．
+- **<span id="meeting-open"></span>** 頃になったら，Zoom ミーティングのリンクが以下に表示されます．リンクが表示されたら早めに入室し，**<span id="meeting-gather"></span>** には面接会場の Zoom ミーティングで待機していてください．この時間に遅れた場合，あなたの面接時間が再調整され大幅に遅れるか，場合によっては失格となります．遅れる場合は，委員会アドレス {{< email >}} に連絡をしてください．
 
 - あなたの面接は **<span id="meeting-start"></span>** から行われます．Zoom ミーティングに参加したまま，待機してください．
 
@@ -35,9 +33,9 @@ type="page"
 名前: **<span id="meeting-name"></span>**
 
 - 身分証と筆記用具・メモ用紙を用意してください．カメラのついた機器から参加してください．
-- 面接の際にはこちらで録画を撮ります．不正確認終了後，録画データは破棄されます．
+- 面接の際にはこちらで録画を撮ることがあります．不正確認終了後，録画データは破棄されます．
 
-{{< wrap tag=span class="meetinglink d-none">}}
+{{< wrap tag=div class="meetinglink d-none">}}
 
 面接会場には[こちらのリンクからアクセスしてください](https://u-tokyo-ac-jp.zoom.us/j/89586763257?pwd=Y0o4YkxMS3FNSkJDN0U5UWhFbjJQQT09)．
 
@@ -50,6 +48,18 @@ type="page"
 {{< / wrap >}}
 {{< /simplebox >}}
 
+##### {{< icon user "競技者情報" >}}
+
+{{% table class="list-like ms-3" %}}
+
+|||
+| --------------- | ----------------------------------- |
+| メールアドレス: | <span id="contestant-email">読み込み中</span> |
+| 競技者氏名:     | <span id="contestant-name"></span>  |
+| 参加枠:         | <span id="contestant-spot"></span>  |
+
+{{% /table %}}
+
 <div id="timer" class="fa-2x">競技開始まで</div>
 
 {{< card-header >}}
@@ -59,7 +69,7 @@ type="page"
 <li><a target="_blank">{{< icon file-download 問題pdf>}}</a></li>
 <li><a target="_blank">{{< icon table 解答用ページ >}}</a></li>
 <li><a href="https://app.sli.do/event/ugAuzW7EEfzfZaJM6Lr1aM/" target="_blank">{{< icon question "質問はこちらの slido から">}}</a></li>
-<li><a href="" target="_blank">{{< icon lock パスワード付き問題pdf >}}</a></li><!---本番のパスワード付き問題pdfのリンク--->
+<li><a href="https://drive.google.com/file/d/1s5_hIRAZaxkFxSJuVhAWH_I0MhglBsEp/view?usp=sharing" target="_blank">{{< icon lock パスワード付き問題pdf >}}</a></li>
 </ul>
 
 {{< /list >}}
@@ -68,6 +78,23 @@ type="page"
 パスワード付き問題pdf のパスワードはこちらに表示されます: <span id="pwd"></span>
 
 <span id="rugtime"></span>
+
+---
+
+**上記のリンクから問題の閲覧・解答の入力が出来なかった場合**は以下のリンクから問題や解答用エクセルファイルを入手してください．解答用エクセルファイルは**競技時間内にメールで** {{< email >}} に提出してください．提出の際には，競技者情報（メールアドレス，競技者氏名，参加枠）を付してください（本ページの上の方に記載のものをコピー&ペーストすると確実です．その他の情報や文面は不要です）．
+
+※解答用ページ（スプレッドシート）で適切に解答が入力できた方は，解答用エクセルファイルの提出はしないでください．
+
+{{< card-header >}}
+{{< list class="list-group list-fill-link" liclass="list-group-item" id="links2">}}
+
+<ul>
+<li><a target="_blank">{{< icon file-download 問題pdf2>}}</a></li>
+<li><a target="_blank">{{< icon table 解答用エクセルファイル >}}</a></li>
+</ul>
+
+{{< /list >}}
+{{< /card-header >}}
 
 ### 競技開始の前に
 
@@ -91,8 +118,8 @@ type="page"
 
 ### 競技中の注意事項
 
-- 問題冊子は??ページまであります．<!---ページ数--->
-- 競技時間は120分です．問題は??問あります．どの問題から解いても構いません．<!---問題数--->
+- 問題冊子は9ページまであります．
+- 競技時間は120分です．問題は5問あります．どの問題から解いても構いません．
 - 競技終了時刻になったら，速やかに解答を終了してください．競技終了時刻以降に入力された解答は採点されません．
 - 競技中は**資料や外部の情報源を使用してはいけません**．不正行為が発覚した場合は失格となります．
 - 問題について質問がある場合は，質問用 slido にアクセスし，質問を記入してください．
@@ -100,7 +127,7 @@ type="page"
 ### 解答の注意
 
 - 解答はすべて解答用ページの指定の解答欄に入力してください．
-- 小問は全部で??問あります．各小問には問題番号が1から??まで振られています．問題番号に対応する解答欄に入力してください．<!---問題数--->
+- 小問は全部で82問あります．各小問には問題番号が1から82まで振られており，小問25, 28にはA~Dの4つの解答項目，小問26, 27にはA~Cの3つの解答項目，小問79にはA, Bの2つの解答項目があります．問題番号に対応する解答欄に入力してください．
 - 解答欄以外には何も入力しないでください．
 - 誤字・脱字がないよう注意深く入力してください．
 - 問題文の表記通りに記入してください．

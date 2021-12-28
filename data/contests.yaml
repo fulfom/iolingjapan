@@ -53,9 +53,11 @@ upcomingContests:
   # result: "/result/jol2022/"
   # record: "/record-jol/#jol2022結果"
   # status: "pre" #応募開始前
-  status: "entryopen" #応募開始後
+  # status: "entryopen" #応募開始後
+  status: "siteopen" #会場オープン
   entry: "/entry/jol2022/"
   entryui: "/entry/jol2022ui/"
+  site: "/contest/jol2022/contest"
   # visible: 
   #   badge: "jol2022"
 - id: aplo2022
