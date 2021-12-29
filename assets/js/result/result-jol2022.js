@@ -46,11 +46,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if (user) {
             const snapshot = await firebase.database().ref("/contests/jol2022/results/" + user.uid).once("value");
             const val = snapshot.val();
-            results.result = val;
+            // results.result = val;
             const ELEM_RESULT = document.getElementById("result");
-            document.getElementById(`sums-chart-${val.spot}`).checked = true;
-            drawSums(val.spot);
-            drawTable("scores", TSCORES, val.spot);
+            // document.getElementById(`sums-chart-${val.spot}`).checked = true;
+            // drawSums(val.spot);
+            // drawTable("scores", TSCORES, val.spot);
 
             if (val && val.award) {
                 if ("無" == val.award) {
@@ -64,30 +64,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     }
                     ELEM_RESULT.innerText = text;
 
-                    // const snapshot2 = await firebase.database().ref("/contests/jol2022/users/" + user.uid).once("value");
-                    // const contVal = snapshot2.val();
-                    // if(contVal){
-                    //     INPUT_NAME.value = contVal.name;
-                    //     INPUT_NAME_ROMAN.value = contVal.nameRoman;
-                    //     INPUT_ZIPCODE.value = contVal.zipcode;
-                    //     INPUT_ADDRESS.value = contVal.address;
-                    // }
-                    // else{
-                    //     const snapshot3 = await firebase.database().ref("/users/" + user.uid).once("value");
-                    //     const userVal = snapshot3.val();
-                    //     if(userVal){
-                    //         INPUT_NAME.value = userVal.name;
-                    //         INPUT_NAME_ROMAN.value = userVal.nameRoman;
-                    //         INPUT_ZIPCODE.value = userVal.zipcode;
-                    //         INPUT_ADDRESS.value = userVal.address;
-                    //     }
-                    // }
+                    const snapshot2 = await firebase.database().ref("/contests/jol2022/users/" + user.uid).once("value");
+                    const contVal = snapshot2.val();
+                    if(contVal){
+                        INPUT_NAME.value = contVal.name;
+                        INPUT_NAME_ROMAN.value = contVal.nameRoman;
+                        INPUT_ZIPCODE.value = contVal.zipcode;
+                        INPUT_ADDRESS.value = contVal.address;
+                    }
                 }
+                document.getElementsByTagName("body").item(0).style.opacity = 1;
             }
             else {
-                ELEM_RESULT.innerText = "あなたはJOL2022に出席していません．";
+                location.href = "/account/";
             }
-            document.getElementsByTagName("body").item(0).style.opacity = 1;
         }
         else {
             location.href = "/login/";
