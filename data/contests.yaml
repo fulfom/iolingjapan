@@ -43,7 +43,6 @@ pastContests:
   visible:
     badge: "iol2021"
     # badge: "iol2021"
-upcomingContests:
 - id: jol2022
   title: JOL2022
   desc1: 2021年12月29日(水) 
@@ -54,12 +53,15 @@ upcomingContests:
   # record: "/record-jol/#jol2022結果"
   # status: "pre" #応募開始前
   # status: "entryopen" #応募開始後
-  status: "siteopen" #会場オープン
+  # status: "siteopen" #会場オープン
+  status: "resultopen" #結果公開
+  result: "/result/jol2022/"
   entry: "/entry/jol2022/"
   entryui: "/entry/jol2022ui/"
   site: "/contest/jol2022/contest"
   # visible: 
   #   badge: "jol2022"
+upcomingContests:
 - id: aplo2022
   title: APLO2022
   desc1: 2022年4月10日(日)

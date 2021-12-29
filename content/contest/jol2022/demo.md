@@ -2,6 +2,7 @@
 title = "JOL2022事前準備"
 import = ["js/contest/jol2022/demo.js"]
 type="page"
+draft = true
 +++
 
 {{< simplebox "JOL2022競技会場公開" >}}

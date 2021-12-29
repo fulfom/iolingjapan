@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
             for(let i = 0; i < USER_EMAILs.length; i++){
                 USER_EMAILs[i].innerText = user.email;
             }
-            const paid = await firebase.database().ref('/orders/jol2022/' + user.email.replaceAll('.','=').toLowerCase()).once("value");
-            if(!paid.val()){
-                ELEM_alert.style.display = "block";
-                ELEM_info.style.display = "none";
-            }
+            // const paid = await firebase.database().ref('/orders/jol2022/' + user.email.replaceAll('.','=').toLowerCase()).once("value");
+            // if(!paid.val()){
+            //     ELEM_alert.style.display = "block";
+            //     ELEM_info.style.display = "none";
+            // }
             const contests = document.getElementsByClassName("appSys-contest");
             let toberemoved = [];
             const promiseBadge = (async () => {
