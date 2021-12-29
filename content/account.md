@@ -7,7 +7,7 @@ importCSS = ["scss/loaded.scss"]
 
 {{< appSys/features >}}
 
-{{< wrap tag=div class="alert alert-warning" role="alert" id="alert" style="display: none;">}}
+<!-- {{< wrap tag=div class="alert alert-warning" role="alert" id="alert" style="display: none;">}}
 {{< icon exclamation-triangle あなたは >}}JOL2022に応募していません．
 
 もしも，ログインするアカウントを間違えた場合は，正しいアカウントでログインしなおしてください．
@@ -16,13 +16,17 @@ importCSS = ["scss/loaded.scss"]
 
 <button id="logout" onclick="logout()" class="btn btn-danger btn-small">ログアウト</button>
 
-{{< /wrap >}}
+{{< /wrap >}} -->
 
 {{< simplebox お知らせ "" "info" >}}
 
-「JOL2022競技会場」ページを公開いたしました．
+<!-- 「JOL2022競技会場」ページを公開いたしました． -->
 
-<a role="button" class="btn btn-info text-decoration-none" href="/contest/jol2022/contest/">JOL2022競技会場</a>
+<!-- <a role="button" class="btn btn-info text-decoration-none" href="/contest/jol2022/contest/">JOL2022競技会場</a> -->
+
+「JOL2022個人成績」ページを公開いたしました．
+
+<a role="button" class="btn btn-info text-decoration-none" href="/result/jol2022/">JOL2022個人成績</a>
 
 {{< /simplebox >}}
 

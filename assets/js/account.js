@@ -1,6 +1,6 @@
 //require appsys.js
 
-const ELEM_alert = document.getElementById("alert");
+// const ELEM_alert = document.getElementById("alert");
 const ELEM_info = document.getElementById("info");
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
             const paid = await firebase.database().ref('/orders/jol2022/' + user.email.replaceAll('.','=').toLowerCase()).once("value");
             if(!paid.val()){
-                ELEM_alert.style.display = "block";
+                // ELEM_alert.style.display = "block";
                 ELEM_info.style.display = "none";
             }
             const contests = document.getElementsByClassName("appSys-contest");
