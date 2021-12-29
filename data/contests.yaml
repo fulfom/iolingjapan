@@ -59,8 +59,8 @@ pastContests:
   entry: "/entry/jol2022/"
   entryui: "/entry/jol2022ui/"
   site: "/contest/jol2022/contest"
-  # visible: 
-  #   badge: "jol2022"
+  visible: 
+    badge: "jol2022"
 upcomingContests:
 - id: aplo2022
   title: APLO2022

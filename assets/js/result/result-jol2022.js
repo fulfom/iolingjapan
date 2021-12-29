@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             const val = snapshot.val();
             // results.result = val;
             const ELEM_RESULT = document.getElementById("result");
+            const ELEM_RESULT2 = document.getElementById("result2");
+            const ELEM_RESULTLEAD = document.getElementById("resultlead");
+            const ELEM_FORM = document.getElementById("form");
             // document.getElementById(`sums-chart-${val.spot}`).checked = true;
             // drawSums(val.spot);
             // drawTable("scores", TSCORES, val.spot);
@@ -57,10 +60,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     ELEM_RESULT.innerText = "残念ながらあなたは賞を獲得することができませんでした．"; //賞獲得ならず
                 }
                 else {
-                    let spottext = val.spot == "flag" ? "選抜" : val.spot == "award" ? "競技" : "";
-                    var text = "日本言語学オリンピック2021の競技結果に基づき，" + spottext + "参加枠 - " + val.award + "賞を授与いたします．";
+                    let spottext = val.spot == "flag" ? "選抜" : val.spot == "award" ? "オープン" : "";
+                    ELEM_RESULTLEAD.innerText = spottext + "枠 " + val.award + "賞";
+                    var text = "日本言語学オリンピック2022の競技結果に基づき，" + spottext + "枠" + val.award + "賞を授与いたします．";
                     if (val.aplo) {
-                        text += "同時にアジア太平洋言語学オリンピック2021（二次選抜）にご招待します．";
+                        text += "\n\n同時に2022年4月10日（日）実施予定のアジア太平洋言語学オリンピック2022（二次選抜）にご招待します．ただし，APLOは別途参加資格の確認があり，参加資格を満たす場合にのみ公式に参加ができます．詳しいことが決まり次第，メールでご連絡差し上げます．";
                     }
                     ELEM_RESULT.innerText = text;
 
@@ -72,6 +76,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         INPUT_ZIPCODE.value = contVal.zipcode;
                         INPUT_ADDRESS.value = contVal.address;
                     }
+                    ELEM_FORM.style.display = "block";
+                    ELEM_RESULT2.style.display = "block";
                 }
                 document.getElementsByTagName("body").item(0).style.opacity = 1;
             }
