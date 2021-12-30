@@ -66,6 +66,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     if (val.aplo) {
                         text += "\n\n同時に2022年4月10日（日）実施予定のアジア太平洋言語学オリンピック2022（二次選抜）にご招待します．ただし，APLOは別途参加資格の確認があり，参加資格を満たす場合にのみ公式に参加ができます．詳しいことが決まり次第，メールでご連絡差し上げます．";
                     }
+                    else{
+                        text += "\n\nあなたはAPLO（二次選抜）の出場権を獲得することはできませんでした．"
+                    }
                     ELEM_RESULT.innerText = text;
 
                     const snapshot2 = await firebase.database().ref("/contests/jol2022/users/" + user.uid).once("value");
