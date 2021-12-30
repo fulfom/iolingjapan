@@ -56,6 +56,7 @@ pastContests:
   # status: "siteopen" #会場オープン
   status: "resultopen" #結果公開
   result: "/result/jol2022/"
+  # record: "/record-jol/#jol2022結果"
   entry: "/entry/jol2022/"
   entryui: "/entry/jol2022ui/"
   site: "/contest/jol2022/contest"
