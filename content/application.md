@@ -5,9 +5,11 @@ keywords = ["募集要項", "申し込み"]
 aliases = ["/past-applications/"]
 +++
 
-<!-- {{% simplebox "お知らせ" %}}
+{{% simplebox "お知らせ" %}}
 
-{{% /simplebox %}} -->
+JOL2022は終了しました．
+
+{{% /simplebox %}}
 
 ### することリスト
 
@@ -206,7 +208,7 @@ IOL2022 はグレートブリテン島とアイルランド島に囲まれたア
 
 ---
 
-<div class="centralize"><a class="btn btn-template-primary text-decoration-none d-block" onclick="login()">応募はこちら</a></div>
+<!-- <div class="centralize"><a class="btn btn-template-primary text-decoration-none d-block" onclick="login()">応募はこちら</a></div> -->
 
 {{< card-header title="以前の受験案内">}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
