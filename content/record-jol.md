@@ -16,7 +16,7 @@ keywords = ["成績","記録"]
 
 {{< wrap tag=div class="scroll" >}}
 {{< table class="table table-award-gsbh" >}}
-|       | {{< icon flag 選抜 >}} | {{< icon award 競技 >}} |
+|       | {{< icon flag 選抜 >}} | {{< icon circle-notch オープン >}} |
 | ----- | -------------------- | --------------------- |
 | 金賞    | 21人                  | 4人                    |
 | 銀賞    | 36人                  | 7人                    |
