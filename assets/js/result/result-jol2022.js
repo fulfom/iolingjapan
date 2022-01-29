@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             const ELEM_RESULT2 = document.getElementById("result2");
             const ELEM_RESULTLEAD = document.getElementById("resultlead");
             const ELEM_FORM = document.getElementById("form");
-            document.getElementById(`sums-chart-${val.spot}`).checked = true;
-            drawSums(val.spot);
-            drawTable("scores", TSCORES, val.spot);
+            // document.getElementById(`sums-chart-${val.spot}`).checked = true;
+            // drawSums(val.spot);
+            // drawTable("scores", TSCORES, val.spot);
 
             if (val && val.award) {
                 if ("無" == val.award) {
