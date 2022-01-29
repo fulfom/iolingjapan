@@ -301,7 +301,6 @@ function drawTable(mode, T, spot = "") {
     let maxs = results[mode].maxs;
     let mins = results[mode].mins;
     for (let i = 0; i < scores.length; i++) {
-        console.log(mode, i)
         T.td2[i].innerText = scores[i];
         T.td2[i].setAttribute("data-min", mins[i]);
         T.td2[i].setAttribute("data-max", maxs[i]);
