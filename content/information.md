@@ -148,11 +148,13 @@ ber- をつけると動詞になる．-an をつけると「～だらけ」と�
 </div>
 {{< /wrap >}}
 {{< wrap tag=div class=col-md >}}
-
+<div style="max-width: 500px;" class="flourish-embed flourish-globe" data-src="visualisation/8589457"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 {{< /wrap >}}
 {{< /wrap >}}
 
-日本が初めて国際大会に出場したのは2012年 スロベニア リュブリャナで行われたIOL2012です．以来日本は毎年度国際大会に代表を送り続けています．国際言語学オリンピック日本委員会は2015年度から活動を始めました．応募者は2016年時点で約20名でしたが，2020年12月に行われたJOL2021では245名（うち代表選抜参加者178名）になっています．
+日本が初めて国際大会に出場したのは2012年 スロベニア リュブリャナで行われたIOL2012です．以来日本は毎年度国際大会に代表を送り続けています．国際言語学オリンピック日本委員会は2015年度から活動を始めました．応募者は2016年時点で約20名でしたが，2021年12月に行われたJOL2022では434名（うち代表選抜参加者354名）に伸びています．
+
+<div style="max-width: 500px;" class="mx-auto flourish-embed flourish-chart" data-src="visualisation/8589743"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
 ## 日本代表になるには
 
