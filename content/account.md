@@ -24,9 +24,9 @@ importCSS = ["scss/loaded.scss"]
 
 <!-- <a role="button" class="btn btn-info text-decoration-none" href="/contest/jol2022/contest/">JOL2022競技会場</a> -->
 
-2021/02/02: 都合により「JOL2022個人成績」個別スコアの公開を一時停止しています．
+2021/02/04: 「JOL2022個人成績」個別スコア（訂正版）を公開しました．
 
-<!-- <a role="button" class="btn btn-info text-decoration-none" href="/result/jol2022/">JOL2022個人成績</a> -->
+<a role="button" class="btn btn-info text-decoration-none" href="/result/jol2022/">JOL2022個人成績</a>
 
 {{< /simplebox >}}
 
