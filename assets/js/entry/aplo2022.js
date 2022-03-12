@@ -13,9 +13,9 @@ Vue.createApp({
                     const badgesSnapshot = await firebase.database().ref("/badges/" + user.uid).once("value");
                     if (badgesSnapshot.val()) {
                         const badges = badgesSnapshot.val()
-                        if (badges.jol2022 === 'flag') {
+                        if (badges.aplo2022) {
                             const userSnapshot = await firebase.database().ref("/users/" + user.uid).once("value");
-                            _this.edit = userSnapshot.val();
+                            _this.edit = { ...userSnapshot.val(), pa: false, preUniv: false };
                         }
                         else location.href = "/account/"
                     }
