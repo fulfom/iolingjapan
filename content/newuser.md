@@ -5,7 +5,9 @@ import = ["js/appsys.js", "js/newuser.js"]
 importCSS = ["scss/loaded.scss"]
 +++
 
-<a id="proceed" href="/entry/jol2022/" role="button" class="btn btn-template-primary text-decoration-none">JOL2022応募に進む</a>
+<!-- <a id="proceed" href="/entry/jol2022/" role="button" class="btn btn-template-primary text-decoration-none">JOL2022応募に進む</a> -->
+
+2022年秋予定のJOL2023応募開始をお待ちください．
 
 {{< simplebox "Q. 登録済なのになぜ新規登録？" >}}
 別のアカウントやメールアドレスでログインしているかもしれません．  

@@ -19,14 +19,14 @@ const INPUT_ZIPCODE = document.getElementById('input-zipcode');
 const INPUT_ADDRESS = document.getElementById('input-address');
 const DATE20 = new Date('2001-07-20');
 
-function logout(){
+function logout() {
     firebase.auth().onAuthStateChanged((user) => {
-        firebase.auth().signOut().then(()=>{
-        console.log("ログアウトしました");
+        firebase.auth().signOut().then(() => {
+            console.log("ログアウトしました");
         })
-        .catch( (error)=>{
-        console.log(`ログアウト時にエラーが発生しました (${error})`);
-        });
+            .catch((error) => {
+                console.log(`ログアウト時にエラーが発生しました (${error})`);
+            });
     });
 }
 
@@ -36,22 +36,22 @@ const FORM_GROUPs = document.querySelectorAll("#app-cont-info .form-group");
 // getElementById("app-cont-info").getElementsByClassName("form-group");
 const FORM_BIRTHDATE = document.getElementById("form-birthdate");
 
-async function updateDatabase(data, prefix = ""){
+async function updateDatabase(data, prefix = "") {
     let user = firebase.auth().currentUser;
-    if(user){
+    if (user) {
         await firebase.database().ref(prefix + '/users/' + user.uid).update(data);
     }
 }
 
-async function updateDatabasePushContToUser(data, prefix){
+async function updateDatabasePushContToUser(data, prefix) {
     let user = firebase.auth().currentUser;
-    if(user){
+    if (user) {
         const FBDB_USERS = firebase.database().ref("/users/" + user.uid);
         const promiseUSERS = (async () => {
             const snapshot = await FBDB_USERS.once("value");
             let val = snapshot.val();
-            if(val){
-                if(!val.settings || !val.settings.pushContToUser){
+            if (val) {
+                if (!val.settings || !val.settings.pushContToUser) {
                     await FBDB_USERS.update(data);
                 }
             }
@@ -61,37 +61,37 @@ async function updateDatabasePushContToUser(data, prefix){
     }
 }
 
-function disableForm(formSelecter){
+function disableForm(formSelecter) {
     EDIT_INFO.disabled = false;
     UPDATE_INFO.disabled = true;
     UPDATE_INFO.style.opacity = 0;
     Array.prototype.map.call(
-    document.querySelectorAll(formSelecter + " input:not(#input-email)"),
-        function(i){
-            i.disabled=true;
+        document.querySelectorAll(formSelecter + " input:not(#input-email)"),
+        function (i) {
+            i.disabled = true;
             i.classList.add("form-control-plaintext");
             i.classList.remove("form-control");
         }
     );
 }
 
-function enableForm(formSelecter){
+function enableForm(formSelecter) {
     EDIT_INFO.disabled = true;
     UPDATE_INFO.disabled = false;
     UPDATE_INFO.style.opacity = 1;
     Array.prototype.map.call(
-    document.querySelectorAll(formSelecter + " input:not(#input-email)"),
-        function(i){
-            i.disabled=false;
+        document.querySelectorAll(formSelecter + " input:not(#input-email)"),
+        function (i) {
+            i.disabled = false;
             i.classList.remove("form-control-plaintext")
             i.classList.add("form-control");
         }
     );
 }
 
-function checkedRadio(radioNodeList){
-    for(let i = 0; i < radioNodeList.length; i++){
-        if(radioNodeList[i].checked == true){
+function checkedRadio(radioNodeList) {
+    for (let i = 0; i < radioNodeList.length; i++) {
+        if (radioNodeList[i].checked == true) {
             return radioNodeList[i];
         }
     }
@@ -99,26 +99,26 @@ function checkedRadio(radioNodeList){
 
 const FORM_INPUTs = document.querySelectorAll('#content input');
 var checkFlag = false;
-var onBeforeunloadHandler = function(e) {
+var onBeforeunloadHandler = function (e) {
     var msg = 'このページから移動すると入力フォームの内容が消えます．';
     e.returnValue = msg;
 }
-var formAlert = function() {
-    if(!checkFlag) {
-    window.addEventListener('beforeunload', onBeforeunloadHandler);
-    for(var i = 0; i < FORM_INPUTs.length; i++) {
-        FORM_INPUTs[i].removeEventListener('input', formAlert);
-        FORM_INPUTs[i].removeEventListener('change', formAlert);
-    }
-    checkFlag = true;
+var formAlert = function () {
+    if (!checkFlag) {
+        window.addEventListener('beforeunload', onBeforeunloadHandler);
+        for (var i = 0; i < FORM_INPUTs.length; i++) {
+            FORM_INPUTs[i].removeEventListener('input', formAlert);
+            FORM_INPUTs[i].removeEventListener('change', formAlert);
+        }
+        checkFlag = true;
     }
 }
-for(var i = 0; i < FORM_INPUTs.length; i++) {
+for (var i = 0; i < FORM_INPUTs.length; i++) {
     FORM_INPUTs[i].addEventListener('input', formAlert);
     FORM_INPUTs[i].addEventListener('change', formAlert);
 }
 
-async function writeData(val){
+async function writeData(val) {
     INPUT_NAME.value = val.name || "";
     INPUT_NAME_ROMAN.value = val.nameRoman || "";
     INPUT_BIRTHDATE.value = val.birthdate || "";
@@ -127,4 +127,41 @@ async function writeData(val){
     INPUT_PUBLISH.checked = val.publish;
     INPUT_ADDRESS.value = val.address || "";
     INPUT_ZIPCODE.value = val.zipcode || "";
+}
+
+
+const debounce = (
+    callback,
+    delay = 250,
+) => {
+    let timeoutId;
+    return (...args) => {
+        clearTimeout(timeoutId)
+        timeoutId = setTimeout(() => callback(...args), delay)
+    }
+}
+
+function throttle(fn, delay) {
+    let timerId;
+    let lastExecTime = 0;
+    return () => {
+        const context = this;
+        const args = arguments;
+        let elapsedTime = performance.now() - lastExecTime;
+        const execute = () => {
+            fn.apply(context, args);
+            lastExecTime = performance.now();
+        }
+        if (!timerId) {
+            execute();
+        }
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+        if (elapsedTime > delay) {
+            execute();
+        } else {
+            timerId = setTimeout(execute, delay);
+        }
+    }
 }

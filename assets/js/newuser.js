@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     firebase.auth().onAuthStateChanged(async (user) => {
-        if(user){
+        if (user) {
             //メールアドレスを取得して表示
-            for(let i = 0; i < USER_EMAILs.length; i++){
+            for (let i = 0; i < USER_EMAILs.length; i++) {
                 USER_EMAILs[i].innerText = user.email;
             }
 
@@ -10,24 +10,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 const snapshot = await firebase.database().ref("/users/" + user.uid).once("value");
                 const val = snapshot.val();
                 let isnewuser = true;
-                if(val){
+                if (val) {
                     //JOL2022未登録なら
-                    if(val.birthdate){
-                        document.getElementById("mainmenu").style.display = "inline-block"
-                        // isnewuser = false;
-                    }
+                    // if(val.birthdate){
+                    //     document.getElementById("mainmenu").style.display = "inline-block"
+                    //     // isnewuser = false;
+                    // }
                 }
-                else{
+                else {
                     await firebase.database().ref("/users/" + user.uid).set({
                         email: user.email
                     });
                 }
-                if(!isnewuser) location.href = "/account/";
+                if (!isnewuser) location.href = "/account/";
                 else document.getElementsByTagName("body").item(0).style.opacity = 1;
             })();
 
         }
-        else{
+        else {
             location.href = "/login/"
         }
     });
