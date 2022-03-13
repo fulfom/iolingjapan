@@ -58,7 +58,7 @@ Vue.createApp({
                 {
                     id: 'nameRoman',
                     label: '氏名（ローマ字）',
-                    pattern: "^[0-9A-Za-z\s]+$",
+                    pattern: '^[0-9A-Za-z\\s]+$',
                     help: '半角英数（例: Namae Myouji / MYOUJI Namae）．こちらで大文字小文字・スペースなどを調整した後，APLO国際ランキングや賞状への記名などに用います．名字名前の順番やスペルが希望通りか確認してください．'
                 },
                 {
@@ -87,7 +87,7 @@ Vue.createApp({
                 {
                     id: 'zipcode',
                     label: '郵便番号',
-                    pattern: "^[0-9]+$",
+                    pattern: '^[0-9]+$',
                     help: 'ハイフン不要'
                 },
                 {
