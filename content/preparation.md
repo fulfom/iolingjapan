@@ -35,11 +35,12 @@ keywords = []
 
 ## 国内予選の過去問 {#pastproblem}
 
+<!-- | [2022SE](/pdf/jol2022-se.pdf) | [2022解答](/pdf/jol2022-sol.pdf)                                     | [問題当日版](/pdf/jol2022.pdf) ※1※3 | -->
+
 {{< table class="table" >}}
 
 | 問題                          | 解答                                                                 | 備考                              |
 | ----------------------------- | -------------------------------------------------------------------- | --------------------------------- |
-| [2022SE](/pdf/jol2022-se.pdf) | [2022解答](/pdf/jol2022-sol.pdf)                                     | [問題当日版](/pdf/jol2022.pdf) ※1※3 |
 | [2021SE](/pdf/jol2021-se.pdf) | [2021解答](/pdf/jol2021-sol.pdf)                                     | [問題当日版](/pdf/jol2021.pdf) ※1 |
 | [2020](/pdf/jol2020.pdf)      | [2020解答](/pdf/jol2020-sol.pdf)                                     |                                   |
 | [2019](/pdf/jol2019.pdf)      | [2019解答](/pdf/jol2019-sol.pdf)                                     |                                   |
@@ -48,6 +49,8 @@ keywords = []
 | [2016](/pdf/jol2016.pdf)      |  [2016解答](/pdf/jol2016-sol.pdf)                                                                    |                                   |
 
 {{< /table >}}
+
+JOL2022はメンテナンスのため一時的に公開を停止しています．公開再開は2022年3月20日（日）のお昼頃です．
 
 {{< table class="list-like" >}}
 |※1|                                                             |
@@ -58,7 +61,7 @@ keywords = []
 
 ※2: スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet
 
-※3: p.6 akwelume の3つ目の説明は正しくは mwanache **vandu** jua akwelume jua atati
+<!-- ※3: p.6 akwelume の3つ目の説明は正しくは mwanache **vandu** jua akwelume jua atati -->
 
 ## データベース
 
