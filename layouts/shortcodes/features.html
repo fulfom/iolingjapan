@@ -7,22 +7,21 @@
 {{$col := .Get 1 | default 3}}
 {{ if gt (len $data) 0 }}
 <section class="bar background-white">
-    <div class="container p-0">
+	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
 				{{ range $index, $element := $data }}
 				<div class="box-simple-xs d-block d-sm-none">
 					{{with .link}}
-					<a href = {{.}}>
-					{{end}}{{if isset . "icon"}}
-                    <div class="icon">
-                        <i class="{{ .icon }}"></i>{{else}}{{if isset . "src"}}
-                    <div class="icon" style="border: none;">
-                        <img src="{{.src}}">{{else}}
-                    <div class="icon">{{end}}{{end}}
-						</div>
-						<h3>{{ $element.title }}</h3>
-                        <p>{{ $element.desc | markdownify }}</p>
+					<a href={{.}}>{{end}}{{if isset . "icon"}}
+						<div class="icon">
+							<i class="{{ .icon }}"></i>{{else}}{{if isset . "src"}}
+							<div class="icon" style="border: none;">
+								<img src="{{.src}}">{{else}}
+								<div class="icon">{{end}}{{end}}
+								</div>
+								<h3>{{ $element.title }}</h3>
+								<p>{{ $element.desc | markdownify }}</p>
 					</a>
 				</div>
 				{{ end }}
@@ -30,24 +29,25 @@
 				{{ if eq (mod $index $col) 0 }}
 				<div class="col-sm-12">
 					<div class="row">
-				{{ end }}
-						<div class="col-sm d-none d-sm-block"><!--Larger than sm-->
+						{{ end }}
+						<div class="col-sm d-none d-sm-block">
+							<!--Larger than sm-->
 							<div class="box-simple">
 								{{with .link}}
-								<a href = {{.}}>
-								{{end}}{{if isset . "icon"}}
-                                <div class="icon">
-                                    <i class="{{ .icon }}"></i>{{else}}{{if isset . "src"}}
-                                <div class="icon" style="border: none;">
-                                    <img src="{{.src}}">{{else}}
-                                <div class="icon">{{end}}{{end}}
-                                </div>
-									<h3>{{ $element.title }}</h3>
-									<p>{{ $element.desc | markdownify }}</p>
+								<a href={{.}}>
+									{{end}}{{if isset . "icon"}}
+									<div class="icon">
+										<i class="{{ .icon }}"></i>{{else}}{{if isset . "src"}}
+										<div class="icon" style="border: none;">
+											<img src="{{.src}}">{{else}}
+											<div class="icon">{{end}}{{end}}
+											</div>
+											<h3>{{ $element.title }}</h3>
+											<p>{{ $element.desc | markdownify }}</p>
 								</a>
 							</div>
 						</div>
-				{{ if or (eq (mod $index $col) (sub $col 1)) (eq $index (sub (len $data) 1 )) }}
+						{{ if or (eq (mod $index $col) (sub $col 1)) (eq $index (sub (len $data) 1 )) }}
 					</div>
 				</div>
 				{{ end }}
