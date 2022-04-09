@@ -84,6 +84,10 @@ const app = Vue.createApp({
                 {
                     id: 'prob5',
                     label: '問題5',
+                },
+                {
+                    id: 'q',
+                    label: 'アンケート',
                 }
             ],
             //個人情報
