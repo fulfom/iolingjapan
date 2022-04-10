@@ -204,8 +204,8 @@ const app = Vue.createApp({
             let user = firebase.auth().currentUser;
             if (user) {
                 const label = elem.parentNode.getElementsByTagName("label")[0];
-                const rootRef = firebase.storage().ref('contests/aplo2022/users/').child(user.uid);
-                let uploadTask = rootRef.child(elem.id + Date.now() + file.name).put(file);
+                const storageRef = firebase.storage().ref('contests/aplo2022/users/').child(user.uid).child(elem.id + Date.now() + file.name);
+                let uploadTask = storageRef.put(file);
 
                 uploadTask.on('state_changed', (snapshot) => {
                     // Observe state change events such as progress, pause, and resume
