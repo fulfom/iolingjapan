@@ -6,7 +6,7 @@
 {{$thisYearsAwardedContestants := where $data "year" $year}}
 {{range sort $.Site.Params.awards "weight"}}
   {{$tmp := where $data "award" .key}}
-  {{$cumulativeAward = merge $cumulativeAward (dict .key (len $tmp))}}
+  {{$cumulativeAward = merge $cumulativeAward (dict .key (len (where $tmp "year" "<=" $year )))}}
   {{$thisYearsAward = merge $thisYearsAward (dict .key (len (where $tmp "year" $year)))}}
 {{end}}
 

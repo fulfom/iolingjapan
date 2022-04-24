@@ -62,7 +62,6 @@ pastContests:
   site: "/contest/jol2022/contest"
   visible: 
     badge: "jol2022"
-upcomingContests:
 - id: aplo2022
   title: APLO2022
   desc1: 2022年4月10日(日)
@@ -70,13 +69,15 @@ upcomingContests:
   detail: "/application/"
   entry: "/entry/aplo2022/"
   # site: "/contest/aplo2022/"
-  # result: "/result/aplo2022/"
-  # record: "/record-aplo/#aplo2022結果"
+  result: "/result/aplo2022/"
+  record: "/record-aplo/#aplo2022結果"
   limited: true
   # status: "pre" #応募開始前
-  status: "entryopen" #応募開始後
+  # status: "entryopen" #応募開始後
+  status: "resultopen" #結果公開
   visible:
     badge: "aplo2022"
+upcomingContests:
 - id: iol2022
   title: IOL2022
   desc1: 2022年7月25-29日
