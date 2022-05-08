@@ -12,7 +12,7 @@ keywords = ["成績","記録"]
 
 さらに，日本から参加した石井さんはAPLO参加者213名の中で1位を取りました．
 
-[国際的な詳しい結果はこちら](https://aplo.asia/results/aplo-2021-results/)
+[国際的な詳しい結果はこちら](https://aplo.asia/results/aplo-2022-results/)
 
 {{< record/result 2022 "aplo" >}}
 
