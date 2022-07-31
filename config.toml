@@ -194,3 +194,19 @@ weight = 4
 key = "best-solution"
 name = "最優秀解答賞"
 weight = 5
+[[params.awards]]
+key = "team-gold"
+name = "団体戦 金賞"
+weight = 6
+[[params.awards]]
+key = "team-silver"
+name = "団体戦 銀賞"
+weight = 7
+[[params.awards]]
+key = "team-bronze"
+name = "団体戦 銅賞"
+weight = 8
+[[params.awards]]
+key = "team-honorable-mention"
+name = "団体戦 努力賞"
+weight = 9
