@@ -7,7 +7,11 @@
 # title: "JOL2022応募開始"
 # description: "<p>応募締切は12月15日(水)</p><p>選抜枠とオープン枠（年齢等制限なし）を併設</p>"
 # link: "/application/"
+# weight: 1
+# title: "JOL2022過去問"
+# description: "<p>2022/01/29: JOL2022の過去問，解答を公開</p>"
+# link: "/preparation/"
 weight: 1
-title: "JOL2022過去問"
-description: "<p>2022/01/29: JOL2022の過去問，解答を公開</p>"
-link: "/preparation/"
+title: "IOL2022結果"
+description: "<p>第19回 マン島大会 日本代表7名が参加</p><p>金2 銅1 努力賞3 最優秀解答賞1つ 団体戦 銀・銅を獲得！</p>"
+link: "/record/"

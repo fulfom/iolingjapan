@@ -1,4 +1,28 @@
 - award: gold
+  year: 2022
+  name: 星井崇道
+- award: gold
+  year: 2022
+  name: 石井誠子
+- award: bronze
+  year: 2022
+  name: 工藤莞駒
+- award: honorable-mention
+  year: 2022
+  name: 川野優真
+- award: honorable-mention
+  year: 2022
+  name: 久保宮玲於奈
+- award: honorable-mention
+  year: 2022
+  name: 森澤優真
+- award: team-silver
+  year: 2022
+  name: Samurai (工藤莞駒・星井崇道・森澤優真)
+- award: team-bronze
+  year: 2022
+  name: Ninja (石井誠子・川野優真・久保宮玲於奈・桜木陽也)
+- award: gold
   year: 2021
   name: 菅原響生
 - award: gold
@@ -79,3 +103,6 @@
 - award: best-solution
   year: 2021
   name: 小川理緒
+- award: best-solution
+  year: 2022
+  name: 星井崇道
