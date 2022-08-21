@@ -34,3 +34,21 @@
   img: /img/iol_logo.png
   desc1: 2021年7月19日(月)～2021年7月23日(金) ラトビア・ヴェンツピルス
   desc2: 
+- title: 日本言語学オリンピック
+  year: 0
+  abbr: JOL
+  img: /img/logo.png
+  desc1: 例年 年末 オンライン
+  desc2: 選抜 → APLO
+- title: アジア太平洋言語学オリンピック
+  year: 0
+  abbr: APLO
+  img: https://aplo.asia/wp-content/uploads/2019/12/APLO-LOGO.png
+  desc1: 例年 3月末から4月頭の日曜日
+  desc2: 8名選抜 → IOL
+- title: 国際言語学オリンピック
+  year: 0
+  abbr: IOL
+  img: /img/iol_logo.png
+  desc1: 例年 7月末 各国持ち回り
+  desc2: 
