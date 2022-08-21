@@ -1,4 +1,4 @@
-{{$year := .Get 0 | default 2020}}
+{{$year := .Get 0 | default 0}}
 {{$data := where $.Site.Data.contestsInfo "year" $year}}
 <div class="row nogutters mb-4">
 {{range $data}}
