@@ -77,7 +77,6 @@ pastContests:
   status: "resultopen" #結果公開
   visible:
     badge: "aplo2022"
-upcomingContests:
 - id: iol2022
   title: IOL2022
   desc1: 2022年7月25-29日
@@ -87,6 +86,58 @@ upcomingContests:
   # detail: "/detail/iol2021/"
   # result: "https://ioling.org/results/2022/"
   # record: "/record/#iol2022結果"
+  limited: true
+  # status: "pre" #応募開始前
+  status: "resultopen" #結果公開
+  result: "https://ioling.org/results/2022/"
+  record: "/record-aplo/#aplo2022結果"
+  visible:
+    badge: "iol2022"
+upcomingContests:
+- id: jol2023
+  title: JOL2023
+  desc1: 2022年12月29日(木) 
+  date: 2022-12-29
+  desc2: オンライン
+  detail: "/application/"
+  # result: "/result/jol2023/"
+  # record: "/record-jol/#jol2023結果"
+  # status: "pre" #応募開始前
+  status: "entryopen" #応募開始後
+  # status: "siteopen" #会場オープン
+  # status: "resultopen" #結果公開
+  # result: "/result/jol2023/"
+  # record: "/record-jol/#jol2023結果"
+  entry: "/entry/jol2023/"
+  entryui: "/entry/jol2023ui/"
+  # site: "/contest/jol2023/contest"
+  # visible: 
+  #   badge: "jol2023"
+- id: aplo2023
+  title: APLO2023
+  desc1: 2023年4月9日(日)
+  date: 2023-04-09
+  detail: "/application/"
+  # entry: "/entry/aplo2023/"
+  # site: "/contest/aplo2023/"
+  # result: "/result/aplo2023/"
+  # record: "/record-aplo/#aplo2023結果"
+  limited: true
+  status: "pre" #応募開始前
+  # status: "entryopen" #応募開始後
+  # status: "resultopen" #結果公開
+  visible:
+    # badge: "aplo2023"
+    spot: "flag"
+- id: iol2023
+  title: IOL2023
+  desc1: 2023年7月末（月～金）
+  date: 2023-07-24
+  desc2: マン島
+  # entry: "/entry/iol2023/"
+  # detail: "/detail/iol2023/"
+  # result: "https://ioling.org/results/2023/"
+  # record: "/record/#iol2023結果"
   limited: true
   status: "pre" #応募開始前
   visible:
