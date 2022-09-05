@@ -9,8 +9,7 @@
 <div id="react"></div>
 
 <!-- TSX を ESBuild でビルドする際の Hugo のオプションを指定する -->
-{{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict
-"process.env.NODE_ENV" "\"development\"") }}
+{{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict "process.env.NODE_ENV" "\"development\"") }}
 
 <!-- TSX のビルドを Hugo のオプションで指定した内容で実行する -->
 {{ $js := resources.Get . | js.Build $options }}
