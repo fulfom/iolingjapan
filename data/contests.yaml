@@ -21,7 +21,7 @@ pastContests:
   desc1: 2021年3月28日(日)
   date: 2021-03-28
   detail: "/past-applications/2021/#32-アジア太平洋言語学オリンピック"
-  entry: "/entry/aplo2021/"
+  # entry: "/entry/aplo2021/"
   site: "/contest/aplo2021/"
   result: "/result/aplo2021/"
   record: "/record-aplo/#aplo2021結果"
@@ -34,7 +34,7 @@ pastContests:
   desc1: 2021年7月19日(月)～23日(金) 
   date: 2021-07-19
   desc2: リモート
-  entry: "/entry/iol2021/"
+  # entry: "/entry/iol2021/"
   # detail: "/detail/iol2021/"
   result: "https://ioling.org/results/2021/"
   record: "/record/#iol2021結果"
@@ -57,8 +57,8 @@ pastContests:
   status: "resultopen" #結果公開
   result: "/result/jol2022/"
   record: "/record-jol/#jol2022結果"
-  entry: "/entry/jol2022/"
-  entryui: "/entry/jol2022ui/"
+  # entry: "/entry/jol2022/"
+  # entryui: "/entry/jol2022ui/"
   site: "/contest/jol2022/contest"
   visible: 
     badge: "jol2022"
@@ -67,7 +67,7 @@ pastContests:
   desc1: 2022年4月10日(日)
   date: 2022-04-10
   detail: "/application/"
-  entry: "/entry/aplo2022/"
+  # entry: "/entry/aplo2022/"
   # site: "/contest/aplo2022/"
   result: "/result/aplo2022/"
   record: "/record-aplo/#aplo2022結果"
