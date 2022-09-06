@@ -6,12 +6,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 declare const firebase: typeof fb;
 
 function App() {
     const [step, setStep] = useState(0);
-    const [loaded, setLoaded] = useState(false)
+    const [loaded, setLoaded] = useState(false);
+    const [loading, setLoading] = useState(0);
     const [user, setUser] = useState(null as fb.User | null);
     const [udb, setUdb] = useState({} as any);
     const [paid, setPaid] = useState(false);
@@ -21,10 +23,12 @@ function App() {
         // setUdb({ spot: "" })
         // 現在ログインしているユーザを取得
         firebase.auth().onAuthStateChanged(async v => {
+            setLoading(20);
             if (v) {
                 setUser(v);
                 //fetch data from db
                 const snapshot = await firebase.database().ref("/contests/jol2023/users/" + v.uid).once("value");
+                setLoading(70);
                 if (snapshot.val()) {
                     setUdb(snapshot.val())
                     setStep(1);
@@ -417,8 +421,8 @@ function App() {
                         → 応募者ページへ
                     </Button>
                 </div> : <></>}
-            </> : <>
-                <div>loading</div>
+            </> : <><p>読み込み中</p>
+                <ProgressBar now={loading} />
             </>}
         </>
     );
