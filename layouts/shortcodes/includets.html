@@ -17,7 +17,7 @@
 <!-- 一応 SRI を有効化した状態でビルドした JS を読み込む -->
 {{ $secureJS := $js | resources.Fingerprint "sha512" }}
 <script
-  src="{{ $secureJS.Permalink }}"
+  src="{{ $secureJS.RelPermalink }}"
   integrity="{{ $secureJS.Data.Integrity }}"
 ></script>
 

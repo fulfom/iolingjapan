@@ -105,14 +105,10 @@
 {{ $file := . }}
 {{ $targetPath := "app.js" }}
 
-<div>imported {{$file}}</div>
-
 <!-- ... -->
 
 <!-- 利用するリソースを指定する -->
 {{ with resources.Get $file }}
-
-<div>imported build</div>
 
 <!-- TSX を ESBuild でビルドする際の Hugo のオプションを指定する -->
 {{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict "process.env.NODE_ENV" `"development"`) }}
@@ -123,7 +119,7 @@
 <!-- 一応 SRI を有効化した状態でビルドした JS を読み込む -->
 {{ $secureJS := $js | resources.Fingerprint "sha512" }}
 <script
-  src="{{ $secureJS.Permalink }}"
+  src="{{ $secureJS.RelPermalink }}"
   integrity="{{ $secureJS.Data.Integrity }}"
 ></script>
 
