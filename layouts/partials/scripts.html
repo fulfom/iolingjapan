@@ -104,10 +104,15 @@
 {{with .Params.importTSX}}
 {{ $file := . }}
 {{ $targetPath := "app.js" }}
+
+<div>imported {{$file}}</div>
+
 <!-- ... -->
 
 <!-- 利用するリソースを指定する -->
 {{ with resources.Get $file }}
+
+<div>imported build</div>
 
 <!-- TSX を ESBuild でビルドする際の Hugo のオプションを指定する -->
 {{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict "process.env.NODE_ENV" `"development"`) }}
