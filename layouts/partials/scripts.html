@@ -103,14 +103,14 @@
 
 {{with .Params.importTSX}}
 {{ $file := . }}
-{{ $targetPath := "js/app.js" }}
+{{ $targetPath := "app.js" }}
 <!-- ... -->
 
 <!-- 利用するリソースを指定する -->
 {{ with resources.Get $file }}
 
 <!-- TSX を ESBuild でビルドする際の Hugo のオプションを指定する -->
-{{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict "process.env.NODE_ENV" "\"development\"") }}
+{{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict "process.env.NODE_ENV" `"development"`) }}
 
 <!-- TSX のビルドを Hugo のオプションで指定した内容で実行する -->
 {{ $js := resources.Get . | js.Build $options }}
@@ -123,8 +123,7 @@
 ></script>
 
 {{ end }}
-
-{{end}}
+{{ end }}
 
 <!-- ... -->
 

@@ -32,6 +32,7 @@ function App() {
                     const dbOrderRef = firebase.database().ref("/orders/jol2023/" + v.email!.replace(/\./g, '='));
                     dbOrderRef.on("value", async (snapshotOrder) => {
                         if (snapshotOrder.val()) {
+                            if (!udb.entry) firebase.database().ref("/contests/jol2023/users/" + v.uid).update({ entry: true });
                             setPaid(true);
                             setStep(4);
                             setLoaded(true);
@@ -399,6 +400,8 @@ function App() {
                         <p>今後別の Google アカウント/メールアドレスで間違えてログインしないよう，応募で使用したメールアドレスをメモやスクリーンショットで記録することをおすすめします．</p>
                         <p>JOL2023の応募に使用したメールアドレス: {user.email}</p>
                     </div>
+                    <p>個人情報は応募締切日まで訂正ができます．</p>
+                    <p>選抜枠: {udb.spot === "flag" ? "選抜" : "オープン"}</p>
                     <Button
                         variant="template-main"
                         onClick={() => setStep(11)}
@@ -409,6 +412,7 @@ function App() {
                         variant="template-primary"
                         className="ms-3"
                         href="/account/"
+                        as="a"
                     >
                         → 応募者ページへ
                     </Button>

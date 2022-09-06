@@ -109,7 +109,7 @@ upcomingContests:
   # result: "/result/jol2023/"
   # record: "/record-jol/#jol2023結果"
   entry: "/entry/jol2023/"
-  entryui: "/entry/jol2023ui/"
+  entryui: "/entry/jol2023/"
   # site: "/contest/jol2023/contest"
   # visible: 
   #   badge: "jol2023"
