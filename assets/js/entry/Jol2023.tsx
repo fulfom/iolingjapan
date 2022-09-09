@@ -253,10 +253,11 @@ function App() {
                                         </Form.Text>
                                     </Form.Group></> : <></>}
                             <Form.Group className="mb-3" controlId="formIsCertificateNecessary">
+                                <p className="mb-2">賞状の受け取り方</p>
                                 <Form.Check
                                     type="radio"
                                     name="isCertificateNecessary"
-                                    label="紙の賞状"
+                                    label="紙の賞状を郵送"
                                     value="paper"
                                     id="isCertificateNecessaryPaper"
                                     inline
@@ -268,7 +269,7 @@ function App() {
                                 <Form.Check
                                     type="radio"
                                     name="isCertificateNecessary"
-                                    label="電子データ（pdf）"
+                                    label="電子データ（pdf）をメール"
                                     value="e"
                                     id="isCertificateNecessaryE"
                                     inline
