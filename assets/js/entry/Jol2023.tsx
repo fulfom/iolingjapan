@@ -29,30 +29,32 @@ function App() {
                 //fetch data from db
                 const snapshot = await firebase.database().ref("/contests/jol2023/users/" + v.uid).once("value");
                 setLoading(70);
-                if (snapshot.val()) {
-                    setUdb(snapshot.val())
+                const udbtmp = snapshot.val();
+                const dbOrderRef = firebase.database().ref("/orders/jol2023/" + v.email!.replace(/\./g, '='));
+                if (udbtmp && udbtmp.email) {
+                    setUdb(udbtmp);
                     setStep(1);
-                    //step 判断
-                    const dbOrderRef = firebase.database().ref("/orders/jol2023/" + v.email!.replace(/\./g, '='));
-                    dbOrderRef.on("value", async (snapshotOrder) => {
-                        if (snapshotOrder.val()) {
-                            if (!udb.entry) firebase.database().ref("/contests/jol2023/users/" + v.uid).update({ entry: true });
-                            setPaid(true);
-                            setStep(4);
+                }
+                else {
+                    const snapshotUser = await firebase.database().ref("/users/" + v.uid).once("value");
+                    setUdb({ ...snapshotUser.val(), publish: true });
+                    setStep(0);
+                }
+                dbOrderRef.on("value", async (snapshotOrder) => {
+                    if (snapshotOrder.val()) {
+                        setPaid(true);
+                        if (udbtmp && udbtmp.email || udb && udb.email) {
+                            if (udbtmp && !udbtmp.entry || udb && !udb.entry) firebase.database().ref("/contests/jol2023/users/" + v.uid).update({ entry: true });
+                            setStep(3);
                             setLoaded(true);
                             dbOrderRef.off();
-                        } else {
-                            setLoaded(true);
                         }
-                    });
-                } else {
-                    const snapshotUser = await firebase.database().ref("/users/" + v.uid).once("value");
-                    setUdb(snapshotUser.val());
-                    setStep(0);
-                    setLoaded(true);
-                }
+                        else setLoaded(true);
+                    }
+                    else setLoaded(true);
+                });
             } else {
-                location.href = "/accout/";
+                location.href = "/account/";
             }
         });
     }, [])
@@ -115,13 +117,16 @@ function App() {
                         setStep(1);
                         window.scrollTo(0, 0);
                     }} className="btn btn-template-primary">JOL2023応募に進む</button>
-                    <button onClick={() => { location.href = "/account/" }} className="btn btn-primary text-decoration-none" style={{ display: "none" }}>過去の成績参照</button>
                     <div className="simple-box">
                         <span className="box-title">Q. 応募済なのにこの画面が出ます</span>
                         <p>応募時とは別のアカウントやメールアドレスでログインしているかもしれません．</p>
                         <p>使用中のメールアドレス: {user.email}</p>
                         <button id="logout" onClick={logout} className="btn btn-danger">ログアウト</button>
                     </div>
+                    <button onClick={async () => {
+                        await firebase.database().ref("/contests/jol2023/users/" + user.uid).update({ isNotNew: true });
+                        location.href = "/account/"
+                    }} className="btn btn-outline-primary text-decoration-none">過去の成績参照</button>
                 </div> : <></>}
                 {step === 1 || step === 11 ? <><div>
                     <h3>参加枠の選択</h3>
@@ -247,6 +252,32 @@ function App() {
                                             数字．所属していなければ-1
                                         </Form.Text>
                                     </Form.Group></> : <></>}
+                            <Form.Group className="mb-3" controlId="formIsCertificateNecessary">
+                                <Form.Check
+                                    type="radio"
+                                    name="isCertificateNecessary"
+                                    label="紙の賞状"
+                                    value="paper"
+                                    id="isCertificateNecessaryPaper"
+                                    inline
+                                    checked={!udb?.isCertificateNecessary}
+                                    onChange={(e) => {
+                                        setUdb({ ...udb, isCertificateNecessary: e.target.value === "e" })
+                                    }}
+                                />
+                                <Form.Check
+                                    type="radio"
+                                    name="isCertificateNecessary"
+                                    label="電子データ（pdf）"
+                                    value="e"
+                                    id="isCertificateNecessaryE"
+                                    inline
+                                    checked={udb?.isCertificateNecessary}
+                                    onChange={(e) => {
+                                        setUdb({ ...udb, isCertificateNecessary: e.target.value === "e" })
+                                    }}
+                                />
+                            </Form.Group>
                             <Form.Group className="mb-3 was-validated" controlId="formZipcode">
                                 <Form.Label>郵便番号</Form.Label>
                                 <Form.Control required pattern="^[0-9]+$"
@@ -273,7 +304,7 @@ function App() {
                             </Form.Group>
                             {udb.spot === "flag" ? <>
                                 <Form.Group className="mb-3" controlId="formPublish">
-                                    <Form.Check type="checkbox" label="広報目的のため，氏名・所属・学年をウェブページに掲載することに同意します"
+                                    <Form.Check type="checkbox" label="広報目的のため，授賞対象者となった場合は，氏名・所属・学年をウェブページに掲載することに同意します"
                                         checked={udb?.publish || false}
                                         onChange={(e) => {
                                             setUdb({ ...udb, publish: e.currentTarget.checked })
@@ -374,7 +405,7 @@ function App() {
                         <span className="box-title">進まない場合</span>
                         <ul>
                             <li>コンビニ決済・銀行振込の場合，コンビニや銀行で受験料をお支払いいただき，こちらで入金が確認でき次第，応募完了となります．</li>
-                            <li>支払いの確認に数分かかります．電波状況などによってはもう少しかかります．</li>
+                            <li>支払いの確認に数分かかります．電波状況などによってはもう少しかかります．数分たっても画面が変わらない場合は一度ページを再読み込みしてみてください．</li>
                             <li>応募と支払いで異なるメールアドレスを使用した場合，支払いの確認が取れません．その場合は，<strong>支払いで使用したメールアドレス</strong>から委員会に以下の内容を含むメールを送信してください．</li>
                             <ul>
                                 <li>氏名</li>
@@ -390,14 +421,11 @@ function App() {
                 {step === 3 || step === 4 || step === 13 ? <div>
                     {step === 3 ? <>
                         <h3>応募完了</h3>
-                        <p>ご応募ありがとうございます．無事，JOL2023への応募が完了しました．</p>
+                        <p>ご応募ありがとうございます．</p>
 
-                    </> : step === 13 ? <>
+                    </> : <>
                         <h3>個人情報の更新完了</h3>
                         <p>個人情報の更新が完了しました．</p>
-                    </> : <>
-                        <h3>応募完了</h3>
-                        <p>JOL2023への応募は完了しています．</p>
                     </>}
                     <div className="simple-box">
                         <span className="box-title">メールアドレスの記録</span>
