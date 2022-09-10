@@ -336,7 +336,9 @@ function App() {
                                         key={`motivations-${i}`}
                                         checked={udb?.motivations && udb?.motivations[i] || false}
                                         onChange={(e) => {
-                                            let motivationsTmp: boolean[] = udb?.motivations ? udb?.motivations.slice() : [];
+                                            console.log(udb.motivations);
+
+                                            let motivationsTmp: boolean[] = udb?.motivations ? udb?.motivations : [];
                                             motivationsTmp[i] = e.currentTarget.checked;
                                             setUdb({ ...udb, motivations: motivationsTmp })
                                         }}
