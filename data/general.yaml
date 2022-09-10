@@ -31,10 +31,10 @@
     - 日本代表を
     - 応援しよう
   desc: 
-    - IOL2021には
-    - 世界34か国/地域から
-    - 216人の代表が参加しました．
-    - 次回開催地はマン島です
+    - IOL2022には
+    - 世界32の国と地域から
+    - 184人の代表が参加しました．
+    - 次回開催地はブルガリアです
 - id: ""
   link: "/application/"
   linktext: "→受験案内"
@@ -46,7 +46,7 @@
     - 20歳未満で大学未入学なら
     - 誰でも代表選抜に応募できます
 - id: ""
-  link: "/information/#material"
+  link: "/ad-material/"
   linktext: "→広報資料"
   color: blue
   title: 
@@ -61,3 +61,5 @@
     inner: <i class="fab fa-twitter"></i>
   - link: "https://www.instagram.com/iolingjapan/"
     inner: <i class="fab fa-instagram colored-instagram"></i>
+  - link: "https://www.facebook.com/iolingjapan/"
+    inner: <i class="fab fa-facebook" style="color:#4267B2;"></i>

@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 alert("エラー");
             });
             toberemoved.forEach((cont) => { cont.remove() });
+            let flag = true;
             for (let j = 0; j < contests.length; j++) {
                 const cont = contests[j];
                 if (cont.getAttribute("data-status") == "entryopen") {
@@ -103,10 +104,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     if (contestantInfo && contestantInfo.entry) {
                         document.getElementById("entried-" + contId).style.display = "block";
                     }
-                    else document.getElementById("entryopen-" + contId).style.display = "block";
+                    else if (contestantInfo && contestantInfo.isNotNew) {
+                        document.getElementById("entryopen-" + contId).style.display = "block";
+                    }
+                    else {
+                        flag = false;
+                        location.href = "/entry/" + contId;
+                    }
                 }
             }
-            document.getElementsByTagName("body").item(0).style.opacity = 1;
+            if (flag) document.getElementsByTagName("body").item(0).style.opacity = 1;
         }
         else {
             location.href = "/login/"

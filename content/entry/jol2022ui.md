@@ -3,6 +3,7 @@ title = "JOL2022応募情報確認"
 type = "page"
 import = ["js/appsys.js", "js/entry/common.js", "js/entry/jol2022ui.js"]
 importCSS = ["scss/loaded.scss"]
+draft = true
 +++
 
 ### 参加枠

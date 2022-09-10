@@ -1,0 +1,26 @@
+{{ $file := .Get "file" }}
+{{ $targetPath := .Get "targetPath" }}
+<!-- ... -->
+
+<!-- 利用するリソースを指定する -->
+{{ with resources.Get $file }}
+
+<!-- id が react の div 要素を用意する -->
+<div id="react"></div>
+
+<!-- TSX を ESBuild でビルドする際の Hugo のオプションを指定する -->
+{{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict "process.env.NODE_ENV" "\"development\"") }}
+
+<!-- TSX のビルドを Hugo のオプションで指定した内容で実行する -->
+{{ $js := resources.Get . | js.Build $options }}
+
+<!-- 一応 SRI を有効化した状態でビルドした JS を読み込む -->
+{{ $secureJS := $js | resources.Fingerprint "sha512" }}
+<script
+  src="{{ $secureJS.RelPermalink }}"
+  integrity="{{ $secureJS.Data.Integrity }}"
+></script>
+
+{{ end }}
+
+<!-- ... -->

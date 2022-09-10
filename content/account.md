@@ -20,7 +20,7 @@ importCSS = ["scss/loaded.scss"]
 
 {{< simplebox お知らせ "" "info" >}}
 
-2022/04/24: [APLO2022のデータ](/record-aplo/#aplo2022結果) と [APLO2022個人成績](/result/aplo2022/)（参加者限定）を公開しました．
+2022/09/06: [JOL2023の応募を開始しました](/entry/jol2023/)．
 
 {{< /simplebox >}}
 

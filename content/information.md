@@ -213,6 +213,6 @@ JOLは例年9月末から募集を開始し，11月中旬に説明会（また�
 
 {{< /list >}}
 
-## 広報資料 {#material}
+## 広報資料
 
-- [IOL2022プレスリリース](/pdf/release/iol2022_release.pdf)
+<a class="btn btn-template-primary" role="button" href="/ad-material/">広報資料はこちら</a>
