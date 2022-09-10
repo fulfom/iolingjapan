@@ -1,5 +1,6 @@
 +++
 title = "管理者ポータル"
+importTSX = "js/admin.tsx"
 +++
 
 {{< card-header title="リンク集" >}}
@@ -9,3 +10,5 @@ title = "管理者ポータル"
 
 {{< /list >}}
 {{< /card-header >}}
+
+<div id="react"></div>
