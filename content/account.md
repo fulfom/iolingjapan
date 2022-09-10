@@ -20,7 +20,7 @@ importCSS = ["scss/loaded.scss"]
 
 {{< simplebox お知らせ "" "info" >}}
 
-2022/09/06: [JOL2023の応募を開始しました](/entry/jol2023/)．
+2022/09/10: [JOL2023の応募を開始しました](/entry/jol2023/)．
 
 {{< /simplebox >}}
 
