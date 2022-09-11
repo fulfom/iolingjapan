@@ -206,15 +206,17 @@ function App() {
                             </Form.Group>
                             <Form.Group className="mb-3 was-validated" controlId="formBirthdate">
                                 <Form.Label>生年月日</Form.Label>
-                                <Form.Control required min="2003-07-26" type="date"
+                                <Form.Control required
+                                    min={udb.spot === "flag" ? "2003-07-26" : ""}
+                                    type="date"
                                     value={udb?.birthdate || ""}
                                     onChange={(e) => {
                                         setUdb({ ...udb, birthdate: e.currentTarget.value })
                                     }}
                                 />
-                                <Form.Text className="text-muted">
+                                {udb.spot === "flag" ? <Form.Text className="text-muted">
                                     2003年7月26日以降の生まれである必要があります．
-                                </Form.Text>
+                                </Form.Text> : <></>}
                             </Form.Group>
                             {udb.spot === "flag" ?
                                 <><Form.Group className="mb-3 was-validated" controlId="formPreUniv">
