@@ -1,0 +1,24 @@
+{{$name := .Get "name"}}
+{{$ruby := .Get "ruby" | default ""}}
+{{$role := .Get "role"}}
+<div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-4">{{with .Get "src"}}
+        <img src="{{.}}" class="img-fluid rounded">{{else}}
+        <div class="text-center" style="font-size: 100px; line-height: 1;"><i class="fas fa-user"></i></div>{{end}}
+      </div>
+      <div class="col-8">
+        <div class="card-body">
+          <h5 class="card-title">{{if $ruby}}
+            <ruby>{{$name}}<rt>{{.Get "ruby"}}</rt>
+            </ruby>{{else}}
+{{$name}}
+{{end}}</h5>
+<p>{{$role}}</p>
+<div class="d-none d-sm-block">{{.Inner}}
+</div>
+        </div>
+      </div>
+      <div class="card-body d-sm-none">{{.Inner}}</div>
+    </div>
+  </div>
