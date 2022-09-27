@@ -1,6 +1,6 @@
 {{$name := .Get "name"}}
 {{$ruby := .Get "ruby" | default ""}}
-{{$role := .Get "role"}}
+{{$role := .Get "role"}}{{$roleClass := .Get "roleClass" | default "bg-secondary"}}
 {{$href := .Get "href"}}
 <div class="card mb-3">{{with $href}}
   <a href="{{. | safeURL}}" class="spread"></a>{{end}}
@@ -11,10 +11,9 @@
       </div>
       <div class="col-8">
         <div class="card-body">
-          <h5 class="card-title">{{if $ruby}}
-            <ruby>{{$name}}<rt>{{.Get "ruby"}}</rt></ruby>{{else}}{{$name}}{{end}}</h5>
-            <p>{{$role}}</p>
-            <div class="d-none d-sm-block">{{.Inner}}</div>
+          <h5 class="card-title"><span>{{if $ruby}}
+            <ruby>{{$name}}<rt>{{.Get "ruby"}}</rt></ruby>{{else}}{{$name}}{{end}}</span><span class="badge align-bottom d-block mt-2 d-sm-inline-block mt-0 ms-sm-3 {{$roleClass}}">{{$role}}</span></h5>
+          <div class="d-none d-sm-block">{{.Inner}}</div>
         </div>
       </div>
       <div class="card-body pt-0 d-sm-none">{{.Inner}}</div>
