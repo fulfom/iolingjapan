@@ -18,7 +18,9 @@ mathjax = true
 1. [トルコ語](#sample3)
 1. [古代エジプトの数字](#sample4)
 1. [トンガ語（難）](#sample5)
-<!-- 1. [（難）](#sample9) -->
+1. [パラオ語](#jol2022-int-1)
+1. [ワルビリ語](#jol2022-int-2)
+1. [マン島語](#jol2022-int-3)
 
 {{% /list %}}
 {{< /card-header >}}
@@ -134,7 +136,7 @@ ber- をつけると動詞になる．-an をつけると「～だらけ」と�
 | ssana | 「傘」     | → | ssanaa   | 「傘は」     |
 | ngi   | 「棘」     | → | ngee     | 「棘は」     |
 | amaji | 「頭」     | → | amajee   | 「頭は」     |
-| fumu  | 「雲」     | → | fumoo    | 「仕事は」   |
+| fumu  | 「雲」     | → | fumoo    | 「雲は」   |
 | haa   | 「井戸」   | → | haaya    | 「井戸は」   |
 | zuu   | 「尻尾」   | → | zuuya    | 「尻尾は」   |
 | ussui | 「風呂敷」 | → | ussuiya  | 「風呂敷は」 |
@@ -682,7 +684,7 @@ n = 77, valu = 1, ono = 9, tolu = 4, hiva = 16, taha = 8, fitu = 2, noa = 0, ua 
 作問: 小林剛士
 {{< /wrap >}}
 
-## 9. {#sample9}
+<!-- ## 9. {#sample9}
 
 以下に漢語が韓国語読み（ハングル表記）と日本語読み（旧仮名遣い表記）で与えられています．
 
@@ -694,7 +696,7 @@ n = 77, valu = 1, ono = 9, tolu = 4, hiva = 16, taha = 8, fitu = 2, noa = 0, ua 
 | 重要     | 중요             | ぢゆうえう         |
 | 交渉     | 교섭             | かうせふ           |
 | 円周率   | 원주율           | ゑんしうりつ       |
-| 表彰式   | 표창식           | へうしゃうしき     |
+| 表彰式   | 표창식           | へうしやうしき     |
 | 光合成   | 광합성           | くわうがふせい     |
 | 同級生   | 동급생           | どうきふせい       |
 | 郵便番号 | 우편 번호        | いうびんばんがう   |
@@ -709,11 +711,208 @@ n = 77, valu = 1, ono = 9, tolu = 4, hiva = 16, taha = 8, fitu = 2, noa = 0, ua 
 Q. ???を旧仮名遣いで埋めてください．
 
 {{% collapse title="答え" id="ans9" %}}
-☆☆
+
+{{< table class="simple-table mb-2" >}}
+|||
+| -------- | -------------------------------- |
+| 回答     | くわいたふ                       |
+| 編集長   | へんしふちやう                   |
+| 中学校   | ちゆうがくかう（ちゆうがつかう） |
+| 農業用水 | のうげふようすい                 |
+| 郷土料理 | きやうどれうり                   |
+{{< /table >}}
+
 {{% /collapse %}}
 
 {{< wrap tag="p" class="text-end" >}}
 作問: 久保宮玲於奈
+{{< /wrap >}} -->
+
+## JOL2022面接-1 パラオ語 {#jol2022-int-1}
+
+以下にパラオ語の名詞とその日本語訳が8つある．
+
+{{< table class="simple-table mb-2" >}}
+|パラオ語|日本語訳|
+| ---------- | ---------------------- |
+| karuk      | 私の薬 or 私の複数の薬 |
+| karum      | 君の薬 or 君の複数の薬 |
+| karul      | 彼の薬 or 彼の複数の薬 |
+| ngalekek   | 私の子供               |
+| rengalekel | 彼の複数の子供         |
+| sechelik   | 私の友人               |
+| resechelim | 君の複数の友人         |
+| bilisul    | 彼の犬 or 彼の複数の犬 |
+{{< /table >}}
+
+(a) ngalekem と bilisuk をそれぞれ日本語に訳しなさい．(可能な訳は全て挙げること)
+
+(b) 「彼の複数の犬」が *rebilisul とならないのはなぜか．簡単に説明しなさい．
+
+{{% collapse title="答え" id="ansjol2022-int-1" %}}
+
+{{< table class="simple-table mb-2" >}}
+
+(a) ngalekem 君の子供，bilisuk 私の犬 or 私の複数の犬  
+(b) re- は人間にしか使わないから．人間じゃないと複数でも何もつけないから．
+
+{{< /table >}}
+
+基本的な構造は (複数-)名詞語幹-所有者
+
+{{< table class="simple-table mb-2" >}}
+|||
+| ------------ | -------------- |
+| karu-k       | 薬-私の        |
+| karu-m       | 薬-君の        |
+| karu-l       | 薬-彼の        |
+| ngaleke-k    | 子供-私の      |
+| re-ngaleke-l | 複数-子供-彼の |
+| secheli-k    | 友人-私の      |
+| re-secheli-m | 複数-友人-君の |
+| bilisu-l     | 犬-彼の        |
+{{< /table >}}
+
+{{< table class="simple-table mb-2" >}}
+|||
+| --------- | --------- |
+| ngaleke-m | 子供-君の |
+| bilisu-k  | 犬-私の   |
+{{< /table >}}
+
+パラオ語では，名詞をその人間性によって区別している
+
+- 「子供」「友人」は人間
+- 「薬」「犬」は非人間
+
+複数接辞 re- は，人間を表す名詞にのみつく: re-ngaleke-l， re-secheli-m
+
+人間でないものを表す名詞は，数を形式上区別していない．
+
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 佐藤和音
+{{< /wrap >}}
+
+## JOL2022面接-2 ワルビリ語 {#jol2022-int-2}
+
+以下にワルビリ語の文とその日本語訳が5つある．
+
+{{< table id="jol2022-int-2-data" class="simple-table foldable-table-upto-md mb-2">}}
+
+|||
+| --------------------------- | ---------------- |
+| Kurdu ka wangkami.          | 子供が話している |
+| Kurdungku ka maliki nyangu. | 子供が犬を見た   |
+| Kirda ka wangkaja.          | 父が話した       |
+| Karnta kulaka parnkaja.     | 女が走らなかった |
+| Kirdangku ka kurdu nyangu.  | 父が子供を見た   |
+
+{{< /table >}}
+
+<style>
+#jol2022-int-2-data {
+  counter-reset: rowCount-jol2022-int-2-data;
+}
+
+#jol2022-int-2-data > tbody > tr {
+  counter-increment: rowCount-jol2022-int-2-data;
+}
+
+#jol2022-int-2-data > tbody > tr::before {
+  content: counter(rowCount-jol2022-int-2-data) ". ";
+  text-align: end;
+}
+</style>
+
+(a) 「子供」を意味する単語を答えなさい．
+
+(b) 以下を日本語に訳しなさい．
+
+6. Maliki ka parnkami.
+7. Karntangku kulaka kirda nyangu.
+
+{{% collapse title="答え" id="ansjol2022-int-2" %}}
+
+(a) kurdu  
+(b) 6. 犬が走っている，7.女が父を見なかった
+
+{{% /collapse %}}
+
+{{% collapse title="解説" id="expjol2022-int-2" %}}
+
+「子供」にあたる単語が出てくる文は 1, 2, 5 の3つで，それぞれ1回ずつ出てくる．ちょうど kurdu が同じ回数出てきているので，これが「子供」と対応できそう
+
+語順は 主語 - 極性（肯定 ka, 否定 kulaka） - （目的語） - 動詞
+
+名詞は，他動詞文の主語（A）であるときのみ -ngku がつき（いわゆる「能格」），自動詞文の主語（S）のときと他動詞文の目的語（P）のときは何もつかない．
+
+動詞の構造は，自動詞は 語根-時制（非過去 -mi, 過去 -ja）．
+
+他動詞については，データが少ない（過去形「見た」しかない）ため，問題からは推測不可
+
+<div data-gloss><p>Kurdu ka wangka-mi.</p><p>子供 肯定 話す-非過去</p></div>
+<div data-gloss><p>Kurdu-ngku ka maliki nyangu.</p><p>子供-能格 肯定 犬 見た</p></div>
+<div data-gloss><p>Kirda ka wangka-ja.</p><p>父 肯定 話す-過去</p></div>
+<div data-gloss><p>Karnta kulaka parnka-ja.</p><p>女 否定 走る-過去</p></div>
+<div data-gloss><p>Kirda-ngku ka kurdu nyangu.</p><p>父-能格 肯定 子供 見た</p></div>
+<div data-gloss>
+<p>Maliki ka parnka-mi.</p>
+<p>犬 肯定 走る-非過去</p>
+</div>
+<div data-gloss>
+<p>Karnta-ngku kulaka kirda nyangu.</p>
+<p>女-能格 否定 父 見た</p>
+</div>
+
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 佐藤和音
+{{< /wrap >}}
+
+## JOL2022面接-3 マン島語 {#jol2022-int-3}
+
+以下にマン島語とその日本語訳が8つある．
+
+{{< table class="simple-table mb-2" >}}
+|||
+| ---------- | -------------- |
+| braag      | 靴             |
+| my vraag   | 私の靴         |
+| kere       | くし           |
+| my xere    | 私のくし       |
+| kiark      | めんどり       |
+| bluckanyn  | 複数のボール   |
+| yn vayrnyn | その複数の帽子 |
+| dty xereyn | 君の複数のくし |
+{{< /table >}}
+
+Q. 以下を日本語に訳しなさい．
+
+(a) my xiark  
+(b) yn vluckan
+
+{{% collapse title="答え" id="ansjol2022-int-3" %}}
+
+(a) 私のめんどり  
+(b) そのボール
+
+{{% /collapse %}}
+
+{{% collapse title="解説" id="expjol2022-int-3" %}}
+
+名詞の前におかれている限定詞では my 「私の」が2回，yn「その」と dty「君の」がそれぞれ1回ずつ現れている．
+
+名詞 braag 「靴」と kere 「くし」は， my 「私の」の後ろでそれぞれ vraag，xere となっており，両方とも語頭の子音の音素が変化している（b → v, k → x）．どうやら，この音韻変化は限定詞が名詞の前にくると発生するようだ．同じ変化が kiark「めんどり」→ my xiark でも見られているので，xiark の x は k が変化したものと捉えてよさげ．ゆえに my xiark「私のめんどり」．
+
+my xere 「私のくし」 と dty xereyn 「君の複数のくし」より，xere と xereyn がそれぞれ「くし」の単数と複数に呼応していることがわかる．bluckanyn と yn vluckan を見ると，vluckan は vraag 同様に語頭の b が v に音韻変化したものなので，実質 bluckan と bluckanyn の対照．ここでも違いは -yn の有無，よって接尾辞 -yn が複数を表すと考えると yn vluckan 「そのボール」．さらに，このことから yn vayrnyn 「その複数の帽子」の vayrnyn は実は vayrn-yn で，音韻変化より元々 vayrn は bayrn だったと推論することもできる．
+
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 佐藤和音・梶田純之介
 {{< /wrap >}}
 
 ---
@@ -735,7 +934,19 @@ Q. ???を旧仮名遣いで埋めてください．
 | 6        | JOLsample-3 | トルコ語           |
 | 7        | JOLsample-4 | 古代エジプトの数字 |
 | 8        | JOLsample-5 | トンガ語           |
-| 9        | JOLsample-9 | ☆☆                 |
+<!-- | 9        | JOLsample-9 | ☆☆                 | -->
 
 {{< /table >}}
 {{< /collapse >}}
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/leipzig@latest/dist/leipzig.min.css">
+
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/leipzig@latest/dist/leipzig.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+Leipzig({lastLineFree: false}).gloss();
+});
+</script>
