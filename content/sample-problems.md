@@ -16,6 +16,7 @@ mathjax = true
 1. [スワヒリ語](#sample6)
 1. [スペイン語](#sample8)
 1. [フィンランド語](#sample9)
+1. [イタリア語](#sample10)
 1. [トルコ語](#sample3)
 1. [古代エジプトの数字](#sample4)
 1. [トンガ語（難）](#sample5)
