@@ -12,10 +12,18 @@ mathjax = true
 
 1. [インドネシア語](#sample1)
 1. [アイヌ語](#sample2)
+1. [黒島方言](#sample7)
 1. [スワヒリ語](#sample6)
+1. [スペイン語](#sample8)
+1. [フィンランド語](#sample9)
+1. [イタリア語](#sample10)
 1. [トルコ語](#sample3)
 1. [古代エジプトの数字](#sample4)
 1. [トンガ語（難）](#sample5)
+1. [パラオ語](#jol2022-int-1)
+1. [ワルピリ語](#jol2022-int-2)
+1. [マン島語](#jol2022-int-3)
+
 {{% /list %}}
 {{< /card-header >}}
 
@@ -70,7 +78,9 @@ ber- をつけると動詞になる．-an をつけると「～だらけ」と�
 
 {{% /collapse %}}
 
-<!-- {{< author "@fulfom" >}} -->
+{{< wrap tag="p" class="text-end" >}}
+作問: 小林剛士
+{{< /wrap >}}
 
 ## 2. アイヌ語 {#sample2}
 
@@ -96,20 +106,17 @@ ber- をつけると動詞になる．-an をつけると「～だらけ」と�
 (a) 大きい・川
 {{% /collapse %}}
 
-<div class="container simple-table">
-    <table>
-        <thead>
-            <tr><th>アイヌ語</th><th>語源</th><th>現在の地名</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>サッナイ</td><td>乾く・沢</td><td>札内(幕別町)</td></tr>
-            <tr><td>ポロナイ</td><td>大きな・沢</td><td>幌内(三笠市)</td></tr>
-            <tr><td>カムイシリ</td><td>神の・山</td><td>神威(浦河町)</td></tr>
-            <tr><td>リシリ</td><td>高い・山</td><td>利尻(利尻町)</td></tr>
-            <tr><td>カムイナイ</td><td>？？？</td><td>神恵内(神恵内町)</td></tr>
-        </tbody>
-    </table>
-</div>
+{{< table class="simple-table mb-2" >}}
+
+| アイヌ語   | 語源       | 現在の地名       |
+| ---------- | ---------- | ---------------- |
+| サッナイ   | 乾く・沢   | 札内(幕別町)     |
+| ポロナイ   | 大きな・沢 | 幌内(三笠市)     |
+| カムイシリ | 神の・山   | 神威(浦河町)     |
+| リシリ     | 高い・山   | 利尻(利尻町)     |
+| カムイナイ | ？？？     | 神恵内(神恵内町) |
+
+{{< /table >}}
 
 (b) 「カムイナイ」の語源は何でしょう？
 
@@ -117,7 +124,88 @@ ber- をつけると動詞になる．-an をつけると「～だらけ」と�
 (b) 神の・沢
 {{% /collapse %}}
 
-## 3. スワヒリ語 {#sample6}
+{{< wrap tag="p" class="text-end" >}}
+作問: 山﨑貴之
+{{< /wrap >}}
+
+## 3. 黒島方言 {#sample7}
+
+以下に黒島方言※の単語があります．
+
+{{< table class="simple-table mb-2" >}}
+||||||
+| ----- | ---------- | -- | -------- | ------------ |
+| ssana | 「傘」     | → | ssanaa   | 「傘は」     |
+| ngi   | 「棘」     | → | ngee     | 「棘は」     |
+| amaji | 「頭」     | → | amajee   | 「頭は」     |
+| fumu  | 「雲」     | → | fumoo    | 「雲は」   |
+| haa   | 「井戸」   | → | haaya    | 「井戸は」   |
+| zuu   | 「尻尾」   | → | zuuya    | 「尻尾は」   |
+| ussui | 「風呂敷」 | → | ussuiya  | 「風呂敷は」 |
+| nkaza | 「ムカデ」 | → | ???      | 「ムカデは」 |
+| siki  | 「月」     | → | ???      | 「月は」     |
+| sanai | 「褌」     | → | ???      | 「褌は」     |
+| ???   | 「浅瀬」   | → | piiya    | 「浅瀬は」   |
+| ???   | 「漁師」   | → | isopusoo | 「漁師は」   |
+{{< /table >}}
+
+Q. ???を埋めてください
+
+※沖縄県八重山郡竹富町黒島の方言
+
+{{% collapse title="答え" id="ans7"%}}
+
+{{< table class="simple-table mb-2" >}}
+|||
+| ------- | ------------ |
+| nkazaa  | 「ムカデは」 |
+| sikee   | 「月は」     |
+| sanaiya | 「褌は」     |
+| pii     | 「浅瀬」     |
+| isopusu | 「漁師」     |
+{{< /table >}}
+
+単語の末尾の音に注目する．
+
+{{< table class="simple-table mb-2" >}}
+||||
+| -- | -- | ---- |
+| VV | → | VVya (Vは何らかの母音) |
+|それ以外|||
+| a  | → | aa   |
+| i  | → | ee   |
+| u  | → | oo   |
+
+{{< /table >}}
+
+{{% /collapse %}}
+
+{{% collapse title="解説" id="exp7"%}}
+はじめに，それぞれの単語の変化する部分に注目すると，
+
+黒島方言では，単語から「～は」の形をつくる方法に
+
+① 末尾にaがつく　（もしくは①' 末尾のaがaaになる）  
+② 末尾のiがeeになる  
+③ 末尾のuがooになる  
+④ 末尾にyaがつく
+
+の4つのタイプがあることが分かる．
+
+次に，それぞれの単語がどのタイプに属するかの規則について考える．
+
+「～は」の作り方から，②が「iで終わる単語」，③が「uで終わる単語」であると予想できる．しかし，これでは「風呂敷」ussuiや「尻尾」zuuなどが，④に属していることを説明できない．
+
+ここで④の単語をよく観察すると，全て「末尾に母音が連続する単語」であり，他のタイプにはそのような単語がないことが分かる．
+
+したがって，④には「末尾に母音が連続する単語」が属し，②と③にはそれぞれ「末尾に母音がひとつだけで，それがiである単語」「末尾に母音がひとつだけで，それがuである単語」が属し，また（この問題では末尾の母音がa, i, uに限られているので，）①には消去法的に「末尾に母音がひとつだけで，それがaである単語」が属するとわかる．
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 久保宮玲於奈
+{{< /wrap >}}
+
+## 4. スワヒリ語 {#sample6}
 
 以下にスワヒリ語の動詞があります．
 
@@ -174,7 +262,133 @@ alijenga
 a-li-jenga （彼は-～した-建てる）
 {{% /collapse %}}
 
-## 4. トルコ語 {#sample3}
+{{< wrap tag="p" class="text-end" >}}
+作問: 高橋翼
+{{< /wrap >}}
+
+## 5. スペイン語 {#sample8}
+
+以下にスペイン語の単語とその日本語訳があります．
+
+但し，単語はハイフンで音節ごとに区切られ，アクセントのある音節は大文字で書かれています．
+
+{{< table class="simple-table mb-2" >}}
+
+|スペイン語|日本語訳|
+| --------------- | ---------- |
+| VIER-nes        | 金曜日     |
+| a-MI-go         | 友人       |
+| es-pa-ÑOL       | スペイン語 |
+| va-QUE-ros      | ジーンズ   |
+| pro-fe-SOR      | 教授       |
+| vi-NA-gre       | 酢         |
+| res-tau-RAN-te  | レストラン |
+| u-ni-ver-si-DAD | 大学       |
+
+{{< /table >}}
+
+Q. 次の語のアクセントはどの音節にあるでしょうか？
+
+{{< table class="simple-table mb-2" >}}
+
+| スペイン語   | 日本語訳   |
+| ------------ | ---------- |
+| au-to-pis-ta | 高速道路   |
+| pa-ra-guay   | パラグアイ |
+| pa-ra-guas   | 雨傘       |
+
+{{< /table >}}
+
+{{% collapse title="答え" id="ans8" %}}
+{{< table class="simple-table mb-2" >}}
+
+| スペイン語   | 日本語訳   |
+| ------------ | ---------- |
+| au-to-PIS-ta | 高速道路   |
+| pa-ra-GUAY   | パラグアイ |
+| pa-RA-guas   | 雨傘       |
+
+{{< /table >}}
+{{< table class="simple-table mb-2" >}}
+
+| 条件                            | アクセントの位置     |
+| ------------------------------- | -------------------- |
+| 最後の音節が母音で終わる        | 後ろから二番目の音節 |
+| 最後の音節がsで終わる           | 後ろから二番目の音節 |
+| 最後の音節がs以外の子音で終わる | 最後の音節           |
+
+{{< /table >}}
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 久保宮玲於奈
+{{< /wrap >}}
+
+## 6. フィンランド語 {#sample9}
+
+以下にフィンランド語の文とその日本語訳が**ランダムな順番**で与えられています。
+
+{{< wrap tag="div" class="container" >}}
+{{< wrap tag="div" class="row row-cols-sm-2" >}}
+
+{{< wrap tag="div" >}}
+
+フィンランド語
+
+1. Ette naura.
+2. Uimme.
+3. Seisot.
+4. Nauran.
+5. En seiso.
+6. Nauratte.
+7. Emme seiso.
+
+{{< /wrap >}}
+
+{{< wrap tag="div" >}}
+
+日本語訳
+
+{{< list type="a" >}}
+
+1. 私は笑っている
+1. あなた方は笑っている
+1. あなた方は笑っていない
+1. あなたは立っている
+1. 私たちは立っていない
+1. 私は立っていない
+1. 私たちは泳いでいる
+
+{{< /list >}}
+{{< /wrap >}}
+
+{{< /wrap >}}
+{{< /wrap >}}
+
+(a) フィンランド語の文を正しい日本語訳と対応させてください  
+(b)「Seisomme.」を日本語に訳してください  
+(c)「あなたは泳いでいない」をフィンランド語に訳してください
+
+{{% collapse title="答え" id="ans9" %}}
+
+(a) 1-c, 2-g, 3-d, 4-a, 5-f, 6-b, 7-e  
+(b) 私たちは立っている  
+(c) Et ui.
+
+肯定の文は、「語幹＋主語を表す部分」  
+否定の文は、「e＋主語を表す部分　語幹」  
+という構造になっている。
+
+語幹 笑っている: naura, 立っている: seiso, 泳いでいる: ui  
+主語を表す部分 私: -n, 私たち: -mme, あなた: -t, あなた方: -tte
+
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 久保宮玲於奈
+{{< /wrap >}}
+
+## 7. トルコ語 {#sample3}
 
 以下はトルコ語のお話とその日本語訳です．空欄1～4をうめてください．1～3は単語, 4には文が入ります．
 
@@ -251,7 +465,43 @@ a-li-jenga （彼は-～した-建てる）
 (4) 子どもたちが来てかいじゅうに風船をあげた
 {{% /collapse %}}
 
-## 5. 古代エジプトの数字 {#sample4}
+{{< wrap tag="p" class="text-end" >}}
+作問: 小林剛士
+{{< /wrap >}}
+
+## 8. イタリア語 {#sample10}
+
+以下にイタリア語の命令文とその日本語訳があります．
+
+{{< table class="simple-table mb-2" >}}
+
+| イタリア語         | 日本語訳         |
+| ------------------ | ---------------- |
+| tira giù la leva   | レバーを下げて   |
+| tirami giù         | 私をこき下ろして   |
+| tira su la manica  | 袖をまくって       |
+| tira giù la manica | 袖を下ろして       |
+| tiraci su          | 私たちを応援して |
+
+{{< /table >}}
+
+Q. このとき「私を応援して」はなんというでしょう？
+
+{{% collapse title="答え" id="ans10" %}}
+tirami su （→ ティラミスの語源）
+
+{{< table class="simple-table mb-2 table-responsive overflow-scroll" >}}
+| 動詞（命令形）           | (-目的語代名詞)           | (方向)            | (目的語)                         |
+| -------------- | ------------------------ | ----------------- | -------------------------------- |
+| tira: 引っ張って | -mi: 私を<br>-ci: 私たちを | giù: 下<br>su: 上 | la leva: レバー<br>la manica: 袖 |
+{{< /table >}}
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 岡本沙紀
+{{< /wrap >}}
+
+## 9. 古代エジプトの数字 {#sample4}
 
 以下, 6つの数が2種類の数字で表されています．上側が古代エジプトの数字, 下側が今私たちが使っているアラビア数字です．同じ数を表しているもの同士を結んでください．
 
@@ -397,7 +647,12 @@ $$
 
 {{% /collapse %}}
 
-## 6. トンガ語 {#sample5}
+{{< wrap tag="p" class="text-end" >}}
+作問: 岡本沙紀  
+ヒント: 小林剛士
+{{< /wrap >}}
+
+## 10. トンガ語 {#sample5}
 
 以下はトンガ語で書かれた数式です．  
 
@@ -523,6 +778,241 @@ n = 77, valu = 1, ono = 9, tolu = 4, hiva = 16, taha = 8, fitu = 2, noa = 0, ua 
 
 {{% /collapse %}}
 
+{{< wrap tag="p" class="text-end" >}}
+作問: 小林剛士
+{{< /wrap >}}
+
+<!-- ## 10. {#sample10}
+
+以下に漢語が韓国語読み（ハングル表記）と日本語読み（旧仮名遣い表記）で与えられています．
+
+{{< table class="simple-table mb-2" >}}
+
+| 漢語     | 韓国語・ハングル | 日本語・旧仮名遣い |
+| -------- | ---------------- | ------------------ |
+| 寛容     | 관용             | くわんよう         |
+| 重要     | 중요             | ぢゆうえう         |
+| 交渉     | 교섭             | かうせふ           |
+| 円周率   | 원주율           | ゑんしうりつ       |
+| 表彰式   | 표창식           | へうしやうしき     |
+| 光合成   | 광합성           | くわうがふせい     |
+| 同級生   | 동급생           | どうきふせい       |
+| 郵便番号 | 우편 번호        | いうびんばんがう   |
+| 回答     | 회답             | ???                |
+| 編集長   | 편집장           | ???                |
+| 中学校   | 중학교           | ???                |
+| 農業用水 | 농업용수         | ???                |
+| 郷土料理 | 향토 요리        | ???                |
+
+{{< /table >}}
+
+Q. ???を旧仮名遣いで埋めてください．
+
+{{% collapse title="答え" id="ans9" %}}
+
+{{< table class="simple-table mb-2" >}}
+|||
+| -------- | -------------------------------- |
+| 回答     | くわいたふ                       |
+| 編集長   | へんしふちやう                   |
+| 中学校   | ちゆうがくかう（ちゆうがつかう） |
+| 農業用水 | のうげふようすい                 |
+| 郷土料理 | きやうどれうり                   |
+{{< /table >}}
+
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 久保宮玲於奈
+{{< /wrap >}} -->
+
+## JOL2022面接-1 パラオ語 {#jol2022-int-1}
+
+以下にパラオ語の名詞とその日本語訳が8つある．
+
+{{< table class="simple-table mb-2" >}}
+|パラオ語|日本語訳|
+| ---------- | ---------------------- |
+| karuk      | 私の薬 or 私の複数の薬 |
+| karum      | 君の薬 or 君の複数の薬 |
+| karul      | 彼の薬 or 彼の複数の薬 |
+| ngalekek   | 私の子供               |
+| rengalekel | 彼の複数の子供         |
+| sechelik   | 私の友人               |
+| resechelim | 君の複数の友人         |
+| bilisul    | 彼の犬 or 彼の複数の犬 |
+{{< /table >}}
+
+(a) ngalekem と bilisuk をそれぞれ日本語に訳しなさい．(可能な訳は全て挙げること)
+
+(b) 「彼の複数の犬」が *rebilisul とならないのはなぜか．簡単に説明しなさい．
+
+{{% collapse title="答え" id="ansjol2022-int-1" %}}
+
+{{< table class="simple-table mb-2" >}}
+
+(a) ngalekem 君の子供，bilisuk 私の犬 or 私の複数の犬  
+(b) re- は人間にしか使わないから．人間じゃないと複数でも何もつけないから．
+
+{{< /table >}}
+
+基本的な構造は (複数-)名詞語幹-所有者
+
+{{< table class="simple-table mb-2" >}}
+|||
+| ------------ | -------------- |
+| karu-k       | 薬-私の        |
+| karu-m       | 薬-君の        |
+| karu-l       | 薬-彼の        |
+| ngaleke-k    | 子供-私の      |
+| re-ngaleke-l | 複数-子供-彼の |
+| secheli-k    | 友人-私の      |
+| re-secheli-m | 複数-友人-君の |
+| bilisu-l     | 犬-彼の        |
+{{< /table >}}
+
+{{< table class="simple-table mb-2" >}}
+|||
+| --------- | --------- |
+| ngaleke-m | 子供-君の |
+| bilisu-k  | 犬-私の   |
+{{< /table >}}
+
+パラオ語では，名詞をその人間性によって区別している
+
+- 「子供」「友人」は人間
+- 「薬」「犬」は非人間
+
+複数接辞 re- は，人間を表す名詞にのみつく: re-ngaleke-l， re-secheli-m
+
+人間でないものを表す名詞は，数を形式上区別していない．
+
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 佐藤和音
+{{< /wrap >}}
+
+## JOL2022面接-2 ワルピリ語 {#jol2022-int-2}
+
+以下にワルピリ語の文とその日本語訳が5つある．
+
+{{< table id="jol2022-int-2-data" class="simple-table foldable-table-upto-md mb-2">}}
+
+|||
+| --------------------------- | ---------------- |
+| Kurdu ka wangkami.          | 子供が話している |
+| Kurdungku ka maliki nyangu. | 子供が犬を見た   |
+| Kirda ka wangkaja.          | 父が話した       |
+| Karnta kulaka parnkaja.     | 女が走らなかった |
+| Kirdangku ka kurdu nyangu.  | 父が子供を見た   |
+
+{{< /table >}}
+
+<style>
+#jol2022-int-2-data {
+  counter-reset: rowCount-jol2022-int-2-data;
+}
+
+#jol2022-int-2-data > tbody > tr {
+  counter-increment: rowCount-jol2022-int-2-data;
+}
+
+#jol2022-int-2-data > tbody > tr::before {
+  content: counter(rowCount-jol2022-int-2-data) ". ";
+  text-align: end;
+}
+</style>
+
+(a) 「子供」を意味する単語を答えなさい．
+
+(b) 以下を日本語に訳しなさい．
+
+6. Maliki ka parnkami.
+7. Karntangku kulaka kirda nyangu.
+
+{{% collapse title="答え" id="ansjol2022-int-2" %}}
+
+(a) kurdu  
+(b) 6. 犬が走っている，7.女が父を見なかった
+
+{{% /collapse %}}
+
+{{% collapse title="解説" id="expjol2022-int-2" %}}
+
+「子供」にあたる単語が出てくる文は 1, 2, 5 の3つで，それぞれ1回ずつ出てくる．ちょうど kurdu が同じ回数出てきているので，これが「子供」と対応できそう
+
+語順は 主語 - 極性（肯定 ka, 否定 kulaka） - （目的語） - 動詞
+
+名詞は，他動詞文の主語（A）であるときのみ -ngku がつき（いわゆる「能格」），自動詞文の主語（S）のときと他動詞文の目的語（P）のときは何もつかない．
+
+動詞の構造は，自動詞は 語根-時制（非過去 -mi, 過去 -ja）．
+
+他動詞については，データが少ない（過去形「見た」しかない）ため，問題からは推測不可
+
+<div data-gloss><p>Kurdu ka wangka-mi.</p><p>子供 肯定 話す-非過去</p></div>
+<div data-gloss><p>Kurdu-ngku ka maliki nyangu.</p><p>子供-能格 肯定 犬 見た</p></div>
+<div data-gloss><p>Kirda ka wangka-ja.</p><p>父 肯定 話す-過去</p></div>
+<div data-gloss><p>Karnta kulaka parnka-ja.</p><p>女 否定 走る-過去</p></div>
+<div data-gloss><p>Kirda-ngku ka kurdu nyangu.</p><p>父-能格 肯定 子供 見た</p></div>
+<div data-gloss>
+<p>Maliki ka parnka-mi.</p>
+<p>犬 肯定 走る-非過去</p>
+</div>
+<div data-gloss>
+<p>Karnta-ngku kulaka kirda nyangu.</p>
+<p>女-能格 否定 父 見た</p>
+</div>
+
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 佐藤和音
+{{< /wrap >}}
+
+## JOL2022面接-3 マン島語 {#jol2022-int-3}
+
+以下にマン島語とその日本語訳が8つある．
+
+{{< table class="simple-table mb-2" >}}
+|||
+| ---------- | -------------- |
+| braag      | 靴             |
+| my vraag   | 私の靴         |
+| kere       | くし           |
+| my xere    | 私のくし       |
+| kiark      | めんどり       |
+| bluckanyn  | 複数のボール   |
+| yn vayrnyn | その複数の帽子 |
+| dty xereyn | 君の複数のくし |
+{{< /table >}}
+
+Q. 以下を日本語に訳しなさい．
+
+(a) my xiark  
+(b) yn vluckan
+
+{{% collapse title="答え" id="ansjol2022-int-3" %}}
+
+(a) 私のめんどり  
+(b) そのボール
+
+{{% /collapse %}}
+
+{{% collapse title="解説" id="expjol2022-int-3" %}}
+
+名詞の前におかれている限定詞では my 「私の」が2回，yn「その」と dty「君の」がそれぞれ1回ずつ現れている．
+
+名詞 braag 「靴」と kere 「くし」は， my 「私の」の後ろでそれぞれ vraag，xere となっており，両方とも語頭の子音の音素が変化している（b → v, k → x）．どうやら，この音韻変化は限定詞が名詞の前にくると発生するようだ．同じ変化が kiark「めんどり」→ my xiark でも見られているので，xiark の x は k が変化したものと捉えてよさげ．ゆえに my xiark「私のめんどり」．
+
+my xere 「私のくし」 と dty xereyn 「君の複数のくし」より，xere と xereyn がそれぞれ「くし」の単数と複数に呼応していることがわかる．bluckanyn と yn vluckan を見ると，vluckan は vraag 同様に語頭の b が v に音韻変化したものなので，実質 bluckan と bluckanyn の対照．ここでも違いは -yn の有無，よって接尾辞 -yn が複数を表すと考えると yn vluckan 「そのボール」．さらに，このことから yn vayrnyn 「その複数の帽子」の vayrnyn は実は vayrn-yn で，音韻変化より元々 vayrn は bayrn だったと推論することもできる．
+
+{{% /collapse %}}
+
+{{< wrap tag="p" class="text-end" >}}
+作問: 佐藤和音・梶田純之介
+{{< /wrap >}}
+
 ---
 
 今後の追加をお楽しみに．
@@ -532,14 +1022,32 @@ n = 77, valu = 1, ono = 9, tolu = 4, hiva = 16, taha = 8, fitu = 2, noa = 0, ua 
 互換性のため，問題番号とラベルがずれている．
 
 {{< table class="simple-table" >}}
-|問題番号|ラベル|タイトル|
-| - | ----------- | ------------------ |
-| 1 | JOLsample-1 | インドネシア語     |
-| 2 | JOLsample-2 | アイヌ語           |
-| 3 | JOLsample-6 | スワヒリ語         |
-| 4 | JOLsample-3 | トルコ語           |
-| 5 | JOLsample-4 | 古代エジプトの数字 |
-| 6 | JOLsample-5 | トンガ語           |
+| 問題番号 | ラベル      | タイトル           |
+| -------- | ----------- | ------------------ |
+| 1        | JOLsample-1 | インドネシア語     |
+| 2        | JOLsample-2 | アイヌ語           |
+| 3        | JOLsample-7 | 黒島方言           |
+| 4        | JOLsample-6 | スワヒリ語         |
+| 5        | JOLsample-8 | スペイン語         |
+| 6        | JOLsample-3 | トルコ語           |
+| 7        | JOLsample-9 | フィンランド語     |
+| 8        | JOLsample-10 | イタリア語     |
+| 9        | JOLsample-4 | 古代エジプトの数字 |
+| 10        | JOLsample-5 | トンガ語           |
+
+<!-- | 10        | JOLsample-10 | ☆☆                 | -->
 
 {{< /table >}}
 {{< /collapse >}}
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/leipzig@latest/dist/leipzig.min.css">
+
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/leipzig@latest/dist/leipzig.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+Leipzig({lastLineFree: false}).gloss();
+});
+</script>

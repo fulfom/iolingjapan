@@ -90,7 +90,7 @@ IOL2017アイルランド大会日本代表, IOL2021ラトヴィア大会日本�
 {{% /memberCard %}}
 
 {{% memberCard name="久保宮 玲於奈" ruby="くぼみや れおな" role="スタッフ" %}}
-IOL2019日本代表（努力賞）, IOL2021日本代表, IOL2022日本代表（努力賞，団体戦金賞）
+IOL2019日本代表（努力賞）, IOL2021日本代表, IOL2022日本代表（努力賞，団体戦銅賞）
 {{% /memberCard %}}
 
 {{% memberCard name="梶田 純之介" ruby="かじた じゅんのすけ" role="アドバイザー" src="/img/members/kajita.jpeg" %}}
