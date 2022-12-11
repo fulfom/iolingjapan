@@ -18,6 +18,22 @@ function App() {
     const [motivationsAward, setMotivationsAward] = useState([] as any[]);
     const [motivationText, setMotivationText] = useState([] as string[])
 
+    const checkOrders = () => {
+        const userEmails = Object.entries(users).map(([k, v]) => (v.email ? v.email.replace(/\./g, "=") : ""));
+        const paidList: string[] = [];
+        const result: [string, string][] = [];
+        for (const [order, flag] of Object.entries(orders)) {
+            if (!flag) continue;
+            if (userEmails.includes(order)) {
+                paidList.push(order)
+            }
+            else {
+                result.push(["未申込", order.replace(/=/g, ".")])
+            }
+        }
+        return result;
+    }
+
     useLayoutEffect(() => {
         // setUser({ email: "test", uid: "" })
         // setUdb({ spot: "" })
@@ -99,6 +115,9 @@ function App() {
                     </tr>
                 </tbody>
             </table>
+            <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
+            <p>未申込: {checkOrders().length}件</p>
+            <p>{checkOrders().map((v) => (v[1])).join(", ")}</p>
             <h2>JOL2023アンケート結果</h2>
             <h3>言語学オリンピックをどこで知りましたか</h3>
             {["友人・先輩", "学校の先生", "家族", "塾", "ツイッター", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト"].map((v, i) => (
