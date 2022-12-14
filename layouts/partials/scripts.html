@@ -43,7 +43,9 @@
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
 
-{{ $firebaseInitialize := resources.Get "js/firebase-initialize.js" }}
+{{ $defines := dict "process.env.HUGO_AUTH_DOMAIN" (getenv "HUGO_AUTH_DOMAIN") }}
+{{ $opts := dict "defines" $defines }}
+{{ $firebaseInitialize := resources.Get "js/firebase-initialize.js" | js.Build $opts }}
 <script src="{{ $firebaseInitialize.RelPermalink }}"></script>
 
 <script src="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth__ja.js"></script>
@@ -118,10 +120,7 @@
 
 <!-- 一応 SRI を有効化した状態でビルドした JS を読み込む -->
 {{ $secureJS := $js | resources.Fingerprint "sha512" }}
-<script
-  src="{{ $secureJS.RelPermalink }}"
-  integrity="{{ $secureJS.Data.Integrity }}"
-></script>
+<script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
 {{ end }}
 {{ end }}
