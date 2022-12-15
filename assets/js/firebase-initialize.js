@@ -2,7 +2,7 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
     apiKey: "AIzaSyB3UbePjjc0Q5-G6uYnWntG9mdKQBL9d6w",
-    authDomain: process.env.HUGO_AUTH_DOMAIN,
+    authDomain: "auth.iolingjapan.org",
     databaseURL: "https://application-ef043.firebaseio.com",
     projectId: "application-ef043",
     storageBucket: "application-ef043.appspot.com",
