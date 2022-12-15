@@ -48,7 +48,7 @@
 {{ $firebaseInitialize := resources.Get "js/firebase-initialize.js" | js.Build $opts }}
 <script src="{{ $firebaseInitialize.RelPermalink }}"></script>
 
-<script src="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth__ja.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth__ja.js"></script>
 
 {{if .Params.login}}
 
