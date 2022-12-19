@@ -1,20 +1,20 @@
 import * as React from "react";
 import { useEffect, useLayoutEffect, useState } from "react";
 import * as ReactDOM from "react-dom/client";
-import fb from "firebase/compat/app";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-
-declare const firebase: typeof fb;
+import { app, auth, db, logout } from "../firebase-initialize"
+import { ref, onValue, update, get, set, serverTimestamp, off } from "firebase/database"
+import { User } from "firebase/auth";
 
 function App() {
     const [step, setStep] = useState(0);
     const [loaded, setLoaded] = useState(false);
     const [loading, setLoading] = useState(0);
-    const [user, setUser] = useState(null as fb.User | null);
+    const [user, setUser] = useState(null as User | null);
     const [udb, setUdb] = useState({} as any);
     const [paid, setPaid] = useState(false);
 
@@ -22,32 +22,34 @@ function App() {
         // setUser({ email: "test", uid: "" })
         // setUdb({ spot: "" })
         // 現在ログインしているユーザを取得
-        firebase.auth().onAuthStateChanged(async v => {
+        auth.onAuthStateChanged(async v => {
             setLoading(20);
             if (v) {
                 setUser(v);
                 //fetch data from db
-                const snapshot = await firebase.database().ref("/contests/jol2023/users/" + v.uid).once("value");
+                const snapshot = await get(ref(db, "/contests/jol2023/users/" + v.uid));
                 setLoading(70);
                 const udbtmp = snapshot.val();
-                const dbOrderRef = firebase.database().ref("/orders/jol2023/" + v.email!.replace(/\./g, '='));
+                const dbOrderRef = ref(db, "/orders/jol2023/" + v.email!.replace(/\./g, '='));
                 if (udbtmp && udbtmp.email) {
                     setUdb(udbtmp);
                     setStep(1);
                 }
                 else {
-                    const snapshotUser = await firebase.database().ref("/users/" + v.uid).once("value");
+                    const snapshotUser = await get(ref(db, "/users/" + v.uid));
                     setUdb({ ...snapshotUser.val(), publish: true });
                     setStep(0);
                 }
-                dbOrderRef.on("value", async (snapshotOrder) => {
+                onValue(dbOrderRef, async (snapshotOrder) => {
                     if (snapshotOrder.val()) {
                         setPaid(true);
                         if (udbtmp && udbtmp.email || udb && udb.email) {
-                            if (udbtmp && !udbtmp.entry || udb && !udb.entry) firebase.database().ref("/contests/jol2023/users/" + v.uid).update({ entry: true });
+                            if (udbtmp && !udbtmp.entry || udb && !udb.entry) {
+                                update(ref(db, "/contests/jol2023/users/" + v.uid), { entry: true })
+                            };
                             setStep(3);
                             setLoaded(true);
-                            dbOrderRef.off();
+                            off(dbOrderRef);
                         }
                         else setLoaded(true);
                     }
@@ -59,17 +61,6 @@ function App() {
         });
     }, [])
 
-    function logout() {
-        firebase.auth().onAuthStateChanged((user) => {
-            firebase.auth().signOut().then(() => {
-                console.log("ログアウトしました");
-            })
-                .catch((error) => {
-                    console.log(`ログアウト時にエラーが発生しました (${error})`);
-                });
-        });
-    }
-
     //todo: コピペ機能
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
@@ -80,10 +71,10 @@ function App() {
     const infoSubmit = async (e: React.FormEvent<HTMLElement>) => {
         if (!user) return;
         await Promise.all([
-            firebase.database().ref("/contests/jol2023/users/" + user.uid).update({
+            update(ref(db, "/contests/jol2023/users/" + user.uid), {
                 ...udb
             }),
-            firebase.database().ref("/users/" + user.uid).update({
+            update(ref(db, "/users/" + user.uid), {
                 ...udb
             })
         ])
@@ -124,7 +115,7 @@ function App() {
                         <button id="logout" onClick={logout} className="btn btn-danger">ログアウト</button>
                     </div>
                     <button onClick={async () => {
-                        await firebase.database().ref("/contests/jol2023/users/" + user.uid).update({ isNotNew: true });
+                        update(await ref(db, "/contests/jol2023/users/" + user.uid), { isNotNew: true });
                         location.href = "/account/"
                     }} className="btn btn-outline-primary text-decoration-none">過去の成績参照</button>
                 </div> : <></>}

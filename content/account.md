@@ -1,14 +1,19 @@
 +++
 title = "応募者ページ"
 description = ""
-import = ["js/appsys.js", "js/account.js"]
+importTSX = "js/account.ts"
 importCSS = ["scss/loaded.scss"]
+isFBInit = false
 +++
 
 {{< appSys/features >}}
 
-<!-- {{< wrap tag=div class="alert alert-warning" role="alert" id="alert" style="display: none;">}}
-{{< icon exclamation-triangle あなたは >}}JOL2022に応募していません．
+{{< wrap tag=div class="alert alert-warning" role="alert" id="alert" style="display: none;">}}
+{{< icon exclamation-triangle あなたは >}}JOL2023の応募が完了していません．
+
+- そもそもJOL2023に応募していない．
+- 受験料の支払いが済んでいない．
+- ログインするアカウントを間違えている．
 
 もしも，ログインするアカウントを間違えた場合は，正しいアカウントでログインしなおしてください．
 
@@ -16,7 +21,7 @@ importCSS = ["scss/loaded.scss"]
 
 <button id="logout" onclick="logout()" class="btn btn-danger btn-small">ログアウト</button>
 
-{{< /wrap >}} -->
+{{< /wrap >}}
 
 {{< simplebox お知らせ "" "info" >}}
 

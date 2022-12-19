@@ -1,14 +1,14 @@
 import * as React from "react";
 import { useEffect, useLayoutEffect, useState } from "react";
 import * as ReactDOM from "react-dom/client";
-import fb from "firebase/compat/app";
+import { app, auth, db } from "./firebase-initialize"
+import { ref, onValue, update, get, set } from "firebase/database"
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-declare const firebase: typeof fb;
 
 function App() {
     const [users, setUsers] = useState({} as Object);
@@ -38,11 +38,11 @@ function App() {
         // setUser({ email: "test", uid: "" })
         // setUdb({ spot: "" })
         // 現在ログインしているユーザを取得
-        firebase.auth().onAuthStateChanged(async v => {
-            const refUsers = firebase.database().ref("/contests/jol2023/users/");
-            const refOrders = firebase.database().ref("/orders/jol2023/");
+        auth.onAuthStateChanged(async v => {
+            const refUsers = ref(db, "/contests/jol2023/users/");
+            const refOrders = ref(db, "/orders/jol2023/");
 
-            refUsers.on("value", (sn) => {
+            onValue(refUsers, (sn) => {
                 if (!sn.val()) return;
                 const { iJzZm4b685VtudLmpnAVlO8EJc93, R0LNjJBhu6fWozNcw29WmP9zHSC2, ...snval } = sn.val()
 
@@ -75,7 +75,7 @@ function App() {
                 setMotivationText(motivationTexttmp);
                 setUsers(snval);
             });
-            refOrders.on("value", (sn) => {
+            onValue(refOrders, (sn) => {
                 if (!sn.val()) return;
                 setOrders(sn.val())
             })
@@ -133,8 +133,8 @@ function App() {
             <div className="container">
                 <p>その他</p>
                 <ul>
-                    {motivationText.map((v) => {
-                        return <li key={v}>{v}</li>
+                    {motivationText.map((v, i) => {
+                        return <li key={`motivation${i}`}>{v}</li>
                     })}
                 </ul>
             </div>

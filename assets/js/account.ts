@@ -1,23 +1,30 @@
-//require appsys.js
+import { app, auth, db } from "./firebase-initialize"
+import { ref, onValue, update, get, set } from "firebase/database"
 
-// const ELEM_alert = document.getElementById("alert");
+const ELEM_alert = document.getElementById("alert");
 const ELEM_info = document.getElementById("info");
+const USER_EMAILs = document.getElementsByClassName('user-email') as HTMLCollectionOf<HTMLElement>;
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    firebase.auth().onAuthStateChanged(async (user) => {
+    auth.onAuthStateChanged(async (user) => {
         if (user) {
             for (let i = 0; i < USER_EMAILs.length; i++) {
-                USER_EMAILs[i].innerText = user.email;
+                USER_EMAILs[i].innerText = user.email || "";
             }
-            // const paid = await firebase.database().ref('/orders/jol2022/' + user.email.replaceAll('.','=').toLowerCase()).once("value");
-            // if(!paid.val()){
-            //     // ELEM_alert.style.display = "block";
-            //     ELEM_info.style.display = "none";
-            // }
+
+            if (ELEM_alert) {
+                // コンテスト直前は支払済みでないアカウントにはアラートを出す
+                const paid = await get(ref(db, '/orders/jol2023/' + user.email!.replace(/\./g, '=').toLowerCase()));
+                if (!paid.val()) {
+                    ELEM_alert.style.display = "block";
+                    ELEM_info!.style.display = "none";
+                }
+            }
+
             const contests = document.getElementsByClassName("appSys-contest");
-            let toberemoved = [];
+            let toberemoved: Element[] = [];
             const promiseBadge = (async () => {
-                const snapshot = await firebase.database().ref("/badges/" + user.uid).once("value")
+                const snapshot = await get(ref(db, "/badges/" + user.uid))
                 const badges = snapshot.val();
                 for (let j = 0; j < contests.length; j++) {
                     const cont = contests[j];
@@ -45,13 +52,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 }
             })();
             const promiseUser = (async () => {
-                const snapshot = await firebase.database().ref("/users/" + user.uid).once("value");
+                const snapshot = await get(ref(db, "/users/" + user.uid));
                 let isnewuser = true;
                 if (snapshot.val()) {
                     const val = snapshot.val();
                     if (val.admin) {
                         toberemoved.splice(0);
-                        const adminRef = await firebase.database().ref("/admin/" + user.uid).once("value");
+                        const adminRef = await get(ref(db, "/admin/" + user.uid));
                         if (adminRef.val()) {
                             isnewuser = false;
                             const a = document.createElement("a");
@@ -59,9 +66,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             a.innerText = "管理者ポータル";
                             a.classList.add("btn", "btn-info", "btn-small");
                             const refNode = document.querySelector("#content section");
-                            refNode.parentNode.insertBefore(a, refNode);
+                            refNode!.parentNode!.insertBefore(a, refNode);
                         }
-                        else await firebase.database().ref("/users/" + user.uid).update({ admin: false });
+                        else await update(ref(db, "/users/" + user.uid), { admin: false });
                     }
                     else {
                         for (let j = 0; j < contests.length; j++) {
@@ -82,7 +89,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     // }
                 }
                 else {
-                    await firebase.database().ref("/users/" + user.uid).set({
+                    await set(ref(db, "/users/" + user.uid), {
                         email: user.email
                     });
                 }
@@ -99,13 +106,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 const cont = contests[j];
                 if (cont.getAttribute("data-status") == "entryopen") {
                     const contId = cont.getAttribute("data-id");
-                    const snapshot2 = await firebase.database().ref("/contests/" + contId + "/users/" + user.uid).once("value");
+                    const snapshot2 = await get(ref(db, "/contests/" + contId + "/users/" + user.uid));
                     const contestantInfo = snapshot2.val();
                     if (contestantInfo && contestantInfo.entry) {
-                        document.getElementById("entried-" + contId).style.display = "block";
+                        document.getElementById("entried-" + contId)!.style.display = "block";
                     }
                     else if (contestantInfo && contestantInfo.isNotNew) {
-                        document.getElementById("entryopen-" + contId).style.display = "block";
+                        document.getElementById("entryopen-" + contId)!.style.display = "block";
                     }
                     else {
                         flag = false;
@@ -113,50 +120,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     }
                 }
             }
-            if (flag) document.getElementsByTagName("body").item(0).style.opacity = 1;
+            if (flag) document.getElementsByTagName("body").item(0)!.style.opacity = "1";
         }
         else {
-            location.href = "/login/"
+            // location.href = "/login/"
         }
     });
 });
-
-//form
-
-// function cancel(){
-//     firebase.auth().onAuthStateChanged((user) => {
-//         if(user){
-//             firebase.database().ref("/users/" + user.uid).update({
-//                 cancel: true
-//             }, (error) => {
-//                 if(error){
-//                     alert("キャンセルできませんでした")
-//                 }
-//                 else{
-//                     alert("応募がキャンセルされました")
-//                     APPCANCELCANCEL.style.display = "block";
-//                     BTNCANCEL.style.display = "none";
-//                 }
-//             });
-//         }
-//     });
-// }
-
-// function cancelcancel(){
-//     firebase.auth().onAuthStateChanged((user) => {
-//         if(user){
-//             firebase.database().ref("/users/" + user.uid).update({
-//                 cancel: false
-//             }, (error) => {
-//                 if(error){
-//                     alert("有効化できませんでした")
-//                 }
-//                 else{
-//                     alert("応募が有効化されました")
-//                     APPCANCELCANCEL.style.display = "none";
-//                     BTNCANCEL.style.display = "block";
-//                 }
-//             });
-//         }
-//     });
-// }

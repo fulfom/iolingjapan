@@ -1,7 +1,7 @@
 +++
-title = "JOL2022競技会場"
-import = ["js/contest/jol2022/contest.js"]
-draft = true
+title = "JOL2023競技会場"
+importTSX = "js/contest/jol2023/contest.tsx"
+draft = false
 type="page"
 +++
 
@@ -9,15 +9,13 @@ type="page"
 
 お疲れさまでした．
 
-{{< icon flag 選抜 >}}枠の方は，面接対象かどうかを16:30頃に本ページ上で発表いたします．それまで，休憩です．
-
-{{< icon circle-notch オープン >}}枠の方は，これで競技は終了となります．30日の結果発表をお待ちください．本ページは閉じても構いません．
+<p id="notice-contest-participation-message"></p>
 
 {{< /simplebox >}}
 
 {{< simplebox "競技終了" "d-none" "notice-notselected" >}}
 
-あなたは面接対象者には選ばれませんでした．これで競技は終了となります．30日の結果発表をお待ちください．本ページは閉じても構いません．
+あなたは面接対象者には選ばれませんでした．これで競技は終了となります．2023年1月10日の結果発表をお待ちください．本ページは閉じても構いません．
 
 {{< /simplebox >}}
 
@@ -29,20 +27,22 @@ type="page"
 
 - あなたの面接は **<span id="meeting-start"></span>** から行われます．Zoom ミーティングに参加したまま，待機してください．
 
-- Zoom ミーティングに入ったら，名前を次の通りにしてください．照合のために，ここでは間違っていても訂正せず，漢字・カタカナ・ひらがな・ローマ字まで，一字一句同一にしてください．（名前: ○○ の ○○ の部分）  
-名前: **<span id="meeting-name"></span>**
+- Zoom ミーティングに入ったら，名前を次の通りにしてください．照合のために，ここでは間違っていても訂正せず，漢字・カタカナ・ひらがな・ローマ字まで，一字一句同一にしてください:  
+**<span id="meeting-name"></span>**
 
-- 身分証と筆記用具・メモ用紙を用意してください．カメラのついた機器から参加してください．
+- 身分証と筆記用具・メモ用紙を用意してください．カメラ・マイクのついた機器から参加してください．
 - 面接の際にはこちらで録画を撮ることがあります．不正確認終了後，録画データは破棄されます．
 
 {{< wrap tag=div class="meetinglink d-none">}}
 
-面接会場には[こちらのリンクからアクセスしてください](https://u-tokyo-ac-jp.zoom.us/j/89586763257?pwd=Y0o4YkxMS3FNSkJDN0U5UWhFbjJQQT09)．
+面接会場には<a id="meetinglinkHref">こちらのリンクからアクセスしてください</a>．
 
 または下のQRコードからアクセスできます．
 
 {{< wrap tag=div style="max-width: 200px" >}}
-{{< figure src="/img/jol2022/qrcode.svg" >}}
+<figure>
+  <img id="meetinglink-qrcode">
+</figure>
 {{< / wrap >}}
 
 {{< / wrap >}}
@@ -68,7 +68,7 @@ type="page"
 <ul>
 <li><a target="_blank">{{< icon file-download 問題pdf>}}</a></li>
 <li><a target="_blank">{{< icon table 解答用ページ >}}</a></li>
-<li><a href="https://app.sli.do/event/ugAuzW7EEfzfZaJM6Lr1aM/" target="_blank">{{< icon question "質問はこちらの slido から">}}</a></li>
+<li><a href="https://app.sli.do/event/hSaeuX4DhifjhHNiEDiRvY" target="_blank">{{< icon question "質問はこちらの slido から">}}</a></li>
 <li><a href="https://drive.google.com/file/d/1s5_hIRAZaxkFxSJuVhAWH_I0MhglBsEp/view?usp=sharing" target="_blank">{{< icon lock パスワード付き問題pdf >}}</a></li>
 </ul>
 
@@ -169,21 +169,25 @@ type="page"
 ---
 
 #### ネット環境の確認
+
 次に，ネット環境が準備できているか確認してください．競技中は常にインターネットに接続していてください．接続が切れても構わず解答を続けて構いませんが，競技終了時点までに再接続しなかった場合，最後に接続した時点での解答が採点される可能性があります．
 
 ---
 
 #### 問題の閲覧方法
+
 問題は pdf で公開します．パソコンやタブレットなどで閲覧しながら解いても，プリンターで印刷しても構いません．両方の方法を併用しても構いません．pdf を閲覧するには何らかの pdf リーダーが必要ですが，Google Chrome や Edge や Safari や Firefox などのブラウザをお使いであればデフォルトでその機能がついているので特別な準備は必要ありません．ただし印刷しないで解く場合は書き込んだりテキストを挿入したりできる pdf 編集ツールがあると便利です．
 
 ---
 
 #### 解答用ページの確認
+
 解答はグーグルスプレッドシートに記入していただきます．解答は自動で保存されます．タブレットやスマホで解答を入力する場合はグーグルスプレッドシートのアプリをダウンロードしておいてください．pcで解く場合はアプリなどのダウンロードは必要ありません．
 
 問題閲覧・解答提出方法については下の方に図解を交えてさらに詳しく説明してあります．合わせてご参照ください．[JOL2022事前準備](/contest/jol2022/demo)の体験版を使用し，きちんと問題pdfが閲覧できるか，解答用ページに記入できるか，確認してください．
 
 #### 競技中の質問方法
+
 質問は slido というサービスから受け付けます．試しにアクセスし，可能なら本ページや競技について質問してみてください．（体験版用のslidoとは別に本番用のslidoを用意してあります．本ページに載っているリンクを使用してください．）
 
 {{< simplebox "選抜枠のみ" >}}
@@ -193,7 +197,6 @@ type="page"
 面接では Zoom を用います．<b>カメラを付けて</b> Zoom が使える状態にしておいてください．
 
 {{< /simplebox >}}
-
 
 事前準備事項は以上です．
 

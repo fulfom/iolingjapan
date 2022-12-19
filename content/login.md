@@ -2,7 +2,6 @@
 title = "ログイン"
 description = ""
 login = true
-import = ["js/loginredirect.js"]
 +++
 
 使用するアカウントやメールアドレスは個人識別に使われます．他の人と同じものを共有しないでください．

@@ -6,7 +6,7 @@
         {
             "label": "local preview",
             "type": "shell",
-            "command": "set HUGO_AUTH_DOMAIN=\"develop--iolingjapan.netlify.app\" && hugo server",
+            "command": "set HUGO_AUTH_DOMAIN=\"auth.iolingjapan.org\" && hugo server",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

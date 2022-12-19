@@ -1,7 +1,14 @@
-const ELEM_LINKS = document.getElementById('links').getElementsByTagName('a');
-const ELEM_LINKSLI = document.getElementById('links').getElementsByTagName('li');
+import { app, auth, db } from "../../firebase-initialize"
+import { ref, onValue, update, get, set } from "firebase/database"
+import { toHms } from "../../utility/toHms"
+
+const ELEM_LINKS = document.getElementById('links')!.getElementsByTagName('a');
+const ELEM_LINKSLI = document.getElementById('links')!.getElementsByTagName('li');
+const ELEM_LINKS2 = document.getElementById('links2')!.getElementsByTagName('a');
+const ELEM_LINKSLI2 = document.getElementById('links2')!.getElementsByTagName('li');
 
 const ELEM_TIMER = document.getElementById('timer');
+const ELEM_TIMERBTN = document.getElementById('timerbtn');
 
 const ELEM_email = document.getElementById("contestant-email");
 const ELEM_name = document.getElementById("contestant-name");
@@ -12,32 +19,36 @@ let handleTimer;
 let demolinks = {};
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    firebase.auth().onAuthStateChanged(async (user) => {
+    auth.onAuthStateChanged(async (user) => {
         if (user) {
-            const paid = await firebase.database().ref('/orders/jol2023/' + user.email.replaceAll('.', '=').toLowerCase()).once("value");
-            if (paid.val()) {
-                const snapshot1 = await firebase.database().ref('/contests/jol2023/users/' + user.uid).once("value");
-                const userInfo = snapshot1.val()
-                if (userInfo) {
-                    ELEM_email.innerText = userInfo.email;
-                    ELEM_name.innerText = userInfo.name;
-                    ELEM_spot.innerText = userInfo.spot == "flag" ? "選抜" : "オープン";
+            onValue(ref(db, '/orders/jol2023/' + user.email!.replace(/\./g, '=').toLowerCase()), (paid) => {
+                if (paid.val()) {
+                    onValue(ref(db, '/contests/jol2023/users/' + user.uid), (snapshot1) => {
+                        const userInfo = snapshot1.val()
+                        if (userInfo) {
+                            ELEM_email!.innerText = userInfo.email;
+                            ELEM_name!.innerText = userInfo.name;
+                            ELEM_spot!.innerText = userInfo.spot == "flag" ? "選抜" : "オープン";
+                        }
+                    });
+                    onValue(ref(db, '/contests/jol2023/publish/demo/'), (snapshot2) => {
+                        const publish = snapshot2.val();
+                        if (publish) {
+                            demolinks = Object.assign({}, demolinks, publish);
+                            // updateLinks(publish);
+                        }
+                    });
+                    onValue(ref(db, '/contests/jol2023/demo/' + user.uid), (snapshot3) => {
+                        const answerSheet = snapshot3.val();
+                        if (answerSheet) {
+                            demolinks = Object.assign({}, demolinks, answerSheet);
+                        }
+                    });
                 }
-                const snapshot2 = await firebase.database().ref('/contests/jol2023/publish/demo/').once("value");
-                const publish = snapshot2.val();
-                if (publish) {
-                    demolinks = Object.assign({}, demolinks, publish);
-                    // updateLinks(publish);
+                else {
+                    location.href = "/account/";
                 }
-                const snapshot3 = await firebase.database().ref('/contests/jol2023/demo/' + user.uid).once("value");
-                const answerSheet = snapshot3.val();
-                if (answerSheet) {
-                    demolinks = Object.assign({}, demolinks, answerSheet);
-                }
-            }
-            else {
-                // location.href = "/account/";
-            }
+            });
         }
         else {
             location.href = "/login/";
@@ -87,6 +98,10 @@ function startTimer(rug) {
     }, 100);
 }
 
+ELEM_TIMERBTN?.addEventListener("click", () => {
+    startTimer(0);
+})
+
 function updateLinks(data) {
     if (data.answerSheet) {
         ELEM_LINKS[1].href = data.answerSheet;
@@ -107,7 +122,7 @@ function updateLinks(data) {
         ELEM_LINKSLI2[0].classList.add('list-group-item-success')
     }
     if (data.pwd) {
-        document.getElementById('pwd').innerText = data.pwd;
+        document.getElementById('pwd')!.innerText = data.pwd;
     };
 }
 
@@ -127,31 +142,6 @@ function updateTimer(data) {
             timer = "競技終了"
         }
         else timer = toHms(data);
-        ELEM_TIMER.innerText = timer;
-    }
-}
-
-function toHms(t) {
-    var hms = "";
-    var h = t / 3600 | 0;
-    var m = t % 3600 / 60 | 0;
-    var s = t % 60;
-
-    if (h != 0) {
-        hms = h + "時間" + padZero(m) + "分" + padZero(s) + "秒";
-    } else if (m != 0) {
-        hms = m + "分" + padZero(s) + "秒";
-    } else {
-        hms = s + "秒";
-    }
-
-    return hms;
-
-    function padZero(v) {
-        if (v < 10) {
-            return "0" + v;
-        } else {
-            return v;
-        }
+        ELEM_TIMER!.innerText = timer;
     }
 }

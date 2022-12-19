@@ -1,8 +1,9 @@
 +++
 title = "JOL2023事前準備"
-import = ["js/contest/jol2023/demo.js"]
+importTSX = "js/contest/jol2023/demo.ts"
 type="page"
 draft = false
+isFBInit = false
 +++
 
 <!-- {{< simplebox "JOL2023競技会場公開" >}}
@@ -33,7 +34,7 @@ draft = false
 
 {{% /table %}}
 
-<button type="button" class="btn btn-primary" onclick="startTimer(0)" id="timerbtn">練習用タイマー</button>
+<button type="button" class="btn btn-primary" id="timerbtn">練習用タイマー</button>
 
 <div id="timer" class="fa-2x">競技開始まで</div>
 

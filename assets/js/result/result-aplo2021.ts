@@ -1,7 +1,10 @@
+import { app, auth, db } from "../firebase-initialize"
+import { ref, onValue, update, get, set, serverTimestamp } from "firebase/database"
+
 document.addEventListener("DOMContentLoaded", (event) => {
-    firebase.auth().onAuthStateChanged(async (user) => {
+    auth.onAuthStateChanged(async (user) => {
         if (user) {
-            const snapshot = await firebase.database().ref("/contests/aplo2021/results/" + user.uid).once("value");
+            const snapshot = await get(ref(db, "/contests/aplo2021/results/" + user.uid));
             const val = snapshot.val();
             // results.result = val;
             const ELEM_RESULT = document.getElementById("result");
@@ -15,7 +18,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     text = "残念ながらあなたは賞を獲得することができませんでした．"; //賞獲得ならず
                     if (val.iol) {
                         text += "しかしあなたはIOL参加希望者の中で上位8名に入る成績を取りました．よってあなたを国際言語学オリンピック2021日本代表に選出します．";
-                        document.getElementById("entry-iol").style.display = "inline-block"
+                        document.getElementById("entry-iol")!.style.display = "inline-block"
                     }
                 }
                 else {
@@ -23,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     text = "アジア太平洋言語学オリンピック2021の競技結果に基づき，" + val.award + "賞を授与いたします．";
                     if (val.iol) {
                         text += "同時にあなたを国際言語学オリンピック2021日本代表に選出します．";
-                        document.getElementById("entry-iol").style.display = "inline-block"
+                        document.getElementById("entry-iol")!.style.display = "inline-block"
                     }
 
                     // const snapshot2 = await firebase.database().ref("/contests/jol2021/users/" + user.uid).once("value");
@@ -45,12 +48,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     //     }
                     // }
                 }
-                ELEM_RESULT.innerText = text;
+                ELEM_RESULT!.innerText = text;
             }
             else {
-                ELEM_RESULT.innerText = "あなたはAPLO2021に出席していません．";
+                ELEM_RESULT!.innerText = "あなたはAPLO2021に出席していません．";
             }
-            document.getElementsByTagName("body").item(0).style.opacity = 1;
+            document.getElementsByTagName("body").item(0)!.style.opacity = "1";
         }
         else {
             location.href = "/login/";
