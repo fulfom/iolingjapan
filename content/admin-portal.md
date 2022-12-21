@@ -1,6 +1,7 @@
 +++
 title = "管理者ポータル"
 importTSX = "js/admin.tsx"
+isFBInit = false
 +++
 
 {{< card-header title="リンク集" >}}

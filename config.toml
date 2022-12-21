@@ -18,6 +18,9 @@ enableGitInfo = true
 media_folder = "static/pdf/"
 public_folder = "/pdf/"
 
+[build]
+noJSConfigInAssets = true
+
 [languages]
   [languages.ja]
     contentDir = "content"

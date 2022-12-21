@@ -1,14 +1,14 @@
 import * as React from "react";
 import { useEffect, useLayoutEffect, useState } from "react";
 import * as ReactDOM from "react-dom/client";
-import fb from "firebase/compat/app";
+import { app, auth, db } from "./firebase-initialize"
+import { ref, onValue, update, get, set } from "firebase/database"
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-declare const firebase: typeof fb;
 
 function App() {
     const [users, setUsers] = useState({} as Object);
@@ -18,15 +18,31 @@ function App() {
     const [motivationsAward, setMotivationsAward] = useState([] as any[]);
     const [motivationText, setMotivationText] = useState([] as string[])
 
+    const checkOrders = () => {
+        const userEmails = Object.entries(users).map(([k, v]) => (v.email ? v.email.replace(/\./g, "=") : ""));
+        const paidList: string[] = [];
+        const result: [string, string][] = [];
+        for (const [order, flag] of Object.entries(orders)) {
+            if (!flag) continue;
+            if (userEmails.includes(order)) {
+                paidList.push(order)
+            }
+            else {
+                result.push(["未申込", order.replace(/=/g, ".")])
+            }
+        }
+        return result;
+    }
+
     useLayoutEffect(() => {
         // setUser({ email: "test", uid: "" })
         // setUdb({ spot: "" })
         // 現在ログインしているユーザを取得
-        firebase.auth().onAuthStateChanged(async v => {
-            const refUsers = firebase.database().ref("/contests/jol2023/users/");
-            const refOrders = firebase.database().ref("/orders/jol2023/");
+        auth.onAuthStateChanged(async v => {
+            const refUsers = ref(db, "/contests/jol2023/users/");
+            const refOrders = ref(db, "/orders/jol2023/");
 
-            refUsers.on("value", (sn) => {
+            onValue(refUsers, (sn) => {
                 if (!sn.val()) return;
                 const { iJzZm4b685VtudLmpnAVlO8EJc93, R0LNjJBhu6fWozNcw29WmP9zHSC2, ...snval } = sn.val()
 
@@ -59,7 +75,7 @@ function App() {
                 setMotivationText(motivationTexttmp);
                 setUsers(snval);
             });
-            refOrders.on("value", (sn) => {
+            onValue(refOrders, (sn) => {
                 if (!sn.val()) return;
                 setOrders(sn.val())
             })
@@ -99,6 +115,9 @@ function App() {
                     </tr>
                 </tbody>
             </table>
+            <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
+            <p>未申込: {checkOrders().length}件</p>
+            <p>{checkOrders().map((v) => (v[1])).join(", ")}</p>
             <h2>JOL2023アンケート結果</h2>
             <h3>言語学オリンピックをどこで知りましたか</h3>
             {["友人・先輩", "学校の先生", "家族", "塾", "ツイッター", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト"].map((v, i) => (
@@ -114,8 +133,8 @@ function App() {
             <div className="container">
                 <p>その他</p>
                 <ul>
-                    {motivationText.map((v) => {
-                        return <li key={v}>{v}</li>
+                    {motivationText.map((v, i) => {
+                        return <li key={`motivation${i}`}>{v}</li>
                     })}
                 </ul>
             </div>

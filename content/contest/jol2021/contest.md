@@ -1,7 +1,7 @@
 +++
 title = "JOL2021競技会場"
 # import = ["js/contest/jol2021/contest2021.js"]
-# draft = true
+draft = true
 +++
 
 {{< simplebox "個人連絡" "d-none" "comment-box" >}}
@@ -167,6 +167,7 @@ title = "JOL2021競技会場"
 {{< /simplebox >}}
 
 事前準備事項は以上です．
+
 ## 当日の流れ
 
 当日の流れについて説明します．

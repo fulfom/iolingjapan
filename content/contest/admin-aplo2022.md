@@ -3,6 +3,7 @@ title = "APLO2022監督者"
 type = "page"
 import = ["js/heic2any.min.js", "js/appsys.js", "js/contest/adminAplo2022.js"]
 cdn = ["https://unpkg.com/vue-easy-lightbox@next/dist/vue-easy-lightbox.umd.min.js"]
+draft = true
 +++
 
 <script src="https://unpkg.com/vue@3"></script>

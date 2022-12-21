@@ -1,52 +1,54 @@
 <div class="navbar-fixed-top">
 
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand ml-md-3" href="{{ .Site.BaseURL }}">
-    <img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-none d-md-block" style="height: 35px;">
-    <p class="d-none d-lg-block site-title">{{ $.Site.Title}}</p>
-    <img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-block d-md-none" style="height: 30px;">
-    <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
-  </a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand ml-md-3" href="{{ .Site.BaseURL }}">
+      <img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-none d-md-block" style="height: 35px;">
+      <p class="d-none d-lg-block site-title">{{ $.Site.Title}}</p>
+      <img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="d-block d-md-none" style="height: 30px;">
+      <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="nav navbar-nav me-auto">
-      {{ range .Site.Menus.main }}
-      <li class="nav-item dropdown">
-        {{ if .HasChildren }}
-        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          {{ range .Children }}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav me-auto">
+        {{ range .Site.Menus.main }}
+        <li class="nav-item dropdown">
+          {{ if .HasChildren }}
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {{ range .Children }}
             <a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+          {{ else }}
+          {{if eq .Name ""}}
+          <a class="nav-link" id="navbarlogin"><i class="fas fa-user-circle"></i>{{ .Name }}</a>
+          {{else}}
+          <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+          {{end}}
           {{ end }}
-        </div>
-        {{ else }}
-        {{if eq .Name ""}}
-        <a class="nav-link" onclick="login()" id="navbarlogin"><i class="fas fa-user-circle"></i>{{ .Name }}</a>
-        {{else}}
-        <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
-        {{end}}
+        </li>
         {{ end }}
-      </li>
-      {{ end }}
-    </ul>
-  </div>
-  <div class="collapse clearfix" id="search">
+      </ul>
+    </div>
+    <div class="collapse clearfix" id="search">
 
-    <form class="navbar-form" role="search">
+      <form class="navbar-form" role="search">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-btn">
+          <input type="text" class="form-control" placeholder="Search">
+          <span class="input-group-btn">
 
-        <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+            <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
 
-    </span>
+          </span>
         </div>
-    </form>
+      </form>
 
-</div>
-</nav>
+    </div>
+  </nav>
 
 </div>

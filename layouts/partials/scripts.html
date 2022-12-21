@@ -33,66 +33,11 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 {{end}}
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
-
-{{ $firebaseInitialize := resources.Get "js/firebase-initialize.js" }}
+{{if .Params.isFBInit | default true}}
+{{ $defines := dict "process.env.HUGO_AUTH_DOMAIN" (getenv "HUGO_AUTH_DOMAIN") }}
+{{ $opts := dict "defines" $defines}}
+{{ $firebaseInitialize := resources.Get "js/firebase-initialize.ts" | js.Build $opts }}
 <script src="{{ $firebaseInitialize.RelPermalink }}"></script>
-
-<script src="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth__ja.js"></script>
-
-{{if .Params.login}}
-
-<script>
-
-  // Initialize the FirebaseUI Widget using Firebase.
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-  var uiConfig = {
-    callbacks: {
-      signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-
-        // User successfully signed in.
-        // Return type determines whether we continue the redirect automatically
-        // or whether we leave that to developer to handle.
-
-        return true;
-      },
-      uiShown: function () {
-        // The widget is rendered.
-        // Hide the loader.
-        document.getElementById('loader').style.display = 'none';
-      }
-    },
-    // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-    signInFlow: 'redirect',
-    signInSuccessUrl: '/account/',
-    signInOptions: [
-      // Leave the lines as is for the providers you want to offer your users.
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      {
-        provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD,
-        requireDisplayName: false
-      }
-    ],
-    // Terms of service url.
-    tosUrl: '/term-of-service/',
-    // Privacy policy url.
-    privacyPolicyUrl: '/privacy-policy/'
-  };
-
-  // The start method will wait until the DOM is loaded.
-  ui.start('#firebaseui-auth-container', uiConfig);
-</script>
-
 {{end}}
 
 {{with .Params.import}}
@@ -111,25 +56,20 @@
 {{ with resources.Get $file }}
 
 <!-- TSX を ESBuild でビルドする際の Hugo のオプションを指定する -->
-{{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict "process.env.NODE_ENV" `"development"`) }}
+{{ $options := dict "targetPath" $targetPath "minify" true "defines" (dict "process.env.NODE_ENV"
+`"development"` "process.env.HUGO_AUTH_DOMAIN" (getenv "HUGO_AUTH_DOMAIN")) }}
 
 <!-- TSX のビルドを Hugo のオプションで指定した内容で実行する -->
 {{ $js := resources.Get . | js.Build $options }}
 
 <!-- 一応 SRI を有効化した状態でビルドした JS を読み込む -->
 {{ $secureJS := $js | resources.Fingerprint "sha512" }}
-<script
-  src="{{ $secureJS.RelPermalink }}"
-  integrity="{{ $secureJS.Data.Integrity }}"
-></script>
+<script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
 {{ end }}
 {{ end }}
 
 <!-- ... -->
-
-{{ $login := resources.Get "js/login.js" }}
-<script src="{{ $login.RelPermalink }}"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
 <!-- {{ if .Site.Params.googleMapsApiKey }}
