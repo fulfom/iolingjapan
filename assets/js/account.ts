@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             if (flag) document.getElementsByTagName("body").item(0)!.style.opacity = "1";
         }
         else {
-            // location.href = "/login/"
+            location.href = "/login/"
         }
     });
 });
