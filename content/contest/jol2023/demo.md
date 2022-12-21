@@ -47,7 +47,7 @@ isFBInit = false
 <li><a target="_blank">{{< icon file-download 問題pdf>}}</a></li>
 <li><a target="_blank">{{< icon table 解答用ページ >}}</a></li>
 <li><a href="https://app.sli.do/event/7S1g4NNgjGgg4VbAs8Wj4J" target="_blank">{{< icon question "質問はこちらの slido から">}}</a></li>
-<li><a href="https://drive.google.com/file/d/1YCoD30f1YxcUSSegRQXABroS4UMIa92g/view?usp=sharing" target="_blank">{{< icon lock パスワード付き問題pdf >}}</a></li>
+<li><a href="https://drive.google.com/file/d/1l8XqmydMqQCB2W9tAPk7Fe-F7SUbfM3i/view?usp=share_link" target="_blank">{{< icon lock パスワード付き問題pdf >}}</a></li>
 </ul>
 
 {{< /list >}}
@@ -59,7 +59,8 @@ isFBInit = false
 
 **上記のリンクから問題の閲覧・解答の入力が出来なかった場合**は以下のリンクから問題や解答用エクセルファイルを入手してください．解答用エクセルファイルは**競技時間内にメールで** {{< email >}} に提出してください．提出の際には，競技者情報（メールアドレス，競技者氏名，参加枠）を付してください（本ページの上の方に記載のものをコピー&ペーストすると確実です．その他の情報や文面は不要です）．
 
-※解答用ページ（スプレッドシート）で適切に解答が入力できた方は，解答用エクセルファイルの提出はしないでください．
+※解答用ページ（スプレッドシート）で適切に解答が入力できた方は，解答用エクセルファイルの提出はしないでください．  
+※**体験版はメール提出しないでください**．
 
 {{< card-header >}}
 {{< list class="list-group list-fill-link" liclass="list-group-item" id="links2">}}
@@ -163,7 +164,7 @@ isFBInit = false
 {{< /table >}}
 {{< /simplebox >}}
 
-- 設問と配点は必ずしも対応しません．複数の設問に正解して初めて点が与えられる場合もあります．
+- **設問と配点は必ずしも対応しません**．複数の設問に正解して初めて点が与えられる場合もあります．
 
 {{< simplebox "例題2（3点）" "ms-4" >}}
 
@@ -287,7 +288,7 @@ isFBInit = false
 
 {{< figure src="/img/jol2022/before_demo.png">}}
 
-質問用ページ（slido）にアクセスするとこのようになっています．Type your question から質問を記入してください．随時，競技監督者が質問に答えます．質問への回答には多少時間がかかる可能性がありますので，質問への回答を待つ間も，問題を解き進めていてください．ただし，個人情報を含む質問はメールでお問い合わせください．
+質問用ページ（slido）にアクセスするとこのようになっています．「質問を入力」から質問を記入してください．随時，競技監督者が質問に答えます．質問への回答には多少時間がかかる可能性がありますので，質問への回答を待つ間も，問題を解き進めていてください．ただし，個人情報を含む質問はメールでお問い合わせください．
 
 {{< figure src="/img/jol2022/slido_demo.png">}}
 
@@ -311,13 +312,9 @@ isFBInit = false
 
 {{< figure src="/img/jol2022/downloaded_demo.png">}}
 
-競技開始時間になったら表示される（パスワードなしの）問題pdf へのリンクから問題pdf を閲覧する場合，問題pdf はこのように開かれます．
+競技開始時間になったら表示される（パスワードなしの）問題pdf へのリンクから問題pdf を閲覧する場合，問題pdf はこのように開かれます．問題が見られるようになると印刷もできるようになります．
 
 {{< figure src="/img/jol2022/problem_demo.png">}}
-
-問題が見られるようになると印刷もできるようになります．
-
-{{< figure src="/img/jol2022/print.png">}}
 
 解答用ページは競技開始時間になったら表示される解答用ページへのリンクからアクセスしてください．解答用ページはグーグルスプレッドシートを利用します．解答はインターネットに接続されている限り自動で保存されるため提出のために特別な操作は必要ありません．
 
