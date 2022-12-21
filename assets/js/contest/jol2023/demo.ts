@@ -28,7 +28,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         if (userInfo) {
                             ELEM_email!.innerText = userInfo.email;
                             ELEM_name!.innerText = userInfo.name;
-                            ELEM_spot!.innerText = userInfo.spot == "flag" ? "選抜" : "オープン";
+                            ELEM_spot!.innerText = userInfo.spot === "flag" ? "選抜" : "オープン";
+                            for (const elem of document.getElementsByClassName("only-flag") as HTMLCollectionOf<HTMLElement>) {
+                                elem.style.display = userInfo.spot === "flag" ? "block" : "none";
+                            }
                         }
                     });
                     onValue(ref(db, '/contests/jol2023/publish/demo/'), (snapshot2) => {
