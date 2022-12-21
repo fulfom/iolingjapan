@@ -191,7 +191,7 @@ JOLには2つの参加枠（{{< icon flag 選抜 >}}，{{< icon circle-notch オ
 | 賞:        | 金賞・銀賞・銅賞・努力賞を授与する．受賞者には後日賞状を郵送する． |
 | 選抜:      | 参加者のうち，世界大会への旅費と，資金不足の場合のIOL登録費自己負担分を支払う意思があるもので，国内上位8名をIOL日本正代表とする．                                     |
 | 補欠の選抜:      | 日本正代表でない参加者のうち，世界大会への旅費と，IOL登録費全額を支払う意思があるもので，国内上位2名をIOL日本代表補欠とする．                                     |
-| サイト: | https://aplo.asia/                                                 |
+| サイト: | <https://aplo.asia/>                                                 |
 {{% /table %}}
 
 {{% simplebox "補足" %}}
@@ -237,7 +237,7 @@ IOL2023 はブルガリアで開かれます．
 
 ---
 
-<div class="centralize"><a class="btn btn-template-primary text-decoration-none d-block" onclick="login()">応募はこちら</a></div>
+<div class="centralize"><a class="btn btn-template-primary text-decoration-none d-block" onclick="location.href='/login/'">応募はこちら</a></div>
 
 {{< card-header title="以前の受験案内">}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}

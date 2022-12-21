@@ -19,7 +19,7 @@ isFBInit = false
 
 今お使いのメールアドレス: <span class=user-email></span>
 
-<button id="logout" onclick="logout()" class="btn btn-danger btn-small">ログアウト</button>
+<button id="logout1" class="btn btn-danger btn-small">ログアウト</button>
 
 {{< /wrap >}}
 
@@ -33,4 +33,4 @@ isFBInit = false
 
 {{< appSys/contests >}}
 
-<button id="logout" onclick="logout()" class="btn btn-danger btn-small mt-5">ログアウト</button>
+<button id="logout2" class="btn btn-danger btn-small mt-5">ログアウト</button>
