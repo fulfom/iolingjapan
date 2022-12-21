@@ -1,9 +1,16 @@
-import { app, auth, db } from "./firebase-initialize"
+import { app, auth, db, logout } from "./firebase-initialize"
 import { ref, onValue, update, get, set } from "firebase/database"
 
 const ELEM_alert = document.getElementById("alert");
 const ELEM_info = document.getElementById("info");
 const USER_EMAILs = document.getElementsByClassName('user-email') as HTMLCollectionOf<HTMLElement>;
+
+document.getElementById("logout1")!.addEventListener("click", () => {
+    logout();
+})
+document.getElementById("logout2")!.addEventListener("click", () => {
+    logout();
+})
 
 document.addEventListener("DOMContentLoaded", (event) => {
     auth.onAuthStateChanged(async (user) => {
