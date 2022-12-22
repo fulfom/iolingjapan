@@ -16,9 +16,15 @@ isFBInit = false
 
 {{< simplebox "本ページでできること" >}}
 
-本ページでは，JOL2023本番とほぼ同様の方法で問題閲覧・解答提出ができます．お使いの端末できちんと問題が閲覧でき，解答が記入できるか，動作の確認と練習ができるようになっています．何か質問がある場合は，<a href="https://app.sli.do/event/7S1g4NNgjGgg4VbAs8Wj4J" target="_blank">こちらにアクセスして質問をお願いします</a>．ただし個人情報を含む質問は，委員会にメールでお問い合わせください: {{< email >}}．
+本ページでは，JOL2023本番とほぼ同様の方法で問題閲覧・解答提出ができます．お使いの端末できちんと問題が閲覧でき，解答が記入できるか，動作の確認と練習ができるようになっています．何か質問がある場合は，本ページ上の slido からお願いします．ただし個人情報を含む質問は，委員会にメールでお問い合わせください: {{< email >}}．
 
 その下に，[事前準備事項](#事前準備事項)，[当日の流れ](#当日の流れ)，[問題閲覧・解答提出方法](#問題閲覧解答提出方法)の説明があります．お読みください．
+
+---
+
+追記
+
+2022年12月22日18:00 質疑応答用ページ（slido）を本ページに埋め込みました．タイマーを常に画面上に表示されるようにしました．
 
 {{< /simplebox >}}
 
@@ -38,7 +44,7 @@ isFBInit = false
 
 練習用タイマーを押すと，競技開始5秒前の状況が再現されます．
 
-<div id="timer" class="fa-2x">競技開始まで</div>
+<div id="timer" class="fa-2x position-sticky pt-1" style="top: 62px; background-color: white; z-index: 10;">競技開始まで</div>
 
 {{< card-header >}}
 {{< list class="list-group list-fill-link" liclass="list-group-item" id="links">}}
@@ -46,7 +52,6 @@ isFBInit = false
 <ul>
 <li><a target="_blank">{{< icon file-download 問題pdf>}}</a></li>
 <li><a target="_blank">{{< icon table 解答用ページ >}}</a></li>
-<li><a href="https://app.sli.do/event/7S1g4NNgjGgg4VbAs8Wj4J" target="_blank">{{< icon question "質問はこちらの slido から">}}</a></li>
 <li><a href="https://drive.google.com/file/d/1l8XqmydMqQCB2W9tAPk7Fe-F7SUbfM3i/view?usp=share_link" target="_blank">{{< icon lock パスワード付き問題pdf >}}</a></li>
 </ul>
 
@@ -72,6 +77,14 @@ isFBInit = false
 
 {{< /list >}}
 {{< /card-header >}}
+
+### 質疑応答
+
+質問は以下の Slido から受け付けます．
+
+<iframe src="https://app.sli.do/event/7S1g4NNgjGgg4VbAs8Wj4J" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido"></iframe>
+
+<a href="https://app.sli.do/event/7S1g4NNgjGgg4VbAs8Wj4J" target="_blank">以上から上手く閲覧できない場合はこちら（同じものが別のウィンドウで開かれます）</a>．
 
 ### 競技開始の前に
 
@@ -154,7 +167,7 @@ isFBInit = false
 
 空欄[ 1 ]を埋めなさい．[3点，部分点あり]
 
-{{< table class="list-like ms-2" >}}
+{{< table class="list-like ms-2 d-none d-md-table" >}}
 |||
 | --------------------------------------------- | ----------------- |
 | 1. alijenga                                   | ←正解 (3 点)     |
@@ -162,6 +175,13 @@ isFBInit = false
 | 1. ninajenga / jenga                          | ←部分点 (1 点)   |
 | 1. ninapika                                   | ←得点なし (0 点) |
 {{< /table >}}
+{{< list class="d-md-none" style="list-style-type: none" >}}
+
+- 1\. alijenga                                    ←正解 (3 点)
+- 1\. anlijenga / anajenga / nilijenga / lijenga  ←部分点 (2 点)
+- 1\. ninajenga / jenga                           ←部分点 (1 点)
+- 1\. ninapika                                    ←得点なし (0 点)
+{{< /list >}}
 {{< /simplebox >}}
 
 - **設問と配点は必ずしも対応しません**．複数の設問に正解して初めて点が与えられる場合もあります．
@@ -186,14 +206,19 @@ isFBInit = false
 
 空欄[ 1 ]～[ 3 ]を埋めなさい． [3点, 完答]
 
-{{< table class="list-like ms-2" >}}
+{{< table class="list-like ms-2 d-none d-sm-table" >}}
 |||||
 | ------------ | --------- | --------- | ----------------- |
 | 1. resensei | 2. mlai   | 3. rebuik | ←正解 (3 点)     |
 | 1. resensei | 2. remlai | 3. rebuik | ←得点なし (0 点) |
 | 1. sensei   | 2. mlai   | 3. buik   | ←得点なし (0 点) |
 {{< /table >}}
+{{< list class="d-sm-none" style="list-style-type: none" >}}
 
+- 1\. resensei 2. mlai   3. rebuik ←正解 (3 点)
+- 1\. resensei 2. remlai 3. rebuik ←得点なし (0 点)
+- 1\. sensei   2. mlai   3. buik   ←得点なし (0 点)
+{{< /list >}}
 {{< /simplebox >}}
 
 ## 事前準備事項
@@ -233,7 +258,7 @@ isFBInit = false
 
 ### 競技中の質問方法
 
-質問は slido というサービスから受け付けます．試しにアクセスし，可能なら本ページや競技について質問してみてください．（本ページには体験版用のslidoへのリンクが載っています．本番は本番用に別のslidoを用意しますのでご注意ください．）
+質問は slido というサービスから受け付けます．試しにアクセスし，可能なら本ページや競技について質問してみてください．（本ページには体験版用のslidoが載っています．本番は本番用に別のslidoを用意しますのでご注意ください．）
 
 {{< wrap tag=div class="only-flag" >}}
 {{< simplebox "選抜枠のみ" >}}

@@ -1,5 +1,5 @@
 import { app, auth, db } from "../../firebase-initialize"
-import { ref, onValue, update, get, set } from "firebase/database"
+import { ref, onValue, update, get, set, serverTimestamp } from "firebase/database"
 import { toHms } from "../../utility/toHms"
 
 const ELEM_LINKS = document.getElementById('links')!.getElementsByTagName('a');
@@ -33,6 +33,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 elem.style.display = userInfo.spot === "flag" ? "block" : "none";
                             }
                         }
+                        update(ref(db, '/contests/jol2023/demolog/' + user.uid), {
+                            timestamp: serverTimestamp()
+                        })
+                    }, {
+                        onlyOnce: true
                     });
                     onValue(ref(db, '/contests/jol2023/publish/demo/'), (snapshot2) => {
                         const publish = snapshot2.val();
@@ -40,12 +45,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             demolinks = Object.assign({}, demolinks, publish);
                             // updateLinks(publish);
                         }
+                    }, {
+                        onlyOnce: true
                     });
                     onValue(ref(db, '/contests/jol2023/demo/' + user.uid), (snapshot3) => {
                         const answerSheet = snapshot3.val();
                         if (answerSheet) {
                             demolinks = Object.assign({}, demolinks, answerSheet);
                         }
+                    }, {
+                        onlyOnce: true
                     });
                 }
                 else {
