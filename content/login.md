@@ -17,10 +17,10 @@ cdn = [
 <div id="loader"></div>
 
 {{< simplebox "ログインに失敗する場合" >}}
-新しい OS の iPhone，iPad をお使いの場合，または Mac で新しい Safari をお使いの場合，ログインに失敗する不具合が確認されています．修正に時間がかかるので，その間，以下の解決策をとっていただくようお願いいたします．
+新しい OS の iPhone，iPad をお使いの場合，または Mac で新しい Safari をお使いの場合，上記のボタンからではログインに失敗する不具合が確認されています．以下の回避策をお試しください．
 
 - パソコンで Chrome からログインする
-- 下記からログインする（ポップアップを許可する必要があるかもしれません）
+- 以下からログインする（ポップアップを許可する必要があるかもしれません）
 
 <div class="d-flex justify-content-center">
 <div id="google-auth2" class="firebaseui-idp-button"></div>

@@ -47,6 +47,7 @@ window.onload = function () {
 }
 
 // Initialize the FirebaseUI Widget using Firebase.
+// @ts-ignore
 var ui = new firebaseui.auth.AuthUI(auth);
 
 var uiConfig = {
