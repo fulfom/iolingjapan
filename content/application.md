@@ -7,7 +7,7 @@ aliases = ["/past-applications/"]
 
 {{% simplebox "お知らせ" %}}
 
-2022年9月10日: JOL2023の募集を開始しました．
+JOL2023の応募は終了しました．
 
 {{% /simplebox %}}
 
@@ -237,7 +237,7 @@ IOL2023 はブルガリアで開かれます．
 
 ---
 
-<div class="centralize"><a class="btn btn-template-primary text-decoration-none d-block" onclick="location.href='/login/'">応募はこちら</a></div>
+<!-- <div class="centralize"><a class="btn btn-template-primary text-decoration-none d-block" onclick="location.href='/login/'">応募はこちら</a></div> -->
 
 {{< card-header title="以前の受験案内">}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}

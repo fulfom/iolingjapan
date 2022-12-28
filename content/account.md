@@ -25,6 +25,7 @@ isFBInit = false
 
 {{< simplebox お知らせ "" "info" >}}
 
+2022/12/29: [JOL2023競技会場ページを公開しました](/contest/jol2023/contest/)  
 2022/12/22: [JOL2023事前練習ページを公開しました](/contest/jol2023/demo/)．
 
 {{< /simplebox >}}
