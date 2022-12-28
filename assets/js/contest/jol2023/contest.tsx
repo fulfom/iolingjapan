@@ -142,7 +142,7 @@ const updateLinks = (data) => {
     if (userdata.currentMeetingGroup) {
         if (userdata.meetinggroup) {
             ELEM_NOTSELECTED!.classList.add('d-none');
-            if (userdata.currentMeetingGroup == userdata.meetinggroup) {
+            if (userdata.currentMeetingGroup == userdata.meetinggroup && userdata.meetingLink) {
                 const meetingHref = document.getElementById("meetinglinkHref") as HTMLLinkElement
                 meetingHref!.href = userdata.meetingLink;
                 QRCode.toDataURL(userdata.meetingLink).then((url) => {
