@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if (user) {
             const paid = await get(ref(db, '/orders/jol2023/' + user.email!.replace(/\./g, '=').toLowerCase()));
             if (paid.val()) {
-                const refContUser = ref(db, '/contests/jol2023/users/' + user.uid)
+                const refContUser = ref(db, '/contests/jol2023/users/' + user.uid);
+                const refContLog = ref(db, '/contests/jol2023/contestlog/' + user.uid);
                 const snapshot1 = await get(refContUser);
                 const userInfo = snapshot1.val()
                 if (userInfo) {
@@ -141,7 +142,7 @@ const updateLinks = (data) => {
     if (userdata.currentMeetingGroup) {
         if (userdata.meetinggroup) {
             ELEM_NOTSELECTED!.classList.add('d-none');
-            if (userdata.currentMeetingGroup == userdata.meetinggroup) {
+            if (userdata.currentMeetingGroup == userdata.meetinggroup && userdata.meetingLink) {
                 const meetingHref = document.getElementById("meetinglinkHref") as HTMLLinkElement
                 meetingHref!.href = userdata.meetingLink;
                 QRCode.toDataURL(userdata.meetingLink).then((url) => {
@@ -156,13 +157,6 @@ const updateLinks = (data) => {
         }
     }
 }
-
-//debug
-ELEM_MEETING!.classList.remove('d-none')
-ELEM_MEETINGLINK.classList.remove('d-none');
-QRCode.toDataURL("iolingjapan.org").then((url) => {
-    (document.getElementById("meetinglink-qrcode") as HTMLImageElement).src = url;
-})
 
 function updateTimer(data) {
     if (data !== null) {
