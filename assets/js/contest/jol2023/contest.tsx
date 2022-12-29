@@ -29,7 +29,8 @@ let userdata = {
     answerSeen: false,
     currentMeetingGroup: "",
     meetinggroup: "",
-    meetingLink: ""
+    meetingLink: "",
+    spot: "",
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     ELEM_spot!.innerText = spot;
                     Object.assign(userdata, userInfo);
                     document.getElementById("notice-contest-participation-message")!.innerText = spot === "選抜"
-                        ? "面接対象かどうかを17:30頃に本ページ上で発表いたします．それまで，休憩です．"
+                        ? "面接対象者には全員面接を行いました．現時点で面接を受けていない方は面接対象ではありません．\nなお面接対象の選考と賞の授与は基準が異なります．2023年1月10日の結果発表をお待ちください．本ページは閉じても構いません．"
                         : "これで競技は終了となります．2023年1月10日の結果発表をお待ちください．本ページは閉じても構いません．";
                 }
                 onValue(ref(db, '/contests/jol2023/publish/contest/'), async (snapshot) => {
@@ -133,29 +134,29 @@ const updateLinks = (data) => {
     if (data.pwd) {
         document.getElementById('pwd')!.innerText = data.pwd;
     };
-    if (0 < data.meetinggroup) {
-        document.getElementById('meeting-start')!.innerText = data.meetingstart;
-        document.getElementById('meeting-gather')!.innerText = data.meetinggather;
-        document.getElementById('meeting-open')!.innerText = data.meetingopen;
-        ELEM_MEETING!.classList.remove('d-none');
-    }
-    if (userdata.currentMeetingGroup) {
-        if (userdata.meetinggroup) {
-            ELEM_NOTSELECTED!.classList.add('d-none');
-            if (userdata.currentMeetingGroup == userdata.meetinggroup && userdata.meetingLink) {
-                const meetingHref = document.getElementById("meetinglinkHref") as HTMLLinkElement
-                meetingHref!.href = userdata.meetingLink;
-                QRCode.toDataURL(userdata.meetingLink).then((url) => {
-                    (document.getElementById("meetinglink-qrcode") as HTMLImageElement).src = url;
-                    ELEM_MEETINGLINK.classList.remove('d-none');
-                })
-            }
-            else ELEM_MEETINGLINK.classList.add('d-none');
-        }
-        else {
-            ELEM_NOTSELECTED!.classList.remove('d-none');
-        }
-    }
+    // if (0 < data.meetinggroup) {
+    //     document.getElementById('meeting-start')!.innerText = data.meetingstart;
+    //     document.getElementById('meeting-gather')!.innerText = data.meetinggather;
+    //     document.getElementById('meeting-open')!.innerText = data.meetingopen;
+    //     ELEM_MEETING!.classList.remove('d-none');
+    // }
+    // if (userdata.currentMeetingGroup && userdata.spot && userdata.spot === "選抜") {
+    //     if (userdata.meetinggroup) {
+    //         ELEM_NOTSELECTED!.classList.add('d-none');
+    //         if (userdata.currentMeetingGroup == userdata.meetinggroup && userdata.meetingLink) {
+    //             const meetingHref = document.getElementById("meetinglinkHref") as HTMLLinkElement
+    //             meetingHref!.href = userdata.meetingLink;
+    //             QRCode.toDataURL(userdata.meetingLink).then((url) => {
+    //                 (document.getElementById("meetinglink-qrcode") as HTMLImageElement).src = url;
+    //                 ELEM_MEETINGLINK.classList.remove('d-none');
+    //             })
+    //         }
+    //         else ELEM_MEETINGLINK.classList.add('d-none');
+    //     }
+    //     else {
+    //         ELEM_NOTSELECTED!.classList.remove('d-none');
+    //     }
+    // }
 }
 
 function updateTimer(data) {
