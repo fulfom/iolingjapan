@@ -104,13 +104,13 @@ upcomingContests:
     # record: "/record-jol/#jol2023結果"
     # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
-    status: "siteopen" #会場オープン
-    # status: "resultopen" #結果公開
-    # result: "/result/jol2023/"
+    # status: "siteopen" #会場オープン
+    status: "resultopen" #結果公開
+    result: "/result/jol2023/"
     # record: "/record-jol/#jol2023結果"
-    entry: "/entry/jol2023/"
-    entryui: "/entry/jol2023/"
-    site: "/contest/jol2023/contest"
+    # entry: "/entry/jol2023/"
+    # entryui: "/entry/jol2023/"
+    # site: "/contest/jol2023/contest"
     # visible:
     #   badge: "jol2023"
   - id: aplo2023
@@ -118,7 +118,7 @@ upcomingContests:
     desc1: 2023年4月9日(日)（推定）
     date: 2023-04-09
     detail: "/application/"
-    # entry: "/entry/aplo2023/"
+    entry: "/entry/aplo2023/"
     # site: "/contest/aplo2023/"
     # result: "/result/aplo2023/"
     # record: "/record-aplo/#aplo2023結果"
@@ -141,4 +141,5 @@ upcomingContests:
     limited: true
     status: "pre" #応募開始前
     visible:
+      # badge: "aplo2023"
       spot: "flag"
