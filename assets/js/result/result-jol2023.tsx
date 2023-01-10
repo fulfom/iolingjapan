@@ -609,7 +609,7 @@ function App() {
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
                 <h4 className="h5"><a className="text-reset text-decoration-none dottedUnderline" data-bs-toggle="collapse" data-bs-target="#collapseAvgScoreRateNote" role="button" aria-expanded="false" aria-controls="collapseAvgScoreRateNote">平均得点率</a>との比較</h4>
-                <p className="collapse small mb-0" id="collapseAvgScoreRateNote">平均得点率 = 平均点 / 配点 × 100</p>
+                <p className="collapse small mb-0" id="collapseAvgScoreRateNote">平均得点率 = 各賞受賞者の平均点 / 配点 × 100</p>
                 <div className="chart-container" style={{ position: "relative" }}>
                     <canvas id="c-sums"></canvas>
                 </div>
@@ -633,7 +633,7 @@ function App() {
                         </tbody>
                     </table>
                 </div>
-                <table className="table table-tdfirst-bold" id="t-sums">
+                <table className="table table-tdfirst-bold mb-1" id="t-sums">
                     <thead>
                         <tr>
                             <th></th>
@@ -652,6 +652,7 @@ function App() {
                             </tr>))}
                     </tbody>
                 </table>
+                <p><a href="/record-jol/">ボーダー・平均点などはこちら</a></p>
             </div>
         </div>
     </>)
