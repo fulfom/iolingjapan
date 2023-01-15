@@ -4,14 +4,11 @@ import React, { useLayoutEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
-import ProgressBar from 'react-bootstrap/ProgressBar';
-import { onAuthStateChanged, User } from "firebase/auth";
 
 function App() {
     const [editting, setEditting] = useState(false);
     const [formValue, setFormValue] = useState([]);
+    const [udb, setUdb] = useState({} as any)
 
     const infoSubmit = async (e: React.FormEvent<HTMLElement>) => {
         const user = auth.currentUser;
@@ -33,16 +30,37 @@ function App() {
                 if (val) {
                     setFormValue(val);
                 }
+                const snapshot2 = await get(ref(db, "/contests/jol2023/users/" + user.uid));
+                const udbVal = snapshot2.val();
+                if (udbVal) {
+                    setUdb(udbVal);
+                }
+            }
+            else {
+                location.href = "/account/";
             }
         })
     }, [])
 
+    if (!udb.email) {
+        return <>読み込み中</>
+    }
     return (<>
         <h2>APLO2023参加意思の確認</h2>
         <p><b>趣旨説明</b>: JOL選抜枠はAPLOやIOL出場を希望しない方も参加できます．そのため，（IOL2次選抜としての）APLOの参加者数はこちらの予想より少なくなります．その参加者の分，より多くの2次選抜参加者をとるため，アンケートを実施することになりました．</p>
         <p><b>締切</b>: <strong>2023年1月23日まで</strong>に回答をお願いします．</p>
         <p>APLO2023は2023年4月9日（日）に対面で開催される予定です．日本会場は東京のみの予定です．</p>
         <p>※このアンケートはあくまで参加意思を確認するもので，アンケートに答えた方が必ずAPLOに進めるとは限りません．このページでの回答によってAPLOに出場できなくなることはありません．回答はAPLOボーダー決定の参考にしますので，正確に正直に答えてください．</p>
+        <hr />
+        <p className="h6"><i className="fas fa-user fa-fw"></i>競技者情報</p>
+        <table className="list-like">
+            <tbody>
+                <tr><td>メールアドレス</td><td>{udb?.email}</td></tr>
+                <tr><td>氏名</td><td>{udb?.name}</td></tr>
+                <tr><td>生年月日</td><td>{udb?.birthdate}</td></tr>
+            </tbody>
+        </table>
+        <p>※競技者情報に間違いがあればメールで連絡してください．</p>
         <hr />
         <Form className="needs-validation"
             onSubmit={(e) => {
