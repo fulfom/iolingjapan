@@ -26,4 +26,6 @@ keywords = ["FAQ","How do I","questions","what if"]
 
 ## お問い合わせ
 
-委員会に関するお問い合わせは  jolinguistics@gmail.com へお寄せください．
+委員会に関するお問い合わせは {{< email >}}  へお寄せください．
+
+※2023年5月3日: 委員会のメールアドレスを以上のものに変更いたしました．当面は以前の jolinguistics@gmail.com でもお問合せを受け付けます．
