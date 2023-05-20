@@ -120,15 +120,15 @@ upcomingContests:
     detail: "/application/"
     # entry: "/entry/aplo2023/"
     # site: "/contest/aplo2023/"
-    # result: "/result/aplo2023/"
-    # record: "/record-aplo/#aplo2023結果"
+    result: "/result/aplo2023/"
+    record: "/record-aplo/#aplo2023結果"
     limited: true
-    status: "pre" #応募開始前
+    # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
-    # status: "resultopen" #結果公開
+    status: "resultopen" #結果公開
     visible:
-      # badge: "aplo2023"
-      spot: "flag"
+      badge: "aplo2023"
+      # spot: "flag"
   - id: iol2023
     title: IOL2023
     desc1: 2023年7月末（月～金）
