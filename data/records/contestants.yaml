@@ -1,3 +1,15 @@
+- name: 2023 Team Ninja
+  member:
+    - 安井寛人
+    - 塚田智志
+    - 杉浦佑月
+    - 勢子流叶
+- name: 2023 Team Samurai
+  member:
+    - 大宮隆誠
+    - 加納怜
+    - 宮路仁魁
+    - 虫明穣二
 - name: 2022 Team Ninja
   member:
     - 石井誠子
@@ -103,4 +115,3 @@
 - name: 2012
   member:
     - Yutaro Yamada
-

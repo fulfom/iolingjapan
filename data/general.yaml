@@ -2,10 +2,10 @@
   link: "/information/"
   linktext: "→概要"
   color: green
-  title: 
+  title:
     - 言語の不思議に
     - 触れてみませんか？
-  desc: 
+  desc:
     - 言語学オリンピックは
     - 言語を分析する能力を競う
     - 科学オリンピックの一大会です
@@ -13,10 +13,10 @@
   link: "/preparation/"
   linktext: "→過去問など"
   color: white
-  title: 
+  title:
     - 過去問を
     - 解いてみよう
-  desc: 
+  desc:
     - 出題されるのは
     - 論理力と探求心で
     - 0から
@@ -27,39 +27,39 @@
   link: "/record/"
   linktext: "→大会成績"
   color: pink
-  title: 
+  title:
     - 日本代表を
     - 応援しよう
-  desc: 
-    - IOL2022には
-    - 世界32の国と地域から
-    - 184人の代表が参加しました．
-    - 次回開催地はブルガリアです
+  desc:
+    - IOL2023には
+    - 世界38の国と地域から
+    - 205人の代表が参加しました．
+    - 次回開催地はブラジルです
 - id: ""
   link: "/application/"
   linktext: "→受験案内"
   color: yellow
-  title: 
+  title:
     - 代表選抜に
     - あなたも挑戦！
-  desc: 
+  desc:
     - 20歳未満で大学未入学なら
     - 誰でも代表選抜に応募できます
 - id: ""
   link: "/ad-material/"
   linktext: "→広報資料"
   color: blue
-  title: 
+  title:
     - 未来の代表に
     - 広めよう
-  desc: 
+  desc:
     - 学校やSNSで
     - 言語学オリンピックを
     - 広めてください！
-  more: 
-  - link: "https://twitter.com/iolingjapan"
-    inner: <i class="fab fa-twitter"></i>
-  - link: "https://www.instagram.com/iolingjapan/"
-    inner: <i class="fab fa-instagram colored-instagram"></i>
-  - link: "https://www.facebook.com/iolingjapan/"
-    inner: <i class="fab fa-facebook" style="color:#4267B2;"></i>
+  more:
+    - link: "https://twitter.com/iolingjapan"
+      inner: <i class="fab fa-twitter"></i>
+    - link: "https://www.instagram.com/iolingjapan/"
+      inner: <i class="fab fa-instagram colored-instagram"></i>
+    - link: "https://www.facebook.com/iolingjapan/"
+      inner: <i class="fab fa-facebook" style="color:#4267B2;"></i>

@@ -115,7 +115,7 @@ upcomingContests:
     #   badge: "jol2023"
   - id: aplo2023
     title: APLO2023
-    desc1: 2023年4月9日(日)（推定）
+    desc1: 2023年4月9日(日)
     date: 2023-04-09
     detail: "/application/"
     # entry: "/entry/aplo2023/"
@@ -131,7 +131,7 @@ upcomingContests:
       # spot: "flag"
   - id: iol2023
     title: IOL2023
-    desc1: 2023年7月末（月～金）
+    desc1: 2023年7月24日～28日（月～金）
     date: 2023-07-24
     desc2: ブルガリア
     # entry: "/entry/iol2023/"
