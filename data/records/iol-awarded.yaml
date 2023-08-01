@@ -1,4 +1,25 @@
 - award: gold
+  year: 2023
+  name: 大宮隆誠
+- award: silver
+  year: 2023
+  name: 加納怜
+- award: bronze
+  year: 2023
+  name: 塚田智志
+- award: bronze
+  year: 2023
+  name: 安井寛人
+- award: honorable-mention
+  year: 2023
+  name: 宮路仁魁
+- award: honorable-mention
+  year: 2023
+  name: 杉浦佑月
+- award: honorable-mention
+  year: 2023
+  name: 勢子流叶
+- award: gold
   year: 2022
   name: 星井崇道
 - award: gold
@@ -106,3 +127,6 @@
 - award: best-solution
   year: 2022
   name: 星井崇道
+- award: best-solution
+  year: 2023
+  name: 大宮隆誠

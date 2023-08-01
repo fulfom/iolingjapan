@@ -20,6 +20,18 @@ keywords = []
 {{< /list >}}
 {{< /card-header >}}
 
+## 書籍
+
+{{< card-header >}}
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
+
+書籍発売中です！
+
+- [『パズルで解く世界の言語　――言語学オリンピックへの招待』](https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html)
+
+{{< /list >}}
+{{< /card-header >}}
+
 ## おすすめの問題
 
 過去の代表が執筆した記事にまとまっています
