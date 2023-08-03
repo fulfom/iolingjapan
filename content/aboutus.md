@@ -34,7 +34,7 @@ IOL2010イギリス代表（問題5最優秀解答賞）
 {{% /memberCard %}}
 
 {{% memberCard name="小林 剛士" ruby="こばやし つよし" role="理事・事務局長" roleClass="btn-template-primary" src="/img/members/kobayashi.png" %}}
-東京外国語大学 博士後期課程 IOL2016インド大会日本代表（銅賞）
+東京外国語大学 博士後期課程 IOL2016インド大会日本代表（銅賞） <jol@iolingjapan.org>
 
 「言語学オリンピックをもっと早く知りたかった」という声を一つでも減らすべく、大会の魅力を知ってもらう活動に取り組んでいます。
 {{% /memberCard %}}
@@ -44,7 +44,7 @@ IOL2010イギリス代表（問題5最優秀解答賞）
 {{% /memberCard %}}
 
 {{% memberCard name="佐藤 和音" ruby="さとう かずね" role="理事" roleClass="bg-success" src="/img/members/satok.jpg" %}}
-ケンブリッジ大学修士課程 学生 IOL2019韓国大会日本代表
+ケンブリッジ大学修士課程 学生 IOL2019韓国大会日本代表 <sato.kaz@iolingjapan.org>
 
 「言語学オリンピックってこんなに楽しいものなのか」という気づきを多くの生徒のみなさんに提供するべく、主に問題作成・代表指導に関わっています。
 {{% /memberCard %}}
@@ -54,7 +54,7 @@ IOL2010イギリス代表（問題5最優秀解答賞）
 {{% /memberCard %}}
 
 {{% memberCard name="大勢 拓実" ruby="おおせ たくみ" role="理事" roleClass="bg-success" %}}
-東京大学 学生 IOL2019韓国大会日本代表（銅賞）
+東京大学 学生 IOL2019韓国大会日本代表（銅賞） <ose.takumi@iolingjapan.org>
 {{% /memberCard %}}
 
 {{% memberCard name="山﨑 貴之" ruby="やまざき たかゆき" role="理事" roleClass="bg-success" %}}
@@ -66,7 +66,7 @@ IOL2010イギリス代表（問題5最優秀解答賞）
 {{% /memberCard %}}
 
 {{% memberCard name="熊谷 勇輝" ruby="くまがえ ゆうき" role="理事" roleClass="bg-success" src="/img/members/kumagae.jpeg" %}}
-千葉大学 医学部医学科 学生　JOL2020金賞
+千葉大学 医学部医学科 学生　JOL2020金賞 <kumagae.yuki@iolingjapan.org>
 {{% /memberCard %}}
 
 {{% memberCard name="佐藤 弘崇" ruby="さとう ひろたか" role="スタッフ" %}}
@@ -93,10 +93,22 @@ IOL2017アイルランド大会日本代表, IOL2021ラトヴィア大会日本�
 IOL2019日本代表（努力賞）, IOL2021日本代表, IOL2022日本代表（努力賞，団体戦銅賞）
 {{% /memberCard %}}
 
-{{% memberCard name="梶田 純之介" ruby="かじた じゅんのすけ" role="アドバイザー" src="/img/members/kajita.jpeg" %}}
-東京大学文学部卒　IOL2017アイルランド大会日本代表（努力賞）
+{{% memberCard name="星井 崇道" ruby="ほしい たかみち" role="スタッフ" %}}
+IOL2021日本代表（金賞）, IOL2022日本代表（金賞，最優秀解答賞，団体戦銀賞）
 
-大会の普及に励む若手委員に助言を与えるとともに、適切な運営が行われているかチェックしています。
+東京大学 学生
+{{% /memberCard %}}
+
+{{% memberCard name="森澤 優真" ruby="もりさわ ゆうま" role="スタッフ" %}}
+IOL2021日本代表, IOL2022日本代表（努力賞，団体戦銀賞）
+
+東京大学 学生
+{{% /memberCard %}}
+
+{{% memberCard name="石井 誠子" ruby="いしい せいこ" role="スタッフ" %}}
+IOL2022日本代表（金賞，団体戦銅賞）
+
+東京大学 学生
 {{% /memberCard %}}
 
 {{< /wrap >}}
