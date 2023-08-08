@@ -1,4 +1,4 @@
-features: 
+features:
   - title: お試し問題
     link: /sample-problems/
     icon: "fas fa-door-open"
@@ -23,5 +23,5 @@ features:
     link: "/experiences/"
     icon: fas fa-walking
   - title: 広報資料
-    link: "/information/#material"
+    link: "/ad-material/"
     icon: fas fa-paper-plane
