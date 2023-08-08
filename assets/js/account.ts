@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 USER_EMAILs[i].innerText = user.email || "";
             }
 
-            if (ELEM_alert) {
-                // コンテスト直前は支払済みでないアカウントにはアラートを出す
-                const paid = await get(ref(db, '/orders/jol2023/' + user.email!.replace(/\./g, '=').toLowerCase()));
-                if (!paid.val()) {
-                    ELEM_alert.style.display = "block";
-                    ELEM_info!.style.display = "none";
-                }
-            }
+            // if (ELEM_alert) {
+            //     // コンテスト直前は支払済みでないアカウントにはアラートを出す
+            //     const paid = await get(ref(db, '/orders/jol2023/' + user.email!.replace(/\./g, '=').toLowerCase()));
+            //     if (!paid.val()) {
+            //         ELEM_alert.style.display = "block";
+            //         ELEM_info!.style.display = "none";
+            //     }
+            // }
 
             const contests = document.getElementsByClassName("appSys-contest");
             let toberemoved: Element[] = [];

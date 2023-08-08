@@ -8,7 +8,7 @@ isFBInit = false
 
 {{< appSys/features >}}
 
-{{< wrap tag=div class="alert alert-warning" role="alert" id="alert" style="display: none;">}}
+<!-- {{< wrap tag=div class="alert alert-warning" role="alert" id="alert" style="display: none;">}}
 {{< icon exclamation-triangle あなたは >}}JOL2023の応募が完了していません．
 
 - そもそもJOL2023に応募していない．
@@ -21,7 +21,7 @@ isFBInit = false
 
 <button id="logout1" class="btn btn-danger btn-small">ログアウト</button>
 
-{{< /wrap >}}
+{{< /wrap >}} -->
 
 {{< simplebox お知らせ "" "info" >}}
 
