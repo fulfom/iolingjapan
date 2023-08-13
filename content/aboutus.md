@@ -7,8 +7,10 @@ title = "ABOUT US"
 {{< wrap tag=div class="container" >}}
 {{< wrap tag=div class="row row-cols-1 row-cols-lg-2" >}}
 
-{{% memberCard name="風間 伸次郎" ruby="かざま しんじろう" role="理事長" roleClass="bg-danger" %}}
+{{% memberCard name="風間 伸次郎" ruby="かざま しんじろう" role="理事長" roleClass="bg-danger" src="/img/members/kazama.jpg" %}}
 東京外国語大学 大学院総合国際学研究院 教授
+
+言語学って文系的なところもあるし理系的なところもあるし、世界や歴史と繋がっていて、本当に楽しくておもしろい分野なんですよ。言語学オリンピックのことを知って、そしてぜひチャレンジしてみてください。言語学の楽しさを一人でも多くの人に味わってもらいたいと望んでいます。
 {{% /memberCard %}}
 
 {{% memberCard name="飯田 純" ruby="いいだ じゅん" role="副理事長" roleClass="bg-primary" %}}

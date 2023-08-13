@@ -104,12 +104,7 @@ keywords = []
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
 - [（全般的な）問題対策](/tutorial/)
-- [JOL2019第5問解説](https://fulfom.hatenablog.com/entry/2019/12/21/145615)  
-- [JOL2018第5問解説](https://karngati.hatenablog.com/entry/JOL2018_5)
-- [karŋati’s diary(karngati)](https://karngati.hatenablog.com/entry/JOL2018_5)
-- [言語学わからない(tungumalanna)](https://tungumalanna.hatenablog.com/archive/category/IOL%E9%9D%9E%E5%85%AC%E5%BC%8F%E8%A7%A3%E8%AA%AC)
-- [言とインドカレー(fulfom)](https://fulfom.hatenablog.com/archive/category/%E8%A8%80%E3%82%AA%E3%83%AA%E8%A7%A3%E8%AA%AC)
-- <a href="https://kotohazi.netlify.app/problems/?s=6Kej6Kqs44Gu44GC44KL5ZWP6aGM&v=1&c=0B4" target="_blank">その他の解説をことはじで探す</a>
+- <a href="https://kotohazi.netlify.app/problems/?s=6Kej6Kqs44Gu44GC44KL5ZWP6aGM&v=1&c=0BG" target="_blank">その他の解説をことはじで探す</a>
 {{< /list >}}
 {{< /card-header >}}
 
@@ -126,6 +121,7 @@ keywords = []
 - [NACLO(北米予選)](https://nacloweb.org/practice.php#previous_problems)
 - [AILO(アイルランド予選)](https://ailo.adaptcentre.ie/sample-puzzles/)
 - [LLO(ラトビア予選)](http://loling.lv/en/past.html)
+- [その他の国](https://ioling.org/local_organizers/)
 - [IOLや各国予選の過去問保管庫(1000問以上; IDとパスワードは両方 guest)](http://tangra.cs.yale.edu/naclobase/)
 
 {{< /list >}}
