@@ -22,23 +22,31 @@ keywords = []
 
 ## 書籍
 
-{{< card-header >}}
-{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
-
 書籍発売中です！
 
-- [『パズルで解く世界の言語　――言語学オリンピックへの招待』](https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html)
+{{< wrap tag=div class="container-fluid" >}}
+{{< wrap tag=div class="row" >}}
 
-{{< /list >}}
-{{< /card-header >}}
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
-## おすすめの問題
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/pazugen_cover.jpg" link="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank">『パズルで解く世界の言語　――言語学オリンピックへの招待』</a>
+
+{{< /wrap >}}
+
+{{< /wrap >}}
+{{< /wrap >}}
+
+## おすすめの問題・問題対策
 
 過去の代表が執筆した記事にまとまっています
 
 {{< card-header >}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
+- [（全般的な）問題対策](/tutorial/)
 - [言オリ初心者に解いてほしいおすすめ過去問7選](https://fulfom.hatenablog.com/entry/2021/07/31/074102)
 - [3日で対策！ 日本言語学オリンピック](http://zohe.hatenablog.com/entry/2019/03/21/191555)
 
@@ -82,7 +90,7 @@ keywords = []
     </a>
   </div>
   <div class="flex-grow-1 ms-3">
-  「ことはじ問題集」には国際大会，海外予選などの問題が一覧になっています．ジャンルや難易度で検索もできる優れものです．
+  「ことはじ問題集」には国際大会，海外予選などの問題が一覧になっています．ジャンルや難易度で検索もできる優れものです．一部の問題には解説へのリンクもついています．
   </div>
 </div>
 
@@ -92,19 +100,8 @@ keywords = []
 - [取り急ぎ過去問を見たい → 大会一覧](https://kotohazi.netlify.app/problems/contests)
 - [ことはじ問題集](https://kotohazi.netlify.app/problems/)
 - <a href="https://kotohazi.netlify.app/problems/?v=1&t=SU9MMjAoMVs1LTldfFteMDFdXGQpfEpPTHxBUExPfOaXpeacrOiqnuiosw&s=5pel5pys6Kqe44Gn6Kej44GR44KL5ZWP6aGM" target="_blank">日本語で解ける問題一覧</a>
+- <a href="https://kotohazi.netlify.app/problems/?s=6Kej6Kqs44Gu44GC44KL5ZWP6aGM&v=1&c=0BG" target="_blank">解説をことはじで探す</a>
 
-{{< /list >}}
-{{< /card-header >}}
-
-## 問題の解説
-
-国内予選，国際大会の問題の解説がいくつか作られています．ここに挙がっているのは一部なので，データベース(ことはじ)の方もチェックしてみてください．
-
-{{< card-header >}}
-{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
-
-- [（全般的な）問題対策](/tutorial/)
-- <a href="https://kotohazi.netlify.app/problems/?s=6Kej6Kqs44Gu44GC44KL5ZWP6aGM&v=1&c=0BG" target="_blank">その他の解説をことはじで探す</a>
 {{< /list >}}
 {{< /card-header >}}
 
