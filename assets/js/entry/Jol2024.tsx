@@ -198,7 +198,7 @@ function App() {
                             <Form.Group className="mb-3 was-validated" controlId="formBirthdate">
                                 <Form.Label>生年月日</Form.Label>
                                 <Form.Control required
-                                    min={udb.spot === "flag" ? "2003-07-26" : ""}
+                                    min={udb.spot === "flag" ? "2004-07-31" : ""}
                                     type="date"
                                     value={udb?.birthdate || ""}
                                     onChange={(e) => {
@@ -206,7 +206,7 @@ function App() {
                                     }}
                                 />
                                 {udb.spot === "flag" ? <Form.Text className="text-muted">
-                                    2003年7月31日以降の生まれである必要があります．
+                                    2004年7月31日以降の生まれである必要があります．
                                 </Form.Text> : <></>}
                             </Form.Group>
                             {udb.spot === "flag" ?
