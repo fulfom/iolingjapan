@@ -2,6 +2,7 @@
 title = "設定"
 # import = ["js/appsys.js", "js/settings.js"]
 # importCSS = ["scss/loaded.scss"]
+draft = true
 +++
 
 [応募者ページに戻る](/account/)

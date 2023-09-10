@@ -1,3 +1,10 @@
 {
-    "nuxt.isNuxtApp": false
+    "runOnSave.commands": [
+        {
+            "match": "data\\\\contests\\.yaml",
+            "command": "node .vscode\\yamlToJson.js ${file} ${workspaceFolder}\\assets\\data\\${fileBasenameNoExtension}.json",
+            "runIn": "backend",
+            "runningStatusMessage": "jsonify ${fileBasenameNoExtension}",
+        }
+    ]
 }
