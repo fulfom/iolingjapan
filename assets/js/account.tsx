@@ -97,17 +97,21 @@ const App = () => {
             <div className="col-lg-6">
                 <h3 id="contests">大会</h3>
                 <div id="account-upcoming-contests" className="list-group list-group-flush mb-2">
-                    {CONTESTS_DATA.upcomingContests.map((v) => (
-                        contest(v, contUserInfo[v.id]?.entry)
-                    ))}
+                    {CONTESTS_DATA.upcomingContests
+                        .sort((a, b) => (new Date(a.date).getTime() - new Date(b.date).getTime()))
+                        .map((v) => (
+                            contest(v, contUserInfo[v.id]?.entry)
+                        ))}
                 </div>
             </div>
             <div className="col-lg-6">
                 <h3 id="results">結果</h3>
                 <div id="account-past-contests" className="list-group list-group-flush mb-2">
-                    {CONTESTS_DATA.pastContests.map((v) => (
-                        contest(v)
-                    ))}
+                    {CONTESTS_DATA.pastContests
+                        .sort((a, b) => (- new Date(a.date).getTime() + new Date(b.date).getTime()))
+                        .map((v) => (
+                            contest(v)
+                        ))}
                 </div>
             </div>
         </div>)

@@ -135,10 +135,11 @@ pastContests:
     desc2: ブルガリア
     # entry: "/entry/iol2023/"
     # detail: "/detail/iol2023/"
-    # result: "https://ioling.org/results/2023/"
-    # record: "/record/#iol2023結果"
+    result: "https://ioling.org/results/2023/"
+    record: "/record/#iol2023結果"
     limited: true
-    status: "pre" #応募開始前
+    # status: "pre" #応募開始前
+    status: "resultopen" #結果公開
     visible:
       # badge: "aplo2023"
       spot: "flag"
