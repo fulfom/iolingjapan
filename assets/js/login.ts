@@ -6,7 +6,7 @@ import type * as firebaseui from 'firebaseui';
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        location.href = "/account/"
+        location.replace("/account/");
     }
     else {
         document.getElementsByTagName('body')!.item(0)!.style.opacity = "1";
