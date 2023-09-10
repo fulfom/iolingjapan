@@ -4,6 +4,7 @@ title = "広報資料"
 
 ## 報道機関向け
 
+- [JOL2024応募開始プレスリリース（2023年9月10日掲載）](/pdf/release/jol2024_appl_release.pdf)
 - [IOL2023プレスリリース（2023年8月8日掲載）](/pdf/release/iol2023_release.pdf)
 - アーカイブ
   - [IOL2022プレスリリース（2022年9月1日掲載）](/pdf/release/iol2022_release.pdf)

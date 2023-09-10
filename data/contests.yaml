@@ -135,30 +135,31 @@ pastContests:
     desc2: ブルガリア
     # entry: "/entry/iol2023/"
     # detail: "/detail/iol2023/"
-    # result: "https://ioling.org/results/2023/"
-    # record: "/record/#iol2023結果"
+    result: "https://ioling.org/results/2023/"
+    record: "/record/#iol2023結果"
     limited: true
-    status: "pre" #応募開始前
+    # status: "pre" #応募開始前
+    status: "resultopen" #結果公開
     visible:
       # badge: "aplo2023"
       spot: "flag"
 upcomingContests:
   - id: jol2024
     title: JOL2024
-    desc1: 2023年12月29日(木)（未確定）
+    desc1: 2023年12月29日(木)
     date: 2023-12-29
     desc2: オンライン
     detail: "/application/"
     # result: "/result/jol2024/"
     # record: "/record-jol/#jol2024結果"
-    status: "pre" #応募開始前
-    # status: "entryopen" #応募開始後
+    # status: "pre" #応募開始前
+    status: "entryopen" #応募開始後
     # status: "siteopen" #会場オープン
     # status: "resultopen" #結果公開
     # result: "/result/jol2024/"
     # record: "/record-jol/#jol2024結果"
-    # entry: "/entry/jol2024/"
-    # entryui: "/entry/jol2024/"
+    entry: "/entry/jol2024/"
+    entryui: "/entry/jol2024/"
     # site: "/contest/jol2024/contest"
     # visible:
     #   badge: "jol2024"

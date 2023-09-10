@@ -1,3 +1,4 @@
+<!-- deprecated -->
 <div id="contest-{{.id}}" class="list-group-item appSys-contest" data-id="{{.id}}"{{range $key,$v := .visible}} data-visible-{{$key}}="{{$v}}"{{end}}{{with .status}} data-status="{{.}}"{{end}}>
     <div class="">
       {{if eq .status "pre"}}<button id="pre-{{.id}}" disabled class="btn btn-outline-dark float-end">{{if .limited}}<i class="fas fa-flag fa-fw"></i>要選抜{{else}}開催予定{{end}}</button>{{end}}

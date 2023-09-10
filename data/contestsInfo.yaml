@@ -1,4 +1,22 @@
 - title: 日本言語学オリンピック
+  year: 2024
+  abbr: JOL
+  img: /img/logo.png
+  desc1: 2023年12月29日(金) オンライン
+  desc2: 数十名程度選抜 → APLO
+- title: アジア太平洋言語学オリンピック
+  year: 2024
+  abbr: APLO
+  img: https://aplo.asia/wp-content/uploads/2019/12/APLO-LOGO.png
+  desc1: 2024年4月7日(日)
+  desc2: 8名選抜 → IOL
+- title: 国際言語学オリンピック
+  year: 2024
+  abbr: IOL
+  img: /img/iol_logo.png
+  desc1: 2024年7月末予定 ブラジル
+  desc2:
+- title: 日本言語学オリンピック
   year: 2023
   abbr: JOL
   img: /img/logo.png
@@ -8,7 +26,7 @@
   year: 2023
   abbr: APLO
   img: https://aplo.asia/wp-content/uploads/2019/12/APLO-LOGO.png
-  desc1: 2023年4月9日(日)（推定）
+  desc1: 2023年4月9日(日)
   desc2: 8名選抜 → IOL
 - title: 国際言語学オリンピック
   year: 2023

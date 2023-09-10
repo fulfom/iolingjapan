@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useEffect, useLayoutEffect, useState } from "react";
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -37,7 +37,27 @@ function App() {
                 }
                 else {
                     const snapshotUser = await get(ref(db, "/users/" + v.uid));
-                    setUdb({ ...snapshotUser.val(), publish: true });
+                    const userInfo = snapshotUser.val();
+                    setUdb({
+                        spot: userInfo?.spot || null,
+                        email: v.email,
+                        name: userInfo?.name || null,
+                        nameRoman: userInfo?.nameRoman || null,
+                        birthdate: userInfo?.birthdate || null,
+                        preUniv: userInfo?.preUniv || null,
+                        isInSchool: userInfo.isInSchool || true,
+                        schoolCode: userInfo?.schoolCode || null,
+                        codeNotFound: userInfo?.codeNotFound || null,
+                        schoolName: userInfo?.schoolName || null,
+                        grade: userInfo?.grade || null,
+                        isCertificateNecessary: userInfo?.isCertificateNecessary || null,
+                        zipcode: userInfo?.zipcode || null,
+                        address: userInfo?.address || null,
+                        publish: userInfo?.publish || true,
+                        pa: userInfo?.pa || null,
+                        motivations: null,
+                        motivationText: null,
+                    });
                     setStep(0);
                 }
                 onValue(dbOrderRef, async (snapshotOrder) => {
@@ -56,7 +76,7 @@ function App() {
                     else setLoaded(true);
                 });
             } else {
-                location.href = "/account/";
+                location.href = "/login/";
             }
         });
     }, [])
@@ -75,7 +95,7 @@ function App() {
                 ...udb
             }),
             update(ref(db, "/users/" + user.uid), {
-                ...udb
+                ...udb, motivations: null, motivationText: null,
             })
         ])
         setStep(step === 11 ? 13 : paid ? 3 : 2);
@@ -198,7 +218,7 @@ function App() {
                             <Form.Group className="mb-3 was-validated" controlId="formBirthdate">
                                 <Form.Label>生年月日</Form.Label>
                                 <Form.Control required
-                                    min={udb.spot === "flag" ? "2003-07-26" : ""}
+                                    min={udb.spot === "flag" ? "2004-07-24" : ""}
                                     type="date"
                                     value={udb?.birthdate || ""}
                                     onChange={(e) => {
@@ -206,45 +226,97 @@ function App() {
                                     }}
                                 />
                                 {udb.spot === "flag" ? <Form.Text className="text-muted">
-                                    2003年7月31日以降の生まれである必要があります．
+                                    2004年7月24日以降の生まれである必要があります．
                                 </Form.Text> : <></>}
                             </Form.Group>
                             {udb.spot === "flag" ?
-                                <><Form.Group className="mb-3 was-validated" controlId="formPreUniv">
-                                    <Form.Check required type="checkbox" label="現在私は大学教育を受けたことがありません"
-                                        checked={udb?.preUniv || false}
-                                        onChange={(e) => {
-                                            setUdb({ ...udb, preUniv: e.currentTarget.checked })
-                                        }}
-                                    />
-                                    <Form.Text className="text-muted">
-                                        参加資格確認
-                                    </Form.Text>
-                                </Form.Group>
-                                    <Form.Group className="mb-3 was-validated" controlId="formSchoolName">
-                                        <Form.Label>現在の所属学校名</Form.Label>
-                                        <Form.Control required
-                                            value={udb?.schoolName || ""}
+                                <>
+                                    <Form.Group className="mb-3 was-validated" controlId="formPreUniv">
+                                        <Form.Check required type="checkbox" label="現在私は大学教育を受けたことがありません"
+                                            checked={udb?.preUniv || false}
                                             onChange={(e) => {
-                                                setUdb({ ...udb, schoolName: e.currentTarget.value })
+                                                setUdb({ ...udb, preUniv: e.currentTarget.checked })
                                             }}
                                         />
                                         <Form.Text className="text-muted">
-                                            正式名称を略さずに記入．所属していなければ「なし」
+                                            参加資格確認
                                         </Form.Text>
                                     </Form.Group>
-                                    <Form.Group className="mb-3 was-validated" controlId="formGrade">
-                                        <Form.Label>現在の学年</Form.Label>
-                                        <Form.Control required type="number"
-                                            value={udb?.grade || ""}
+                                    <Form.Group className="mb-3" controlId="formIsInSchool">
+                                        <Form.Check type="checkbox" label="現在学校に通っています"
+                                            checked={udb?.isInSchool || false}
                                             onChange={(e) => {
-                                                setUdb({ ...udb, grade: e.currentTarget.value })
+                                                setUdb({ ...udb, isInSchool: e.currentTarget.checked })
                                             }}
                                         />
                                         <Form.Text className="text-muted">
-                                            数字．所属していなければ-1
+                                            通っていない場合はチェックを外してください．
                                         </Form.Text>
-                                    </Form.Group></> : <></>}
+                                    </Form.Group>
+                                    {udb?.isInSchool ? <>
+                                        {!udb?.codeNotFound ? <Form.Group className="mb-3 was-validated" controlId="formSchoolCode">
+                                            <Form.Label>現在の所属学校の学校コード</Form.Label>
+                                            <Form.Control required
+                                                value={udb?.schoolCode || ""}
+                                                onChange={(e) => {
+                                                    setUdb({ ...udb, schoolCode: e.currentTarget.value.trim() })
+                                                    if (!udb?.schoolName && e.currentTarget.value.match("[A-H][12][0-4][0-9][1-3][1-9][0-9]{7}")) {
+                                                        // Todo: Cloud Functions でここを実装
+                                                        // fetch("https://api.edu-data.jp/api/v1/single", {method: "GET", headers: {'Authorization': `Bearer: process.env.SCHOOL_CODE_API_TOKEN`, 'Accept': 'application/json', 'school_code': `${e.currentTarget.value}` } })
+                                                        //     .then((res) => {
+                                                        //         return res.json()
+                                                        //     })
+                                                        //     .then((json) => {
+                                                        //         setUdb((pre) => ({
+                                                        //             ...pre,
+                                                        //             schoolName: json?.school?.school_name || "",
+                                                        //         }))
+                                                        //     })
+                                                    }
+                                                }}
+                                                pattern="[A-H][12][0-4][0-9][1-3][1-9][0-9]{7}"
+                                            />
+                                            <Form.Text className="text-muted">
+                                                <a href="https://edu-data.jp/" target="_blank" rel="noopener noreferrer">https://edu-data.jp/ で学校コードを検索しコピペしてください．</a>例: B148210000013
+                                            </Form.Text>
+                                        </Form.Group> : <></>}
+                                        <Form.Group className="mb-3" controlId="formCodeNotFound">
+                                            <Form.Check type="checkbox" label="海外の学校に在学などで学校コードが見つかりません"
+                                                checked={udb?.codeNotFound || false}
+                                                onChange={(e) => {
+                                                    setUdb({ ...udb, codeNotFound: e.currentTarget.checked })
+                                                }}
+                                            />
+                                            <Form.Text className="text-muted">
+                                                学校コードが見つからない場合はチェック
+                                            </Form.Text>
+                                        </Form.Group>
+                                        <Form.Group className="mb-3 was-validated" controlId="formSchoolName">
+                                            <Form.Label>現在の所属学校名</Form.Label>
+                                            <Form.Control required
+                                                value={udb?.schoolName || ""}
+                                                onChange={(e) => {
+                                                    setUdb({ ...udb, schoolName: e.currentTarget.value })
+                                                }}
+                                            />
+                                            <Form.Text className="text-muted">
+                                                正式名称を略さずに記入．
+                                            </Form.Text>
+                                        </Form.Group>
+                                        <Form.Group className="mb-3 was-validated" controlId="formGrade">
+                                            <Form.Label>現在の学年</Form.Label>
+                                            <Form.Control required type="number"
+                                                value={udb?.grade || ""}
+                                                onChange={(e) => {
+                                                    setUdb({ ...udb, grade: e.currentTarget.value })
+                                                }}
+                                            />
+                                            <Form.Text className="text-muted">
+                                                数字．
+                                            </Form.Text>
+                                        </Form.Group>
+                                    </> : <></>}
+                                </> : <></>}
                             <Form.Group className="mb-3" controlId="formIsCertificateNecessary">
                                 <p className="mb-2">賞状の受け取り方</p>
                                 <Form.Check
@@ -319,7 +391,7 @@ function App() {
                             <h3>アンケート（任意）</h3>
                             <h4>言語学オリンピックをどこで知りましたか</h4>
                             {
-                                ["友人・先輩", "学校の先生", "家族", "塾", "ツイッター", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト"].map((v, i) => (
+                                ["友人・先輩", "学校の先生", "家族", "塾", "ツイッター（X）", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"].map((v, i) => (
                                     <Form.Check
                                         inline
                                         label={v}
@@ -336,7 +408,7 @@ function App() {
                                     />
                                 ))
                             }
-                            <Form.Group className="mb-3" controlId="formMtoivationText">
+                            <Form.Group className="mb-3" controlId="formMotivationText">
                                 <Form.Label>その他</Form.Label>
                                 <Form.Control
                                     value={udb?.motivationText || ""}
@@ -394,7 +466,7 @@ function App() {
                         5. 指示に従って支払いを済ませる<br />
                         6. 支払いが確認されるまで本ページ上でお待ちください．
                     </p>
-                    <p><a className='btn btn-template-primary text-decoration-none' href="https://iolingjapan.stores.jp/items/63147bc3f0b1086c27c0ece7" target="_blank">受験料支払い用のサイトへ</a></p>
+                    <p><a className='btn btn-template-primary text-decoration-none' href="https://iolingjapan.stores.jp/items/64fd86474adc323b7ce4f5d0" target="_blank">受験料支払い用のサイトへ</a></p>
                     <div className="simple-box">
                         <span className="box-title">進まない場合</span>
                         <ul>
@@ -450,7 +522,7 @@ function App() {
     );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("react"));
+const root = createRoot(document.getElementById("react")!);
 
 root.render(
     <App />,

@@ -9,9 +9,13 @@
 # link: "/application/"
 
 weight: 1
-title: "IOL2023結果"
-description: "<p>第20回 ブルガリア大会 日本代表8名が参加</p><p>金1（世界2位） 銀1 銅2 努力賞3 最優秀解答賞1 獲得！</p>"
-link: "/record/"
+title: "JOL2024応募開始"
+description: "<p>応募締切は12月15日(金)</p><p>選抜枠とオープン枠（年齢等制限なし）を併設</p>"
+link: "/application/"
+# weight: 1
+# title: "IOL2023結果"
+# description: "<p>第20回 ブルガリア大会 日本代表8名が参加</p><p>金1（世界2位） 銀1 銅2 努力賞3 最優秀解答賞1 獲得！</p>"
+# link: "/record/"
 # weight: 1
 # title: "JOL2023過去問"
 # description: "<p>2023/05/03: JOL2023の過去問，解答を公開！</p>"
