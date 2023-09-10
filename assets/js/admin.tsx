@@ -1,6 +1,5 @@
-import * as React from "react";
-import { useEffect, useLayoutEffect, useState } from "react";
-import * as ReactDOM from "react-dom/client";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import { createRoot } from "react-dom/client";
 import { app, auth, db } from "./firebase-initialize"
 import { ref, onValue, update, get, set } from "firebase/database"
 import Form from "react-bootstrap/Form";
@@ -9,14 +8,17 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
+type UserInfo = {
+    email: string;
+    isCertificateNecessary?: boolean;
+    paid?: boolean;
+    spot?: string;
+    // [key: string]?: string;
+}
 
 function App() {
-    const [users, setUsers] = useState({} as Object);
-    const [orders, setOrders] = useState({});
-    const [motivations, setMotivations] = useState([] as any[]);
-    const [motivationsFlag, setMotivationsFlag] = useState([] as any[]);
-    const [motivationsAward, setMotivationsAward] = useState([] as any[]);
-    const [motivationText, setMotivationText] = useState([] as string[])
+    const [users, setUsers] = useState<{ [uid: string]: UserInfo }>({});
+    const [orders, setOrders] = useState<any>({});
 
     const checkOrders = () => {
         const userEmails = Object.entries(users).map(([k, v]) => (v.email ? v.email.replace(/\./g, "=") : ""));
@@ -34,45 +36,52 @@ function App() {
         return result;
     }
 
+    const { motivations, motivationsFlag, motivationsAward, motivationText } = useMemo(() => {
+        let motivationstmp = Array(20).fill(0);
+        let motivationstmpFlag = Array(20).fill(0);
+        let motivationstmpAward = Array(20).fill(0);
+        let motivationTexttmp: string[] = [];
+        Object.entries(users as Object).map(([k, v]) => {
+            if (v.motivations) {
+                Object.entries(v.motivations).map(([mk, mv]) => {
+                    motivationstmp[mk] += mv ? 1 : 0;
+                    if (v.spot === "flag") {
+                        motivationstmpFlag[mk] += mv ? 1 : 0;
+                    } else {
+                        motivationstmpAward[mk] += mv ? 1 : 0;
+                    }
+                })
+            }
+            if (v.motivationText) {
+                motivationTexttmp.push(v.motivationText as string);
+            }
+        })
+        return {
+            motivations: motivationstmp,
+            motivationsFlag: motivationstmpFlag,
+            motivationsAward: motivationstmpAward,
+            motivationText: motivationTexttmp,
+        }
+    }, [users])
+
     useLayoutEffect(() => {
         // setUser({ email: "test", uid: "" })
         // setUdb({ spot: "" })
         // 現在ログインしているユーザを取得
         auth.onAuthStateChanged(async v => {
-            const refUsers = ref(db, "/contests/jol2023/users/");
-            const refOrders = ref(db, "/orders/jol2023/");
+            const refUsers = ref(db, "/contests/jol2024/users/");
+            const refOrders = ref(db, "/orders/jol2024/");
 
             onValue(refUsers, (sn) => {
                 if (!sn.val()) return;
-                const { iJzZm4b685VtudLmpnAVlO8EJc93, R0LNjJBhu6fWozNcw29WmP9zHSC2, ...snval } = sn.val()
 
-                let motivationstmp = Array(20).fill(0);
-                let motivationstmpFlag = Array(20).fill(0);
-                let motivationstmpAward = Array(20).fill(0);
-                let motivationTexttmp = [] as string[];
-                Object.entries(snval as Object).map(([k, v]) => {
-                    if (v.motivations) {
-                        Object.entries(v.motivations).map(([mk, mv]) => {
-                            motivationstmp[mk] += mv ? 1 : 0;
-                            if (v.spot === "flag") {
-                                motivationstmpFlag[mk] += mv ? 1 : 0;
-                            } else {
-                                motivationstmpAward[mk] += mv ? 1 : 0;
-                            }
-                        })
-                    }
-                    if (v.motivationText) {
-                        motivationTexttmp.push(v.motivationText as string);
-                    }
+                const { iJzZm4b685VtudLmpnAVlO8EJc93, R0LNjJBhu6fWozNcw29WmP9zHSC2, ...snval }: { [uid: string]: UserInfo } = sn.val()
 
+                Object.entries(snval).map(([k, v]) => {
                     if (orders) {
-                        snval[k] = ({ ...snval[k], paid: snval.email ? orders[snval.email.replace(/\./g, "=")] : false })
+                        snval[k] = ({ ...snval[k], paid: orders[v.email.replace(/\./g, "=")] })
                     }
                 })
-                setMotivations(motivationstmp);
-                setMotivationsFlag(motivationstmpFlag);
-                setMotivationsAward(motivationstmpAward);
-                setMotivationText(motivationTexttmp);
                 setUsers(snval);
             });
             onValue(refOrders, (sn) => {
@@ -84,7 +93,7 @@ function App() {
 
     return (
         <>
-            <h2>JOL2023 応募状況</h2>
+            <h2>JOL2024 応募状況</h2>
             <table className="table">
                 <thead>
                     <tr>
@@ -118,9 +127,9 @@ function App() {
             <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
             <p>未申込: {checkOrders().length}件</p>
             <p>{checkOrders().map((v) => (v[1])).join(", ")}</p>
-            <h2>JOL2023アンケート結果</h2>
+            <h2>JOL2024アンケート結果</h2>
             <h3>言語学オリンピックをどこで知りましたか</h3>
-            {["友人・先輩", "学校の先生", "家族", "塾", "ツイッター", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト"].map((v, i) => (
+            {["友人・先輩", "学校の先生", "家族", "塾", "ツイッター", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"].map((v, i) => (
                 <div className="container" key={v}>
                     <div className="row">
                         <div className="col-12 col-md-2">{v}</div>
@@ -143,7 +152,7 @@ function App() {
     );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("react"));
+const root = createRoot(document.getElementById("react")!);
 
 root.render(
     <App />,
