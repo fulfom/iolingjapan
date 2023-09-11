@@ -75,7 +75,7 @@ const App = () => {
         const configBadge = config.visible?.badge;
         const configSpot = config.visible?.spot;
 
-        const isVisible = userInfo.admin ? true : (configBadge ? badges[configBadge] : true) && (configSpot ? userInfo.spot === configSpot : true)
+        const isVisible = isAdmin || (configBadge ? badges && badges[configBadge] : true) && (configSpot ? userInfo.spot === configSpot : true)
 
         return isVisible ? <div className="list-group-item appSys-contest">
             <div>
@@ -133,7 +133,7 @@ const App = () => {
                         const adminRef = await get(ref(db, "/admin/" + user.uid));
                         setIsAdmin(adminRef.val());
                         if (!adminRef.val()) {
-                            await update(ref(db, "/users/" + user.uid), { admin: false });
+                            await update(ref(db, "/users/" + user.uid), { admin: null });
                         }
                     }
                     else if (snapshot.val()) {
