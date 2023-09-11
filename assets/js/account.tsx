@@ -65,17 +65,17 @@ const logoutButton = <button onClick={logout} className="btn btn-danger btn-smal
 
 const App = () => {
     const [user, setUser] = useState<User | null>(null);
-    const [badges, setBadges] = useState<any>({});
-    const [userInfo, setUserInfo] = useState<any>({});
+    const [badges, setBadges] = useState<{ [key: string]: boolean } | null>(null);
+    const [userInfo, setUserInfo] = useState<{ [key: string]: unknown } | null>(null);
     const [isAdmin, setIsAdmin] = useState(false);
     const [paid, setPaid] = useState(false);
-    const [contUserInfo, setContUserInfo] = useState<any>({})
+    const [contUserInfo, setContUserInfo] = useState<{ [key: string]: { [key: string]: unknown } } | null>(null)
 
     const contest = (config: contestConfigType, isEntried: boolean = false) => {
         const configBadge = config.visible?.badge;
         const configSpot = config.visible?.spot;
 
-        const isVisible = isAdmin || (configBadge ? badges && badges[configBadge] : true) && (configSpot ? userInfo.spot === configSpot : true)
+        const isVisible = isAdmin || (configBadge ? badges && badges[configBadge] : true) && (configSpot ? userInfo?.spot === configSpot : true)
 
         return isVisible ? <div className="list-group-item appSys-contest">
             <div>
@@ -100,7 +100,7 @@ const App = () => {
                     {CONTESTS_DATA.upcomingContests
                         .sort((a, b) => (new Date(a.date).getTime() - new Date(b.date).getTime()))
                         .map((v) => (
-                            contest(v, contUserInfo[v.id]?.entry)
+                            contest(v, !!contUserInfo?.[v.id]?.entry)
                         ))}
                 </div>
             </div>
