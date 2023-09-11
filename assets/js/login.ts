@@ -40,7 +40,7 @@ window.onload = function () {
         ux_mode: "popup",
     });
     google.accounts.id.renderButton(
-        document.getElementById("google-auth2") as HTMLElement,
+        document.getElementById("google-auth2")!,
         { theme: "outline", size: "large", type: "standard" }  // customization attributes
     );
     // google.accounts.id.prompt(); // also display the One Tap dialog

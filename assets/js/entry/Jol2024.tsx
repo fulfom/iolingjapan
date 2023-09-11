@@ -14,8 +14,8 @@ function App() {
     const [step, setStep] = useState(0);
     const [loaded, setLoaded] = useState(false);
     const [loading, setLoading] = useState(0);
-    const [user, setUser] = useState(null as User | null);
-    const [udb, setUdb] = useState({} as any);
+    const [user, setUser] = useState<User | null>(null);
+    const [udb, setUdb] = useState<any | null>(null); // need a proper type definition
     const [paid, setPaid] = useState(false);
 
     useLayoutEffect(() => {

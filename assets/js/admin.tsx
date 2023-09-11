@@ -9,10 +9,11 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 type UserInfo = {
+    [key: string]: string;
+} & {
     email?: string;
     isCertificateNecessary?: boolean;
     spot?: string;
-    // [key: string]?: string;
 }
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
         let motivationstmpAward = Array(20).fill(0);
         let motivationTexttmp: string[] = [];
         let motivationCountertmp = 0;
-        Object.entries(users as Object).map(([k, v]) => {
+        Object.entries(users).map(([k, v]) => {
             if (v.motivations) {
                 Object.entries(v.motivations).map(([mk, mv]) => {
                     motivationstmp[mk] += mv ? 1 : 0;
@@ -54,7 +55,7 @@ function App() {
                 })
             }
             if (v.motivationText) {
-                motivationTexttmp.push(v.motivationText as string);
+                motivationTexttmp.push(v.motivationText);
             }
             if (v.motivations || v.motivationText) {
                 motivationCountertmp++;
