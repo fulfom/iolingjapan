@@ -9,18 +9,20 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 type UserInfo = {
+    [key: string]: string;
+} & {
     email?: string;
     isCertificateNecessary?: boolean;
     spot?: string;
-    // [key: string]?: string;
 }
 
 function App() {
     const [users, setUsers] = useState<{ [uid: string]: UserInfo }>({});
-    const [orders, setOrders] = useState<any>({});
+    const [orders, setOrders] = useState<{ [key: string]: boolean }>({});
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
 
     const checkOrders = useMemo(() => {
+        if (!users || !orders) { return [] };
         const userEmails = Object.entries(users).map(([k, v]) => (v.email ? v.email.replace(/\./g, "=") : ""));
         const paidList: string[] = [];
         const result: [string, string][] = [];
@@ -42,7 +44,7 @@ function App() {
         let motivationstmpAward = Array(20).fill(0);
         let motivationTexttmp: string[] = [];
         let motivationCountertmp = 0;
-        Object.entries(users as Object).map(([k, v]) => {
+        Object.entries(users).map(([k, v]) => {
             if (v.motivations) {
                 Object.entries(v.motivations).map(([mk, mv]) => {
                     motivationstmp[mk] += mv ? 1 : 0;
@@ -54,7 +56,7 @@ function App() {
                 })
             }
             if (v.motivationText) {
-                motivationTexttmp.push(v.motivationText as string);
+                motivationTexttmp.push(v.motivationText);
             }
             if (v.motivations || v.motivationText) {
                 motivationCountertmp++;

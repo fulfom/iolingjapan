@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button"
 function App() {
     const [editting, setEditting] = useState(false);
     const [formValue, setFormValue] = useState([]);
-    const [udb, setUdb] = useState({} as any)
+    const [udb, setUdb] = useState<{ [key: string]: unknown } & { [key in "email" | "birthdate" | "name"]?: string | null } | null>(null)
 
     const infoSubmit = async (e: React.FormEvent<HTMLElement>) => {
         const user = auth.currentUser;
@@ -42,7 +42,7 @@ function App() {
         })
     }, [])
 
-    if (!udb.email) {
+    if (!udb?.email) {
         return <>読み込み中</>
     }
     return (<>
@@ -186,7 +186,7 @@ function App() {
     </>)
 }
 
-const root = createRoot(document.getElementById("app"));
+const root = createRoot(document.getElementById("app")!);
 
 root.render(
     <App />,
