@@ -9,7 +9,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 type UserInfo = {
-    email: string;
+    email?: string;
     isCertificateNecessary?: boolean;
     paid?: boolean;
     spot?: string;
@@ -86,7 +86,7 @@ function App() {
 
                 Object.entries(snval).map(([k, v]) => {
                     if (orders) {
-                        snval[k] = ({ ...snval[k], paid: orders[v.email.replace(/\./g, "=")] })
+                        snval[k] = ({ ...snval[k], paid: v.email && orders[v.email.replace(/\./g, "=")] })
                     }
                 })
                 setUsers(snval);
