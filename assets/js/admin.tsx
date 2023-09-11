@@ -18,10 +18,11 @@ type UserInfo = {
 
 function App() {
     const [users, setUsers] = useState<{ [uid: string]: UserInfo }>({});
-    const [orders, setOrders] = useState<any>({});
+    const [orders, setOrders] = useState<{ [key: string]: boolean }>({});
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
 
     const checkOrders = useMemo(() => {
+        if (!users || !orders) { return [] };
         const userEmails = Object.entries(users).map(([k, v]) => (v.email ? v.email.replace(/\./g, "=") : ""));
         const paidList: string[] = [];
         const result: [string, string][] = [];
