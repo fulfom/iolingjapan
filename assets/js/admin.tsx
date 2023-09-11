@@ -11,7 +11,6 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 type UserInfo = {
     email?: string;
     isCertificateNecessary?: boolean;
-    paid?: boolean;
     spot?: string;
     // [key: string]?: string;
 }
@@ -21,7 +20,7 @@ function App() {
     const [orders, setOrders] = useState<any>({});
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
 
-    const checkOrders = () => {
+    const checkOrders = useMemo(() => {
         const userEmails = Object.entries(users).map(([k, v]) => (v.email ? v.email.replace(/\./g, "=") : ""));
         const paidList: string[] = [];
         const result: [string, string][] = [];
@@ -35,7 +34,7 @@ function App() {
             }
         }
         return result;
-    }
+    }, [users, orders])
 
     const { motivations, motivationsFlag, motivationsAward, motivationText, motivationCounter } = useMemo(() => {
         let motivationstmp = Array(20).fill(0);
@@ -81,14 +80,7 @@ function App() {
 
             onValue(refUsers, (sn) => {
                 if (!sn.val()) return;
-
                 const { iJzZm4b685VtudLmpnAVlO8EJc93, R0LNjJBhu6fWozNcw29WmP9zHSC2, ...snval }: { [uid: string]: UserInfo } = sn.val()
-
-                Object.entries(snval).map(([k, v]) => {
-                    if (orders) {
-                        snval[k] = ({ ...snval[k], paid: v.email && orders[v.email.replace(/\./g, "=")] })
-                    }
-                })
                 setUsers(snval);
             });
             onValue(refOrders, (sn) => {
@@ -137,8 +129,8 @@ function App() {
                 </tbody>
             </table>
             <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
-            <p>未申込: {checkOrders().length}件</p>
-            <p>{checkOrders().map((v) => (v[1])).join(", ")}</p>
+            <p>未申込: {checkOrders.length}件</p>
+            <p>{checkOrders.map((v) => (v[1])).join(", ")}</p>
             <h2>JOL2024アンケート結果</h2>
             <h3>言語学オリンピックをどこで知りましたか</h3>
             <p>{motivationCounter}人回答</p>
