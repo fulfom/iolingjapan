@@ -2,7 +2,11 @@ meta:
   title: "Supported by"
   types:
     - 後援
+    - 協賛
 data:
   - type: 0
     name: 日本言語学会
     link: "https://www.ls-japan.org/"
+  - type: 1
+    link: "https://www.kawai-juku.ac.jp/kkai/"
+    img: "/img/clients/kkai.jpg"
