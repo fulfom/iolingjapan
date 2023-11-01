@@ -9,6 +9,13 @@ type = "page"
 {{< wrap tag=div class="container" >}}
 {{< wrap tag=div class="row row-cols-1 row-cols-lg-2" >}}
 
+{{% memberCard name="大宮 隆誠" ruby="おおみや りゅうせい" role="IOL2023日本代表（金賞・世界2位・最優秀解答賞）" href="/experiences/iol2023-1/" %}}
+
+{{< icon pen 執筆>}}2023年
+
+<button class="btn btn-small btn-template-primary">→読む</button>
+{{% /memberCard %}}
+
 {{% memberCard name="石井 誠子" ruby="いしい せいこ" role="IOL2022日本代表（金賞）" href="/experiences/iol2022-1/"%}}
 
 {{< icon pen 執筆>}}2022年
