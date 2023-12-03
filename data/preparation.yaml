@@ -9,7 +9,7 @@ features:
   - title: おすすめの問題
     link: "#おすすめの問題"
     icon: fas fa-star
-  - title: JOl過去問
+  - title: JOL過去問
     link: "#pastproblem"
     icon: fas fa-paperclip
   - title: 推薦図書
