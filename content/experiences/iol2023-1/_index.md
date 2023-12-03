@@ -1,6 +1,7 @@
 +++
 title = "言オリ2023体験記"
 type = "page"
+draft = true
 +++
 
 [←その他の体験談](/experiences/)
