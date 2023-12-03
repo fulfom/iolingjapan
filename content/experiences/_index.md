@@ -54,3 +54,4 @@ type = "page"
 - [過去問・資料まとめ](/preparation/)
 - [問題対策](/tutorial/)
 - [広報資料](/ad-material)
+{{< /list >}}
