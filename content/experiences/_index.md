@@ -55,3 +55,4 @@ type = "page"
 - [問題対策](/tutorial/)
 - [広報資料](/ad-material)
 {{< /list >}}
+{{< /card-header >}}
