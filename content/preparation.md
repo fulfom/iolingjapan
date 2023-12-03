@@ -63,7 +63,7 @@ keywords = []
 | [2022SE](/pdf/jol2022-se.pdf) | [2022解答](/pdf/jol2022-sol.pdf)                                     | [問題当日版](/pdf/jol2022.pdf) ※1※3 |
 | [2021SE](/pdf/jol2021-se.pdf) | [2021解答](/pdf/jol2021-sol.pdf)                                     | [問題当日版](/pdf/jol2021.pdf) ※1 |
 | [2020](/pdf/jol2020.pdf)      | [2020解答](/pdf/jol2020-sol.pdf)                                     |                                   |
-| [2019](/pdf/jol2019.pdf)      | [2019解答](/pdf/jol2019-sol.pdf)                                     |                                   |
+| [2019](/pdf/jol2019.pdf)      | [2019解答](/pdf/jol2019-sol.pdf)                                     | 解答誤植※4                                  |
 | [2018](/pdf/jol2018.pdf)      | [2018解答](/pdf/jol2018-sol.pdf) | 問題誤植※2                        |
 | [2017](/pdf/jol2017.pdf)      | [2017解答](/pdf/jol2017-sol.pdf)                                     |                                   |
 | [2016](/pdf/jol2016.pdf)      |  [2016解答](/pdf/jol2016-sol.pdf)                                                                    |                                   |
@@ -80,6 +80,8 @@ keywords = []
 ※2: スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet
 
 ※3: p.6 akwelume の3つ目の説明は正しくは mwanache **vandu** jua akwelume jua atati
+
+※4: 問3 18. kylvan と kylven は 1 点ではなく 2 点
 
 ## データベース
 
