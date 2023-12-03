@@ -3,22 +3,22 @@ features:
     link: /sample-problems/
     icon: "fas fa-door-open"
     desc: 「言語学オリンピックってどんなもの？」
+  - title: 書籍
+    link: "#書籍"
+    icon: "fas fa-book"
   - title: おすすめの問題
     link: "#おすすめの問題"
     icon: fas fa-star
-  - title: JOL過去問
+  - title: JOl過去問
     link: "#pastproblem"
     icon: fas fa-paperclip
+  - title: 推薦図書
+    link: "#推薦図書"
+    icon: fas fa-compass
   - title: データベース
     link: "#データベース"
     src: "/img/kotohazi-logo.svg"
     desc: 国際大会の過去問も
-  - title: 問題の解説
-    link: "#問題の解説"
-    icon: fas fa-compass
-  - title: 他の言語学オリンピック
-    link: "#他の言語学オリンピック"
-    icon: "fas fa-globe"
   - title: 体験談
     link: "/experiences/"
     icon: fas fa-walking
