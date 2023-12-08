@@ -158,11 +158,17 @@ const App = () => {
                             location.replace("/entry/" + cont.id);
                         }
                         else {
+                            // 支払いが完了しているのに，参加者情報が不完全な場合は応募ページに飛ばす．
+                            if (!contestantInfo.entry) {
+                                const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
+                                if (paidSnapshot.val()) {
+                                    location.replace("/entry/" + cont.id);
+                                }
+                            }
                             setContUserInfo((pre) => ({ ...pre, [cont.id]: contestantInfo }));
                         }
                     }
                 }
-                // const paidSnapshot = await get(ref(db, '/orders/jol2023/' + user.email!.replace(/\./g, '=').toLowerCase()));
 
                 document.getElementsByTagName("body").item(0)!.style.opacity = "1";
             }
