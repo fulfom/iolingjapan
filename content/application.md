@@ -5,6 +5,12 @@ keywords = ["募集要項", "申し込み"]
 aliases = ["/past-applications/"]
 +++
 
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
+
+- [→ {{< icon "user-circle" "応募者向け: 支払い確認，参加者情報の変更はこちら" >}}](/account/)
+
+{{< /list >}}
+
 {{% simplebox "お知らせ" %}}
 
 2023年9月10日: JOL2024への応募を開始しました．

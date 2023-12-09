@@ -68,7 +68,7 @@ const App = () => {
     const [badges, setBadges] = useState<{ [key: string]: boolean } | null>(null);
     const [userInfo, setUserInfo] = useState<{ [key: string]: unknown } | null>(null);
     const [isAdmin, setIsAdmin] = useState(false);
-    const [paid, setPaid] = useState(false);
+    const [notPaid, setNotPaid] = useState(false);
     const [contUserInfo, setContUserInfo] = useState<{ [key: string]: { [key: string]: unknown } } | null>(null)
 
     const contest = (config: contestConfigType, isEntried: boolean = false) => {
@@ -164,6 +164,9 @@ const App = () => {
                                 if (paidSnapshot.val()) {
                                     location.replace("/entry/" + cont.id);
                                 }
+                                else {
+                                    setNotPaid(true);
+                                }
                             }
                             setContUserInfo((pre) => ({ ...pre, [cont.id]: contestantInfo }));
                         }
@@ -182,7 +185,45 @@ const App = () => {
             unsubscribed();
         };
     }, []);
-    return <>{adminPortalLink}{contests}{logoutButton}</>
+    return <>
+        {notPaid ? <div className="simple-box">
+            <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
+            <p>JOL2024の応募完了までもう一歩です</p>
+            <ol>
+                <li>
+                    <p>応募途中の場合</p>
+                    <p><a href="/entry/jol2024/">→こちらから応募手続きを続けてください．</a></p>
+                </li>
+                <li>
+                    <p>ログインするアカウントを間違えている場合</p>
+                    <p>→正しいアカウントでログインしなおしてください．</p>
+                    <div className="d-flex align-items-baseline">
+                        <p>今お使いのメールアドレス: <span className="user-select-all">{user?.email || ""}</span></p>
+                        <button onClick={logout} className="btn btn-danger btn-small ms-auto">ログアウト</button>
+                    </div>
+                </li>
+                <li>
+                    <p>受験料の支払い確認が取れない場合</p>
+                    <div className="simple-box m-0">
+                        <ul>
+                            <li>コンビニ決済・銀行振込の場合，コンビニや銀行で受験料をお支払いいただき，こちらで入金が確認でき次第，応募完了となります．</li>
+                            <li>応募と支払いで異なるメールアドレスを使用した場合，支払いの確認が取れません．その場合は，<strong>支払いで使用したメールアドレス</strong>から委員会 <a href="mailto:jol@iolingjapan.org">jol@iolingjapan.org</a> に以下の内容を含むメールを送信してください．</li>
+                            <ul>
+                                <li>氏名</li>
+                                <li>応募で使用したメールアドレス</li>
+                                <li>受験料振替の旨</li>
+                                <li>支払いで使用したメールアドレスが分からない，間違えた場合は，代わりにオーダー番号</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+
+
+        </div> : <></>}
+        {adminPortalLink}
+        {contests}
+        {logoutButton}</>
 }
 
 const root = createRoot(document.getElementById("app")!);
