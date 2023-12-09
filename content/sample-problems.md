@@ -410,15 +410,15 @@ Q. 次の語のアクセントはどの音節にあるでしょうか？
 {{< /table >}}
 
 <style>
-#sample3-data {
+# sample3-data {
   counter-reset: rowCount;
 }
 
-#sample3-data > tbody > tr {
+# sample3-data > tbody > tr {
   counter-increment: rowCount;
 }
 
-#sample3-data > tbody > tr::before {
+# sample3-data > tbody > tr::before {
   content: counter(rowCount) ". ";
   text-align: end;
 }
@@ -910,15 +910,15 @@ Q. ???を旧仮名遣いで埋めてください．
 {{< /table >}}
 
 <style>
-#jol2022-int-2-data {
+# jol2022-int-2-data {
   counter-reset: rowCount-jol2022-int-2-data;
 }
 
-#jol2022-int-2-data > tbody > tr {
+# jol2022-int-2-data > tbody > tr {
   counter-increment: rowCount-jol2022-int-2-data;
 }
 
-#jol2022-int-2-data > tbody > tr::before {
+# jol2022-int-2-data > tbody > tr::before {
   content: counter(rowCount-jol2022-int-2-data) ". ";
   text-align: end;
 }
@@ -1013,6 +1013,7 @@ my xere 「私のくし」 と dty xereyn 「君の複数のくし」より，xe
 作問: 佐藤和音・梶田純之介
 {{< /wrap >}}
 
+{{< wrap tag="div" class="d-print-none" >}}
 ---
 
 今後の追加をお楽しみに．
@@ -1039,9 +1040,24 @@ my xere 「私のくし」 と dty xereyn 「君の複数のくし」より，xe
 
 {{< /table >}}
 {{< /collapse >}}
+{{< /wrap >}}
 
 <!-- CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/leipzig@latest/dist/leipzig.min.css">
+<style>
+    @media print{
+        header, [role="button"], #footer, #copyright{
+            display: none;
+        }
+    }
+    @page {
+        size: A4 portrait;
+        /* margin: 0mm; */
+    }
+    h2{
+        page-break-before: always;
+    }
+</style>
 
 <!-- JavaScript -->
 <script src="//cdn.jsdelivr.net/npm/leipzig@latest/dist/leipzig.min.js"></script>
