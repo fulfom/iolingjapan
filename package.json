@@ -3,6 +3,7 @@
     "@types/google.accounts": "^0.0.4",
     "bootstrap": "^5.2.0",
     "chart.js": "^4.1.1",
+    "date-fns": "^3.0.0",
     "firebase": "^9.9.4",
     "firebaseui": "^6.0.2",
     "qrcode": "^1.5.1",
@@ -10,7 +11,9 @@
     "react-bootstrap": "^2.5.0",
     "react-chartjs-2": "^5.0.1",
     "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.1.1",
     "react-markdown": "^8.0.3",
+    "react-timer-hook": "^3.0.7",
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {

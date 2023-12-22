@@ -35,6 +35,7 @@ type contestConfigType = {
     result?: string;
     record?: string;
     site?: string;
+    demosite?: string;
     status: string;
     visible?: {
         badge?: string;
@@ -50,6 +51,8 @@ const statusButton = (config: contestConfigType, isEntried?: boolean) => {
             return !isEntried ?
                 <><a href={config.entry} className="btn btn-primary float-end" role="button"><i className="fas fa-file-alt fa-fw"></i>応募</a></> :
                 <><button disabled className="btn btn-outline-success float-end"><i className="fas fa-check-circle fa-fw"></i>応募済</button></>
+        case "demositeopen":
+            return <a href={config.demosite} className="btn btn-primary float-end" role="button"><i className="fas fa-puzzle-piece fa-fw"></i>事前準備</a>
         case "siteopen":
             return <a href={config.site} className="btn btn-primary float-end" role="button"><i className="fas fa-puzzle-piece fa-fw"></i>競技会場</a>
         case "marking":

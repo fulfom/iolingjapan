@@ -53,8 +53,14 @@
 <!-- 利用するリソースを指定する -->
 {{ with resources.Get $file }}
 
+{{ $options := dict }}
+
+{{ if eq (getenv "HUGO_ENV") "production" }}
 <!-- TSX を ESBuild でビルドする際の Hugo のオプションを指定する -->
-{{ $options := dict "targetPath" $targetPath "minify" true }}
+{{ $options = dict "targetPath" $targetPath "minify" true }}
+{{ else }}
+{{ $options = dict "targetPath" $targetPath }}
+{{end}}
 
 <!-- TSX のビルドを Hugo のオプションで指定した内容で実行する -->
 {{ $js := resources.Get . | js.Build $options }}
