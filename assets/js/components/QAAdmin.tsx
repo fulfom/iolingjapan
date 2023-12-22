@@ -140,7 +140,7 @@ function MessageListAdmin({ contId, site }: { contId: string, site: string }) {
 
     return (
         <div className="mb-3">
-            {messages && messages.length ? messages.map((post) => (
+            {messages && messages.length ? messages.toReversed().map((post) => (
                 <MessagePost key={post.key} post={{ ...post.val() }} contId={contId} site={site} dataKey={post.key}></MessagePost>
             )) : <div>訂正・よくある質問はありません</div>}
         </div>

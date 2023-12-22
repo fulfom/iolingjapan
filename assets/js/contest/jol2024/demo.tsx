@@ -24,6 +24,10 @@ rootQA.render(
     <QA contId="jol2024" site="demo" />
 );
 
+window.onhashchange = () => {
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+};
+
 document.addEventListener("DOMContentLoaded", (event) => {
     auth.onAuthStateChanged(async (user) => {
         if (user) {

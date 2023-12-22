@@ -65,7 +65,7 @@ export const PostCard = ({ post, type, editable = false, cancel }: { post: Post,
 }
 
 export const Question = ({ question, contId, cancel }: { question: QuestionType, contId: string, cancel: () => {} }) => {
-    return <Card body bg='light'>
+    return <Card body bg='light' border={question.reply && "success"} style={{ borderWidth: "4px" }}>
         <PostCard post={question.question} type="q" editable={!question.reply} cancel={cancel}></PostCard>
         {question.reply ? <PostCard post={question.reply} type="a"></PostCard> : <></>}
     </Card >
