@@ -58,6 +58,7 @@ const Timer = ({ rug, setFlag, expiryTimestamp }: { rug: number, setFlag: (arg0:
     const handleClick = () => {
         const end = new Date();
         end.setTime(end.getTime() + 7205000 + rug)
+        setFlag(false)
         restart(end)
     }
 

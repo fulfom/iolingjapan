@@ -35,7 +35,7 @@ isFBInit = false
 
 {{< wrap tag=div id="links" >}}
 
-<button type="button" class="btn btn-primary" id="timerbtn">練習用タイマー</button>
+<button type="button" class="btn btn-primary" id="timerbtn" disabled>練習用タイマー</button>
 
 練習用タイマーを押すと，競技開始5秒前の状況が再現されます．
 
