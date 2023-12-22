@@ -33,13 +33,13 @@ isFBInit = false
 {{% /table %}}
 {{< /wrap >}}
 
+{{< wrap tag=div id="links" >}}
+
 <button type="button" class="btn btn-primary" id="timerbtn">練習用タイマー</button>
 
 練習用タイマーを押すと，競技開始5秒前の状況が再現されます．
 
 <div id="timer" class="fa-2x position-sticky pt-1" style="top: 62px; background-color: white; z-index: 10;">競技開始まで</div>
-
-{{< wrap tag=div id="links" >}}
 
 {{< card-header >}}
 <ul class="list-group list-fill-link list-group-horizontal-sm">

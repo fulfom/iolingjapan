@@ -2,21 +2,15 @@ import { app, auth, db } from "@js/firebase-initialize"
 import { ref, onValue, update, get, set, serverTimestamp } from "firebase/database"
 import { toHms } from "@js/utility/toHms"
 import QA from "@js/components/QA"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import { createRoot } from "react-dom/client";
 import { Button, ButtonGroup, Card, Collapse } from "react-bootstrap"
 import { useObjectVal } from "react-firebase-hooks/database"
 import { User } from "firebase/auth"
-
-const ELEM_TIMER = document.getElementById('timer');
-const ELEM_TIMERBTN = document.getElementById('timerbtn');
+import { useTimer } from "react-timer-hook"
 
 const rootQA = createRoot(document.getElementById("qa")!);
 const rootContestantInfoTable = createRoot(document.getElementById("contestant-info-table")!);
-
-let handleTimer: NodeJS.Timeout;
-// startTimer(0);
-let demolinks = {};
 
 rootQA.render(
     <QA contId="jol2024" site="demo" />
@@ -31,40 +25,97 @@ type PublishDemoType = {
     problem2: string;
     problem3: string;
     answerSheet2: string;
+    rug?: number;
 }
 
 type demoUserType = {
     answerSheet: string;
 }
 
+const Timer = ({ rug, setFlag, expiryTimestamp }: { rug: number, setFlag: (arg0: boolean) => (void), expiryTimestamp: Date }) => {
+    const {
+        totalSeconds,
+        seconds,
+        minutes,
+        hours,
+        days,
+        isRunning,
+        start,
+        pause,
+        resume,
+        restart,
+    } = useTimer({ expiryTimestamp, autoStart: false, onExpire: () => console.warn('onExpire called') });
+
+    useEffect(() => {
+        if (totalSeconds === 7200) {
+            setFlag(true)
+            console.log("true")
+        }
+        return () => {
+        }
+    }, [totalSeconds])
+
+    const handleClick = () => {
+        const end = new Date();
+        end.setTime(end.getTime() + 7205000 + rug)
+        restart(end)
+    }
+
+    return <>
+        <Button className="btn btn-primary" onClick={handleClick}>練習用タイマー</Button>
+        <p>練習用タイマーを押すと，競技開始5秒前の状況が再現されます．</p>
+        <div className="fa-2x position-sticky pt-1" style={{ top: "62px", backgroundColor: "white", zIndex: 10 }}>
+            {
+                totalSeconds > 7200 ?
+                    "競技開始まで" + toHms(totalSeconds - 7200)
+                    : totalSeconds <= 0 ?
+                        "競技終了"
+                        : toHms(totalSeconds)
+            }
+        </div></>
+}
+
 const Links = ({ user }: { user: any }) => {
     const [publishDemo, publishDemoloading, publishDemoerror] = useObjectVal<PublishDemoType>(ref(db, '/contests/jol2024/publish/demo/'));
     const [demoUser, demoUserloading, demoUsererror] = useObjectVal<demoUserType>(ref(db, `/contests/jol2024/demo/${user.uid}`));
     const [alternateAnswerSheet, setAlternateAnswerSheet] = useState<boolean>(false);
+    const [flag, setFlag] = useState(false);
 
-    const { problem, problem2, problem3, answerSheet2 }: PublishDemoType = publishDemo || {
+    const end = new Date();
+    end.setTime(end.getTime() + 7205000);
+
+    const { problem, problem2, problem3, answerSheet2 }: PublishDemoType = useMemo(() => (flag && publishDemo) || {
         problem: "",
         problem2: "",
         problem3: "",
         answerSheet2: "",
-    }
-    const { answerSheet }: demoUserType = demoUser || { answerSheet: "" }
+    }, [publishDemo?.problem, publishDemo?.problem2, publishDemo?.problem3, publishDemo?.answerSheet2, flag])
+
+    const rug: number = publishDemo && publishDemo.rug || 0;
+
+    const { answerSheet }: demoUserType = useMemo(() => (flag && demoUser) || { answerSheet: "" }, [flag, demoUser])
 
     const toggleAlternateAnswerSheet = async () => {
         setAlternateAnswerSheet((prev: boolean) => (!prev));
     }
 
-    useEffect(() => {
-        if (problem) {
-            window.open(problem, '_blank');
-        }
-        if (answerSheet) {
-            window.open(answerSheet, '_blank');
-        }
-    }, [problem, answerSheet])
+    const handleFlag = (newValue: boolean) => {
+        setFlag(newValue)
+    }
 
+    useEffect(() => {
+        if (flag) {
+            if (problem) {
+                window.open(problem, '_blank');
+            }
+            if (answerSheet) {
+                window.open(answerSheet, '_blank');
+            }
+        }
+    }, [problem, answerSheet, flag])
 
     return <>
+        <Timer rug={rug} setFlag={handleFlag} expiryTimestamp={end} />
         <Card>
             <ul className="list-group list-fill-link list-group-horizontal-sm">
                 <li className={"list-group-item flex-fill" + (problem ? " list-group-item-success" : "")}>
@@ -157,53 +208,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-function startTimer(rug: number) {
-    let flag = false;
-    clearInterval(handleTimer)
-    var end = new Date();
-    end.setTime(end.getTime() + 7206000);
-    // var now = new Date();
-    // var diff = end.getTime() - now.getTime();
-    // var data = Math.max(Math.floor(diff/1000) + rug, 0);
-    //現在時刻から試験終了までの秒数を取得
-    // console.log(end,now,diff,data)
-
-    handleTimer = setInterval(() => {
-        var now = new Date();
-        var diff = end.getTime() - now.getTime();
-        var data = Math.max(Math.floor(diff / 1000) + rug, 0);
-        updateTimer(data)
-        if (data == 7200 && !flag) {
-            console.log("start!", flag)
-            flag = true;
-            // link
-        }
-        if (data <= 0) {
-            clearInterval(handleTimer);
-        }
-    }, 100);
-}
-
-ELEM_TIMERBTN?.addEventListener("click", () => {
-    startTimer(0);
-})
 
 // function updateTimer(data){
 //     if(data !== null){
 //         document.getElementById('timer').innerText = data > 7200 ? "競技開始まで" + toHms(data - 7200) : toHms(data);
 //     }
 // }
-
-function updateTimer(data: number | null) {
-    if (data !== null) {
-        var timer = "";
-        if (data > 7200) {
-            timer = "競技開始まで" + toHms(data - 7200)
-        }
-        else if (data <= 0) {
-            timer = "競技終了"
-        }
-        else timer = toHms(data);
-        ELEM_TIMER!.innerText = timer;
-    }
-}
