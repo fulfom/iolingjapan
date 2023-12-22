@@ -76,9 +76,9 @@ const Timer = ({ rug, setFlag, expiryTimestamp }: { rug: number, setFlag: (arg0:
         </div></>
 }
 
-const Links = ({ user }: { user: any }) => {
+const Links = ({ user, uid }: { user: any, uid: string }) => {
     const [publishDemo, publishDemoloading, publishDemoerror] = useObjectVal<PublishDemoType>(ref(db, '/contests/jol2024/publish/demo/'));
-    const [demoUser, demoUserloading, demoUsererror] = useObjectVal<demoUserType>(ref(db, `/contests/jol2024/demo/${user.uid}`));
+    const [demoUser, demoUserloading, demoUsererror] = useObjectVal<demoUserType>(ref(db, `/contests/jol2024/demo/${uid}/`));
     const [alternateAnswerSheet, setAlternateAnswerSheet] = useState<boolean>(false);
     const [flag, setFlag] = useState(false);
 
@@ -94,7 +94,7 @@ const Links = ({ user }: { user: any }) => {
 
     const rug: number = publishDemo && publishDemo.rug || 0;
 
-    const { answerSheet }: demoUserType = useMemo(() => (flag && demoUser) || { answerSheet: "" }, [flag, demoUser])
+    const { answerSheet }: demoUserType = useMemo(() => (flag && demoUser) || { answerSheet: "" }, [flag, demoUser?.answerSheet])
 
     const toggleAlternateAnswerSheet = async () => {
         setAlternateAnswerSheet((prev: boolean) => (!prev));
@@ -113,7 +113,7 @@ const Links = ({ user }: { user: any }) => {
                 window.open(answerSheet, '_blank');
             }
         }
-    }, [problem, answerSheet, flag])
+    }, [flag])
 
     return <>
         <Timer rug={rug} setFlag={handleFlag} expiryTimestamp={end} />
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                     </tbody>
                                 </table>
                             )
-                            createRoot(document.getElementById("links")!).render(<Links user={userInfo} />)
+                            createRoot(document.getElementById("links")!).render(<Links user={userInfo} uid={user.uid} />)
                             for (const elem of Array.from(document.getElementsByClassName("only-flag") as HTMLCollectionOf<HTMLElement>)) {
                                 elem.style.display = userInfo.spot === "flag" ? "block" : "none";
                             }
