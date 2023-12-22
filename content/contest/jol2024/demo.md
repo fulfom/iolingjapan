@@ -258,14 +258,13 @@ isFBInit = false
 
 ↓競技開始時間になると，{{< icon "file-download" 問題pdf >}} が緑になり，押すと問題pdf がダウンロードできるようになります．同様に，解答用ページにもアクセスできるようになります．
 
+{{< figure src="/img/demo/jol2024_links_displayed_demo.png">}}
+
+※問題を閉じてしまった場合や何らかの理由で開けなかった場合は改めて「{{< icon "file-download" 問題pdf >}}」をクリックしてください．
+
 {{< simplebox "事前練習の際は" >}}
 練習用タイマーを押すと，競技開始5秒前が再現されます．
 {{< /simplebox >}}
-
-{{< figure src="/img/jol2022/links_displayed_demo.png">}}
-<!-- {{< figure src="/img/jol2024_links_displayed_demo.png">}} -->
-
-※問題を閉じてしまった場合や何らかの理由で開けなかった場合は改めて「{{< icon "file-download" 問題pdf >}}」をクリックしてください．
 
 {{< wrap tag=div class="container-fluid" >}}
 {{< wrap tag=div class="row" >}}
