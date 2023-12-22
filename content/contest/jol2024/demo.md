@@ -39,37 +39,43 @@ isFBInit = false
 
 <div id="timer" class="fa-2x position-sticky pt-1" style="top: 62px; background-color: white; z-index: 10;">競技開始まで</div>
 
+{{< wrap tag=div id="links" >}}
+
 {{< card-header >}}
-{{< list class="list-group list-fill-link" liclass="list-group-item" id="links">}}
-
-<ul>
-<li><a target="_blank">{{< icon file-download 問題pdf>}}</a></li>
-<li><a target="_blank">{{< icon table 解答用ページ >}}</a></li>
-<li><a href="https://drive.google.com/file/d/1l8XqmydMqQCB2W9tAPk7Fe-F7SUbfM3i/view?usp=share_link" target="_blank">{{< icon lock パスワード付き問題pdf >}}</a></li>
+<ul class="list-group list-fill-link list-group-horizontal-sm">
+  <li class="list-group-item flex-fill">
+      <a target="_blank">
+          <i class="fas fa-file-download fa-fw"></i>問題pdf1（体験版）
+      </a>
+  </li>
+  <li class="list-group-item">
+      <a target="_blank">
+          <i class="fas fa-file-download fa-fw"></i>（予備）問題pdf2（体験版）
+      </a>
+  </li>
+  <li class="list-group-item">
+      <a target="_blank">
+          <i class="fas fa-file-download fa-fw"></i>（予備）問題pdf3（体験版）
+      </a>
+  </li>
 </ul>
-
-{{< /list >}}
+<ul class="list-group list-fill-link list-group-horizontal-sm">
+  <li class="list-group-item flex-fill">
+      <a target="_blank">
+          <span class="unmot"><i class="fas fa-table fa-fw"></i>解答用ページ（体験版）</span>
+      </a></li>
+  <li class="list-group-item">
+      <a role="button">
+          <span class="unmot"><i class="fas fa-table fa-fw"></i>（予備）解答用ページが使えない場合</span>
+      </a></li>
+</ul>
 {{< /card-header >}}
 
-パスワード付き問題pdf のパスワードはこちらに表示されます: <span id="pwd" class="user-select-all"></span>
+{{< /wrap >}}
 
----
-
-**上記のリンクから問題の閲覧・解答の入力が出来なかった場合**は以下のリンクから問題や解答用エクセルファイルを入手してください．解答用エクセルファイルは**競技時間内にメールで** {{< email >}} に提出してください．提出の際には，競技者情報（メールアドレス，競技者氏名，参加枠）を付してください（本ページの上の方に記載のものをコピー&ペーストすると確実です．その他の情報や文面は不要です）．
-
+※問題pdf1が読み込めなかった人は問題pdf2, 問題pdf3を開いてください（中身は同じものです）．  
 ※解答用ページ（スプレッドシート）で適切に解答が入力できた方は，解答用エクセルファイルの提出はしないでください．  
 ※**体験版はメール提出しないでください**．
-
-{{< card-header >}}
-{{< list class="list-group list-fill-link" liclass="list-group-item" id="links2">}}
-
-<ul>
-<li><a target="_blank">{{< icon file-download 問題pdf2>}}</a></li>
-<li><a target="_blank">{{< icon table 解答用エクセルファイル >}}</a></li>
-</ul>
-
-{{< /list >}}
-{{< /card-header >}}
 
 <div id="qa" ></div>
 
@@ -250,41 +256,32 @@ isFBInit = false
 
 ## 問題閲覧・解答提出手順
 
-競技が始まると，問題pdf，解答用ページへのリンク，パスワード付き問題pdf のパスワードの3点が読み込まれ，表示されます．
+↓競技開始時間になると，{{< icon "file-download" 問題pdf >}} が緑になり，押すと問題pdf がダウンロードできるようになります．同様に，解答用ページにもアクセスできるようになります．
 
 {{< simplebox "事前練習の際は" >}}
 練習用タイマーを押すと，競技開始5秒前が再現されます．
 {{< /simplebox >}}
 
-↓競技開始 （{{< icon "file-download" 問題pdf >}} が緑になり，押すと問題pdf がダウンロードできるようになっています．解答用ページにもアクセスできるようになっています．パスワード付き問題pdf のパスワードが表示されています）
-
 {{< figure src="/img/jol2022/links_displayed_demo.png">}}
-{{< figure src="/img/jol2024_links_displayed_demo.png">}}
+<!-- {{< figure src="/img/jol2024_links_displayed_demo.png">}} -->
 
-問題pdf を開く方法は2通りあります．
+※問題を閉じてしまった場合や何らかの理由で開けなかった場合は改めて「{{< icon "file-download" 問題pdf >}}」をクリックしてください．
 
-1. 競技開始後，{{< icon "file-download" 問題pdf >}} を押す．この場合，パスワードを入力する時間が不要になりますが通信環境によっては pdf の読み込みに時間がかかることがあります．
-1. 事前にパスワード付き問題pdf をダウンロードしておき，時間になったらこのページに表示されるパスワードを入力して開く．この場合，事前に pdf を読み込むためパスワードを入力するとすぐに問題を見ることができます．
+{{< wrap tag=div class="container-fluid" >}}
+{{< wrap tag=div class="row" >}}
 
-{{< collapse title="2. パスワード付き問題pdf のダウンロードの方法" id="passwardDemo" >}}
+{{< wrap tag=div class="col-lg-6" >}}
+問題pdfのイメージ
+{{< figure src="/img/jol2022/problem_demo.png">}}
+{{< /wrap >}}
 
-パスワード付き問題pdf にアクセスすると以下のような画面が表示されます．この時点ですでにパスワードを求められますが気にしないでください．この時点ではまだ問題pdfはお使いの端末上にダウンロードされていません．ダウンロードするためには画面右上に表示されている{{< icon download ダウンロード >}}ボタンをクリックしてください．
-
-{{< figure src="/img/jol2022/protected_demo.png">}}
-
-ダウンロードできたら，端末上でそのパスワード付き問題pdf を開こうとしてみてください．このように，パスワードが求められる画面まで出れば準備完了です．競技が開始されたら，パスワードが表示されますので，それを入力してください．
-
-{{< figure src="/img/jol2022/downloaded_demo.png">}}
-
-{{< /collapse >}}
-
----
-
-※問題を閉じてしまった場合や何らかの理由で開けなかった場合は改めて（パスワードなしの）「問題pdf」をクリックしてください．
-
-解答用ページは競技開始時間になったら表示される解答用ページへのリンクからアクセスしてください．解答用ページはグーグルスプレッドシートを利用します．解答はインターネットに接続されている限り，自動で保存されるため提出のために特別な操作は必要ありません．
-
+{{< wrap tag=div class="col-lg-6" >}}
+解答用ページのイメージ
 {{< figure src="/img/jol2022/answer_demo.png">}}
+{{< /wrap >}}
+
+{{< /wrap >}}
+{{< /wrap >}}
 
 ### 競技中の質問方法
 

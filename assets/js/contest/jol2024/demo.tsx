@@ -2,13 +2,11 @@ import { app, auth, db } from "@js/firebase-initialize"
 import { ref, onValue, update, get, set, serverTimestamp } from "firebase/database"
 import { toHms } from "@js/utility/toHms"
 import QA from "@js/components/QA"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { createRoot } from "react-dom/client";
-
-const ELEM_LINKS = document.getElementById('links')!.getElementsByTagName('a');
-const ELEM_LINKSLI = document.getElementById('links')!.getElementsByTagName('li');
-const ELEM_LINKS2 = document.getElementById('links2')!.getElementsByTagName('a');
-const ELEM_LINKSLI2 = document.getElementById('links2')!.getElementsByTagName('li');
+import { Button, ButtonGroup, Card, Collapse } from "react-bootstrap"
+import { useObjectVal } from "react-firebase-hooks/database"
+import { User } from "firebase/auth"
 
 const ELEM_TIMER = document.getElementById('timer');
 const ELEM_TIMERBTN = document.getElementById('timerbtn');
@@ -27,6 +25,88 @@ rootQA.render(
 window.onhashchange = () => {
     window.history.replaceState(null, '', window.location.pathname + window.location.search);
 };
+
+type PublishDemoType = {
+    problem: string;
+    problem2: string;
+    problem3: string;
+    answerSheet2: string;
+}
+
+type demoUserType = {
+    answerSheet: string;
+}
+
+const Links = ({ user }: { user: any }) => {
+    const [publishDemo, publishDemoloading, publishDemoerror] = useObjectVal<PublishDemoType>(ref(db, '/contests/jol2024/publish/demo/'));
+    const [demoUser, demoUserloading, demoUsererror] = useObjectVal<demoUserType>(ref(db, `/contests/jol2024/demo/${user.uid}`));
+    const [alternateAnswerSheet, setAlternateAnswerSheet] = useState<boolean>(false);
+
+    const { problem, problem2, problem3, answerSheet2 }: PublishDemoType = publishDemo || {
+        problem: "",
+        problem2: "",
+        problem3: "",
+        answerSheet2: "",
+    }
+    const { answerSheet }: demoUserType = demoUser || { answerSheet: "" }
+
+    const toggleAlternateAnswerSheet = async () => {
+        setAlternateAnswerSheet((prev: boolean) => (!prev));
+    }
+
+    useEffect(() => {
+        if (problem) {
+            window.open(problem, '_blank');
+        }
+        if (answerSheet) {
+            window.open(answerSheet, '_blank');
+        }
+    }, [problem, answerSheet])
+
+
+    return <>
+        <Card>
+            <ul className="list-group list-fill-link list-group-horizontal-sm">
+                <li className={"list-group-item flex-fill" + (problem ? " list-group-item-success" : "")}>
+                    <a target="_blank" href={problem || undefined}>
+                        <i className="fas fa-file-download fa-fw"></i>問題pdf1（体験版）
+                    </a>
+                </li>
+                <li className={"list-group-item" + (problem2 ? " list-group-item-success" : "")}>
+                    <a target="_blank" href={problem2 || undefined}>
+                        <i className="fas fa-file-download fa-fw"></i>（予備）問題pdf2（体験版）
+                    </a>
+                </li>
+                <li className={"list-group-item" + (problem3 ? " list-group-item-success" : "")}>
+                    <a target="_blank" href={problem3 || undefined}>
+                        <i className="fas fa-file-download fa-fw"></i>（予備）問題pdf3（体験版）
+                    </a>
+                </li>
+            </ul>
+            <ul className="list-group list-fill-link list-group-horizontal-sm">
+                <li className={"list-group-item flex-fill" + (answerSheet ? " list-group-item-success" : "")}>
+                    <a target="_blank" href={answerSheet || undefined}>
+                        <span className="unmot"><i className="fas fa-table fa-fw"></i>解答用ページ（体験版）</span>
+                    </a></li>
+                <li className="list-group-item">
+                    <a role="button" onClick={toggleAlternateAnswerSheet} className="link-primary">
+                        <span className="unmot"><i className="fas fa-table fa-fw"></i>（予備）解答用ページが使えない場合</span>
+                    </a></li>
+            </ul>
+        </Card >
+        <Collapse in={alternateAnswerSheet}>
+            <div className="my-3">
+                <p>下記の解答用エクセルファイルをダウンロードして解答を記入してください．</p>
+                <p>解答用エクセルファイルは<strong>競技時間内にメールで</strong> <a href="mailto:jol@iolingjapan.org">jol@iolingjapan.org</a> に提出してください．</p>
+                <p>メールには次の情報を付してください:「<span className="user-select-all">メールアドレス: {user.email}，氏名: {user.name}，参加枠: {user.spot === "flag" ? "選抜" : "オープン"}</span>」</p>
+                <ul className="list-group list-fill-link">
+                    <li className={"list-group-item flex-fill" + (answerSheet2 ? " list-group-item-success" : "")}>
+                        <a target="_blank" href={answerSheet2 || undefined}><i className="fas fa-table fa-fw"></i>解答用エクセル（予備）</a></li>
+                </ul>
+            </div>
+        </Collapse>
+    </>
+}
 
 document.addEventListener("DOMContentLoaded", (event) => {
     auth.onAuthStateChanged(async (user) => {
@@ -54,6 +134,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                     </tbody>
                                 </table>
                             )
+                            createRoot(document.getElementById("links")!).render(<Links user={userInfo} />)
                             for (const elem of Array.from(document.getElementsByClassName("only-flag") as HTMLCollectionOf<HTMLElement>)) {
                                 elem.style.display = userInfo.spot === "flag" ? "block" : "none";
                             }
@@ -61,23 +142,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         update(ref(db, '/contests/jol2024/demolog/' + user.uid), {
                             timestamp: serverTimestamp()
                         })
-                    }, {
-                        onlyOnce: true
-                    });
-                    onValue(ref(db, '/contests/jol2024/publish/demo/'), (snapshot2) => {
-                        const publish = snapshot2.val();
-                        if (publish) {
-                            demolinks = Object.assign({}, demolinks, publish);
-                            // updateLinks(publish);
-                        }
-                    }, {
-                        onlyOnce: true
-                    });
-                    onValue(ref(db, '/contests/jol2024/demo/' + user.uid), (snapshot3) => {
-                        const answerSheet = snapshot3.val();
-                        if (answerSheet) {
-                            demolinks = Object.assign({}, demolinks, answerSheet);
-                        }
                     }, {
                         onlyOnce: true
                     });
@@ -112,7 +176,7 @@ function startTimer(rug: number) {
         if (data == 7200 && !flag) {
             console.log("start!", flag)
             flag = true;
-            updateLinks(demolinks);
+            // link
         }
         if (data <= 0) {
             clearInterval(handleTimer);
@@ -123,30 +187,6 @@ function startTimer(rug: number) {
 ELEM_TIMERBTN?.addEventListener("click", () => {
     startTimer(0);
 })
-
-function updateLinks(data: any) {
-    if (data.answerSheet) {
-        ELEM_LINKS[1].href = data.answerSheet;
-        ELEM_LINKSLI[1].classList.add('list-group-item-success')
-        window.open(data.answerSheet, '_blank');
-    }
-    if (data.problem) {
-        ELEM_LINKS[0].href = data.problem;
-        ELEM_LINKSLI[0].classList.add('list-group-item-success')
-        window.open(data.problem, '_blank');
-    }
-    if (data.answerSheet2) {
-        ELEM_LINKS2[1].href = data.answerSheet2;
-        ELEM_LINKSLI2[1].classList.add('list-group-item-success')
-    }
-    if (data.problem2) {
-        ELEM_LINKS2[0].href = data.problem2;
-        ELEM_LINKSLI2[0].classList.add('list-group-item-success')
-    }
-    if (data.pwd) {
-        document.getElementById('pwd')!.innerText = data.pwd;
-    };
-}
 
 // function updateTimer(data){
 //     if(data !== null){
