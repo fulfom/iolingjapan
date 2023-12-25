@@ -7,7 +7,7 @@ aliases = ["/past-applications/"]
 
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
-- [→ {{< icon "user-circle" "応募者向け: 支払い確認，参加者情報の変更はこちら" >}}](/account/)
+- [→ {{< icon "user-circle" "応募者向け: 支払い確認，参加者情報の変更，競技会場へのアクセスはこちら" >}}](/account/)
 
 {{< /list >}}
 
@@ -15,6 +15,8 @@ aliases = ["/past-applications/"]
 
 2023年9月10日: JOL2024への応募を開始しました．  
 2023年12月15日: JOL2024への応募を12月18日(月)までに延長しました．
+2023年12月18日: 応募終了
+2023年12月23日: [応募者向け] [JOL2024事前準備ページを公開しました．](/account/)
 
 {{% /simplebox %}}
 
