@@ -25,6 +25,7 @@ type PublishDemoType = {
     problem2: string;
     problem3: string;
     answerSheet2: string;
+    answerSheet3: string;
     rug?: number;
 }
 
@@ -85,12 +86,13 @@ const Links = ({ user, uid }: { user: any, uid: string }) => {
     const end = new Date();
     end.setTime(end.getTime() + 7205000);
 
-    const { problem, problem2, problem3, answerSheet2 }: PublishDemoType = useMemo(() => (flag && publishDemo) || {
+    const { problem, problem2, problem3, answerSheet2, answerSheet3 }: PublishDemoType = useMemo(() => (flag && publishDemo) || {
         problem: "",
         problem2: "",
         problem3: "",
         answerSheet2: "",
-    }, [publishDemo?.problem, publishDemo?.problem2, publishDemo?.problem3, publishDemo?.answerSheet2, flag])
+        answerSheet3: "",
+    }, [publishDemo?.problem, publishDemo?.problem2, publishDemo?.problem3, publishDemo?.answerSheet2, publishDemo?.answerSheet3, flag])
 
     const rug: number = publishDemo && publishDemo.rug || 0;
 
@@ -151,10 +153,15 @@ const Links = ({ user, uid }: { user: any, uid: string }) => {
                 <p>下記の解答用エクセルファイルをダウンロードして解答を記入してください．</p>
                 <p>解答用エクセルファイルは<strong>競技時間内にメールで</strong> <a href="mailto:jol@iolingjapan.org">jol@iolingjapan.org</a> に提出してください．</p>
                 <p>メールには次の情報を付してください:「<span className="user-select-all">メールアドレス: {user.email}，氏名: {user.name}，参加枠: {user.spot === "flag" ? "選抜" : "オープン"}</span>」</p>
-                <ul className="list-group list-fill-link">
+                <ul className="list-group list-fill-link mb-3">
                     <li className={"list-group-item flex-fill" + (answerSheet2 ? " list-group-item-success" : "")}>
-                        <a target="_blank" href={answerSheet2 || undefined}><i className="fas fa-table fa-fw"></i>解答用エクセル（予備）</a></li>
+                        <a target="_blank" href={answerSheet2 || undefined}><i className="fas fa-table fa-fw"></i>解答用エクセル1</a>
+                    </li>
+                    <li className={"list-group-item flex-fill" + (answerSheet3 ? " list-group-item-success" : "")}>
+                        <a target="_blank" href={answerSheet3 || undefined}><i className="fas fa-table fa-fw"></i>（予備）解答用エクセル2</a>
+                    </li>
                 </ul>
+                <p>※解答用エクセル1と2は同じものです</p>
             </div>
         </Collapse>
     </>
