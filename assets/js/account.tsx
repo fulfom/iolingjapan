@@ -64,7 +64,7 @@ const statusButton = (config: contestConfigType, isEntried?: boolean) => {
     }
 }
 
-const logoutButton = <button onClick={logout} className="btn btn-danger btn-small mt-5">ログアウト</button>
+// const logoutButton = <button onClick={logout} className="btn btn-danger btn-small mt-5">ログアウト</button>
 
 const App = () => {
     const [user, setUser] = useState<User | null>(null);
@@ -80,12 +80,12 @@ const App = () => {
 
         const isVisible = isAdmin || (configBadge ? badges && badges[configBadge] : true) && (configSpot ? userInfo?.spot === configSpot : true)
 
-        return isVisible ? <div className="list-group-item appSys-contest">
+        return isVisible ? <div className="list-group-item appSys-contest" key={config.id}>
             <div>
                 {statusButton(config, isEntried)}
                 <div>
                     <small>{config.desc1}</small>
-                    {config.desc2 ? <small className="ms-1">{config.desc2.split("|").map((desc2) => (<span className="unmot">{desc2}</span>))}</small> : <></>}
+                    {config.desc2 ? <small className="ms-1">{config.desc2.split("|").map((desc2) => (<span className="unmot" key={desc2}>{desc2}</span>))}</small> : <></>}
                 </div>
             </div>
             <h5 className="text-moderate mt-1">{config.title}</h5>
@@ -121,6 +121,50 @@ const App = () => {
 
     const adminPortalLink = isAdmin ? <a href="/admin-portal/" className="btn btn-info btn-small" role="button">管理者ポータル</a> : <></>
 
+    const message1 = <div className="simple-box">
+        <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
+        <p>JOL2024の応募完了までもう一歩です</p>
+        <ol>
+            <li>
+                <p>応募途中の場合</p>
+                <p><a href="/entry/jol2024/">→こちらから応募手続きを続けてください．</a></p>
+            </li>
+            <li>
+                <p>ログインするアカウントを間違えている場合</p>
+                <p>→正しいアカウントでログインしなおしてください．</p>
+                <div className="d-flex align-items-baseline">
+                    <p>今お使いのメールアドレス: <span className="user-select-all">{user?.email || ""}</span></p>
+                    <button onClick={logout} className="btn btn-danger btn-small ms-auto">ログアウト</button>
+                </div>
+            </li>
+            <li>
+                <p>受験料の支払い確認が取れない場合</p>
+                <div className="simple-box m-0">
+                    <ul>
+                        <li>コンビニ決済・銀行振込の場合，コンビニや銀行で受験料をお支払いいただき，こちらで入金が確認でき次第，応募完了となります．</li>
+                        <li>応募と支払いで異なるメールアドレスを使用した場合，支払いの確認が取れません．その場合は，<strong>支払いで使用したメールアドレス</strong>から委員会 <a href="mailto:jol@iolingjapan.org">jol@iolingjapan.org</a> に以下の内容を含むメールを送信してください．</li>
+                        <ul>
+                            <li>氏名</li>
+                            <li>応募で使用したメールアドレス</li>
+                            <li>受験料振替の旨</li>
+                            <li>支払いで使用したメールアドレスが分からない，間違えた場合は，代わりにオーダー番号</li>
+                        </ul>
+                    </ul>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    const message2 = <div className="simple-box">
+        <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
+        <p>ログインするアカウントを間違えている可能性があります．</p>
+        <p>→正しいアカウントでログインしなおしてください．</p>
+        <div className="d-flex align-items-baseline">
+            <p>今お使いのメールアドレス: <span className="user-select-all">{user?.email || ""}</span></p>
+            <button onClick={logout} className="btn btn-danger btn-small ms-auto">ログアウト</button>
+        </div>
+    </div>
+
     useEffect(() => {
         const unsubscribed = auth.onAuthStateChanged(async (user) => {
             setUser(user);
@@ -147,6 +191,7 @@ const App = () => {
                             email: user.email
                         });
                     }
+
                 })();
                 await Promise.all([promiseBadge, promiseUserInfo]).catch((e) => {
                     console.error(e);
@@ -154,7 +199,13 @@ const App = () => {
                 });
 
                 for (const cont of CONTESTS_DATA.upcomingContests) {
-                    if (cont.status === "entryopen") {
+                    if (cont.status === "demositeopen" || cont.status === "siteopen") {
+                        const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
+                        if (!paidSnapshot.val()) {
+                            setNotPaid(true);
+                        }
+                    }
+                    else if (cont.status === "entryopen") {
                         const contSnapshot = await get(ref(db, "/contests/" + cont.id + "/users/" + user.uid));
                         const contestantInfo = contSnapshot.val();
                         if (!contestantInfo) {
@@ -189,44 +240,15 @@ const App = () => {
         };
     }, []);
     return <>
-        {notPaid ? <div className="simple-box">
-            <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
-            <p>JOL2024の応募完了までもう一歩です</p>
-            <ol>
-                <li>
-                    <p>応募途中の場合</p>
-                    <p><a href="/entry/jol2024/">→こちらから応募手続きを続けてください．</a></p>
-                </li>
-                <li>
-                    <p>ログインするアカウントを間違えている場合</p>
-                    <p>→正しいアカウントでログインしなおしてください．</p>
-                    <div className="d-flex align-items-baseline">
-                        <p>今お使いのメールアドレス: <span className="user-select-all">{user?.email || ""}</span></p>
-                        <button onClick={logout} className="btn btn-danger btn-small ms-auto">ログアウト</button>
-                    </div>
-                </li>
-                <li>
-                    <p>受験料の支払い確認が取れない場合</p>
-                    <div className="simple-box m-0">
-                        <ul>
-                            <li>コンビニ決済・銀行振込の場合，コンビニや銀行で受験料をお支払いいただき，こちらで入金が確認でき次第，応募完了となります．</li>
-                            <li>応募と支払いで異なるメールアドレスを使用した場合，支払いの確認が取れません．その場合は，<strong>支払いで使用したメールアドレス</strong>から委員会 <a href="mailto:jol@iolingjapan.org">jol@iolingjapan.org</a> に以下の内容を含むメールを送信してください．</li>
-                            <ul>
-                                <li>氏名</li>
-                                <li>応募で使用したメールアドレス</li>
-                                <li>受験料振替の旨</li>
-                                <li>支払いで使用したメールアドレスが分からない，間違えた場合は，代わりにオーダー番号</li>
-                            </ul>
-                        </ul>
-                    </div>
-                </li>
-            </ol>
-
-
-        </div> : <></>}
+        {notPaid ? message2 : <></>}
         {adminPortalLink}
+        {isAdmin ? <a href="/contest/jol2024/admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024Admin</a> : <></>}
         {contests}
-        {logoutButton}</>
+        <div className="mt-5">
+            <span className="me-3">{user?.email + " でログイン中" || "読み込み中"}</span>
+            <button onClick={logout} className="btn btn-danger btn-small">ログアウト</button>
+        </div>
+    </>
 }
 
 const root = createRoot(document.getElementById("app")!);
