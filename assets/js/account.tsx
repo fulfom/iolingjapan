@@ -1,6 +1,6 @@
 import { app, auth, db, logout } from "./firebase-initialize"
 import { ref, onValue, update, get, set } from "firebase/database"
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import CONTESTS_DATA from "../data/contests.json";
 import { User } from "firebase/auth";
@@ -73,10 +73,10 @@ const statusButton = (config: contestConfigType, isEntried?: boolean) => {
 
 const App = () => {
     const [user, setUser] = useState<User | null>(null);
-    const [badges, setBadges] = useState<{ [key: string]: boolean } | null>(null);
+    const [[badges, isBadgesLoaded], setBadges] = useState<[{ [key: string]: boolean } | null, boolean]>([null, false]);
     const [userInfo, setUserInfo] = useState<{ [key: string]: unknown } | null>(null);
     const [isAdmin, setIsAdmin] = useState(false);
-    const [notPaid, setNotPaid] = useState(false);
+    const [[notPaid, isNotPaidLoaded], setNotPaid] = useState([true, false]);
     const [contUserInfo, setContUserInfo] = useState<{ [key: string]: { [key: string]: unknown } } | null>(null)
 
     const contest = (config: contestConfigType, isEntried: boolean = false) => {
@@ -85,7 +85,7 @@ const App = () => {
 
         const isVisible = isAdmin || (configBadge ? badges && badges[configBadge] : true) && (configSpot ? userInfo?.spot === configSpot : true)
 
-        return isVisible ? <div className="list-group-item appSys-contest" key={config.id}>
+        return isVisible && <div className="list-group-item appSys-contest" key={config.id}>
             <div>
                 {statusButton(config, isEntried)}
                 <div>
@@ -97,37 +97,51 @@ const App = () => {
             {config.detail ? <a className="card-link" href={config.detail}>詳細</a> : <></>}
             {config.status === "entryopen" && isEntried && (config.entryui || config.entry) && <a className="card-link" href={config.entryui || config.entry}><i className="fas fa-user-edit fa-fw"></i>確認</a>}
             {config.record ? <a className="card-link" href={config.record}>データ</a> : <></>}
-        </div > : <></>
+        </div>
     }
+
+    const loadingContest = <div className="list-group-item appSys-contest placeholder-glow">
+        <div>
+            <div>
+                <small className="placeholder w-50"></small>
+            </div>
+        </div>
+        <h5 className="text-moderate mt-1 placeholder w-25"></h5>
+        <p className="placeholder w-100"></p>
+    </div >
 
     const contests = (
         <div id="account-contests" className="row">
             <div className="col-lg-6">
                 <h3 id="contests">大会</h3>
                 <div id="account-upcoming-contests" className="list-group list-group-flush mb-2">
-                    {CONTESTS_DATA.upcomingContests
+                    {isBadgesLoaded ? CONTESTS_DATA.upcomingContests
                         .sort((a, b) => (new Date(a.date).getTime() - new Date(b.date).getTime()))
                         .map((v) => (
                             contest(v,
                                 v.status === "entryopen" ? !!contUserInfo?.[v.id]?.entry : !notPaid)
-                        ))}
+                        )) :
+                        loadingContest}
                 </div>
             </div>
             <div className="col-lg-6">
                 <h3 id="results">結果</h3>
                 <div id="account-past-contests" className="list-group list-group-flush mb-2">
-                    {CONTESTS_DATA.pastContests
-                        .sort((a, b) => (- new Date(a.date).getTime() + new Date(b.date).getTime()))
-                        .map((v) => (
-                            contest(v)
-                        ))}
+                    {isBadgesLoaded ?
+                        CONTESTS_DATA.pastContests
+                            .sort((a, b) => (- new Date(a.date).getTime() + new Date(b.date).getTime()))
+                            .map((v) => (
+                                contest(v)
+                            )) :
+                        loadingContest
+                    }
                 </div>
             </div>
         </div>)
 
     const adminPortalLink = isAdmin ? <a href="/admin-portal/" className="btn btn-info btn-small" role="button">管理者ポータル</a> : <></>
 
-    const message1 = <div className="simple-box">
+    const messagePreOrder = <div className="simple-box">
         <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
         <p>JOL2024の応募完了までもう一歩です</p>
         <ol>
@@ -161,7 +175,7 @@ const App = () => {
         </ol>
     </div>
 
-    const emails = !notPaid &&
+    const emails = useMemo(() =>
         <div className="simple-box">
             <span className="box-title">応募者向けメール履歴</span>
             <Accordion flush>
@@ -200,14 +214,14 @@ const App = () => {
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
-        </div>
+        </div>, [])
 
-    const news = <div className="simple-box">
+    const news = useMemo(() => <div className="simple-box">
         <span className="box-title">お知らせ</span>
-        <p>2023/12/22: <a href="/contest/jol2024/demo/">JOL2024の事前準備ページを公開しました．</a></p>
-    </div>
+        {!notPaid && <p>2023/12/22: <a href="/contest/jol2024/demo/">JOL2024の事前準備ページを公開しました．</a></p>}
+    </div>, [notPaid])
 
-    const message2 = <div className="simple-box">
+    const message2 = useMemo(() => <div className="simple-box">
         <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
         <p>ログインするアカウントを間違えている可能性があります．</p>
         <p>→正しいアカウントでログインしなおしてください．</p>
@@ -215,15 +229,41 @@ const App = () => {
             <p>今お使いのメールアドレス: <span className="user-select-all">{user?.email || ""}</span></p>
             <button onClick={logout} className="btn btn-danger btn-small ms-auto">ログアウト</button>
         </div>
-    </div>
+    </div>, [user])
 
     useEffect(() => {
         const unsubscribed = auth.onAuthStateChanged(async (user) => {
             setUser(user);
             if (user) {
+                for (const cont of CONTESTS_DATA.upcomingContests) {
+                    if (cont.status === "demositeopen" || cont.status === "siteopen") {
+                        const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
+                        if (paidSnapshot.val()) {
+                            setNotPaid([false, true]);
+                        }
+                    }
+                    else if (cont.status === "entryopen") {
+                        const contSnapshot = await get(ref(db, "/contests/" + cont.id + "/users/" + user.uid));
+                        const contestantInfo = contSnapshot.val();
+                        if (!contestantInfo) {
+                            location.replace("/entry/" + cont.id);
+                        }
+                        else {
+                            // 支払いが完了しているのに，参加者情報が不完全な場合は応募ページに飛ばす．
+                            if (!contestantInfo.entry) {
+                                const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
+                                if (paidSnapshot.val()) {
+                                    location.replace("/entry/" + cont.id);
+                                }
+                            }
+                            setContUserInfo((pre) => ({ ...pre, [cont.id]: contestantInfo }));
+                        }
+                    }
+                }
+
                 const promiseBadge = (async () => {
                     const snapshot = await get(ref(db, "/badges/" + user.uid));
-                    setBadges(snapshot.val());
+                    setBadges([snapshot.val(), true]);
                 })();
                 const promiseUserInfo = (async () => {
                     const snapshot = await get(ref(db, "/users/" + user.uid));
@@ -250,36 +290,7 @@ const App = () => {
                     alert("エラー");
                 });
 
-                for (const cont of CONTESTS_DATA.upcomingContests) {
-                    if (cont.status === "demositeopen" || cont.status === "siteopen") {
-                        const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
-                        if (!paidSnapshot.val()) {
-                            setNotPaid(true);
-                        }
-                    }
-                    else if (cont.status === "entryopen") {
-                        const contSnapshot = await get(ref(db, "/contests/" + cont.id + "/users/" + user.uid));
-                        const contestantInfo = contSnapshot.val();
-                        if (!contestantInfo) {
-                            location.replace("/entry/" + cont.id);
-                        }
-                        else {
-                            // 支払いが完了しているのに，参加者情報が不完全な場合は応募ページに飛ばす．
-                            if (!contestantInfo.entry) {
-                                const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
-                                if (paidSnapshot.val()) {
-                                    location.replace("/entry/" + cont.id);
-                                }
-                                else {
-                                    setNotPaid(true);
-                                }
-                            }
-                            setContUserInfo((pre) => ({ ...pre, [cont.id]: contestantInfo }));
-                        }
-                    }
-                }
-
-                document.getElementsByTagName("body").item(0)!.style.opacity = "1";
+                // document.getElementsByTagName("body").item(0)!.style.opacity = "1";
             }
             else {
                 location.replace("/login/");
@@ -291,18 +302,29 @@ const App = () => {
             unsubscribed();
         };
     }, []);
-    return <>
-        {news}
-        {emails}
-        {notPaid ? message2 : <></>}
+    return <div>
+        {isNotPaidLoaded ? <>
+            {news}
+            {!notPaid && emails}
+            {notPaid && message2}
+        </> :
+            <div className="simple-box placeholder-glow">
+                <span className="box-title placeholder col-1"></span>
+                <p className="placeholder w-100"></p>
+                <p className="placeholder w-75"></p>
+                <p className="placeholder w-50"></p>
+            </div>}
         {adminPortalLink}
         {isAdmin ? <a href="/contest/jol2024/admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024Admin</a> : <></>}
         {contests}
         <div className="mt-5">
-            <span className="me-3">{user?.email + " でログイン中" || "読み込み中"}</span>
+            {user ?
+                <span className="me-3">{user.email + " でログイン中"}</span> :
+                <span className="me-3 placeholder-glow placeholder w-25"></span>
+            }
             <button onClick={logout} className="btn btn-danger btn-small">ログアウト</button>
         </div>
-    </>
+    </div>
 }
 
 const root = createRoot(document.getElementById("app")!);
