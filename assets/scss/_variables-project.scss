@@ -16,6 +16,10 @@ $success: #28a745;
   color: $primary;
 }
 
+.accordion-body {
+  overflow-wrap: break-word;
+}
+
 // custom.css から移行中
 
 /* your styles go here */
