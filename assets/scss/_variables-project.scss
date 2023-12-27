@@ -2,8 +2,19 @@
 $font-family: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
 $font-family-bold: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic", "Segoe UI", Verdana, Meiryo, sans-serif;
 $primary: #38a7bb;
-$secondary: #fe624d;
+// $secondary: #fe624d;
 $success: #28a745;
+
+.accordion-header {
+  :hover {
+    text-decoration: underline;
+  }
+}
+
+.accordion-button {
+  padding: 0.5rem 0 0.5rem 0;
+  color: $primary;
+}
 
 // custom.css から移行中
 
