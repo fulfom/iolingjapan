@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import CONTESTS_DATA from "../data/contests.json";
 import { User } from "firebase/auth";
+import { Accordion } from "react-bootstrap";
 
 const FEATURES_CONFIG = [
     {
@@ -52,9 +53,13 @@ const statusButton = (config: contestConfigType, isEntried?: boolean) => {
                 <><a href={config.entry} className="btn btn-primary float-end" role="button"><i className="fas fa-file-alt fa-fw"></i>応募</a></> :
                 <><button disabled className="btn btn-outline-success float-end"><i className="fas fa-check-circle fa-fw"></i>応募済</button></>
         case "demositeopen":
-            return <a href={config.demosite} className="btn btn-primary float-end" role="button"><i className="fas fa-puzzle-piece fa-fw"></i>事前準備</a>
+            return isEntried ?
+                <a href={config.demosite} className="btn btn-primary float-end" role="button"><i className="fas fa-puzzle-piece fa-fw"></i>事前準備</a> :
+                <button disabled className="btn btn-outline-dark float-end">応募終了</button>
         case "siteopen":
-            return <a href={config.site} className="btn btn-primary float-end" role="button"><i className="fas fa-puzzle-piece fa-fw"></i>競技会場</a>
+            return isEntried ?
+                <a href={config.site} className="btn btn-primary float-end" role="button"><i className="fas fa-puzzle-piece fa-fw"></i>競技会場</a> :
+                <button disabled className="btn btn-outline-dark float-end">応募終了</button>
         case "marking":
             return <button disabled className="btn btn-outline-dark float-end">採点中</button>
         case "resultopen":
@@ -90,7 +95,7 @@ const App = () => {
             </div>
             <h5 className="text-moderate mt-1">{config.title}</h5>
             {config.detail ? <a className="card-link" href={config.detail}>詳細</a> : <></>}
-            {isEntried ? (config.entryui || config.entry ? <a className="card-link" href={config.entryui || config.entry}><i className="fas fa-user-edit fa-fw"></i>確認</a> : <></>) : <></>}
+            {config.status === "entryopen" && isEntried && (config.entryui || config.entry) && <a className="card-link" href={config.entryui || config.entry}><i className="fas fa-user-edit fa-fw"></i>確認</a>}
             {config.record ? <a className="card-link" href={config.record}>データ</a> : <></>}
         </div > : <></>
     }
@@ -103,7 +108,8 @@ const App = () => {
                     {CONTESTS_DATA.upcomingContests
                         .sort((a, b) => (new Date(a.date).getTime() - new Date(b.date).getTime()))
                         .map((v) => (
-                            contest(v, !!contUserInfo?.[v.id]?.entry)
+                            contest(v,
+                                v.status === "entryopen" ? !!contUserInfo?.[v.id]?.entry : !notPaid)
                         ))}
                 </div>
             </div>
@@ -153,6 +159,52 @@ const App = () => {
                 </div>
             </li>
         </ol>
+    </div>
+
+    const emails = !notPaid &&
+        <div className="simple-box">
+            <span className="box-title">応募者向けメール履歴</span>
+            <Accordion flush>
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header as="p">2023/12/23 02:15: JOL2024事前準備ページ公開</Accordion.Header>
+                    <Accordion.Body>
+                        <p className="mb-3">JOL2024応募者のみなさま，</p>
+                        <p className="mb-3">JOL2024事前準備ページを公開いたしました．</p>
+                        <p className="mb-3"><a href="https://iolingjapan.org/contest/jol2024/demo/">https://iolingjapan.org/contest/jol2024/demo/</a></p>
+                        <p className="mb-3">※ログインが必要です．ログインしてもアクセスできない場合，メールアドレスを間違えている可能性があります．その場合は，このメールを受け取ったメールアドレスでログインしなおしてみてください．</p>
+                        <p>なにかトラブルが生じた場合は委員会にお問い合わせください．</p>
+                        <p className="mb-3"><a href="mailto:jol@iolingjapan.org">jol@iolingjapan.org</a></p>
+                        <p className="mb-3">それでは，よろしくお願いいたします．</p>
+                        <p>国際言語学オリンピック日本委員会</p>
+
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header as="p">2023/12/20 22:50: 日本言語学オリンピック 今後のスケジュール</Accordion.Header>
+                    <Accordion.Body>
+                        <p className="mb-3">JOL2024応募者のみなさま，</p>
+                        <p className="mb-3">このたびは日本言語学オリンピックにご応募いただきありがとうございます．</p>
+                        <p>今後のスケジュールについてご連絡いたします．</p>
+                        <ul className="mb-3">
+                            <li>12月22日（予定）「JOL2024事前準備」ページ公開</li>
+                            <li>12月23日～28日 動作確認期間</li>
+                            <li>12月29日 「JOL2024競技会場」ページ公開</li>
+                        </ul>
+                        <p className="mb-3">まず，22日に公開予定の「JOL2024事前準備」ページでは，当日とほとんど同じ環境で競技の体験ができるようになっています．具体的には1. 問題（体験版）pdfの閲覧，2. 解答の入力（スプレッドシートまたはエクセル），3. 競技中の質問投稿・訂正の確認，4. 当日の流れと注意事項の説明，以上4点が可能です．</p>
+                        <p className="mb-3">ごくまれに問題が閲覧できないなどのトラブルがありますので，あらかじめ事前準備ページにアクセスしていただき，動作確認と練習を行っていただくようお願いいたします．</p>
+                        <p className="mb-3">29日になりましたら，「JOL2024競技会場」ページが公開されます．12時30分～競技開始までの間にこちらのページにアクセスしてください．13:00になりましたら競技がスタートし，問題pdfの閲覧と解答入力が可能になります．2時間楽しんでいただければ幸いです．</p>
+                        <p className="mb-3">15:00になりましたら，競技終了・解散となります．結果は競技2週間後をめどに発表する予定です．</p>
+                        <p className="mb-3">解答入力の方法など，細かい点は事前練習ページに案内を掲載いたしますので，そちらをご確認ください．22日と29日のページ公開の際には再度メールでご連絡を差し上げます．</p>
+                        <p className="mb-3">それでは，よろしくお願いいたします．</p>
+                        <p>国際言語学オリンピック日本委員会</p>
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
+        </div>
+
+    const news = <div className="simple-box">
+        <span className="box-title">お知らせ</span>
+        <p>2023/12/22: <a href="/contest/jol2024/demo/">JOL2024の事前準備ページを公開しました．</a></p>
     </div>
 
     const message2 = <div className="simple-box">
@@ -240,6 +292,8 @@ const App = () => {
         };
     }, []);
     return <>
+        {news}
+        {emails}
         {notPaid ? message2 : <></>}
         {adminPortalLink}
         {isAdmin ? <a href="/contest/jol2024/admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024Admin</a> : <></>}
