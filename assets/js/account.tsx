@@ -127,7 +127,7 @@ const App = () => {
 
     const adminPortalLink = isAdmin ? <a href="/admin-portal/" className="btn btn-info btn-small" role="button">管理者ポータル</a> : <></>
 
-    const message1 = <div className="simple-box">
+    const messagePreOrder = <div className="simple-box">
         <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
         <p>JOL2024の応募完了までもう一歩です</p>
         <ol>
@@ -204,7 +204,7 @@ const App = () => {
 
     const news = <div className="simple-box">
         <span className="box-title">お知らせ</span>
-        <p>2023/12/22: <a href="/contest/jol2024/demo/">JOL2024の事前準備ページを公開しました．</a></p>
+        {!notPaid && <p>2023/12/22: <a href="/contest/jol2024/demo/">JOL2024の事前準備ページを公開しました．</a></p>}
     </div>
 
     const message2 = <div className="simple-box">
