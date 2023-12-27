@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     });
                 }
                 else {
+                    alert("JOL2024応募アカウントではありません．アカウントを間違えている場合はログインし直してください．")
                     location.href = "/account/";
                 }
             });
