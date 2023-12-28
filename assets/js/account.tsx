@@ -315,7 +315,8 @@ const App = () => {
                 <p className="placeholder w-50"></p>
             </div>}
         {adminPortalLink}
-        {isAdmin ? <a href="/contest/jol2024/admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024Admin</a> : <></>}
+        {isAdmin ? <a href="/contest/jol2024/contest-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024本番Admin</a> : <></>}
+        {isAdmin ? <a href="/contest/jol2024/demo-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024デモAdmin</a> : <></>}
         {contests}
         <div className="mt-5">
             {user ?
