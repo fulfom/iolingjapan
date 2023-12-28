@@ -6,4 +6,6 @@ draft = false
 isFBInit = false
 +++
 
+[←応募者ページへ戻る](/account/)
+
 <div id="app">読み込み中</div>
