@@ -1,176 +1,212 @@
-import { app, auth, db } from "../../firebase-initialize"
-import { ref, onValue, update, get, set, serverTimestamp } from "firebase/database"
-import { toHms } from "../../utility/toHms"
-import QRCode from "qrcode";
+import { app, auth, db } from "@js/firebase-initialize"
+import { ref, onValue, update, get, set, serverTimestamp, push } from "firebase/database"
+import { toHms } from "@js/utility/toHms"
+import QA from "@js/components/QA"
+import React, { useEffect, useMemo, useState } from "react"
+import { createRoot } from "react-dom/client";
+import { Button, ButtonGroup, Card, Collapse } from "react-bootstrap"
+import { useObjectVal } from "react-firebase-hooks/database"
+import { User } from "firebase/auth"
+import { useTimer } from "react-timer-hook"
 
-const ELEM_LINKS = document.getElementById('links')!.getElementsByTagName('a');
-const ELEM_LINKSLI = document.getElementById('links')!.getElementsByTagName('li');
-const ELEM_LINKS2 = document.getElementById('links2')!.getElementsByTagName('a');
-const ELEM_LINKSLI2 = document.getElementById('links2')!.getElementsByTagName('li');
+const rootQA = createRoot(document.getElementById("qa")!);
+const rootContestantInfoTable = createRoot(document.getElementById("contestant-info-table")!);
 
-const ELEM_TIMER = document.getElementById('timer');
+rootQA.render(
+    <QA contId="jol2024" site="contest" />
+);
 
-const ELEM_MEETING = document.getElementById('notice-meeting');
-const ELEM_MEETINGLINK = document.getElementsByClassName('meetinglink')[0];
-// const ELEM_COMMENT_BOX = document.getElementById('comment-box');
-// const ELEM_COMMENT_BODY = document.getElementById('comment-body');
-const ELEM_RUGTIME = document.getElementById('rugtime');
-const ELEM_NOTSELECTED = document.getElementById('notice-notselected');
-
-const ELEM_email = document.getElementById("contestant-email");
-const ELEM_name = document.getElementById("contestant-name");
-const ELEM_meetingname = document.getElementById("meeting-name");
-const ELEM_spot = document.getElementById("contestant-spot");
-
-
-let handleTimer;
-let userdata = {
-    problemSeen: false,
-    answerSeen: false,
-    currentMeetingGroup: "",
-    meetinggroup: "",
-    meetingLink: "",
-    spot: "",
+window.onhashchange = () => {
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
 };
+
+type PublishType = {
+    problem: string;
+    problem2: string;
+    problem3: string;
+    answerSheet2: string;
+    answerSheet3: string;
+    rug?: number;
+}
+
+const ELEM_TIMER = document.getElementById("timer")!
+
+const Timer = ({ expiryTimestamp }: { expiryTimestamp: Date }) => {
+    const {
+        totalSeconds,
+        seconds,
+        minutes,
+        hours,
+        days,
+        isRunning,
+        start,
+        pause,
+        resume,
+        restart,
+    } = useTimer({ expiryTimestamp, autoStart: true, onExpire: () => console.warn('onExpire called') });
+
+    useEffect(() => {
+        restart(expiryTimestamp, true);
+        return () => {
+        }
+    }, [expiryTimestamp])
+
+    ELEM_TIMER.innerText =
+        totalSeconds > 7200 ?
+            "競技開始まで" + toHms(totalSeconds - 7200)
+            : totalSeconds <= 0 ?
+                "競技終了"
+                : toHms(totalSeconds)
+
+    return <>
+        {/* <div className="fa-2x position-sticky pt-1" style={{ top: "62px", backgroundColor: "white", zIndex: 10 }}>
+            {
+                totalSeconds > 7200 ?
+                    "競技開始まで" + toHms(totalSeconds - 7200)
+                    : totalSeconds <= 0 ?
+                        "競技終了"
+                        : toHms(totalSeconds)
+            }
+        </div> */}
+    </>
+}
+
+const Links = ({ user, uid }: { user: any, uid: string }) => {
+    const [publish, publishloading, publisherror] = useObjectVal<PublishType>(ref(db, '/contests/jol2024/publish/contest/'));
+    const [answerSheet, answerSheetloading, answerSheeterror] = useObjectVal<string>(ref(db, `/contests/jol2024/contest/${uid}/answerSheet`));
+    const [alternateAnswerSheet, setAlternateAnswerSheet] = useState<boolean>(false);
+
+    const rug: number = publish && publish.rug || 0;
+
+    const expiryTimestamp = useMemo(() => {
+        const end = new Date("2023-12-29T15:00:00+09:00");
+        end.setTime(end.getTime() + rug * 1000);
+        return end
+    }, [rug])
+
+    const { problem, problem2, problem3, answerSheet2, answerSheet3 }: PublishType = useMemo(() => (publish) || {
+        problem: "",
+        problem2: "",
+        problem3: "",
+        answerSheet2: "",
+        answerSheet3: "",
+    }, [publish?.problem, publish?.problem2, publish?.problem3, publish?.answerSheet2, publish?.answerSheet3])
+
+    const toggleAlternateAnswerSheet = async () => {
+        setAlternateAnswerSheet((prev: boolean) => (!prev));
+    }
+
+    useEffect(() => {
+        if (problem) {
+            window.open(problem, '_blank');
+            push(ref(db, `/contests/jol2024/log/contest/${uid}/problem`), serverTimestamp())
+        }
+    }, [problem])
+    useEffect(() => {
+        if (answerSheet) {
+            window.open(answerSheet, '_blank');
+            push(ref(db, `/contests/jol2024/log/contest/${uid}/answerSheet`), serverTimestamp())
+        }
+    }, [answerSheet])
+
+    return <>
+        <Timer expiryTimestamp={expiryTimestamp} />
+        <Card>
+            <ul className="list-group list-fill-link list-group-horizontal-sm">
+                <li className={"list-group-item flex-fill" + (problem ? " list-group-item-success" : "")}>
+                    <a target="_blank" href={problem || undefined}>
+                        <i className="fas fa-file-download fa-fw"></i>問題pdf1
+                    </a>
+                </li>
+                <li className={"list-group-item" + (problem2 ? " list-group-item-success" : "")}>
+                    <a target="_blank" href={problem2 || undefined}>
+                        <i className="fas fa-file-download fa-fw"></i>（予備）問題pdf2
+                    </a>
+                </li>
+                <li className={"list-group-item" + (problem3 ? " list-group-item-success" : "")}>
+                    <a target="_blank" href={problem3 || undefined}>
+                        <i className="fas fa-file-download fa-fw"></i>（予備）問題pdf3
+                    </a>
+                </li>
+            </ul>
+            <ul className="list-group list-fill-link list-group-horizontal-sm">
+                <li className={"list-group-item flex-fill" + (answerSheet ? " list-group-item-success" : "")}>
+                    <a target="_blank" href={answerSheet || undefined}>
+                        <span className="unmot"><i className="fas fa-table fa-fw"></i>解答用ページ</span>
+                    </a></li>
+                <li className="list-group-item">
+                    <a role="button" onClick={toggleAlternateAnswerSheet} className="link-primary">
+                        <span className="unmot"><i className="fas fa-table fa-fw"></i>（予備）解答用ページが使えない場合</span>
+                    </a></li>
+            </ul>
+        </Card >
+        <Collapse in={alternateAnswerSheet}>
+            <div className="my-3">
+                <p>下記の解答用エクセルファイルをダウンロードして解答を記入してください．</p>
+                <p>解答用エクセルファイルは<strong>競技時間内にメールで</strong> <a href="mailto:jol@iolingjapan.org">jol@iolingjapan.org</a> に提出してください．</p>
+                <p>メールには次の情報を付してください:「<span className="user-select-all">メールアドレス: {user.email}，氏名: {user.name}，参加枠: {user.spot === "flag" ? "選抜" : "オープン"}</span>」</p>
+                <ul className="list-group list-fill-link mb-3">
+                    <li className={"list-group-item flex-fill" + (answerSheet2 ? " list-group-item-success" : "")}>
+                        <a target="_blank" href={answerSheet2 || undefined}><i className="fas fa-table fa-fw"></i>解答用エクセル1</a>
+                    </li>
+                    <li className={"list-group-item flex-fill" + (answerSheet3 ? " list-group-item-success" : "")}>
+                        <a target="_blank" href={answerSheet3 || undefined}><i className="fas fa-table fa-fw"></i>（予備）解答用エクセル2</a>
+                    </li>
+                </ul>
+                <p>※解答用エクセル1と2は同じものです</p>
+            </div>
+        </Collapse>
+        {rug > 0 && <p>{rug}秒遅れで競技開始（タイマーには加算済み）</p>}
+    </>
+}
 
 document.addEventListener("DOMContentLoaded", (event) => {
     auth.onAuthStateChanged(async (user) => {
         if (user) {
-            const paid = await get(ref(db, '/orders/jol2023/' + user.email!.replace(/\./g, '=').toLowerCase()));
-            if (paid.val()) {
-                const refContUser = ref(db, '/contests/jol2023/users/' + user.uid);
-                const refContLog = ref(db, '/contests/jol2023/contestlog/' + user.uid);
-                const snapshot1 = await get(refContUser);
-                const userInfo = snapshot1.val()
-                if (userInfo) {
-                    const spot = userInfo.spot == "flag" ? "選抜" : "オープン";
-                    ELEM_email!.innerText = userInfo.email;
-                    ELEM_name!.innerText = userInfo.name;
-                    ELEM_meetingname!.innerText = userInfo.name;
-                    ELEM_spot!.innerText = spot;
-                    Object.assign(userdata, userInfo);
-                    document.getElementById("notice-contest-participation-message")!.innerText = spot === "選抜"
-                        ? "面接対象者には全員面接を行いました．現時点で面接を受けていない方は面接対象ではありません．\nなお面接対象の選考と賞の授与は基準が異なります．2023年1月10日の結果発表をお待ちください．本ページは閉じても構いません．"
-                        : "これで競技は終了となります．2023年1月10日の結果発表をお待ちください．本ページは閉じても構いません．";
+            onValue(ref(db, '/orders/jol2024/' + user.email!.replace(/\./g, '=').toLowerCase()), (paid) => {
+                if (paid.val()) {
+                    onValue(ref(db, '/contests/jol2024/users/' + user.uid), (snapshot1) => {
+                        const userInfo = snapshot1.val()
+                        if (userInfo) {
+                            rootContestantInfoTable.render(
+                                <table className="list-like ms-3">
+                                    <tbody>
+                                        <tr>
+                                            <td>メールアドレス:</td>
+                                            <td>{user.email}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>競技者氏名:</td>
+                                            <td>{userInfo.name}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>参加枠:</td>
+                                            <td>{userInfo.spot === "flag" ? "選抜" : "オープン"}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            )
+                            createRoot(document.getElementById("links")!).render(<Links user={userInfo} uid={user.uid} />)
+                            for (const elem of Array.from(document.getElementsByClassName("only-flag") as HTMLCollectionOf<HTMLElement>)) {
+                                elem.style.display = userInfo.spot === "flag" ? "block" : "none";
+                            }
+                        }
+                        // update(ref(db, '/contests/jol2024/log/contest/' + user.uid), {
+                        //     timestamp: serverTimestamp()
+                        // })
+                        push(ref(db, `/contests/jol2024/log/contest/${user.uid}/siteVisit`), serverTimestamp())
+                    }, {
+                        onlyOnce: true
+                    });
                 }
-                onValue(ref(db, '/contests/jol2023/publish/contest/'), async (snapshot) => {
-                    const data = snapshot.val();
-                    if (data) {
-                        Object.assign(userdata, data);
-                        updateLinks(data);
-                        if (!userdata.problemSeen) {
-                            await update(refContUser, { problemSeen: serverTimestamp() });
-                            Object.assign(userdata, { problemSeen: true });
-                        }
-                        ELEM_RUGTIME!.innerText = data.rug == 0 ? "" : toHms(data.rug) + "遅れで競技開始（タイマーには加算済み）"
-                        startTimer(data.rug || 0);
-                    }
-                    else {
-                        startTimer(0);
-                    }
-                });
-                onValue(ref(db, '/contests/jol2023/contest/' + user.uid), async (snapshot) => {
-                    const data = snapshot.val();
-                    if (data) {
-                        Object.assign(userdata, data);
-                        updateLinks(data);
-                        if (!userdata.answerSeen) {
-                            await update(refContUser, { answerSeen: serverTimestamp() });
-                            Object.assign(userdata, { answerSeen: true });
-                        }
-                    }
-                });
-            }
-            else {
-                location.href = "/account/";
-            }
+                else {
+                    alert("JOL2024応募アカウントではありません．アカウントを間違えている場合はログインし直してください．")
+                    location.href = "/account/";
+                }
+            });
         }
         else {
             location.href = "/login/";
         }
     });
 });
-
-function startTimer(rug) {
-    clearInterval(handleTimer)
-    var end = new Date(Date.UTC(2022, 11, 29, 6, 0, 0))
-    // var now = new Date();
-    // var diff = end.getTime() - now.getTime();
-    // var data = Math.max(Math.floor(diff/1000) + rug, 0);
-    //現在時刻から試験終了までの秒数を取得
-    // console.log(end,now,diff,data)
-
-    handleTimer = setInterval(() => {
-        var now = new Date();
-        var diff = end.getTime() - now.getTime();
-        var data = Math.max(Math.floor(diff / 1000) + rug, 0);
-        updateTimer(data)
-        if (data <= 0) {
-            document.getElementById('notice-contest-participation')!.classList.remove('d-none');
-            clearInterval(handleTimer);
-        }
-    }, 100);
-}
-
-const updateLinks = (data) => {
-    if (data.answerSheet) {
-        ELEM_LINKS[1].href = data.answerSheet;
-        ELEM_LINKSLI[1].classList.add('list-group-item-success')
-        if (!userdata.answerSeen) window.open(data.answerSheet, '_blank');
-    }
-    if (data.problem) {
-        ELEM_LINKS[0].href = data.problem;
-        ELEM_LINKSLI[0].classList.add('list-group-item-success')
-        if (!userdata.problemSeen) window.open(data.problem, '_blank');
-    }
-    if (data.answerSheet2) {
-        ELEM_LINKS2[1].href = data.answerSheet2;
-        ELEM_LINKSLI2[1].classList.add('list-group-item-success')
-    }
-    if (data.problem2) {
-        ELEM_LINKS2[0].href = data.problem2;
-        ELEM_LINKSLI2[0].classList.add('list-group-item-success')
-    }
-    if (data.pwd) {
-        document.getElementById('pwd')!.innerText = data.pwd;
-    };
-    // if (0 < data.meetinggroup) {
-    //     document.getElementById('meeting-start')!.innerText = data.meetingstart;
-    //     document.getElementById('meeting-gather')!.innerText = data.meetinggather;
-    //     document.getElementById('meeting-open')!.innerText = data.meetingopen;
-    //     ELEM_MEETING!.classList.remove('d-none');
-    // }
-    // if (userdata.currentMeetingGroup && userdata.spot && userdata.spot === "選抜") {
-    //     if (userdata.meetinggroup) {
-    //         ELEM_NOTSELECTED!.classList.add('d-none');
-    //         if (userdata.currentMeetingGroup == userdata.meetinggroup && userdata.meetingLink) {
-    //             const meetingHref = document.getElementById("meetinglinkHref") as HTMLLinkElement
-    //             meetingHref!.href = userdata.meetingLink;
-    //             QRCode.toDataURL(userdata.meetingLink).then((url) => {
-    //                 (document.getElementById("meetinglink-qrcode") as HTMLImageElement).src = url;
-    //                 ELEM_MEETINGLINK.classList.remove('d-none');
-    //             })
-    //         }
-    //         else ELEM_MEETINGLINK.classList.add('d-none');
-    //     }
-    //     else {
-    //         ELEM_NOTSELECTED!.classList.remove('d-none');
-    //     }
-    // }
-}
-
-function updateTimer(data) {
-    if (data !== null) {
-        var timer = "";
-        if (data > 7200) {
-            timer = "競技開始まで" + toHms(data - 7200)
-        }
-        else if (data < 0) {
-            timer = "競技終了"
-        }
-        else timer = toHms(data);
-        if (ELEM_TIMER!.innerText !== timer) {
-            ELEM_TIMER!.innerText = timer;
-        }
-    }
-}
