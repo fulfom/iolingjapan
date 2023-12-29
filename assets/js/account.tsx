@@ -252,8 +252,9 @@ const App = () => {
 
     const news = useMemo(() => <div className="simple-box">
         <span className="box-title">お知らせ</span>
-        {!notPaid && <p>2023/12/22: <a href="/contest/jol2024/demo/">JOL2024の事前準備ページを公開しました．</a></p>}
-        {!notPaid && <p>2023/12/29: <a href="/contest/jol2024/contest/">JOL2024本番で使う競技会場ページを公開しました．</a></p>}
+        {!notPaid && <p>2023/12/22: <a>JOL2024の事前準備ページを公開しました．</a></p>}
+        {!notPaid && <p>2023/12/29: <a>JOL2024本番で使う競技会場ページを公開しました．</a></p>}
+        <p>2023/12/29: JOL2024本番終了</p>
     </div>, [notPaid])
 
     const message2 = useMemo(() => <div className="simple-box">
@@ -271,7 +272,7 @@ const App = () => {
             setUser(user);
             if (user) {
                 for (const cont of CONTESTS_DATA.upcomingContests) {
-                    if (cont.status === "demositeopen" || cont.status === "siteopen") {
+                    if (cont.status === "demositeopen" || cont.status === "siteopen" || cont.status === "marking") {
                         const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
                         if (paidSnapshot.val()) {
                             setNotPaid([false, true]);

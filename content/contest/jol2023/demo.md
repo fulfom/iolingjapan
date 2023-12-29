@@ -2,7 +2,7 @@
 title = "JOL2023事前準備"
 importTSX = "js/contest/jol2023/demo.ts"
 type="page"
-draft = false
+draft = true
 isFBInit = false
 +++
 

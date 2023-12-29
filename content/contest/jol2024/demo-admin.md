@@ -2,7 +2,7 @@
 title = "JOL2024 admin"
 importTSX = "js/contest/jol2024/demo-admin.tsx"
 type="page"
-draft = false
+draft = true
 isFBInit = false
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "JOL2024競技会場"
 importTSX = "js/contest/jol2024/contest.tsx"
-draft = false
+draft = true
 type="page"
 isFBInit = false
 +++
