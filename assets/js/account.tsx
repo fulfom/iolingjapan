@@ -96,6 +96,7 @@ const App = () => {
             <h5 className="text-moderate mt-1">{config.title}</h5>
             {config.detail ? <a className="card-link" href={config.detail}>詳細</a> : <></>}
             {config.status === "entryopen" && isEntried && (config.entryui || config.entry) && <a className="card-link" href={config.entryui || config.entry}><i className="fas fa-user-edit fa-fw"></i>確認</a>}
+            {config.status === "siteopen" && isEntried && config.demosite && <a href={config.demosite} className="card-link" ><i className="fas fa-puzzle-piece fa-fw"></i>事前準備</a>}
             {config.record ? <a className="card-link" href={config.record}>データ</a> : <></>}
         </div>
     }
@@ -179,6 +180,39 @@ const App = () => {
         <div className="simple-box">
             <span className="box-title">応募者向けメール履歴</span>
             <Accordion flush>
+                <Accordion.Item eventKey="2">
+                    <Accordion.Header as="p">2023/12/29 10:00: JOL2024競技会場ページ公開</Accordion.Header>
+                    <Accordion.Body>
+                        <p className="mb-3">JOL2024応募者のみなさま，</p>
+                        <p className="mb-3">JOL2024本番で使う競技会場ページを公開いたしました．</p>
+                        <p className="mb-3">競技会場ページで待機の上，13:00に問題pdfが閲覧できるようになったら各自解き始めてください．</p>
+                        <p className="mb-3"><a href="https://iolingjapan.org/contest/jol2024/contest/">https://iolingjapan.org/contest/jol2024/contest/</a></p>
+                        <p className="mb-3">※ログインが必要です．ログインしてもアクセスできない場合，メールアドレスを間違えている可能性があります．その場合は，このメールを受け取ったメールアドレスでログインしなおしてみてください．</p>
+                        <p className="mb-3">2点重要な注意事項をお知らせします．</p>
+                        <p><strong>不正行為について</strong></p>
+                        <p>不正行為は偽計業務妨害にあたり，違法行為です．</p>
+                        <p>ここ数年間のオンライン競技で，不正行為によって失格した者はゼロではありません．</p>
+                        <p>競技者本人が，他者の助けを得たり，外部資料を参照したりすることなく参加してください．</p>
+                        <p>不正行為が疑われる場合，所属校にその旨を通知するなどの処置を取ります．</p>
+                        <p>不正行為が疑われる場合には追加調査を行う可能性がありますが，追加調査に協力しなかった場合は失格とします．</p>
+                        <p className="mb-3"></p>
+                        <p><strong>問題pdfと解答用ページ閲覧のトラブルについて</strong></p>
+                        <p>事前準備ページで問題pdfと解答用ページが閲覧・操作できている方は問題ありません．</p>
+                        <p>事前準備ページで動作確認を行っていない場合，競技時間中にトラブルが生じても対応しきれない可能性があります．</p>
+                        <p className="mb-3">よくある回避策: 問題pdfや解答用ページにアクセスする際に，シークレットモード/シークレットウィンドウで開くことで，アクセスできるようになるケースがあります．</p>
+                        <p className="mb-3">そのほか，動作確認期間中にいただいたよくある質問の解答を掲載いたします．</p>
+                        <ul>
+                            <li>解答用ページ（グーグルスプレッドシート）は提出操作不要です．競技時間が終了したら解答用ページと競技会場を閉じて解散して構いません．</li>
+                            <li>↑が使えず，代わりに解答用エクセルをダウンロードして記入した場合に限り，競技時間内に解答用エクセルのメール提出が必要です．詳しくは競技会場ページの「（予備）解答用ページが使えない場合」を押して案内をお読みください．</li>
+                            <li>問題pdfの印刷の際に，プリンターのトラブルが生じたなどの理由で，問題を解く以外の範囲で他者の助けを借りるのは構いません．</li>
+                        </ul>
+                        <p>なにかトラブルが生じた場合は委員会にお問い合わせください．</p>
+                        <p className="mb-3"><a href="mailto:jol@iolingjapan.org">jol@iolingjapan.org</a></p>
+                        <p className="mb-3">それでは，本番お楽しみください．よろしくお願いいたします．</p>
+                        <p>国際言語学オリンピック日本委員会</p>
+
+                    </Accordion.Body>
+                </Accordion.Item>
                 <Accordion.Item eventKey="1">
                     <Accordion.Header as="p">2023/12/23 02:15: JOL2024事前準備ページ公開</Accordion.Header>
                     <Accordion.Body>
@@ -219,6 +253,7 @@ const App = () => {
     const news = useMemo(() => <div className="simple-box">
         <span className="box-title">お知らせ</span>
         {!notPaid && <p>2023/12/22: <a href="/contest/jol2024/demo/">JOL2024の事前準備ページを公開しました．</a></p>}
+        {!notPaid && <p>2023/12/29: <a href="/contest/jol2024/contest/">JOL2024本番で使う競技会場ページを公開しました．</a></p>}
     </div>, [notPaid])
 
     const message2 = useMemo(() => <div className="simple-box">
@@ -240,6 +275,9 @@ const App = () => {
                         const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
                         if (paidSnapshot.val()) {
                             setNotPaid([false, true]);
+                        }
+                        else {
+                            setNotPaid([true, true]);
                         }
                     }
                     else if (cont.status === "entryopen") {

@@ -1,7 +1,7 @@
 +++
 title = "JOL2024競技会場"
 importTSX = "js/contest/jol2024/contest.tsx"
-draft = true
+draft = false
 type="page"
 isFBInit = false
 +++
@@ -9,19 +9,19 @@ isFBInit = false
 ##### {{< icon user "競技者情報" >}}
 
 {{< wrap tag=div id="contestant-info-table" >}}
-{{% table class="list-like ms-3" %}}
+{{% table class="list-like ms-3 placeholder-glow" %}}
 |||
 | --------------- | ----------------------------------- |
-| メールアドレス: | 読み込み中 |
-| 競技者氏名:     |   |
-| 参加枠:         |   |
+| メールアドレス: | <p class="placeholder" style="width: max(24vw, 8rem)"></p> |
+| 競技者氏名:     | <p class="placeholder" style="width: max(18vw, 6rem)"></p>  |
+| 参加枠:         |  <p class="placeholder" style="width: max(6vw, 2rem)"></p> |
 
 {{% /table %}}
 {{< /wrap >}}
 
-{{< wrap tag=div id="links" >}}
-
 <div id="timer" class="fa-2x position-sticky pt-1" style="top: 62px; background-color: white; z-index: 10;">競技開始まで</div>
+
+{{< wrap tag=div id="links" >}}
 
 {{< card-header >}}
 <ul class="list-group list-fill-link list-group-horizontal-sm">
@@ -64,16 +64,17 @@ isFBInit = false
 
 ### 競技中の注意事項
 
-- 問題冊子は6ページまであります．
-- 競技時間は120分です．問題は2問あります．どの問題から解いても構いません．
+- 問題冊子は10ページまであります．
+- 競技時間は120分です．問題は5問あります．どの問題から解いても構いません．
 - 競技開始時刻になったら，解答用ページのリンクを開いて解答を入力してください．
 - 競技終了時刻になったら，速やかに解答を終了してください．競技終了時刻以降に入力された解答は採点されません．
 - 競技中は**資料や外部の情報源を使用してはいけません**．不正行為が発覚した場合は失格となります．
+- 問題は日本言語学オリンピック公式サイト (`https://iolingjapan.org/`) で公開されるまで外部に漏らさないでください．問題公開日より前に問題をオンライン上で流出させたり議論したりしないでください．
 
 ### 解答の注意
 
 - 解答はすべて解答用ページの指定の解答欄に入力してください．
-- 小問は全部で23問あります．各小問には問題番号が1から23まで振られており，小問20にはA, Bの2つの解答項目があります．問題番号に対応する解答欄に入力してください．
+- 小問は全部で47問あります．各小問には問題番号が1から47まで振られており，小問35にはAからDの4つの解答項目があります．問題番号に対応する解答欄に入力してください．
 - 解答欄以外には何も入力しないでください．
 - 誤字・脱字がないよう注意深く入力してください．
 - 問題文の表記通りに記入してください．
@@ -100,9 +101,10 @@ isFBInit = false
 - 句読点やピリオドは入れても入れなくてもかまいません．
 - 大文字と小文字の区別はしなくてかまいません．
 
-### 採点基準について
+### 解答の制約と採点基準について
 
-- 部分点を重視するので，**分かったことがあれば部分的にでも書いてください**．複数の解答が考えられる場合は，最も適切だと予想する解答を書いてください．
+- 断りのない限り，解答は1つに定まります．複数の解答が考えられる場合は，最も適切だと予想する解答を**1つだけ**書いてください．
+- 部分点を重視するので，**分かったことがあれば部分的にでも書いてください**．
 
 {{< simplebox "例題1（3点）" "ms-4" >}}
 
@@ -123,17 +125,17 @@ isFBInit = false
 
 {{< table class="list-like ms-2 d-none d-md-table" >}}
 |||
-| --------------------------------------------- | ----------------- |
-| 1. alijenga                                   | ←正解 (3 点)     |
-| 1. anlijenga 1\. anajenga 1\. nilijenga 1\. lijenga | ←部分点 (2 点)   |
-| 1. ninajenga 1\. jenga                          | ←部分点 (1 点)   |
-| 1. ninapika                                   | ←得点なし (0 点) |
+| ------------------------------------------------------ | ----------------- |
+| 1. alijenga                                            | ←正解 (3 点)     |
+| 1. anlijenga, 1\. anajenga, 1\. nilijenga, 1\. lijenga | ←部分点 (2 点)   |
+| 1. ninajenga, 1\. jenga                                | ←部分点 (1 点)   |
+| 1. ninapika                                            | ←得点なし (0 点) |
 {{< /table >}}
 {{< list class="d-md-none" style="list-style-type: none" >}}
 
 - 1\. alijenga                                    ←正解 (3 点)
-- 1\. anlijenga 1\. anajenga 1\. nilijenga 1\. lijenga  ←部分点 (2 点)
-- 1\. ninajenga 1\. jenga                           ←部分点 (1 点)
+- 1\. anlijenga, 1\. anajenga, 1\. nilijenga, 1\. lijenga  ←部分点 (2 点)
+- 1\. ninajenga, 1\. jenga                           ←部分点 (1 点)
 - 1\. ninapika                                    ←得点なし (0 点)
 {{< /list >}}
 {{< /simplebox >}}
@@ -242,10 +244,6 @@ isFBInit = false
 {{< figure src="/img/demo/jol2024_links_displayed_demo.png">}}
 
 ※問題を閉じてしまった場合や何らかの理由で開けなかった場合は改めて「{{< icon "file-download" 問題pdf >}}」をクリックしてください．
-
-{{< simplebox "事前練習の際は" >}}
-練習用タイマーを押すと，競技開始5秒前が再現されます．
-{{< /simplebox >}}
 
 {{< wrap tag=div class="container-fluid" >}}
 {{< wrap tag=div class="row" >}}

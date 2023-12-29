@@ -6,13 +6,13 @@ draft = false
 isFBInit = false
 +++
 
-<!-- {{< simplebox "JOL2024競技会場公開" >}}
+{{< simplebox "JOL2024競技会場公開" >}}
 
 本ページは練習用のページです．本番に参加する際は，「JOL2024競技会場」ページを開いておいてください．
 
 <a role="button" class="btn btn-info text-decoration-none" href="/contest/jol2024/contest/">JOL2024競技会場</a>
 
-{{< /simplebox >}} -->
+{{< /simplebox >}}
 
 {{< simplebox "本ページでできること" >}}
 

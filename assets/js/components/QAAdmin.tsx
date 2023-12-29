@@ -147,7 +147,7 @@ function MessageListAdmin({ contId, site }: { contId: string, site: string }) {
     )
 }
 
-function PostCardAdmin({ post, type, poster }: { post: Post, type: "q" | "a", poster: string }) {
+function PostCardAdmin({ post, type, poster, dataKey }: { post: Post, type: "q" | "a", poster: string, dataKey?: string | null }) {
     const [postTime, setPostTime] = useState("");
 
     const postMemo = useMemo(() => (post), [post.timestamp, post.content, post.likes, post.cancel]);
@@ -164,7 +164,7 @@ function PostCardAdmin({ post, type, poster }: { post: Post, type: "q" | "a", po
         return <Card bg="light" className='m-0'>
             <div className='d-flex'>
                 <Card.Body className="p-0">
-                    <p className="mb-2 text-muted small">{postTime} 投稿者: <span className="user-select-all">{poster}</span></p>
+                    <p className="mb-2 text-muted small">{postTime} 投稿者: <span className="user-select-all">{poster}</span> 質問ID: <span className="user-select-all">{dataKey}</span></p>
                     <div>
                         {postMemo.content}
                         {/* {postMemo.cancel ? <p className='mb-0 mt-2 text-muted small'>この質問を取り消しました</p> : <></>} */}
@@ -196,7 +196,7 @@ export const QuestionAdmin = ({ dataKey, question, contId, site }: { dataKey: st
 
     return <Card body bg='light'>
         <div className='d-flex'>
-            <PostCardAdmin post={question.question} type="q" poster={question.poster} />
+            <PostCardAdmin post={question.question} type="q" poster={question.poster} dataKey={dataKey} />
             <Button variant="primary" className="flex-shrink-0 ms-auto mb-auto mt-0 btn-small" onClick={handleEdit}>{isEditing ? <i className="fas fa-times"></i> : "返答する"}</Button>
         </div>
         {isEditing ? <div>

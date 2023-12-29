@@ -20,6 +20,10 @@ $success: #28a745;
   overflow-wrap: break-word;
 }
 
+.card-link+.card-link {
+  margin-left: 1rem;
+}
+
 // custom.css から移行中
 
 /* your styles go here */
