@@ -127,6 +127,14 @@ keywords = []
 
 {{< /wrap >}}
 
+{{< /wrap >}}
+{{< /wrap >}}
+
+### 専門書
+
+{{< wrap tag=div class="container-fluid" >}}
+{{< wrap tag=div class="row" >}}
+
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
 <!-- markdownlint-disable MD034 -->
@@ -135,14 +143,6 @@ keywords = []
 <a href="https://doi.org/10.1017/CBO9780511805066" target="_blank">DM</a>
 
 {{< /wrap >}}
-
-{{< /wrap >}}
-{{< /wrap >}}
-
-### 専門書
-
-{{< wrap tag=div class="container-fluid" >}}
-{{< wrap tag=div class="row" >}}
 
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
