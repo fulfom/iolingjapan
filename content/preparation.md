@@ -65,7 +65,7 @@ keywords = []
 | [2020](/pdf/jol2020.pdf)      | [2020解答](/pdf/jol2020-sol.pdf)                                     |                                   |
 | [2019](/pdf/jol2019.pdf)      | [2019解答](/pdf/jol2019-sol.pdf)                                     | 解答誤植※4                                  |
 | [2018](/pdf/jol2018.pdf)      | [2018解答](/pdf/jol2018-sol.pdf) | 問題誤植※2                        |
-| [2017](/pdf/jol2017.pdf)      | [2017解答](/pdf/jol2017-sol.pdf)                                     |                                   |
+| [2017](/pdf/jol2017.pdf)      | [2017解答](/pdf/jol2017-sol.pdf)                                     | 解答補足※5                                  |
 | [2016](/pdf/jol2016.pdf)      |  [2016解答](/pdf/jol2016-sol.pdf)                                                                    |                                   |
 
 {{< /table >}}
@@ -77,11 +77,13 @@ keywords = []
 | 問題当日版 | JOL20xxで実際に使用された，不正抑制措置が施されたバージョン |
 {{< /table >}}
 
-※2: スウェーデン語の「主の祈り」の最後の行 誤 vighet -> 正 evighet
+※2: スウェーデン語の「主の祈り」の最終行にある vighet は正しくは evighet
 
-※3: p.6 akwelume の3つ目の説明は正しくは mwanache **vandu** jua akwelume jua atati
+※3: 第4問 akwelume の3つ目の説明（6ページ目）は正しくは mwanache **vandu** jua akwelume jua atati
 
-※4: 問3 18. kylvan と kylven は 1 点ではなく 2 点
+※4: 問3 11. ruoan は 1 点ではなく 2 点であり，18. kylvan と kylven は 1 点ではなく 2 点
+
+※5: 問題3 (e) は найм も正解としてよい
 
 ## 推薦図書
 
@@ -125,6 +127,14 @@ keywords = []
 
 {{< /wrap >}}
 
+{{< /wrap >}}
+{{< /wrap >}}
+
+### 専門書
+
+{{< wrap tag=div class="container-fluid" >}}
+{{< wrap tag=div class="row" >}}
+
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
 <!-- markdownlint-disable MD034 -->
@@ -133,14 +143,6 @@ keywords = []
 <a href="https://doi.org/10.1017/CBO9780511805066" target="_blank">DM</a>
 
 {{< /wrap >}}
-
-{{< /wrap >}}
-{{< /wrap >}}
-
-### 専門書
-
-{{< wrap tag=div class="container-fluid" >}}
-{{< wrap tag=div class="row" >}}
 
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
