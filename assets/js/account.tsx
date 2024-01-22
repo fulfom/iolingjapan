@@ -181,6 +181,18 @@ const App = () => {
             <span className="box-title">応募者向けメール履歴</span>
             <Accordion flush>
                 <Accordion.Item eventKey="2">
+                    <Accordion.Header as="p">2024/01/22 12:00: JOL2024結果発表</Accordion.Header>
+                    <Accordion.Body>
+                        <p className="mb-3">JOL2024応募者のみなさま，</p>
+                        <p className="mb-3">JOL2024の結果を公開いたしました．</p>
+                        <p className="mb-3"><a href="https://iolingjapan.org/result/jol2024/">https://iolingjapan.org/result/jol2024/</a></p>
+                        <p className="mb-3">システムトラブルのため，結果発表が遅れましたことをお詫び申し上げます．</p>
+                        <p className="mb-3">よろしくお願いいたします．</p>
+                        <p>国際言語学オリンピック日本委員会</p>
+
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="2">
                     <Accordion.Header as="p">2023/12/29 10:00: JOL2024競技会場ページ公開</Accordion.Header>
                     <Accordion.Body>
                         <p className="mb-3">JOL2024応募者のみなさま，</p>
@@ -255,6 +267,7 @@ const App = () => {
         {!notPaid && <p>2023/12/22: <a>JOL2024の事前準備ページを公開しました．</a></p>}
         {!notPaid && <p>2023/12/29: <a>JOL2024本番で使う競技会場ページを公開しました．</a></p>}
         <p>2023/12/29: JOL2024本番終了</p>
+        <p>2024/01/22: JOL2024結果発表</p>
     </div>, [notPaid])
 
     const message2 = useMemo(() => <div className="simple-box">
