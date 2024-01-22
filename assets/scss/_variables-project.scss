@@ -442,14 +442,26 @@ i.fa-angle-right {
 
 .gold {
   background-color: #eee7cc;
+
+  td {
+    background-color: inherit;
+  }
 }
 
 .silver {
   background-color: #eee;
+
+  td {
+    background-color: inherit;
+  }
 }
 
 .bronze {
   background-color: #edc;
+
+  td {
+    background-color: inherit;
+  }
 }
 
 .best-solution {
@@ -469,6 +481,10 @@ i.fa-angle-right {
 }
 
 .table-award-gsbh {
+  tbody tr td {
+    background-color: inherit;
+  }
+
   tbody tr {
     &:nth-child(1) {
       @extend .gold;
