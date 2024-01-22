@@ -455,7 +455,7 @@ function AuthProvider() {
                 location.href = "/account/";
             }
         });
-    });
+    }, []);
 
     return (user && udb.email
         ? <App user={user} udb={udb}></App>
@@ -499,6 +499,7 @@ function VideoArea({ videos }: { videos: Video[] }) {
                 <a onClick={() => setSelect(i)}
                     className="me-3"
                     role="button"
+                    key={alt}
                 >{alt}</a>
             ))}</p>}
         </>
@@ -523,7 +524,6 @@ function App({ user, udb }: { user: User, udb: any }) {
 
     const hmAward: boolean[] = userResult && !userResult.award ? userResult.sums.slice(1).map((v, i) => (v >= 16)) : Array(4).fill(false);
     const hasHmAward = hmAward.some((v) => v);
-    const hmAwardName = hasHmAward ? `第${hmAward.map((v, i) => (i + 1)).join(", ")}問敢闘賞` : "";
 
     const videos: Video[] = useMemo(() => {
         if (!userResult) { return []; }
@@ -599,5 +599,5 @@ function App({ user, udb }: { user: User, udb: any }) {
 const root = createRoot(document.getElementById("app")!);
 
 root.render(
-    <AuthProvider />,
+    <AuthProvider />
 );

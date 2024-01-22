@@ -180,8 +180,8 @@ const App = () => {
         <div className="simple-box">
             <span className="box-title">応募者向けメール履歴</span>
             <Accordion flush>
-                <Accordion.Item eventKey="2">
-                    <Accordion.Header as="p">2024/01/22 12:00: JOL2024結果発表</Accordion.Header>
+                <Accordion.Item eventKey="3">
+                    <Accordion.Header as="p">2024/01/22 13:20: JOL2024結果発表</Accordion.Header>
                     <Accordion.Body>
                         <p className="mb-3">JOL2024応募者のみなさま，</p>
                         <p className="mb-3">JOL2024の結果を公開いたしました．</p>
