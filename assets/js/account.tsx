@@ -181,13 +181,20 @@ const App = () => {
             <span className="box-title">応募者向けメール履歴</span>
             <Accordion flush>
                 <Accordion.Item eventKey="3">
-                    <Accordion.Header as="p">2024/01/22 13:20: JOL2024結果発表</Accordion.Header>
+                    <Accordion.Header as="p">2024/01/22 17:30: JOL2024結果発表</Accordion.Header>
                     <Accordion.Body>
                         <p className="mb-3">JOL2024応募者のみなさま，</p>
                         <p className="mb-3">JOL2024の結果を公開いたしました．</p>
-                        <p className="mb-3"><a href="https://iolingjapan.org/result/jol2024/">https://iolingjapan.org/result/jol2024/</a></p>
-                        <p className="mb-3">システムトラブルのため，結果発表が遅れましたことをお詫び申し上げます．</p>
-                        <p className="mb-3">よろしくお願いいたします．</p>
+                        <p>個人成績: <a href="https://iolingjapan.org/result/jol2024/">https://iolingjapan.org/result/jol2024/</a></p>
+                        <p className="mb-3">全体結果: <a href="https://iolingjapan.org/record-jol/">https://iolingjapan.org/record-jol/</a></p>
+                        <p className="mb-3">採点結果の最終調整のため，結果発表が遅れましたことをお詫び申し上げます．</p>
+                        <p className="mb-3">問題は楽しんでいただけたでしょうか？</p>
+                        <p className="mb-3">再ダウンロードできるリンクをお送りします．諸事情のため，問題はまだ公式サイトに公開できませんが，参加者同士であれば中身について話し合っても構いません（SNS等での共有はまだできません）．競技中時間がなくて解けなかった問題など，じっくり解きなおしてみると楽しいと思います．</p>
+                        <p className="mb-3">問題: <a href="https://drive.google.com/file/d/1RbPcK0RFvl56PbhXNXzNSEzBgT8vlo90/view">https://drive.google.com/file/d/1RbPcK0RFvl56PbhXNXzNSEzBgT8vlo90/view</a></p>
+                        <p className="mb-3">※なお，第5問について，誤植がありました．心よりお詫び申し上げます．この点について採点基準の調整は済んでいます．</p>
+                        <p className="mb-3">11. 誤: atupa sia re woban; 正: atupa sia ye woban;</p>
+                        <p className="mb-3">これからもより良い問題を作成し，言語学の世界や世界の言語への間口が広がるかもしれない機会を提供できるよう取り組み続けていきたいと思います．</p>
+                        <p className="mb-3">今後とも言語学オリンピックをよろしくお願いいたします．</p>
                         <p>国際言語学オリンピック日本委員会</p>
 
                     </Accordion.Body>
