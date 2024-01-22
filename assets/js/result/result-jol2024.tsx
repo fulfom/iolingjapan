@@ -415,7 +415,7 @@ function ResultChart({ userResult }: { userResult: Result }) {
                                 data-min={scores.mins[0]}
                                 data-max={scores.maxs[0]}
                                 style={{
-                                    background: `linear-gradient(${scoreLine(userResult.sums[0], scores.maxs[0])}), linear-gradient(${chartRadio === "all" ? scoreGradation(scores.avgs.all.whole[0]) : scoreGradationTotal(scores.borders[chartRadio])})`
+                                    background: `linear-gradient(${scoreLine(userResult.sums[0], scores.maxs[0])}), linear-gradient(${chartRadio === "all" ? scoreGradation(scores.avgs.all.whole[0] * 100 / scores.maxs[0]) : scoreGradationTotal(scores.borders[chartRadio])})`
                                 }}
                             >{userResult.sums[0]}</td>
                         </tr>
@@ -425,7 +425,7 @@ function ResultChart({ userResult }: { userResult: Result }) {
                                 <td
                                     data-min={scores.mins[i + 1]}
                                     data-max={scores.maxs[i + 1]}
-                                    style={{ background: `linear-gradient(${scoreLine(userResult.sums[i + 1], scores.maxs[i + 1])}), linear-gradient(${scoreGradation(scores.avgs[chartRadio].whole[i + 1])})` }}
+                                    style={{ background: `linear-gradient(${scoreLine(userResult.sums[i + 1], scores.maxs[i + 1])}), linear-gradient(${scoreGradation(scores.avgs[chartRadio].whole[i + 1] * 100 / scores.maxs[i + 1])})` }}
                                 >{userResult.sums[i + 1]}</td>
                             </tr>))}
                     </tbody>
