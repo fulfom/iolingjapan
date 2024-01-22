@@ -274,7 +274,7 @@ const App = () => {
         {!notPaid && <p>2023/12/22: <a>JOL2024の事前準備ページを公開しました．</a></p>}
         {!notPaid && <p>2023/12/29: <a>JOL2024本番で使う競技会場ページを公開しました．</a></p>}
         <p>2023/12/29: JOL2024本番終了</p>
-        <p>2024/01/22: JOL2024結果発表</p>
+        <p>2024/01/22: <a href="/result/jol2024/">JOL2024結果発表</a></p>
     </div>, [notPaid])
 
     const message2 = useMemo(() => <div className="simple-box">
