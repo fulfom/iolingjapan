@@ -292,7 +292,7 @@ const App = () => {
             setUser(user);
             if (user) {
                 for (const cont of CONTESTS_DATA.upcomingContests) {
-                    if (cont.status === "demositeopen" || cont.status === "siteopen" || cont.status === "marking") {
+                    if (cont.status === "demositeopen" || cont.status === "siteopen" || cont.status === "marking" || cont.status === "resultopen") {
                         const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
                         if (paidSnapshot.val()) {
                             setNotPaid([false, true]);
