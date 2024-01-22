@@ -180,6 +180,25 @@ const App = () => {
         <div className="simple-box">
             <span className="box-title">応募者向けメール履歴</span>
             <Accordion flush>
+                <Accordion.Item eventKey="3">
+                    <Accordion.Header as="p">2024/01/22 17:30: JOL2024結果発表</Accordion.Header>
+                    <Accordion.Body>
+                        <p className="mb-3">JOL2024応募者のみなさま，</p>
+                        <p className="mb-3">JOL2024の結果を公開いたしました．</p>
+                        <p>個人成績: <a href="https://iolingjapan.org/result/jol2024/">https://iolingjapan.org/result/jol2024/</a></p>
+                        <p className="mb-3">全体結果: <a href="https://iolingjapan.org/record-jol/">https://iolingjapan.org/record-jol/</a></p>
+                        <p className="mb-3">採点結果の最終調整のため，結果発表が遅れましたことをお詫び申し上げます．</p>
+                        <p className="mb-3">問題は楽しんでいただけたでしょうか？</p>
+                        <p className="mb-3">再ダウンロードできるリンクをお送りします．諸事情のため，問題はまだ公式サイトに公開できませんが，参加者同士であれば中身について話し合っても構いません（SNS等での共有はまだできません）．競技中時間がなくて解けなかった問題など，じっくり解きなおしてみると楽しいと思います．</p>
+                        <p className="mb-3">問題: <a href="https://drive.google.com/file/d/1RbPcK0RFvl56PbhXNXzNSEzBgT8vlo90/view">https://drive.google.com/file/d/1RbPcK0RFvl56PbhXNXzNSEzBgT8vlo90/view</a></p>
+                        <p className="mb-3">※なお，第5問について，誤植がありました．心よりお詫び申し上げます．この点について採点基準の調整は済んでいます．</p>
+                        <p className="mb-3">11. 誤: atupa sia re woban; 正: atupa sia ye woban;</p>
+                        <p className="mb-3">これからもより良い問題を作成し，言語学の世界や世界の言語への間口が広がるかもしれない機会を提供できるよう取り組み続けていきたいと思います．</p>
+                        <p className="mb-3">今後とも言語学オリンピックをよろしくお願いいたします．</p>
+                        <p>国際言語学オリンピック日本委員会</p>
+
+                    </Accordion.Body>
+                </Accordion.Item>
                 <Accordion.Item eventKey="2">
                     <Accordion.Header as="p">2023/12/29 10:00: JOL2024競技会場ページ公開</Accordion.Header>
                     <Accordion.Body>
@@ -255,6 +274,7 @@ const App = () => {
         {!notPaid && <p>2023/12/22: <a>JOL2024の事前準備ページを公開しました．</a></p>}
         {!notPaid && <p>2023/12/29: <a>JOL2024本番で使う競技会場ページを公開しました．</a></p>}
         <p>2023/12/29: JOL2024本番終了</p>
+        <p>2024/01/22: <a href="/result/jol2024/">JOL2024結果発表</a></p>
     </div>, [notPaid])
 
     const message2 = useMemo(() => <div className="simple-box">
@@ -272,7 +292,7 @@ const App = () => {
             setUser(user);
             if (user) {
                 for (const cont of CONTESTS_DATA.upcomingContests) {
-                    if (cont.status === "demositeopen" || cont.status === "siteopen" || cont.status === "marking") {
+                    if (cont.status === "demositeopen" || cont.status === "siteopen" || cont.status === "marking" || cont.status === "resultopen") {
                         const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
                         if (paidSnapshot.val()) {
                             setNotPaid([false, true]);
