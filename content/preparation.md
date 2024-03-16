@@ -32,7 +32,7 @@ keywords = []
 <!-- markdownlint-disable MD034 -->
 {{< figure src="/img/pazugen_cover.jpg" link="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank">『パズルで解く世界の言語　――言語学オリンピックへの招待』</a>
+<a href="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank">パズルで解く世界の言語——言語学オリンピックへの招待</a>
 
 {{< /wrap >}}
 
@@ -97,16 +97,16 @@ keywords = []
 <!-- markdownlint-disable MD034 -->
 {{< figure src="/img/prince_cover.jpg" link="https://wp.tufs.ac.jp/tufspress/books/book66/" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://wp.tufs.ac.jp/tufspress/books/book66/" target="_blank">『28言語で読む「星の王子さま」』</a>
+<a href="https://wp.tufs.ac.jp/tufspress/books/book66/" target="_blank">28言語で読む「星の王子さま」</a>
 
 {{< /wrap >}}
 
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
 <!-- markdownlint-disable MD034 -->
-{{< figure src="/img/fromkin_cover.jpg" link="https://www.cengageasia.com/title/default/detail?isbn=9781337559577" target="_blank" >}}
+{{< figure src="/img/pazugen_cover.jpg" link="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://www.cengageasia.com/title/default/detail?isbn=9781337559577" target="_blank">フロムキンの言語学（原書第11版）</a>
+<a href="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank">パズルで解く世界の言語</a>
 
 {{< /wrap >}}
 
@@ -121,9 +121,71 @@ keywords = []
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
 <!-- markdownlint-disable MD034 -->
+{{< figure src="/img/fromkin_cover.jpg" link="https://www.cengageasia.com/title/default/detail?isbn=9781337559577" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://www.cengageasia.com/title/default/detail?isbn=9781337559577" target="_blank">An Introduction to Language (11th ed.)</a>
+
+{{< /wrap >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
 {{< figure src="/img/els_cover.jpg" link="https://doi.org/10.1017/CBO9780511806483" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://doi.org/10.1017/CBO9780511806483" target="_blank">ELS</a>
+<a href="https://doi.org/10.1017/CBO9780511806483" target="_blank">Exploring Language Structure</a>
+
+{{< /wrap >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/odden-2nd_cover.jpg" link="https://doi.org/10.1017/CBO9781139381727" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://doi.org/10.1017/CBO9781139381727" target="_blank">Introducing Phonology (2nd ed.)</a>
+
+{{< /wrap >}}
+
+{{< /wrap >}}
+{{< /wrap >}}
+
+### 用語集
+
+{{< wrap tag=div class="container-fluid" >}}
+{{< wrap tag=div class="row" >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/meikai-gengo_cover.png" link="https://dictionary.sanseido-publ.co.jp/dict/ssd13578" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://dictionary.sanseido-publ.co.jp/dict/ssd13578" target="_blank">明解言語学辞典</a>
+
+{{< /wrap >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/meikai-hougen_cover.png" link="https://dictionary.sanseido-publ.co.jp/dict/ssd13579" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://dictionary.sanseido-publ.co.jp/dict/ssd13579" target="_blank">明解方言学辞典</a>
+
+{{< /wrap >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/daijiten-6_cover.png" link="https://dictionary.sanseido-publ.co.jp/dict/ssd15218" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://dictionary.sanseido-publ.co.jp/dict/ssd15218" target="_blank">言語学大辞典 第6巻 術語編</a>
+
+{{< /wrap >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/crystal-7th_cover.jpg" link="https://www.wiley.com/en-ie/A+Dictionary+of+Linguistics+and+Phonetics%2C+7th+Edition-p-9781119184539" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://www.wiley.com/en-ie/A+Dictionary+of+Linguistics+and+Phonetics%2C+7th+Edition-p-9781119184539" target="_blank">A Dictionary of Linguistics and Phonetics (7th ed.)</a>
 
 {{< /wrap >}}
 
@@ -140,16 +202,40 @@ keywords = []
 <!-- markdownlint-disable MD034 -->
 {{< figure src="/img/dm_cover.jpg" link="https://doi.org/10.1017/CBO9780511805066" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://doi.org/10.1017/CBO9780511805066" target="_blank">DM</a>
+<a href="https://doi.org/10.1017/CBO9780511805066" target="_blank">Describing Morphosyntax</a>
 
 {{< /wrap >}}
 
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
 <!-- markdownlint-disable MD034 -->
-{{< figure src="/img/ag_cover.jpg" link="https://global.oup.com/academic/product/the-art-of-grammar-9780199683222" target="_blank" >}}
+{{< figure src="/img/ueg_cover.jpg" link="https://doi.org/10.1017/CBO9780511778988" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://global.oup.com/academic/product/the-art-of-grammar-9780199683222" target="_blank">AG</a>
+<a href="https://doi.org/10.1017/CBO9780511778988" target="_blank">Understanding English Grammar</a>
+
+{{< /wrap >}}
+
+{{< /wrap >}}
+{{< /wrap >}}
+
+{{< wrap tag=div class="container-fluid" >}}
+{{< wrap tag=div class="row" >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/aog_cover.jpg" link="https://global.oup.com/academic/product/the-art-of-grammar-9780199683222" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://global.oup.com/academic/product/the-art-of-grammar-9780199683222" target="_blank">The Art of Grammar</a>
+
+{{< /wrap >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/essence_cover.jpg" link="https://doi.org/10.1163/9789004446519" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://doi.org/10.1163/9789004446519" target="_blank">The Essence of Linguistic Analysis</a>
 
 {{< /wrap >}}
 
@@ -158,7 +244,7 @@ keywords = []
 <!-- markdownlint-disable MD034 -->
 {{< figure src="/img/blt1_cover.jpg" link="https://global.oup.com/academic/product/basic-linguistic-theory-volume-1-9780199571062" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://global.oup.com/academic/product/basic-linguistic-theory-volume-1-9780199571062" target="_blank">BLT1</a>
+<a href="https://global.oup.com/academic/product/basic-linguistic-theory-volume-1-9780199571062" target="_blank">Basic Linguistic Theory, Volume 1</a>
 
 {{< /wrap >}}
 
@@ -167,7 +253,7 @@ keywords = []
 <!-- markdownlint-disable MD034 -->
 {{< figure src="/img/blt2_cover.jpg" link="https://global.oup.com/academic/product/basic-linguistic-theory-volume-2-9780199571086" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://global.oup.com/academic/product/basic-linguistic-theory-volume-2-9780199571086" target="_blank">BLT2</a>
+<a href="https://global.oup.com/academic/product/basic-linguistic-theory-volume-2-9780199571086" target="_blank">Basic Linguistic Theory, Volume 2</a>
 
 {{< /wrap >}}
 
@@ -176,7 +262,7 @@ keywords = []
 <!-- markdownlint-disable MD034 -->
 {{< figure src="/img/blt3_cover.jpg" link="https://global.oup.com/academic/product/basic-linguistic-theory-volume-3-9780199571109" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://global.oup.com/academic/product/basic-linguistic-theory-volume-3-9780199571109" target="_blank">BLT3</a>
+<a href="https://global.oup.com/academic/product/basic-linguistic-theory-volume-3-9780199571109" target="_blank">Basic Linguistic Theory, Volume 3</a>
 
 {{< /wrap >}}
 
