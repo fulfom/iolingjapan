@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import CONTESTS_DATA from "../data/contests.json";
 import { User } from "firebase/auth";
-import { Accordion } from "react-bootstrap";
+import { Accordion, Badge, Button, Modal, ModalProps, Stack, Table } from "react-bootstrap";
 
 const FEATURES_CONFIG = [
     {
@@ -39,12 +39,107 @@ type contestConfigType = {
     demosite?: string;
     status: string;
     visible?: {
+        history?: string;
         badge?: string;
         spot?: string;
     };
+    probCount?: number;
 };
 
-const statusButton = (config: contestConfigType, isEntried?: boolean) => {
+const CONFIG_AWARD: {
+    [key: string]: {
+        name: string;
+        color: string;
+    }
+} = {
+    gold: {
+        name: "金賞",
+        color: "#eee7cc"
+    },
+    silver: {
+        name: "銀賞",
+        color: "#eee"
+    },
+    bronze: {
+        name: "銅賞",
+        color: "#edc"
+    },
+    honourable: {
+        name: "努力賞",
+        color: ""
+    }
+}
+
+type History = {
+    [key: string]: {
+        award?: string[],
+        sum?: number[],
+        status?: string,
+        rank?: number
+    }
+} & {
+    admin?: {
+        value: boolean,
+        email: string,
+    }
+}
+
+const CONTESTS_DATA_OBJ: { [key: string]: contestConfigType } = Object.fromEntries([...(CONTESTS_DATA.hideContests || []), ...(CONTESTS_DATA.pastContests || []), ...(CONTESTS_DATA.upcomingContests || [])].map((v) => ([v.id, v])))
+
+function ResultModal(props: ModalProps & { fullHistory: History | null, contestId: string }) {
+    const { fullHistory, contestId, ...modalProps } = props;
+
+    const CONTEST_DATA = CONTESTS_DATA_OBJ[contestId];
+    if (!CONTEST_DATA) {
+        return <></>
+    }
+    const history = fullHistory && fullHistory[contestId];
+    if (!history) {
+        alert("結果がありません")
+        return <></>
+    }
+    const [total, ...probSum]: number[] = history.sum || [];
+    const award: string[] = history.award && history.award.length > 0 && history.award || []
+    const color = award.length > 0 && CONFIG_AWARD[award[0]] && CONFIG_AWARD[award[0]].color || ""
+
+    return (
+        <Modal
+            {...modalProps}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    {CONTEST_DATA.title}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <p className={`fs-1 centralize py-3 ${award[0]}`}>
+                    {award.map((v) => (CONFIG_AWARD[v].name)).join("，")}
+                    {history.rank &&
+                        <>{history.rank}位</>}
+                </p>
+                <Table responsive>
+                    <thead>
+                        <tr>
+                            <th>合計</th>
+                            {[...Array(CONTEST_DATA.probCount || 5)].map((v, i) => <th key={i}>{i + 1}</th>)}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{total}</td>
+                            {probSum.map((v, i) => <td key={i}>{v}</td>)}
+                        </tr>
+                    </tbody>
+                </Table>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+const statusButton = (handleModalShow: (id: string) => (void), config: contestConfigType, isEntried: boolean) => {
     switch (config.status) {
         case "pre":
             return <button disabled className="btn btn-outline-dark float-end">{config.limited ? <><i className="fas fa-flag fa-fw"></i>要選抜</> : <>開催予定</>}</button>
@@ -63,7 +158,9 @@ const statusButton = (config: contestConfigType, isEntried?: boolean) => {
         case "marking":
             return <button disabled className="btn btn-outline-dark float-end">採点中</button>
         case "resultopen":
-            return <a href={config.result} className="btn btn-info float-end" role="button"><i className="fas fa-trophy fa-fw"></i>結果公開</a>
+            return config.result ?
+                <a href={config.result} className="btn btn-info float-end" role="button"><i className="fas fa-trophy fa-fw"></i>結果公開</a> :
+                <Button variant="info" className="float-end" onClick={() => handleModalShow(config.id)}><i className="fas fa-trophy fa-fw"></i>結果公開</Button>
         default:
             break;
     }
@@ -74,20 +171,37 @@ const statusButton = (config: contestConfigType, isEntried?: boolean) => {
 const App = () => {
     const [user, setUser] = useState<User | null>(null);
     const [[badges, isBadgesLoaded], setBadges] = useState<[{ [key: string]: boolean } | null, boolean]>([null, false]);
-    const [userInfo, setUserInfo] = useState<{ [key: string]: unknown } | null>(null);
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [[history, isHistoryLoaded], setHistory] = useState<[History | null, boolean]>([null, false]);
+    // const [userInfo, setUserInfo] = useState<{ [key: string]: unknown } | null>(null);
+    // const [isAdmin, setIsAdmin] = useState(false);
     const [[notPaid, isNotPaidLoaded], setNotPaid] = useState([true, false]);
-    const [contUserInfo, setContUserInfo] = useState<{ [key: string]: { [key: string]: unknown } } | null>(null)
+    // const [contUserInfo, setContUserInfo] = useState<{ [key: string]: { [key: string]: unknown } } | null>(null)
+
+    const isAdmin: boolean = history && history.admin && history.admin.value || false;
+    const [modalShow, setModalShow] = useState("");
+
+    const handleShowModal = useCallback((id: string) => {
+        setModalShow(id);
+    }, []);
 
     const contest = (config: contestConfigType, isEntried: boolean = false) => {
+        const configHistory = config.visible?.history;
         const configBadge = config.visible?.badge;
-        const configSpot = config.visible?.spot;
+        // const configSpot = config.visible?.spot;
 
-        const isVisible = isAdmin || (configBadge ? badges && badges[configBadge] : true) && (configSpot ? userInfo?.spot === configSpot : true)
+        const isVisible = isAdmin || (
+            configHistory ? history && history[configHistory] :
+                (configBadge ? badges && badges[configBadge] : true))
 
-        return isVisible && <div className="list-group-item appSys-contest" key={config.id}>
+        // const isVisible = isAdmin ||
+        //     (configBadge ? badges && badges[configBadge] : true) &&
+        //     (configSpot ? userInfo?.spot === configSpot : true)
+
+        const award = history && history[config.id] && history[config.id].award || [];
+        const color = award.length > 0 && CONFIG_AWARD[award[0]].color || "";
+        return isVisible && <div className="list-group-item appSys-contest" key={config.id} style={{ background: `linear-gradient(to right, ${color} 50%, transparent)` }}>
             <div>
-                {statusButton(config, isEntried)}
+                {statusButton(handleShowModal, config, isEntried)}
                 <div>
                     <small>{config.desc1}</small>
                     {config.desc2 ? <small className="ms-1">{config.desc2.split("|").map((desc2) => (<span className="unmot" key={desc2}>{desc2}</span>))}</small> : <></>}
@@ -120,7 +234,8 @@ const App = () => {
                         .sort((a, b) => (new Date(a.date).getTime() - new Date(b.date).getTime()))
                         .map((v) => (
                             contest(v,
-                                v.status === "entryopen" ? !!contUserInfo?.[v.id]?.entry : !notPaid)
+                                // v.status === "entryopen" ? !!contUserInfo?.[v.id]?.entry : !notPaid
+                            )
                         )) :
                         loadingContest}
                 </div>
@@ -291,60 +406,44 @@ const App = () => {
         const unsubscribed = auth.onAuthStateChanged(async (user) => {
             setUser(user);
             if (user) {
-                for (const cont of CONTESTS_DATA.upcomingContests) {
-                    if (cont.status === "demositeopen" || cont.status === "siteopen" || cont.status === "marking" || cont.status === "resultopen") {
-                        const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
-                        if (paidSnapshot.val()) {
-                            setNotPaid([false, true]);
-                        }
-                        else {
-                            setNotPaid([true, true]);
-                        }
-                    }
-                    else if (cont.status === "entryopen") {
-                        const contSnapshot = await get(ref(db, "/contests/" + cont.id + "/users/" + user.uid));
-                        const contestantInfo = contSnapshot.val();
-                        if (!contestantInfo) {
-                            location.replace("/entry/" + cont.id);
-                        }
-                        else {
-                            // 支払いが完了しているのに，参加者情報が不完全な場合は応募ページに飛ばす．
-                            if (!contestantInfo.entry) {
-                                const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
-                                if (paidSnapshot.val()) {
-                                    location.replace("/entry/" + cont.id);
-                                }
-                            }
-                            setContUserInfo((pre) => ({ ...pre, [cont.id]: contestantInfo }));
-                        }
-                    }
-                }
+                // for (const cont of CONTESTS_DATA.upcomingContests) {
+                //     if (cont.status === "demositeopen" || cont.status === "siteopen" || cont.status === "marking" || cont.status === "resultopen") {
+                //         const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
+                //         if (paidSnapshot.val()) {
+                //             setNotPaid([false, true]);
+                //         }
+                //         else {
+                //             setNotPaid([true, true]);
+                //         }
+                //     }
+                //     else if (cont.status === "entryopen") {
+                //         const contSnapshot = await get(ref(db, "/contests/" + cont.id + "/users/" + user.uid));
+                //         const contestantInfo = contSnapshot.val();
+                //         if (!contestantInfo) {
+                //             location.replace("/entry/" + cont.id);
+                //         }
+                //         else {
+                //             // 支払いが完了しているのに，参加者情報が不完全な場合は応募ページに飛ばす．
+                //             if (!contestantInfo.entry) {
+                //                 const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
+                //                 if (paidSnapshot.val()) {
+                //                     location.replace("/entry/" + cont.id);
+                //                 }
+                //             }
+                //             setContUserInfo((pre) => ({ ...pre, [cont.id]: contestantInfo }));
+                //         }
+                //     }
+                // }
 
                 const promiseBadge = (async () => {
                     const snapshot = await get(ref(db, "/badges/" + user.uid));
                     setBadges([snapshot.val(), true]);
                 })();
-                const promiseUserInfo = (async () => {
-                    const snapshot = await get(ref(db, "/users/" + user.uid));
-                    setUserInfo(snapshot.val());
-                    if (snapshot.val()?.admin) {
-                        const adminRef = await get(ref(db, "/admin/" + user.uid));
-                        setIsAdmin(adminRef.val());
-                        if (!adminRef.val()) {
-                            await update(ref(db, "/users/" + user.uid), { admin: null });
-                        }
-                    }
-                    else if (snapshot.val()) {
-                        // console.log("normal")
-                    }
-                    else {
-                        await update(ref(db, "/users/" + user.uid), {
-                            email: user.email
-                        });
-                    }
-
+                const promiseHistory = (async () => {
+                    const snapshot = await get(ref(db, "/history/" + user.uid));
+                    setHistory([snapshot.val(), true]);
                 })();
-                await Promise.all([promiseBadge, promiseUserInfo]).catch((e) => {
+                await Promise.all([promiseBadge, promiseHistory]).catch((e) => {
                     console.error(e);
                     alert("エラー");
                 });
@@ -362,7 +461,8 @@ const App = () => {
         };
     }, []);
     return <div>
-        {isNotPaidLoaded ? <>
+        {news}
+        {/* {isNotPaidLoaded ? <>
             {news}
             {!notPaid && emails}
             {notPaid && message2}
@@ -372,7 +472,7 @@ const App = () => {
                 <p className="placeholder w-100"></p>
                 <p className="placeholder w-75"></p>
                 <p className="placeholder w-50"></p>
-            </div>}
+            </div>} */}
         {adminPortalLink}
         {isAdmin ? <a href="/contest/jol2024/contest-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024本番Admin</a> : <></>}
         {isAdmin ? <a href="/contest/jol2024/demo-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024デモAdmin</a> : <></>}
@@ -384,6 +484,12 @@ const App = () => {
             }
             <button onClick={logout} className="btn btn-danger btn-small">ログアウト</button>
         </div>
+        <ResultModal
+            show={modalShow != ""}
+            onHide={() => setModalShow("")}
+            contestId={modalShow}
+            fullHistory={history}
+        ></ResultModal>
     </div>
 }
 

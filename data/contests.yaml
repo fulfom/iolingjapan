@@ -23,12 +23,12 @@ pastContests:
     detail: "/past-applications/2021/#32-アジア太平洋言語学オリンピック"
     # entry: "/entry/aplo2021/"
     site: "/contest/aplo2021/"
-    result: "/result/aplo2021/"
+    # result: "/result/aplo2021/"
     record: "/record-aplo/#aplo2021結果"
     limited: true
     status: "resultopen" #結果公開
     visible:
-      badge: "aplo2021"
+      history: "aplo2021"
   - id: iol2021
     title: IOL2021
     desc1: 2021年7月19日(月)～23日(金)
@@ -69,14 +69,14 @@ pastContests:
     detail: "/application/"
     # entry: "/entry/aplo2022/"
     # site: "/contest/aplo2022/"
-    result: "/result/aplo2022/"
+    # result: "/result/aplo2022/"
     record: "/record-aplo/#aplo2022結果"
     limited: true
     # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
     status: "resultopen" #結果公開
     visible:
-      badge: "aplo2022"
+      history: "aplo2022"
   - id: iol2022
     title: IOL2022
     desc1: 2022年7月25-29日
@@ -119,14 +119,14 @@ pastContests:
     detail: "/application/"
     # entry: "/entry/aplo2023/"
     # site: "/contest/aplo2023/"
-    result: "/result/aplo2023/"
+    # result: "/result/aplo2023/"
     record: "/record-aplo/#aplo2023結果"
     limited: true
     # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
     status: "resultopen" #結果公開
     visible:
-      badge: "aplo2023"
+      history: "aplo2023"
       # spot: "flag"
   - id: iol2023
     title: IOL2023
@@ -141,8 +141,8 @@ pastContests:
     # status: "pre" #応募開始前
     status: "resultopen" #結果公開
     visible:
-      # badge: "aplo2023"
-      spot: "flag"
+      badge: "iol2023"
+      # spot: "flag"
 upcomingContests:
   - id: jol2024
     title: JOL2024
@@ -174,14 +174,13 @@ upcomingContests:
     # entry: "/entry/aplo2024/"
     # site: "/contest/aplo2024/"
     # result: "/result/aplo2024/"
-    # record: "/record-aplo/#aplo2024結果"
+    record: "/record-aplo/#aplo2024結果"
     limited: true
-    status: "pre" #応募開始前
+    # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
-    # status: "resultopen" #結果公開
+    status: "resultopen" #結果公開
     visible:
-      # badge: "aplo2024"
-      spot: "flag"
+      history: "aplo2024"
   - id: iol2024
     title: IOL2024
     desc1: 2024年7月末あたり
@@ -194,5 +193,4 @@ upcomingContests:
     limited: true
     status: "pre" #応募開始前
     visible:
-      # badge: "aplo2024"
-      spot: "flag"
+      history: "iol2024"
