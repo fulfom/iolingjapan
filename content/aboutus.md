@@ -2,6 +2,18 @@
 title = "ABOUT US"
 +++
 
+### 情報公開
+
+{{< card-header >}}
+{{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
+
+- [東京都生活文化スポーツ局](https://www.seikatubunka.metro.tokyo.lg.jp/houjin/npo_houjin/list/ledger/0003097.html)
+- [国税庁法人番号公表サイト](https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=7010105001398)
+- [定款（GitHub）](https://github.com/iolingjapan/articles/)
+
+{{< /list >}}
+{{< /card-header >}}
+
 ### 運営メンバー紹介
 
 {{< wrap tag=div class="container" >}}
@@ -36,51 +48,61 @@ IOL2010イギリス代表（問題5最優秀解答賞）
 {{% /memberCard %}}
 
 {{% memberCard name="小林 剛士" ruby="こばやし つよし" role="理事・事務局長" roleClass="btn-template-primary" src="/img/members/kobayashi.png" %}}
-東京外国語大学 博士後期課程 IOL2016インド大会日本代表（銅賞） <jol@iolingjapan.org>
+東京外国語大学 博士後期課程
+
+IOL2016インド大会日本代表（銅賞）
+
+<jol@iolingjapan.org>
 
 「言語学オリンピックをもっと早く知りたかった」という声を一つでも減らすべく、大会の魅力を知ってもらう活動に取り組んでいます。
 {{% /memberCard %}}
 
 {{% memberCard name="岡本 沙紀" ruby="おかもと さき" role="理事" roleClass="bg-success" %}}
-東京大学 学生 IOL2018チェコ大会日本代表
+東京大学 学生
+
+IOL2018チェコ大会日本代表
 {{% /memberCard %}}
 
 {{% memberCard name="佐藤 和音" ruby="さとう かずね" role="理事" roleClass="bg-success" src="/img/members/satok.jpg" %}}
-ケンブリッジ大学修士課程 学生 IOL2019韓国大会日本代表 <sato.kaz@iolingjapan.org>
+ケンブリッジ大学修士課程 学生
+
+IOL2019韓国大会日本代表
+
+<sato.kaz@iolingjapan.org>
 
 言語学オリンピックでの日本代表選手の活躍が、回を追うごとに一段また一段とめざましいものになってきていることをとても誇りに思います。引き続き、作問を通して「言語学オリンピックってこんなに楽しいものなのか」という気づきを多くの生徒のみなさんに提供できたら嬉しいです！
 {{% /memberCard %}}
 
 {{% memberCard name="高橋 翼" ruby="たかはし つばさ" role="理事" roleClass="bg-success" %}}
-東京外国語大学 学生 IOL2019韓国大会日本代表（銅賞）
+東京外国語大学 学生
+
+IOL2019韓国大会日本代表（銅賞）
 {{% /memberCard %}}
 
 {{% memberCard name="大勢 拓実" ruby="おおせ たくみ" role="理事" roleClass="bg-success" %}}
-東京大学 学生 IOL2019韓国大会日本代表（銅賞） <ose.takumi@iolingjapan.org>
-{{% /memberCard %}}
+東京大学 学生
 
-{{% memberCard name="山﨑 貴之" ruby="やまざき たかゆき" role="理事" roleClass="bg-success" %}}
-東京大学 学生 IOL2018プラハ大会日本代表（努力賞）
+IOL2019韓国大会日本代表（銅賞）
+
+<ose.takumi@iolingjapan.org>
 {{% /memberCard %}}
 
 {{% memberCard name="森西 理温" ruby="もりにし りおん" role="理事" roleClass="bg-success" %}}
-筑波大学 学生 IOL2019韓国大会日本代表
+筑波大学 学生
+
+IOL2019韓国大会日本代表
 {{% /memberCard %}}
 
 {{% memberCard name="熊谷 勇輝" ruby="くまがえ ゆうき" role="理事" roleClass="bg-success" src="/img/members/kumagae.jpeg" %}}
-千葉大学 医学部医学科 学生　JOL2020金賞 <kumagae.yuki@iolingjapan.org>
+千葉大学 医学部医学科 学生
+
+国際哲学オリンピック第27回ローマ大会日本代表（奨励賞）, JOL2020（金賞）
+
+<kumagae.yuki@iolingjapan.org>
 {{% /memberCard %}}
 
 {{% memberCard name="佐藤 弘崇" ruby="さとう ひろたか" role="スタッフ" %}}
 IOL2016日本代表（問題5最優秀解答賞）
-{{% /memberCard %}}
-
-{{% memberCard name="平山 楓馬" ruby="ひらやま ふうま" role="スタッフ" %}}
-東京大学 教養学部（前期課程）理科一類 学生
-
-IMO2020 ロシア大会 銅メダル　APMO2019 銅メダル
-
-この世界では異質な人間かもしれませんが、数学オリンピックなどでの経験をもとに少し違った目線から運営をサポートできればと思っています。
 {{% /memberCard %}}
 
 {{% memberCard name="田中 醇之介" ruby="たなか じゅんのすけ" role="スタッフ" %}}
@@ -96,21 +118,21 @@ IOL2019日本代表（努力賞）, IOL2021日本代表, IOL2022日本代表（�
 {{% /memberCard %}}
 
 {{% memberCard name="星井 崇道" ruby="ほしい たかみち" role="スタッフ" %}}
-IOL2021日本代表（金賞）, IOL2022日本代表（金賞，最優秀解答賞，団体戦銀賞）
-
 東京大学 学生
+
+IOL2021日本代表（金賞）, IOL2022日本代表（金賞，最優秀解答賞，団体戦銀賞）
 {{% /memberCard %}}
 
 {{% memberCard name="森澤 優真" ruby="もりさわ ゆうま" role="スタッフ" %}}
-IOL2021日本代表, IOL2022日本代表（努力賞，団体戦銀賞）
-
 東京大学 学生
+
+IOL2021日本代表, IOL2022日本代表（努力賞，団体戦銀賞）
 {{% /memberCard %}}
 
 {{% memberCard name="石井 誠子" ruby="いしい せいこ" role="スタッフ" %}}
-IOL2022日本代表（金賞，団体戦銅賞）
-
 東京大学 学生
+
+IOL2022日本代表（金賞，団体戦銅賞）
 {{% /memberCard %}}
 
 {{< /wrap >}}

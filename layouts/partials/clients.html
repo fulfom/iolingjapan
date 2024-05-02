@@ -16,7 +16,7 @@
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3">{{ if .img }}{{if .link}}
           <a href="{{.link}}"><img src="{{ .img }}" class="w-100"></img></a>{{ else }}
           <img src="{{ .img }}" class="w-100"></img>{{ end }}{{ else }}
-          <p class="fs-2 text-center text-dark">{{if .link}}<a href="{{.link}}">{{.name}}</a>{{else}}{{.name}}{{end}}</p>{{ end }}
+          <p class="fs-2 text-center text-dark align-content-around" style="min-height: 100px">{{if .link}}<a href="{{.link}}">{{.name}}</a>{{else}}{{.name}}{{end}}</p>{{ end }}
         </div>
         {{ end }}
       </div>
