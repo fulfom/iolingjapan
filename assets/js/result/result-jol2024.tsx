@@ -587,7 +587,7 @@ function App({ user, udb }: { user: User, udb: any }) {
                         : <p>（アジア太平洋言語学オリンピック2024への招待はありません）</p>
                 )}
                 <ResultChart userResult={userResult}></ResultChart>
-                <UserForm user={user} udb={udb}></UserForm>
+                {/* <UserForm user={user} udb={udb}></UserForm> */}
             </>
             }
             {userResult.participation === "onhold" && <p>{userResult.message}</p>}

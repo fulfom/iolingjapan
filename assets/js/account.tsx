@@ -40,9 +40,8 @@ type contestConfigType = {
     demosite?: string;
     status: string;
     visible?: {
+        public?: boolean;
         history?: string;
-        badge?: string;
-        spot?: string;
     };
     probCount?: number;
 };
@@ -67,16 +66,38 @@ const CONFIG_AWARD: {
     },
     honourable: {
         name: "努力賞",
-        color: ""
-    }
+        color: "#dcedc8"
+    },
+    grand: {
+        name: "最優秀賞",
+        color: "#eee7cc"
+    },
+    junior: {
+        name: "ジュニア奨励賞",
+        color: "#dcedc8"
+    },
+    area: {
+        name: "地区賞",
+        color: "#dcedc8"
+    },
+    hm: {
+        name: "敢闘賞",
+        color: "#dcedc8"
+    },
 }
 
 type History = {
     [key: string]: {
+        spot?: "flag" | "award",
+        qualified?: boolean,
+        attend?: boolean,
+        onhold?: boolean,
         award?: string[],
+        teamAward?: string[],
         sum?: number[],
-        status?: string,
-        rank?: number
+        score?: number[], // for compatibility
+        rank?: number, // used for APLO and the "grand" award
+        area?: string,
     }
 } & {
     admin?: {
@@ -171,7 +192,7 @@ const statusButton = (handleModalShow: (id: string) => (void), config: contestCo
 
 const App = () => {
     const [user, setUser] = useState<User | null>(null);
-    const [[badges, isBadgesLoaded], setBadges] = useState<[{ [key: string]: boolean } | null, boolean]>([null, false]);
+    // const [[badges, isBadgesLoaded], setBadges] = useState<[{ [key: string]: boolean } | null, boolean]>([null, false]);
     const [[history, isHistoryLoaded], setHistory] = useState<[History | null, boolean]>([null, false]);
     // const [userInfo, setUserInfo] = useState<{ [key: string]: unknown } | null>(null);
     // const [isAdmin, setIsAdmin] = useState(false);
@@ -186,13 +207,16 @@ const App = () => {
     }, []);
 
     const contest = (config: contestConfigType, isEntried: boolean = false) => {
-        const configHistory = config.visible?.history;
-        const configBadge = config.visible?.badge;
+        const configVisiblePublic = config.visible?.public;
+        const configVisibleHistory = config.visible?.history;
+        // const configBadge = config.visible?.badge;
         // const configSpot = config.visible?.spot;
 
-        const isVisible = isAdmin || (
-            configHistory ? history && history[configHistory] :
-                (configBadge ? badges && badges[configBadge] : true))
+        const isVisible = !!(isAdmin ||
+            configVisiblePublic ||
+            history && history[config.id] && history[config.id].attend)
+
+        // (configBadge ? badges && badges[configBadge] : true))
 
         // const isVisible = isAdmin ||
         //     (configBadge ? badges && badges[configBadge] : true) &&
@@ -200,7 +224,7 @@ const App = () => {
 
         const award = history && history[config.id] && history[config.id].award || [];
         const color = award.length > 0 && CONFIG_AWARD[award[0]].color || "";
-        return isVisible && <div className="list-group-item appSys-contest" key={config.id} style={{ background: `linear-gradient(to right, ${color} 50%, transparent)` }}>
+        return isVisible ? <div className="list-group-item appSys-contest" key={config.id} style={{ background: `linear-gradient(to right, ${color} 50%, transparent)` }}>
             <div>
                 {statusButton(handleShowModal, config, isEntried)}
                 <div>
@@ -213,7 +237,7 @@ const App = () => {
             {config.status === "entryopen" && isEntried && (config.entryui || config.entry) && <a className="card-link" href={config.entryui || config.entry}><i className="fas fa-user-edit fa-fw"></i>確認</a>}
             {config.status === "siteopen" && isEntried && config.demosite && <a href={config.demosite} className="card-link" ><i className="fas fa-puzzle-piece fa-fw"></i>事前準備</a>}
             {config.record ? <a className="card-link" href={config.record}>データ</a> : <></>}
-        </div>
+        </div> : <></>
     }
 
     const loadingContest = <div className="list-group-item appSys-contest placeholder-glow">
@@ -231,7 +255,7 @@ const App = () => {
             <div className="col-lg-6">
                 <h3 id="contests">大会</h3>
                 <div id="account-upcoming-contests" className="list-group list-group-flush mb-2">
-                    {isBadgesLoaded ? CONTESTS_DATA.upcomingContests
+                    {isHistoryLoaded ? CONTESTS_DATA.upcomingContests
                         .sort((a, b) => (new Date(a.date).getTime() - new Date(b.date).getTime()))
                         .map((v) => (
                             contest(v,
@@ -244,7 +268,7 @@ const App = () => {
             <div className="col-lg-6">
                 <h3 id="results">結果</h3>
                 <div id="account-past-contests" className="list-group list-group-flush mb-2">
-                    {isBadgesLoaded ?
+                    {isHistoryLoaded ?
                         CONTESTS_DATA.pastContests
                             .sort((a, b) => (- new Date(a.date).getTime() + new Date(b.date).getTime()))
                             .map((v) => (
@@ -343,15 +367,11 @@ const App = () => {
                 //     }
                 // }
 
-                const promiseBadge = (async () => {
-                    const snapshot = await get(ref(db, "/badges/" + user.uid));
-                    setBadges([snapshot.val(), true]);
-                })();
                 const promiseHistory = (async () => {
                     const snapshot = await get(ref(db, "/history/" + user.uid));
                     setHistory([snapshot.val(), true]);
                 })();
-                await Promise.all([promiseBadge, promiseHistory]).catch((e) => {
+                await Promise.all([promiseHistory]).catch((e) => {
                     console.error(e);
                     alert("エラー");
                 });
@@ -382,8 +402,8 @@ const App = () => {
                 <p className="placeholder w-50"></p>
             </div>} */}
         {adminPortalLink}
-        {isAdmin ? <a href="/contest/jol2024/contest-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024本番Admin</a> : <></>}
-        {isAdmin ? <a href="/contest/jol2024/demo-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024デモAdmin</a> : <></>}
+        {/* {isAdmin ? <a href="/contest/jol2024/contest-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024本番Admin</a> : <></>}
+        {isAdmin ? <a href="/contest/jol2024/demo-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2024デモAdmin</a> : <></>} */}
         {contests}
         <div className="mt-5">
             {user ?
