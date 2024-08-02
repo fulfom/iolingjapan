@@ -8,10 +8,14 @@
 # description: "<p>応募締切は12月15日(木)</p><p>選抜枠とオープン枠（年齢等制限なし）を併設</p>"
 # link: "/application/"
 
+# weight: 1
+# title: "JOL2024結果発表"
+# description: "<p>結果を公開しました</p>"
+# link: "/application/"
 weight: 1
-title: "JOL2024結果発表"
-description: "<p>結果を公開しました</p>"
-link: "/application/"
+title: "IOL2024結果"
+description: "<p>第21回 ブラジル大会 日本代表8名が参加</p><p>金1 銀1 銅3 努力賞1 団体銅1 獲得！</p>"
+link: "/record/"
 # weight: 1
 # title: "IOL2023結果"
 # description: "<p>第20回 ブルガリア大会 日本代表8名が参加</p><p>金1（世界2位） 銀1 銅2 努力賞3 最優秀解答賞1 獲得！</p>"
