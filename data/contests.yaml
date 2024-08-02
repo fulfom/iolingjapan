@@ -160,7 +160,7 @@ upcomingContests:
     desc1: 2024年7月23日～31日（火～水）
     date: 2024-07-26
     desc2: ブラジル
-    # result: "https://ioling.org/results/2024/"
-    # record: "/record/#iol2024結果"
+    result: "https://ioling.org/results/2024/"
+    record: "/record/#iol2024結果"
     limited: true
-    status: "pre" #応募開始前
+    # status: "pre" #応募開始前
