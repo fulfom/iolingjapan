@@ -1,8 +1,7 @@
-# weight: 1
-# title: "IOL2021結果"
-# description: "<p>第18回 ラトビア大会 日本代表8名が参加</p><p>金2 銀1 努力賞2 最優秀解答賞2つを獲得！</p>"
-# more: '<img src="/img/iol2021r.jpeg" style="max-height: 200px; max-width: 100%;">'
-# link: "/record/"
+weight: 1
+title: "JOL2025応募開始"
+description: "<p>応募締切は12月15日(月)</p>"
+link: "/application/"
 # weight: 1
 # title: "JOL2023応募開始"
 # description: "<p>応募締切は12月15日(木)</p><p>選抜枠とオープン枠（年齢等制限なし）を併設</p>"
@@ -12,19 +11,26 @@
 # title: "JOL2024結果発表"
 # description: "<p>結果を公開しました</p>"
 # link: "/application/"
-weight: 1
-title: "IOL2024結果"
-description: "<p>第21回 ブラジル大会 日本代表8名が参加</p><p>金1 銀1 銅3 努力賞1 団体銅1 獲得！</p>"
-link: "/record/"
+
+# weight: 1
+# title: "JOL2023過去問"
+# description: "<p>2023/05/03: JOL2023の過去問，解答を公開！</p>"
+# link: "/preparation/"
+
+# weight: 1
+# title: "IOL2024結果"
+# description: "<p>第21回 ブラジル大会 日本代表8名が参加</p><p>金1 銀1 銅3 努力賞1 団体銅1 獲得！</p>"
+# link: "/record/"
 # weight: 1
 # title: "IOL2023結果"
 # description: "<p>第20回 ブルガリア大会 日本代表8名が参加</p><p>金1（世界2位） 銀1 銅2 努力賞3 最優秀解答賞1 獲得！</p>"
 # link: "/record/"
 # weight: 1
-# title: "JOL2023過去問"
-# description: "<p>2023/05/03: JOL2023の過去問，解答を公開！</p>"
-# link: "/preparation/"
-# weight: 1
 # title: "IOL2022結果"
 # description: "<p>第19回 マン島大会 日本代表7名が参加</p><p>金2 銅1 努力賞3 最優秀解答賞1つ 団体戦 銀・銅を獲得！</p>"
+# link: "/record/"
+# weight: 1
+# title: "IOL2021結果"
+# description: "<p>第18回 ラトビア大会 日本代表8名が参加</p><p>金2 銀1 努力賞2 最優秀解答賞2つを獲得！</p>"
+# more: '<img src="/img/iol2021r.jpeg" style="max-height: 200px; max-width: 100%;">'
 # link: "/record/"
