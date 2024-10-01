@@ -163,6 +163,7 @@ pastContests:
     record: "/record/#iol2024結果"
     limited: true
     # status: "pre" #応募開始前
+    status: "resultopen" #結果公開
 upcomingContests:
   - id: jol2025
     title: JOL2025
@@ -172,18 +173,19 @@ upcomingContests:
     detail: "/application/"
     # result: "/result/jol2025/"
     # record: "/record-jol/#jol2025結果"
-    status: "pre" #応募開始前
-    # status: "entryopen" #応募開始後
+    # status: "pre" #応募開始前
+    status: "entryopen" #応募開始後
     # status: "demositeopen" #事前準備オープン
     # status: "siteopen" #会場オープン
     # status: "marking" #採点中
     # status: "resultopen" #結果公開
-    result: "/result/jol2025/"
-    record: "/record-jol/#jol2025結果"
-    # entry: "/entry/jol2025/"
-    # entryui: "/entry/jol2025/"
+    # result: "/result/jol2025/"
+    # record: "/record-jol/#jol2025結果"
+    entry: "/entry/jol2025/"
+    entryui: "/entry/jol2025/"
     # demosite: "/contest/jol2025/demo"
     # site: "/contest/jol2025/contest"
+    public: true
   - id: aplo2025
     title: APLO2025
     desc1: 2025年4月20日(日)
@@ -196,6 +198,7 @@ upcomingContests:
     status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
     # status: "resultopen" #結果公開
+    public: true
   - id: iol2025
     title: IOL2025
     desc1: 2025年7月後半
@@ -205,3 +208,4 @@ upcomingContests:
     record: "/record/#iol2025結果"
     limited: true
     status: "pre" #応募開始前
+    public: true

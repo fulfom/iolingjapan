@@ -39,10 +39,7 @@ type contestConfigType = {
     site?: string;
     demosite?: string;
     status: string;
-    visible?: {
-        public?: boolean;
-        history?: string;
-    };
+    public?: boolean;
     probCount?: number;
 };
 
@@ -196,8 +193,9 @@ const App = () => {
     const [[history, isHistoryLoaded], setHistory] = useState<[History | null, boolean]>([null, false]);
     // const [userInfo, setUserInfo] = useState<{ [key: string]: unknown } | null>(null);
     // const [isAdmin, setIsAdmin] = useState(false);
-    const [[notPaid, isNotPaidLoaded], setNotPaid] = useState([true, false]);
+    const [[isPaid, isIsPaidLoaded], setIsPaid] = useState([false, false]);
     // const [contUserInfo, setContUserInfo] = useState<{ [key: string]: { [key: string]: unknown } } | null>(null)
+    const [[isEntried, isIsEntriedLoaded], setIsEntried] = useState([false, false]);
 
     const isAdmin: boolean = history && history.admin && history.admin.value || false;
     const [modalShow, setModalShow] = useState("");
@@ -206,9 +204,8 @@ const App = () => {
         setModalShow(id);
     }, []);
 
-    const contest = (config: contestConfigType, isEntried: boolean = false) => {
-        const configVisiblePublic = config.visible?.public;
-        const configVisibleHistory = config.visible?.history;
+    const contest = (config: contestConfigType) => {
+        const configVisiblePublic = config.public;
         // const configBadge = config.visible?.badge;
         // const configSpot = config.visible?.spot;
 
@@ -258,8 +255,8 @@ const App = () => {
                     {isHistoryLoaded ? CONTESTS_DATA.upcomingContests
                         .sort((a, b) => (new Date(a.date).getTime() - new Date(b.date).getTime()))
                         .map((v) => (
-                            contest(v,
-                                // v.status === "entryopen" ? !!contUserInfo?.[v.id]?.entry : !notPaid
+                            contest(v
+                                // v.status === "entryopen" ? !!contUserInfo?.[v.id]?.entry : isPaid
                             )
                         )) :
                         loadingContest}
@@ -284,11 +281,11 @@ const App = () => {
 
     const messagePreOrder = <div className="simple-box">
         <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
-        <p>JOL2024の応募完了までもう一歩です</p>
+        <p>JOL2025の応募完了までもう一歩です</p>
         <ol>
             <li>
                 <p>応募途中の場合</p>
-                <p><a href="/entry/jol2024/">→こちらから応募手続きを続けてください．</a></p>
+                <p><a href="/entry/jol2025/">→こちらから応募手続きを続けてください．</a></p>
             </li>
             <li>
                 <p>ログインするアカウントを間違えている場合</p>
@@ -318,11 +315,11 @@ const App = () => {
 
     const news = useMemo(() => <div className="simple-box">
         <span className="box-title">お知らせ</span>
-        {!notPaid && <p>2023/12/22: <a>JOL2024の事前準備ページを公開しました．</a></p>}
-        {!notPaid && <p>2023/12/29: <a>JOL2024本番で使う競技会場ページを公開しました．</a></p>}
+        {/* {isPaid && <p>2023/12/22: <a>JOL2024の事前準備ページを公開しました．</a></p>}
+        {isPaid && <p>2023/12/29: <a>JOL2024本番で使う競技会場ページを公開しました．</a></p>}
         <p>2023/12/29: JOL2024本番終了</p>
-        <p>2024/01/22: <a href="/result/jol2024/">JOL2024結果発表</a></p>
-    </div>, [notPaid])
+        <p>2024/01/22: <a href="/result/jol2024/">JOL2024結果発表</a></p> */}
+    </div>, [isPaid])
 
     const message2 = useMemo(() => <div className="simple-box">
         <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
@@ -338,34 +335,32 @@ const App = () => {
         const unsubscribed = auth.onAuthStateChanged(async (user) => {
             setUser(user);
             if (user) {
-                // for (const cont of CONTESTS_DATA.upcomingContests) {
-                //     if (cont.status === "demositeopen" || cont.status === "siteopen" || cont.status === "marking" || cont.status === "resultopen") {
-                //         const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
-                //         if (paidSnapshot.val()) {
-                //             setNotPaid([false, true]);
-                //         }
-                //         else {
-                //             setNotPaid([true, true]);
-                //         }
-                //     }
-                //     else if (cont.status === "entryopen") {
-                //         const contSnapshot = await get(ref(db, "/contests/" + cont.id + "/users/" + user.uid));
-                //         const contestantInfo = contSnapshot.val();
-                //         if (!contestantInfo) {
-                //             location.replace("/entry/" + cont.id);
-                //         }
-                //         else {
-                //             // 支払いが完了しているのに，参加者情報が不完全な場合は応募ページに飛ばす．
-                //             if (!contestantInfo.entry) {
-                //                 const paidSnapshot = await get(ref(db, `/orders/${cont.id}/` + user.email!.replace(/\./g, '=').toLowerCase()));
-                //                 if (paidSnapshot.val()) {
-                //                     location.replace("/entry/" + cont.id);
-                //                 }
-                //             }
-                //             setContUserInfo((pre) => ({ ...pre, [cont.id]: contestantInfo }));
-                //         }
-                //     }
-                // }
+                const currentContestId = "jol2025"
+                const currentContestData = CONTESTS_DATA.upcomingContests.find((v) => (v.id === currentContestId))
+                if (!currentContestData) return
+                switch (currentContestData.status) {
+                    case "pre":
+                        break;
+                    default:
+                        const paidSnapshot = await get(ref(db, `/orders/${currentContestId}/` + user.email!.replace(/\./g, '=').toLowerCase()))
+                        const isPaidTemp = paidSnapshot.val()
+                        setIsPaid([!!isPaidTemp, true]);
+
+                        if (currentContestData.status === "entryopen") {
+                            const contSnapshot = await get(ref(db, "/contests/" + currentContestId + "/users/" + user.uid));
+                            const contestantInfo = contSnapshot.val();
+                            if (contestantInfo && contestantInfo.name && isPaidTemp) {
+                                setIsEntried([true, true])
+                            }
+                            else if (contestantInfo && contestantInfo.isNotNew) {
+                                setIsEntried([false, true])
+                            }
+                            else {
+                                location.replace("/entry/" + currentContestId);
+                            }
+                        }
+                        break;
+                }
 
                 const promiseHistory = (async () => {
                     const snapshot = await get(ref(db, "/history/" + user.uid));
@@ -389,11 +384,15 @@ const App = () => {
         };
     }, []);
     return <div>
-        {news}
-        {/* {isNotPaidLoaded ? <>
+        {isIsPaidLoaded && isIsEntriedLoaded && !isPaid ? <>
             {news}
-            {!notPaid && emails}
-            {notPaid && message2}
+            {messagePreOrder}
+        </>
+            : <></>}
+        {/* {isIsPaidLoaded ? <>
+            {news}
+            {isPaid && emails}
+            {!isPaid && message2}
         </> :
             <div className="simple-box placeholder-glow">
                 <span className="box-title placeholder col-1"></span>
