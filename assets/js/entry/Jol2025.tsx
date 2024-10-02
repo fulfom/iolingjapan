@@ -45,7 +45,7 @@ function App() {
                         nameRoman: userInfo?.nameRoman || null,
                         birthdate: userInfo?.birthdate || null,
                         preUniv: userInfo?.preUniv || null,
-                        isInSchool: userInfo.isInSchool || true,
+                        isInSchool: userInfo?.isInSchool || true,
                         schoolCode: userInfo?.schoolCode || null,
                         codeNotFound: userInfo?.codeNotFound || null,
                         schoolName: userInfo?.schoolName || null,
