@@ -7,6 +7,26 @@ import Button from "react-bootstrap/Button"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import { User } from "firebase/auth";
+
+const CONTEST_DATA: {
+    [key: string]: {
+        previous: string;
+        name: string;
+        motivations: string[];
+    }
+} = {
+    jol2024: {
+        previous: "jol2023",
+        name: "JOL2024",
+        motivations: ["友人・先輩", "学校の先生", "家族", "塾", "ツイッター", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"],
+    },
+    jol2025: {
+        previous: "jol2024",
+        name: "JOL2025",
+        motivations: ["友人・先輩", "学校の先生", "家族", "塾", "YouTube", "ツイッター（X）", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"],
+    }
+}
 
 type UserInfo = {
     [key: string]: string;
@@ -14,12 +34,15 @@ type UserInfo = {
     email?: string;
     isCertificateNecessary?: boolean;
     spot?: string;
+    motivations?: boolean[];
 }
 
 function App() {
+    const [user, setUser] = useState<User | null>(null);
     const [users, setUsers] = useState<{ [uid: string]: UserInfo }>({});
     const [orders, setOrders] = useState<{ [key: string]: boolean }>({});
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
+    const [selectedId, setSelectedId] = useState("jol2025");
 
     const checkOrders = useMemo(() => {
         if (!users || !orders) { return [] };
@@ -39,21 +62,23 @@ function App() {
     }, [users, orders])
 
     const { motivations, motivationsFlag, motivationsAward, motivationText, motivationCounter } = useMemo(() => {
-        let motivationstmp = Array(20).fill(0);
-        let motivationstmpFlag = Array(20).fill(0);
-        let motivationstmpAward = Array(20).fill(0);
+        let motivationstmp: number[] = Array(CONTEST_DATA[selectedId].motivations.length).fill(0);
+        let motivationstmpFlag: number[] = Array(CONTEST_DATA[selectedId].motivations.length).fill(0);
+        let motivationstmpAward: number[] = Array(CONTEST_DATA[selectedId].motivations.length).fill(0);
         let motivationTexttmp: string[] = [];
         let motivationCountertmp = 0;
-        Object.entries(users).map(([k, v]) => {
+        for (const k in users) {
+            const v = users[k]
             if (v.motivations) {
-                Object.entries(v.motivations).map(([mk, mv]) => {
-                    motivationstmp[mk] += mv ? 1 : 0;
+                for (const mk in v.motivations) {
+                    const mv = v.motivations[mk];
+                    motivationstmp[Number(mk)] += mv ? 1 : 0;
                     if (v.spot === "flag") {
-                        motivationstmpFlag[mk] += mv ? 1 : 0;
+                        motivationstmpFlag[Number(mk)] += mv ? 1 : 0;
                     } else {
-                        motivationstmpAward[mk] += mv ? 1 : 0;
+                        motivationstmpAward[Number(mk)] += mv ? 1 : 0;
                     }
-                })
+                }
             }
             if (v.motivationText) {
                 motivationTexttmp.push(v.motivationText);
@@ -61,7 +86,7 @@ function App() {
             if (v.motivations || v.motivationText) {
                 motivationCountertmp++;
             }
-        })
+        }
         return {
             motivations: motivationstmp,
             motivationsFlag: motivationstmpFlag,
@@ -74,28 +99,47 @@ function App() {
     useEffect(() => {
         // setUser({ email: "test", uid: "" })
         // setUdb({ spot: "" })
-        // 現在ログインしているユーザを取得
-        auth.onAuthStateChanged(async v => {
-            const refUsers = ref(db, "/contests/jol2024/users/");
-            const refUsersPreviousYear = ref(db, "/contests/jol2023/users/");
-            const refOrders = ref(db, "/orders/jol2024/");
 
-            onValue(refUsers, (sn) => {
-                if (!sn.val()) return;
-                const { iJzZm4b685VtudLmpnAVlO8EJc93, R0LNjJBhu6fWozNcw29WmP9zHSC2, ...snval }: { [uid: string]: UserInfo } = sn.val()
-                setUsers(snval);
-            });
-            onValue(refOrders, (sn) => {
-                if (!sn.val()) return;
-                setOrders(sn.val())
-            });
-            setUsersPreviousYear((await get(refUsersPreviousYear)).val())
+        if (user === null) return;
+        const refUsers = ref(db, `/contests/${selectedId}/users/`);
+        const refUsersPreviousYear = ref(db, `/contests/${CONTEST_DATA[selectedId].previous}/users/`);
+        const refOrders = ref(db, `/orders/${selectedId}/`);
+
+        console.log("fetching data")
+        const unsubscribeUsers = onValue(refUsers, (sn) => {
+            if (!sn.val()) return;
+            const { iJzZm4b685VtudLmpnAVlO8EJc93, R0LNjJBhu6fWozNcw29WmP9zHSC2, ...snval }: { [uid: string]: UserInfo } = sn.val()
+            setUsers(snval);
+        });
+        const unsubscribeOrders = onValue(refOrders, (sn) => {
+            if (!sn.val()) return;
+            setOrders(sn.val())
+        });
+        const unsubscribePreviousYear = onValue(refUsersPreviousYear, (sn) => {
+            if (!sn.val()) return;
+            setUsersPreviousYear(sn.val());
+        }, { onlyOnce: true });
+
+        return () => {
+            unsubscribeUsers();
+            unsubscribeOrders();
+            unsubscribePreviousYear();
+        }
+    }, [selectedId, user])
+
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            setUser(user);
         });
     }, [])
 
     return (
         <>
-            <h2>JOL2024 応募状況</h2>
+            <Form.Select aria-label="Select Year" value={selectedId} onChange={(e) => setSelectedId(e.target.value)}>
+                <option value="jol2025">JOL2025</option>
+                <option value="jol2024">JOL2024</option>
+            </Form.Select>
+            <h2>{CONTEST_DATA[selectedId].name} 応募状況</h2>
             <table className="table">
                 <thead>
                     <tr>
@@ -133,10 +177,10 @@ function App() {
             <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
             <p>未申込: {checkOrders.length}件</p>
             <p>{checkOrders.map((v) => (v[1])).join(", ")}</p>
-            <h2>JOL2024アンケート結果</h2>
+            <h2>{CONTEST_DATA[selectedId].name}アンケート結果</h2>
             <h3>言語学オリンピックをどこで知りましたか</h3>
             <p>{motivationCounter}人回答</p>
-            {["友人・先輩", "学校の先生", "家族", "塾", "ツイッター", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"].map((v, i) => (
+            {CONTEST_DATA[selectedId].motivations.map((v, i) => (
                 <div className="container" key={v}>
                     <div className="row">
                         <div className="col-12 col-md-2">{v}</div>
@@ -147,7 +191,7 @@ function App() {
                 </div>
             ))}
             <div className="container">
-                <p>その他</p>
+                <p>その他・詳細</p>
                 <ul>
                     {motivationText.map((v, i) => {
                         return <li key={`motivation${i}`}>{v}</li>
