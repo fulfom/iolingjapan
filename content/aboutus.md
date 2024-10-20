@@ -42,7 +42,7 @@ IOL2010イギリス代表（問題5最優秀解答賞）
 {{% /memberCard %}}
 
 {{% memberCard name="山田 洋平" ruby="やまだ ようへい" role="理事" roleClass="bg-success" src="/img/members/yamada.png" %}}
-東京外国語大学 講師
+東京外国語大学 大学院総合国際学研究院 准教授
 
 言語学オリンピックを通じて、多くの人に言語学という学問とその楽しさを知ってもらい、また親しんでもらえるよう取り組んでいきたいと思います。
 {{% /memberCard %}}
@@ -64,7 +64,7 @@ IOL2018チェコ大会日本代表
 {{% /memberCard %}}
 
 {{% memberCard name="佐藤 和音" ruby="さとう かずね" role="理事" roleClass="bg-success" src="/img/members/satok.jpg" %}}
-ケンブリッジ大学修士課程 学生
+オックスフォード大学 博士課程 学生
 
 IOL2019韓国大会日本代表
 
@@ -106,7 +106,7 @@ IOL2016日本代表（問題5最優秀解答賞）
 {{% /memberCard %}}
 
 {{% memberCard name="田中 醇之介" ruby="たなか じゅんのすけ" role="スタッフ" %}}
-東京大学 教養学部（前期）文科3類 学生
+東京大学 学生
 
 IOL2017アイルランド大会日本代表, IOL2021ラトヴィア大会日本代表（努力賞）
 
@@ -133,6 +133,46 @@ IOL2021日本代表, IOL2022日本代表（努力賞，団体戦銀賞）
 東京大学 学生
 
 IOL2022日本代表（金賞，団体戦銅賞）
+{{% /memberCard %}}
+
+{{% memberCard name="吉野 匠" ruby="よしの たくみ" role="スタッフ" %}}
+IOL2017日本代表（銀賞），IOL2019日本代表（金賞）
+{{% /memberCard %}}
+
+{{% memberCard name="桜木 陽也" ruby="さくらぎ はるや" role="スタッフ" %}}
+University College London 学生
+
+IOL2022日本代表（団体戦銅賞）
+{{% /memberCard %}}
+
+{{% memberCard name="浅井 拓衛" ruby="あさい たくえい" role="スタッフ" %}}
+東京大学 学生
+{{% /memberCard %}}
+
+{{% memberCard name="金澤 裕仁" ruby="かなざわ ひろひと" role="スタッフ" %}}
+University College London 修士課程修了
+{{% /memberCard %}}
+
+{{% memberCard name="菅原 宜優" ruby="すがわら たかまさ" role="スタッフ" %}}
+東京外国語大学 修士課程修了
+{{% /memberCard %}}
+
+{{% memberCard name="宮路 仁魁" ruby="みやじ とかい" role="スタッフ" %}}
+東京大学 学生
+
+IOL2023日本代表（努力賞）
+{{% /memberCard %}}
+
+{{% memberCard name="加納 怜" ruby="かのう れい" role="スタッフ" %}}
+東京大学 学生
+
+IOL2023日本代表（銀賞）
+{{% /memberCard %}}
+
+{{% memberCard name="勢子 流叶" ruby="せいし るか" role="スタッフ" %}}
+筑波大学 学生
+
+IOL2023日本代表（努力賞）
 {{% /memberCard %}}
 
 {{< /wrap >}}
