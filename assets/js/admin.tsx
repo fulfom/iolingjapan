@@ -1,13 +1,14 @@
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { app, auth, db } from "./firebase-initialize"
-import { ref, onValue, update, get, set } from "firebase/database"
+import { ref, onValue, update, get, set, push, serverTimestamp } from "firebase/database"
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { User } from "firebase/auth";
+import { format } from "date-fns";
 
 const CONTEST_DATA: {
     [key: string]: {
@@ -39,10 +40,14 @@ type UserInfo = {
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
+    const [history, setHistory] = useState<{ [key: string]: { [key: string]: any } }>({});
     const [users, setUsers] = useState<{ [uid: string]: UserInfo }>({});
     const [orders, setOrders] = useState<{ [key: string]: boolean }>({});
+    const [transfers, setTransfers] = useState<{ [key: string]: { source: string, target: string, name: string, memo: string, timestamp: number } }>({});
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
     const [selectedId, setSelectedId] = useState("jol2025");
+
+    const transferFormSource = useRef<HTMLInputElement>(null);
 
     const checkOrders = useMemo(() => {
         if (!users || !orders) { return [] };
@@ -104,6 +109,7 @@ function App() {
         const refUsers = ref(db, `/contests/${selectedId}/users/`);
         const refUsersPreviousYear = ref(db, `/contests/${CONTEST_DATA[selectedId].previous}/users/`);
         const refOrders = ref(db, `/orders/${selectedId}/`);
+        const refTransfers = ref(db, `/orderTransferHistory/${selectedId}/`);
 
         console.log("fetching data")
         const unsubscribeUsers = onValue(refUsers, (sn) => {
@@ -119,11 +125,16 @@ function App() {
             if (!sn.val()) return;
             setUsersPreviousYear(sn.val());
         }, { onlyOnce: true });
+        const unsubscribeTransfers = onValue(refTransfers, (sn) => {
+            if (!sn.val()) return;
+            setTransfers(sn.val());
+        });
 
         return () => {
             unsubscribeUsers();
             unsubscribeOrders();
             unsubscribePreviousYear();
+            unsubscribeTransfers();
         }
     }, [selectedId, user])
 
@@ -132,6 +143,58 @@ function App() {
             setUser(user);
         });
     }, [])
+
+    useEffect(() => {
+        if (user === null) return;
+        const refHistory = ref(db, `/history/${user.uid}/`);
+        const unsubscribeHistory = onValue(refHistory, (sn) => {
+            if (!sn.val()) return;
+            setHistory(sn.val());
+        }, { onlyOnce: true });
+        return () => {
+            unsubscribeHistory();
+        }
+    }, [user]);
+
+    const handleTransfer = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (user === null) {
+            alert("Not logged in");
+            return;
+        }
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.stopPropagation();
+            alert("Invalid input");
+        } else {
+            const source = form["transfer.source"].value.replace(/\./g, "=");
+            const target = form["transfer.target"].value.replace(/\./g, "=");
+            const refOrders = ref(db, `/orders/${selectedId}/`);
+            if (source !== "" && target !== "" && orders[source] && !orders[target]) {
+                push(ref(db, `/orderTransferHistory/${selectedId}`), {
+                    source: form["transfer.source"].value,
+                    target: form["transfer.target"].value,
+                    name: form["transfer.name"].value,
+                    memo: form["transfer.memo"].value,
+                    timestamp: serverTimestamp(),
+                });
+                await update(refOrders, {
+                    [target]: orders[source],
+                    [source]: null,
+                });
+                form.reset();
+            } else {
+                let errs = [];
+                if (!orders[source]) {
+                    errs.push(`${source} is not paid`);
+                }
+                if (orders[target]) {
+                    errs.push(`${target} is already paid`);
+                }
+                alert(`Invalid input: ${errs.join(", ")}`);
+            }
+        }
+    }
 
     return (
         <>
@@ -174,9 +237,47 @@ function App() {
                     </tr>
                 </tbody>
             </table>
-            <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
-            <p>未申込: {checkOrders.length}件</p>
-            <p>{checkOrders.map((v) => (v[1])).join(", ")}</p>
+            {history && history.admin?.orderTransfer &&
+                <>
+                    <h2>オーダー付替</h2>
+                    <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
+                    <p>未申込: {checkOrders.length}件</p>
+                    <div style={{ overflowWrap: "anywhere" }}>{checkOrders.map((v) => (
+                        <a role="button" key={v[1]} className="me-3 text-nowrap" onClick={
+                            (e) => {
+                                if (transferFormSource.current) {
+                                    transferFormSource.current.value = v[1];
+                                }
+                            }
+                        }>{v[1]}</a>
+                    ))}</div>
+                    <Form validated onSubmit={handleTransfer}>
+                        <Form.Group className="mb-3" controlId="transfer.source">
+                            <Form.Label>Source</Form.Label>
+                            <Form.Control type="email" required autoComplete="off" ref={transferFormSource} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="transfer.target">
+                            <Form.Label>Target</Form.Label>
+                            <Form.Control type="email" required autoComplete="off" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="transfer.name">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control type="text" required autoComplete="off" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="transfer.memo">
+                            <Form.Label>Memo</Form.Label>
+                            <Form.Control type="text" autoComplete="off" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit">Submit</Button>
+                    </Form>
+                    <h3>{CONTEST_DATA[selectedId].name} 付替履歴</h3>
+                    <ul>
+                        {Object.entries(transfers).map(([k, v]) => (
+                            <li key={k}>{v.source} → {v.target} @{format(v.timestamp, "yyyy-MM-dd HH:mm:ss")} {v.name} //{v.memo}</li>
+                        ))}
+                    </ul>
+                </>
+            }
             <h2>{CONTEST_DATA[selectedId].name}アンケート結果</h2>
             <h3>言語学オリンピックをどこで知りましたか</h3>
             <p>{motivationCounter}人回答</p>
