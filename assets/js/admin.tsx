@@ -47,7 +47,12 @@ function App() {
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
     const [selectedId, setSelectedId] = useState("jol2025");
 
-    const transferFormSource = useRef<HTMLInputElement>(null);
+    // const transferFormSource = useRef<HTMLInputElement>(null);
+    const transferFormName = useRef<HTMLInputElement>(null);
+    const [transferFormSource, setTransferFormSource] = useState<string>("");
+    const [transferFormTarget, setTransferFormTarget] = useState<string>("");
+
+    const transferTargetCandidates = Object.entries(users).filter(([k, v]) => (v.email === transferFormTarget))
 
     const checkOrders = useMemo(() => {
         if (!users || !orders) { return [] };
@@ -242,27 +247,28 @@ function App() {
                     <h2>オーダー付替</h2>
                     <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
                     <p>未申込: {checkOrders.length}件</p>
-                    <div style={{ overflowWrap: "anywhere" }}>{checkOrders.map((v) => (
+                    <div style={{ overflowWrap: "anywhere", overflow: "hidden" }}>{checkOrders.filter((v) => (
+                        transferFormSource ? v[1].toLowerCase().startsWith(transferFormSource.toLowerCase()) : true
+                    )).map((v) => (
                         <a role="button" key={v[1]} className="me-3 text-nowrap" onClick={
                             (e) => {
-                                if (transferFormSource.current) {
-                                    transferFormSource.current.value = v[1];
-                                }
+                                setTransferFormSource(v[1]);
                             }
                         }>{v[1]}</a>
                     ))}</div>
                     <Form validated onSubmit={handleTransfer}>
                         <Form.Group className="mb-3" controlId="transfer.source">
                             <Form.Label>Source</Form.Label>
-                            <Form.Control type="email" required autoComplete="off" ref={transferFormSource} />
+                            <Form.Control type="email" required autoComplete="off" value={transferFormSource} onChange={(e) => setTransferFormSource(e.currentTarget.value)} />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="transfer.target">
                             <Form.Label>Target</Form.Label>
-                            <Form.Control type="email" required autoComplete="off" />
+                            <Form.Control type="email" required autoComplete="off" value={transferFormTarget} onChange={(e) => setTransferFormTarget(e.currentTarget.value)} />
+                            <Form.Text className="text-muted">{transferTargetCandidates.length}件 {transferTargetCandidates.length <= 0 ? "" : !orders[transferFormTarget.replace(/\./g, "=")] ? "OK" : "NG: 支払済！"} {transferTargetCandidates.map(([k, v]) => (<span key={k} role="button" onClick={(e) => { if (transferFormName.current) transferFormName.current.value = v.name }}>{v.name}</span>))}</Form.Text>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="transfer.name">
                             <Form.Label>Name</Form.Label>
-                            <Form.Control type="text" required autoComplete="off" />
+                            <Form.Control type="text" required autoComplete="off" ref={transferFormName} />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="transfer.memo">
                             <Form.Label>Memo</Form.Label>
