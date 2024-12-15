@@ -9,6 +9,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { User } from "firebase/auth";
 import { format } from "date-fns";
+import { Col, Row, Table } from "react-bootstrap";
 
 const CONTEST_DATA: {
     [key: string]: {
@@ -51,6 +52,8 @@ function App() {
     const transferFormName = useRef<HTMLInputElement>(null);
     const [transferFormSource, setTransferFormSource] = useState<string>("");
     const [transferFormTarget, setTransferFormTarget] = useState<string>("");
+    const [searchFormZipcode, setSearchFormZipcode] = useState<string>("");
+    const [searchFormName, setSearchFormName] = useState<string>("");
 
     const transferTargetCandidates = Object.entries(users).filter(([k, v]) => (v.email?.toLowerCase() === transferFormTarget.toLowerCase()))
 
@@ -278,6 +281,43 @@ function App() {
                         </Form.Group>
                         <Button variant="primary" type="submit">Submit</Button>
                     </Form>
+                    <Row className="mb-3">
+                        <Form.Group as={Col} controlId="search.zipcode">
+                            <Form.Label>zipcode</Form.Label>
+                            <Form.Control type="text" autoComplete="off" value={searchFormZipcode} onChange={(e) => setSearchFormZipcode(e.currentTarget.value)} />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="search.name">
+                            <Form.Label>name</Form.Label>
+                            <Form.Control type="text" autoComplete="off" value={searchFormName} onChange={(e) => setSearchFormName(e.currentTarget.value)} />
+                        </Form.Group>
+                    </Row>
+                    <Table>
+                        <thead>
+                            <tr>
+                                <th>uid</th>
+                                <th>email</th>
+                                <th>name</th>
+                                <th>zipcode</th>
+                                <th>address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {(searchFormZipcode || searchFormName) ? Object.entries(users).filter(([k, v]) => (
+                                v.zipcode && v.name &&
+                                v.zipcode.startsWith(searchFormZipcode) && v.name.includes(searchFormName)
+                            )).map(([k, v]) => (
+                                <tr key={k}>
+                                    <td>{k}</td>
+                                    <td>{v.email}</td>
+                                    <td>{v.name}</td>
+                                    <td>{v.zipcode}</td>
+                                    <td>{v.address}</td>
+                                </tr>
+                            )) : <tr>
+                                <td colSpan={5}>検索条件を指定してください</td>
+                            </tr>}
+                        </tbody>
+                    </Table>
                     <h3>{CONTEST_DATA[selectedId].name} 付替履歴</h3>
                     <ul>
                         {Object.entries(transfers).map(([k, v]) => (
