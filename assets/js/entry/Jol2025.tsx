@@ -30,7 +30,7 @@ function App() {
                 const snapshot = await get(ref(db, "/contests/jol2025/users/" + v.uid));
                 setLoading(70);
                 const udbtmp = snapshot.val();
-                const dbOrderRef = ref(db, "/orders/jol2025/" + v.email!.replace(/\./g, '='));
+                const dbOrderRef = ref(db, "/orders/jol2025/" + v.email!.replace(/\./g, '=').toLowerCase());
                 if (udbtmp && udbtmp.email) {
                     setUdb(udbtmp);
                     setStep(1);

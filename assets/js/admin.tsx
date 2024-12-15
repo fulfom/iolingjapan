@@ -52,11 +52,11 @@ function App() {
     const [transferFormSource, setTransferFormSource] = useState<string>("");
     const [transferFormTarget, setTransferFormTarget] = useState<string>("");
 
-    const transferTargetCandidates = Object.entries(users).filter(([k, v]) => (v.email === transferFormTarget))
+    const transferTargetCandidates = Object.entries(users).filter(([k, v]) => (v.email?.toLowerCase() === transferFormTarget.toLowerCase()))
 
     const checkOrders = useMemo(() => {
         if (!users || !orders) { return [] };
-        const userEmails = Object.entries(users).map(([k, v]) => (v.email ? v.email.replace(/\./g, "=") : ""));
+        const userEmails = Object.entries(users).map(([k, v]) => (v.email ? v.email.replace(/\./g, "=").toLowerCase() : ""));
         const paidList: string[] = [];
         const result: [string, string][] = [];
         for (const [order, flag] of Object.entries(orders)) {
@@ -173,7 +173,7 @@ function App() {
             alert("Invalid input");
         } else {
             const source = form["transfer.source"].value.replace(/\./g, "=");
-            const target = form["transfer.target"].value.replace(/\./g, "=");
+            const target = form["transfer.target"].value.replace(/\./g, "=").toLowerCase();
             const refOrders = ref(db, `/orders/${selectedId}/`);
             if (source !== "" && target !== "" && orders[source] && !orders[target]) {
                 push(ref(db, `/orderTransferHistory/${selectedId}`), {
@@ -224,21 +224,21 @@ function App() {
                     <tr>
                         <th>全体</th>
                         <td>{Object.entries(users).filter(([k, v]) => (v.email)).length}</td>
-                        <td>{Object.entries(users).filter(([k, v]) => (v.email && orders[v.email.replace(/\./g, "=")])).length}</td>
+                        <td>{Object.entries(users).filter(([k, v]) => (v.email && orders[v.email.replace(/\./g, "=").toLowerCase()])).length}</td>
                         <td>{Object.entries(users).filter(([k, v]) => (v.email && usersPreviousYear[k]?.email)).length}</td>
                         <td>{Object.entries(users).filter(([k, v]) => (v.email && !v.isCertificateNecessary)).length}</td>
                     </tr>
                     <tr>
                         <th>選抜枠</th>
                         <td>{Object.entries(users).filter(([k, v]) => (v.spot === "flag")).length}</td>
-                        <td>{Object.entries(users).filter(([k, v]) => (v.spot === "flag" && v.email && orders[v.email.replace(/\./g, "=")])).length}</td>
+                        <td>{Object.entries(users).filter(([k, v]) => (v.spot === "flag" && v.email && orders[v.email.replace(/\./g, "=").toLowerCase()])).length}</td>
                         <td>{Object.entries(users).filter(([k, v]) => (v.spot === "flag" && v.email && usersPreviousYear[k]?.email)).length}</td>
                         <td>{Object.entries(users).filter(([k, v]) => (v.spot === "flag" && v.email && !v.isCertificateNecessary)).length}</td>
                     </tr>
                     <tr>
                         <th>オープン枠</th>
                         <td>{Object.entries(users).filter(([k, v]) => (v.spot === "award")).length}</td>
-                        <td>{Object.entries(users).filter(([k, v]) => (v.spot === "award" && v.email && orders[v.email.replace(/\./g, "=")])).length}</td>
+                        <td>{Object.entries(users).filter(([k, v]) => (v.spot === "award" && v.email && orders[v.email.replace(/\./g, "=").toLowerCase()])).length}</td>
                         <td>{Object.entries(users).filter(([k, v]) => (v.spot === "award" && v.email && usersPreviousYear[k]?.email)).length}</td>
                         <td>{Object.entries(users).filter(([k, v]) => (v.spot === "award" && v.email && !v.isCertificateNecessary)).length}</td>
                     </tr>
@@ -266,7 +266,7 @@ function App() {
                         <Form.Group className="mb-3" controlId="transfer.target">
                             <Form.Label>Target</Form.Label>
                             <Form.Control type="email" required autoComplete="off" value={transferFormTarget} onChange={(e) => setTransferFormTarget(e.currentTarget.value)} />
-                            <Form.Text className="text-muted">{transferTargetCandidates.length}件 {transferTargetCandidates.length <= 0 ? "" : !orders[transferFormTarget.replace(/\./g, "=")] ? "OK" : "NG: 支払済！"} {transferTargetCandidates.map(([k, v]) => (<span key={k} role="button" onClick={(e) => { if (transferFormName.current) transferFormName.current.value = v.name }}>{v.name} {v.spot === "flag" ? "選抜" : "オープン"} {v.birthdate} {v.zipcode} {v.address} {v.schoolName} {v.grade}年</span>))}</Form.Text>
+                            <Form.Text className="text-muted">{transferTargetCandidates.length}件 {transferTargetCandidates.length <= 0 ? "" : !orders[transferFormTarget.replace(/\./g, "=").toLowerCase()] ? "OK" : "NG: 支払済！"} {transferTargetCandidates.map(([k, v]) => (<span key={k} role="button" onClick={(e) => { if (transferFormName.current) transferFormName.current.value = v.name }}>{v.name} {v.spot === "flag" ? "選抜" : "オープン"} {v.birthdate} {k} {v.zipcode} {v.address} {v.schoolName} {v.grade}年</span>))}</Form.Text>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="transfer.name">
                             <Form.Label>Name</Form.Label>
