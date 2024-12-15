@@ -187,6 +187,8 @@ function App() {
                     [target]: orders[source],
                     [source]: null,
                 });
+                setTransferFormSource("");
+                setTransferFormTarget("");
                 form.reset();
             } else {
                 let errs = [];
