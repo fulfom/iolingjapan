@@ -266,7 +266,7 @@ function App() {
                         <Form.Group className="mb-3" controlId="transfer.target">
                             <Form.Label>Target</Form.Label>
                             <Form.Control type="email" required autoComplete="off" value={transferFormTarget} onChange={(e) => setTransferFormTarget(e.currentTarget.value)} />
-                            <Form.Text className="text-muted">{transferTargetCandidates.length}件 {transferTargetCandidates.length <= 0 ? "" : !orders[transferFormTarget.replace(/\./g, "=")] ? "OK" : "NG: 支払済！"} {transferTargetCandidates.map(([k, v]) => (<span key={k} role="button" onClick={(e) => { if (transferFormName.current) transferFormName.current.value = v.name }}>{v.name}</span>))}</Form.Text>
+                            <Form.Text className="text-muted">{transferTargetCandidates.length}件 {transferTargetCandidates.length <= 0 ? "" : !orders[transferFormTarget.replace(/\./g, "=")] ? "OK" : "NG: 支払済！"} {transferTargetCandidates.map(([k, v]) => (<span key={k} role="button" onClick={(e) => { if (transferFormName.current) transferFormName.current.value = v.name }}>{v.name} {v.spot === "flag" ? "選抜" : "オープン"} {v.birthdate} {v.zipcode} {v.address} {v.schoolName} {v.grade}年</span>))}</Form.Text>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="transfer.name">
                             <Form.Label>Name</Form.Label>
