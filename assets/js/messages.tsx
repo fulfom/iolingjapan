@@ -57,7 +57,7 @@ export const emails = <div className="simple-box">
             </Accordion.Body>
         </Accordion.Item> */}
         <Accordion.Item eventKey="0">
-            <Accordion.Header as="p">2024/12/20 08:00: 日本言語学オリンピック JOL2025事前準備ページ公開 & 今後のスケジュール</Accordion.Header>
+            <Accordion.Header as="p">2024/12/20 09:00頃: 日本言語学オリンピック JOL2025事前準備ページ公開 & 今後のスケジュール</Accordion.Header>
             <Accordion.Body>
                 <p className="mb-3">JOL2025応募者のみなさま，</p>
                 <p className="mb-3">このたびは日本言語学オリンピックにご応募いただきありがとうございます．</p>
