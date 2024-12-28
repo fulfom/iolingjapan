@@ -175,8 +175,8 @@ upcomingContests:
     # record: "/record-jol/#jol2025結果"
     # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
-    status: "demositeopen" #事前準備オープン
-    # status: "siteopen" #会場オープン
+    # status: "demositeopen" #事前準備オープン
+    status: "siteopen" #会場オープン
     # status: "marking" #採点中
     # status: "resultopen" #結果公開
     # result: "/result/jol2025/"
@@ -184,7 +184,7 @@ upcomingContests:
     entry: "/entry/jol2025/"
     entryui: "/entry/jol2025/"
     demosite: "/contest/jol2025/demo"
-    # site: "/contest/jol2025/contest"
+    site: "/contest/jol2025/contest"
     public: true
   - id: aplo2025
     title: APLO2025
