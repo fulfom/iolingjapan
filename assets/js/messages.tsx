@@ -22,14 +22,15 @@ export const emails = <div className="simple-box">
                 <p>国際言語学オリンピック日本委員会</p>
 
             </Accordion.Body>
-        </Accordion.Item>
+        </Accordion.Item>*/}
         <Accordion.Item eventKey="2">
-            <Accordion.Header as="p">2023/12/29 10:00: JOL2024競技会場ページ公開</Accordion.Header>
+            <Accordion.Header as="p">2024/12/29 8:00頃: JOL2025競技会場ページ公開</Accordion.Header>
             <Accordion.Body>
-                <p className="mb-3">JOL2024応募者のみなさま，</p>
-                <p className="mb-3">JOL2024本番で使う競技会場ページを公開いたしました．</p>
-                <p className="mb-3">競技会場ページで待機の上，13:00に問題pdfが閲覧できるようになったら各自解き始めてください．</p>
-                <p className="mb-3"><a href="https://iolingjapan.org/contest/jol2024/contest/">https://iolingjapan.org/contest/jol2024/contest/</a></p>
+                <p className="mb-3">JOL2025応募者のみなさま，</p>
+                <p className="mb-3">JOL2025本番で使う競技会場ページを公開いたしました．</p>
+                <p>競技会場ページで待機の上，問題pdfが閲覧できるようになったら各自解き始めてください．</p>
+                <p className="mb-3">配信にタイムラグがあることを踏まえて，12:59～13:00の間に配信します．</p>
+                <p className="mb-3"><a href="https://iolingjapan.org/contest/jol2025/contest/">https://iolingjapan.org/contest/jol2025/contest/</a></p>
                 <p className="mb-3">※ログインが必要です．ログインしてもアクセスできない場合，メールアドレスを間違えている可能性があります．その場合は，このメールを受け取ったメールアドレスでログインしなおしてみてください．</p>
                 <p className="mb-3">2点重要な注意事項をお知らせします．</p>
                 <p><strong>不正行為について</strong></p>
@@ -42,9 +43,10 @@ export const emails = <div className="simple-box">
                 <p><strong>問題pdfと解答用ページ閲覧のトラブルについて</strong></p>
                 <p>事前準備ページで問題pdfと解答用ページが閲覧・操作できている方は問題ありません．</p>
                 <p>事前準備ページで動作確認を行っていない場合，競技時間中にトラブルが生じても対応しきれない可能性があります．</p>
-                <p className="mb-3">よくある回避策: 問題pdfや解答用ページにアクセスする際に，シークレットモード/シークレットウィンドウで開くことで，アクセスできるようになるケースがあります．</p>
                 <p className="mb-3">そのほか，動作確認期間中にいただいたよくある質問の解答を掲載いたします．</p>
                 <ul>
+                    <li>紙の受験票は送付していません．</li>
+                    <li>スマホアプリでスプレッドシートを編集する際はGoogleアカウントへのログインが必要なようです．なんらかのアカウントでログインの上お使いください（アカウントはJOL応募アカウントと無関係なものでも，新しく作ったものでも構いません）．</li>
                     <li>解答用ページ（グーグルスプレッドシート）は提出操作不要です．競技時間が終了したら解答用ページと競技会場を閉じて解散して構いません．</li>
                     <li>↑が使えず，代わりに解答用エクセルをダウンロードして記入した場合に限り，競技時間内に解答用エクセルのメール提出が必要です．詳しくは競技会場ページの「（予備）解答用ページが使えない場合」を押して案内をお読みください．</li>
                     <li>問題pdfの印刷の際に，プリンターのトラブルが生じたなどの理由で，問題を解く以外の範囲で他者の助けを借りるのは構いません．</li>
@@ -55,7 +57,7 @@ export const emails = <div className="simple-box">
                 <p>国際言語学オリンピック日本委員会</p>
 
             </Accordion.Body>
-        </Accordion.Item> */}
+        </Accordion.Item>
         <Accordion.Item eventKey="0">
             <Accordion.Header as="p">2024/12/20 09:00頃: 日本言語学オリンピック JOL2025事前準備ページ公開 & 今後のスケジュール</Accordion.Header>
             <Accordion.Body>

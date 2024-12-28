@@ -317,6 +317,7 @@ const App = () => {
         <span className="box-title">お知らせ</span>
         {!isPaid && <p>2024/12/20: JOL2025の応募は終了しました．</p>}
         {isPaid && <p>2024/12/20: <a href="/contest/jol2025/demo/">JOL2025の事前準備ページを公開しました．</a></p>}
+        {isPaid && <p>2024/12/29: <a href="/contest/jol2025/contest/">JOL2025本番で使う競技会場ページを公開しました．</a></p>}
         {/* {isPaid && <p>2024/12/29: <a>JOL2025本番で使う競技会場ページを公開しました．</a></p>}
         <p>2024/12/29: JOL2024本番終了</p>
         <p>2025/01/: <a href="/result/jol2024/">JOL2024結果発表</a></p> */}
@@ -348,7 +349,7 @@ const App = () => {
                         const isPaidTemp = paidSnapshot.val()
                         setIsPaid([!!isPaidTemp, true]);
 
-                        if (currentContestData.status === "entryopen" || currentContestData.status === "demositeopen") {
+                        if (currentContestData.status === "entryopen" || currentContestData.status === "demositeopen" || currentContestData.status === "siteopen") {
                             const contSnapshot = await get(ref(db, "/contests/" + currentContestId + "/users/" + user.uid));
                             const contestantInfo = contSnapshot.val();
                             if (contestantInfo && contestantInfo.name && isPaidTemp) {
