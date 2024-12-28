@@ -24,7 +24,7 @@ export const emails = <div className="simple-box">
             </Accordion.Body>
         </Accordion.Item>*/}
         <Accordion.Item eventKey="2">
-            <Accordion.Header as="p">2024/12/29 10:00頃: JOL2025競技会場ページ公開</Accordion.Header>
+            <Accordion.Header as="p">2024/12/29 8:00頃: JOL2025競技会場ページ公開</Accordion.Header>
             <Accordion.Body>
                 <p className="mb-3">JOL2025応募者のみなさま，</p>
                 <p className="mb-3">JOL2025本番で使う競技会場ページを公開いたしました．</p>
