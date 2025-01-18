@@ -1,7 +1,11 @@
 weight: 1
-title: "JOL2025過去問"
-description: "<p>2024/12/29: JOL2025の過去問を公開！</p>"
-link: "/preparation/"
+title: "JOL2025結果発表"
+description: "<p>結果を公開しました</p>"
+link: "/record-jol/"
+# weight: 1
+# title: "JOL2025過去問"
+# description: "<p>2024/12/29: JOL2025の過去問を公開！</p>"
+# link: "/preparation/"
 # weight: 1
 # title: "JOL2025応募開始"
 # description: "<p>応募締切は12月16日(月)</p>"
