@@ -514,7 +514,13 @@ function App({ user, udb }: { user: User, udb: any }) {
     // const hasHmAward: boolean = userResult && !userResult.award ? userResult.sum.slice(1).some((v, i) => (v >= scores.maxs[i + 1] * 0.8)) : false;
 
     const videos: Video[] = useMemo(() => {
-        if (!userResult || !userResult.award) { return []; }
+        if (!userResult) { return []; }
+        if (!userResult.award) {
+            return [{
+                src: `/video/jol2025-result/${userResult.spot}-none.mp4`,
+                alt: "受賞なし"
+            }];
+        }
         let tmp: Video[] = [];
         // 最優秀賞
         if (userResult.award.includes("grand")) {
