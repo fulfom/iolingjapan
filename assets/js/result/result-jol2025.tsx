@@ -537,8 +537,9 @@ function App({ user, udb }: { user: User, udb: any }) {
             });
         }
         if (userResult.award.includes("silver")) {
+            const aplosuffix = userResult.spot === "flag" ? userResult.award.includes("aplo") ? "-aplo" : "-notaplo" : "";
             tmp.push({
-                src: `/video/jol2025-result/${userResult.spot}-silver${userResult.award.includes("aplo") ? "-aplo" : "-notaplo"}.mp4`,
+                src: `/video/jol2025-result/${userResult.spot}-silver${aplosuffix}.mp4`,
                 alt: "銀賞"
             });
         }
