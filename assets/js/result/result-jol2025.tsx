@@ -472,14 +472,25 @@ type Video = {
     alt: string;
 }
 
-function VideoArea({ videos }: { videos: Video[] }) {
+function VideoArea({ videos, children }: { videos: Video[], children: React.ReactNode }) {
     const [select, setSelect] = useState(0);
     const [ended, setEnded] = useState(false);
 
-    const selectedVideo = videos.length > 0 && <video muted playsInline autoPlay className="w-100" src={videos[select].src} key={videos[select].src}
-        onEnded={() => setEnded(true)}>
-        <p style={{ fontSize: "3em" }}>{videos[select].alt}</p>
-    </video>;
+    const selectedVideo = videos.length > 0 && <>
+        <video id="result-video" muted playsInline autoPlay className="w-100" src={videos[select].src} key={videos[select].src}
+            onEnded={() => setEnded(true)}>
+            <p style={{ fontSize: "3em" }}>{videos[select].alt}</p>
+        </video>
+        <div className="d-flex justify-content-end">
+            <Button
+                variant="light"
+                onClick={() => {
+                    const rv = document.getElementById("result-video") as HTMLVideoElement;
+                    rv.currentTime = rv.duration;
+                }}
+                className="mt-0 w-25"><i className="fas fa-forward"></i></Button>
+        </div>
+    </>;
 
     return (
         <>
@@ -491,6 +502,7 @@ function VideoArea({ videos }: { videos: Video[] }) {
                     key={alt}
                 >{alt}</a>
             ))}</p>}
+            {ended && children}
         </>
     )
 }
@@ -507,61 +519,61 @@ function App({ user, udb }: { user: User, udb: any }) {
         // 最優秀賞
         if (userResult.award.includes("grand")) {
             tmp.push({
-                src: `/video/jol2025-result/${userResult.spot}-best${userResult.rank}.mov`,
+                src: `/video/jol2025-result/${userResult.spot}-best${userResult.rank}.mp4`,
                 alt: `${userResult.spot === "flag" ? "選抜" : "オープン"}枠最優秀賞（${userResult.rank}位）`
             });
         }
         // 優秀賞
         if (userResult.award.includes("gold")) {
             tmp.push({
-                src: `/video/jol2025-result/${userResult.spot}-gold.mov`,
-                alt: "gold"
+                src: `/video/jol2025-result/${userResult.spot}-gold.mp4`,
+                alt: "金賞"
             });
         }
         if (userResult.award.includes("silver")) {
             tmp.push({
-                src: `/video/jol2025-result/${userResult.spot}-silver${userResult.award.includes("aplo") ? "-aplo" : "-notaplo"}.mov`,
-                alt: "silver"
+                src: `/video/jol2025-result/${userResult.spot}-silver${userResult.award.includes("aplo") ? "-aplo" : "-notaplo"}.mp4`,
+                alt: "銀賞"
             });
         }
         if (userResult.award.includes("bronze")) {
             tmp.push({
-                src: `/video/jol2025-result/${userResult.spot}-bronze.mov`,
-                alt: "bronze"
+                src: `/video/jol2025-result/${userResult.spot}-bronze.mp4`,
+                alt: "銅賞"
             });
         }
         if (userResult.award.includes("honourable")) {
             tmp.push({
-                src: `/video/jol2025-result/${userResult.spot}-honourable.mov`,
-                alt: "honourable"
+                src: `/video/jol2025-result/${userResult.spot}-honourable.mp4`,
+                alt: "努力賞"
             });
         }
 
         // ジュニア奨励賞
         if (userResult.award.includes("junior")) {
             tmp.push({
-                src: `/video/jol2025-result/junior.mov`,
+                src: `/video/jol2025-result/junior.mp4`,
                 alt: "ジュニア奨励賞"
             });
         }
         // 地区賞
         if (userResult.award.includes("area")) {
             tmp.push({
-                src: `/video/jol2025-result/${userResult.area}.mov`,
+                src: `/video/jol2025-result/${userResult.area}.mp4`,
                 alt: `${userResult.area}地区賞`
             });
         }
         // 敢闘賞
         if (userResult.award.includes("hm")) {
             tmp.push({
-                src: `/video/jol2025-result/${userResult.spot}-k.mov`,
+                src: `/video/jol2025-result/${userResult.spot}-k.mp4`,
                 alt: `敢闘賞`
             });
         }
 
         if (tmp.length === 0) {
             return [{
-                src: `/video/jol2025-result/${userResult.spot}-none.mov`,
+                src: `/video/jol2025-result/${userResult.spot}-none.mp4`,
                 alt: "受賞なし"
             }];
         } else {
@@ -575,12 +587,13 @@ function App({ user, udb }: { user: User, udb: any }) {
             <p>あなたはJOL当日に参加していません．</p> :
             <>
                 {userResult.attend && userResult.award && <>
-                    <VideoArea videos={videos}></VideoArea>
-                    {userResult.spot === "flag" && (
-                        userResult.award.includes("aplo") ?
-                            <p>2025年4月20日（日）実施のアジア太平洋言語学オリンピック2025（二次選抜）にご招待します．ただし，APLOは別途参加資格の確認があり，参加資格を満たす場合にのみ公式に参加ができます．詳しいことが決まり次第，メールでご連絡差し上げます．</p>
-                            : <p>（アジア太平洋言語学オリンピック2025への招待はありません）</p>
-                    )}
+                    <VideoArea videos={videos}>
+                        {userResult.spot === "flag" && (
+                            userResult.award.includes("aplo") ?
+                                <p>2025年4月20日（日）実施のアジア太平洋言語学オリンピック2025（二次選抜）にご招待します．ただし，APLOは別途参加資格の確認があり，参加資格を満たす場合にのみ公式に参加ができます．詳しいことが決まり次第，メールでご連絡差し上げます．</p>
+                                : <p>（アジア太平洋言語学オリンピック2025への招待はありません）</p>
+                        )}
+                    </VideoArea>
                     {userResult.sum && <ResultChart userResult={userResult}></ResultChart>}
                     {/* <UserForm user={user} udb={udb}></UserForm> */}
                 </>}
