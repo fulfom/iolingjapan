@@ -592,10 +592,10 @@ function App({ user, udb }: { user: User, udb: any }) {
         {!userResultLoading ? !userResult ?
             <p>あなたはJOL当日に参加していません．</p> :
             <>
-                {userResult.attend && userResult.award && <>
+                {userResult.attend && <>
                     <VideoArea videos={videos}>
                         {userResult.spot === "flag" && (
-                            userResult.award.includes("aplo") ?
+                            userResult.award && userResult.award.includes("aplo") ?
                                 <p>2025年4月20日（日）実施のアジア太平洋言語学オリンピック2025（二次選抜）にご招待します．ただし，APLOは別途参加資格の確認があり，参加資格を満たす場合にのみ公式に参加ができます．詳しいことが決まり次第，メールでご連絡差し上げます．</p>
                                 : <p>（アジア太平洋言語学オリンピック2025への招待はありません）</p>
                         )}
