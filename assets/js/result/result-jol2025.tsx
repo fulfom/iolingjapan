@@ -601,7 +601,7 @@ function App({ user, udb }: { user: User, udb: any }) {
                         )}
                     </VideoArea>
                     {userResult.sum && <ResultChart userResult={userResult}></ResultChart>}
-                    {/* <UserForm user={user} udb={udb}></UserForm> */}
+                    <UserForm user={user} udb={udb}></UserForm>
                 </>}
                 {/* {userResult.participation === "onhold" && <p>{userResult.message}</p>} */}
                 {!userResult.attend && <p>あなたはJOL当日に参加していません．</p>}
