@@ -195,10 +195,10 @@ upcomingContests:
     # site: "/contest/aplo2025/"
     record: "/record-aplo/#aplo2025結果"
     limited: true
-    status: "pre" #応募開始前
+    # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
-    # status: "resultopen" #結果公開
-    public: true
+    status: "resultopen" #結果公開
+    # public: true
   - id: iol2025
     title: IOL2025
     desc1: 2025年7月後半
