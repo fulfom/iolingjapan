@@ -465,19 +465,24 @@ i.fa-angle-right {
 }
 
 .best-solution {
-  background-color: #0076ba30;
+  // background-color: #0076ba30;
+  background-color: #b2d5ea;
+
+  td {
+    background-color: inherit;
+  }
 }
 
 .team-gold {
-  background-color: #eee7cc;
+  @extend .gold;
 }
 
 .team-silver {
-  background-color: #eee;
+  @extend .silver;
 }
 
 .team-bronze {
-  background-color: #edc;
+  @extend .bronze;
 }
 
 .table-award-gsbh {

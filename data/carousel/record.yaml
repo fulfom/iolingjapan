@@ -1,7 +1,7 @@
-weight: 1
-title: "JOL2025結果発表"
-description: "<p>結果を公開しました</p>"
-link: "/record-jol/"
+# weight: 1
+# title: "JOL2025結果発表"
+# description: "<p>結果を公開しました</p>"
+# link: "/record-jol/"
 # weight: 1
 # title: "JOL2025過去問"
 # description: "<p>2024/12/29: JOL2025の過去問を公開！</p>"
@@ -26,6 +26,10 @@ link: "/record-jol/"
 # description: "<p>2023/05/03: JOL2023の過去問，解答を公開！</p>"
 # link: "/preparation/"
 
+weight: 1
+title: "IOL2025結果"
+description: "<p>第22回 台湾大会 日本代表8名が参加</p><p>銀4 銅2 努力賞1 団体努力賞1 獲得！</p>"
+link: "/record/"
 # weight: 1
 # title: "IOL2024結果"
 # description: "<p>第21回 ブラジル大会 日本代表8名が参加</p><p>金1 銀1 銅3 努力賞1 団体銅1 獲得！</p>"
