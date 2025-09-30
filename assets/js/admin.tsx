@@ -27,6 +27,11 @@ const CONTEST_DATA: {
         previous: "jol2024",
         name: "JOL2025",
         motivations: ["友人・先輩", "学校の先生", "家族", "塾", "YouTube", "ツイッター（X）", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"],
+    },
+    jol2026: {
+        previous: "jol2025",
+        name: "JOL2026",
+        motivations: ["友人・先輩", "学校の先生", "家族", "塾", "YouTube", "ツイッター（X）", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"],
     }
 }
 
@@ -46,7 +51,7 @@ function App() {
     const [orders, setOrders] = useState<{ [key: string]: boolean }>({});
     const [transfers, setTransfers] = useState<{ [key: string]: { source: string, target: string, name: string, memo: string, timestamp: number } }>({});
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
-    const [selectedId, setSelectedId] = useState("jol2025");
+    const [selectedId, setSelectedId] = useState("jol2026");
 
     // const transferFormSource = useRef<HTMLInputElement>(null);
     const transferFormName = useRef<HTMLInputElement>(null);
@@ -209,6 +214,7 @@ function App() {
     return (
         <>
             <Form.Select aria-label="Select Year" value={selectedId} onChange={(e) => setSelectedId(e.target.value)}>
+                <option value="jol2026">JOL2026</option>
                 <option value="jol2025">JOL2025</option>
                 <option value="jol2024">JOL2024</option>
             </Form.Select>
