@@ -281,11 +281,11 @@ const App = () => {
 
     const messagePreOrder = <div className="simple-box">
         <span className="box-title"><i className="fas fa-exclamation-triangle fa-fw"></i>注意</span>
-        <p>JOL2025の応募完了までもう一歩です</p>
+        <p>JOL2026の応募完了までもう一歩です</p>
         <ol>
             <li>
                 <p>応募途中の場合</p>
-                <p><a href="/entry/jol2025/">→こちらから応募手続きを続けてください．</a></p>
+                <p><a href="/entry/jol2026/">→こちらから応募手続きを続けてください．</a></p>
             </li>
             <li>
                 <p>ログインするアカウントを間違えている場合</p>
@@ -318,8 +318,8 @@ const App = () => {
         {/* {!isPaid && <p>2024/12/20: JOL2025の応募は終了しました．</p>} */}
         {/* {isPaid && <p>2024/12/20: <a href="/contest/jol2025/demo/">JOL2025の事前準備ページを公開しました．</a></p>} */}
         {/* {isPaid && <p>2024/12/29: <a href="/contest/jol2025/contest/">JOL2025本番で使う競技会場ページを公開しました．</a></p>} */}
-        <p>2024/12/29: JOL2025は終了しました．</p>
-        <p>2025/01/19: <a href="/result/jol2025/">JOL2025結果発表</a></p>
+        {/* <p>2024/12/29: JOL2025は終了しました．</p> */}
+        {/* <p>2025/01/19: <a href="/result/jol2025/">JOL2025結果発表</a></p> */}
     </div>, [isPaid])
 
     const message2 = useMemo(() => <div className="simple-box">
@@ -336,7 +336,7 @@ const App = () => {
         const unsubscribed = auth.onAuthStateChanged(async (user) => {
             setUser(user);
             if (user) {
-                const currentContestId = "jol2025"
+                const currentContestId = "jol2026"
                 const currentContestData = CONTESTS_DATA.upcomingContests.find((v) => (v.id === currentContestId))
                 if (!currentContestData) return
                 switch (currentContestData.status) {
@@ -389,13 +389,13 @@ const App = () => {
     }, []);
     return <div>
         {adminPortalLink}
-        {isAdmin ? <a href="/contest/jol2025/contest-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2025本番Admin</a> : <></>}
-        {isAdmin ? <a href="/contest/jol2025/demo-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2025デモAdmin</a> : <></>}
-        {/* {isIsPaidLoaded && isIsEntriedLoaded && !isPaid ? <>
+        {/* {isAdmin ? <a href="/contest/jol2025/contest-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2025本番Admin</a> : <></>}
+        {isAdmin ? <a href="/contest/jol2025/demo-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2025デモAdmin</a> : <></>} */}
+        {isIsPaidLoaded && isIsEntriedLoaded && !isPaid ? <>
             {news}
             {messagePreOrder}
         </>
-            : <></>} */}
+            : <></>}
         {/* {isIsPaidLoaded ? <>
             {news}
             {isPaid && emails}
@@ -407,7 +407,7 @@ const App = () => {
                 <p className="placeholder w-75"></p>
                 <p className="placeholder w-50"></p>
             </div>} */}
-        {news}
+        {/* {news} */}
         {contests}
         <div className="mt-5">
             {user ?

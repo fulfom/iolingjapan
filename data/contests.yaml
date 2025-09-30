@@ -164,7 +164,6 @@ pastContests:
     limited: true
     # status: "pre" #応募開始前
     status: "resultopen" #結果公開
-upcomingContests:
   - id: jol2025
     title: JOL2025
     desc1: 2024年12月29日(日)
@@ -206,6 +205,52 @@ upcomingContests:
     desc2: 台湾
     result: "https://ioling.org/results/2025/"
     record: "/record/#iol2025結果"
+    limited: true
+    # status: "pre" #応募開始前
+    status: "resultopen" #結果公開
+    public: true
+upcomingContests:
+  - id: jol2026
+    title: JOL2026
+    desc1: 2025年12月29日(月)
+    date: 2025-12-29
+    desc2: オンライン
+    detail: "/application/"
+    # result: "/result/jol2026/"
+    # record: "/record-jol/#jol2026結果"
+    # status: "pre" #応募開始前
+    status: "entryopen" #応募開始後
+    # status: "demositeopen" #事前準備オープン
+    # status: "siteopen" #会場オープン
+    # status: "marking" #採点中
+    # status: "resultopen" #結果公開
+    # result: "/result/jol2026/"
+    # record: "/record-jol/#jol2026結果"
+    entry: "/entry/jol2026/"
+    entryui: "/entry/jol2026/"
+    # demosite: "/contest/jol2026/demo"
+    # site: "/contest/jol2026/contest"
+    public: true
+  - id: aplo2026
+    title: APLO2026
+    desc1: 2026年3月29日(日)
+    date: 2026-03-29
+    detail: "/application/"
+    # entry: "/entry/aplo2026/"
+    # site: "/contest/aplo2026/"
+    # record: "/record-aplo/#aplo2026結果"
+    limited: true
+    status: "pre" #応募開始前
+    # status: "entryopen" #応募開始後
+    # status: "resultopen" #結果公開
+    # public: true
+  - id: iol2026
+    title: IOL2026
+    desc1: 2026年7月後半
+    date: 2026-07-24
+    desc2: ルーマニア
+    result: "https://ioling.org/results/2026/"
+    record: "/record/#iol2026結果"
     limited: true
     status: "pre" #応募開始前
     public: true

@@ -23,7 +23,7 @@ export const emails = <div className="simple-box">
 
             </Accordion.Body>
         </Accordion.Item>*/}
-        <Accordion.Item eventKey="2">
+        {/* <Accordion.Item eventKey="2">
             <Accordion.Header as="p">2024/12/29 8:00頃: JOL2025競技会場ページ公開</Accordion.Header>
             <Accordion.Body>
                 <p className="mb-3">JOL2025応募者のみなさま，</p>
@@ -57,8 +57,8 @@ export const emails = <div className="simple-box">
                 <p>国際言語学オリンピック日本委員会</p>
 
             </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="0">
+        </Accordion.Item> */}
+        {/* <Accordion.Item eventKey="0">
             <Accordion.Header as="p">2024/12/20 09:00頃: 日本言語学オリンピック JOL2025事前準備ページ公開 & 今後のスケジュール</Accordion.Header>
             <Accordion.Body>
                 <p className="mb-3">JOL2025応募者のみなさま，</p>
@@ -79,6 +79,6 @@ export const emails = <div className="simple-box">
                 <p className="mb-3">それでは，よろしくお願いいたします．</p>
                 <p>国際言語学オリンピック日本委員会</p>
             </Accordion.Body>
-        </Accordion.Item>
+        </Accordion.Item> */}
     </Accordion>
 </div>
