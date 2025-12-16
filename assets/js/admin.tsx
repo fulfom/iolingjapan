@@ -42,6 +42,7 @@ type UserInfo = {
     isCertificateNecessary?: boolean;
     spot?: string;
     motivations?: boolean[];
+    birthdate?: string;
 }
 
 function App() {
@@ -78,6 +79,8 @@ function App() {
         }
         return result;
     }, [users, orders])
+
+    const youngAwardUsers = Object.entries(users).filter(([k, v]) => (v.spot === "award" && v.birthdate && new Date(v.birthdate) >= new Date("2008-04-02")));
 
     const { motivations, motivationsFlag, motivationsAward, motivationText, motivationCounter } = useMemo(() => {
         let motivationstmp: number[] = Array(CONTEST_DATA[selectedId].motivations.length).fill(0);
@@ -258,7 +261,7 @@ function App() {
                     <h2>オーダー付替</h2>
                     <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
                     <p>未申込: {checkOrders.length}件</p>
-                    <div style={{ overflowWrap: "anywhere", overflow: "hidden" }}>{checkOrders.filter((v) => (
+                    <div style={{ overflowWrap: "anywhere" }}>{checkOrders.filter((v) => (
                         transferFormSource ? v[1].toLowerCase().startsWith(transferFormSource.toLowerCase()) : true
                     )).map((v) => (
                         <a role="button" key={v[1]} className="me-3 text-nowrap" onClick={
@@ -296,6 +299,12 @@ function App() {
                             <Form.Label>name</Form.Label>
                             <Form.Control type="text" autoComplete="off" value={searchFormName} onChange={(e) => setSearchFormName(e.currentTarget.value)} />
                         </Form.Group>
+                        <Form.Group as={Col} xs="12" md="auto" controlId="search.clear">
+                            <Button variant="secondary" onClick={() => {
+                                setSearchFormZipcode("");
+                                setSearchFormName("");
+                            }} >clear</Button>
+                        </Form.Group>
                     </Row>
                     <Table>
                         <thead>
@@ -314,7 +323,11 @@ function App() {
                             )).map(([k, v]) => (
                                 <tr key={k}>
                                     <td>{k}</td>
-                                    <td>{v.email}</td>
+                                    <td>{<a role="button" className="me-3 text-nowrap" onClick={
+                                        (e) => {
+                                            setTransferFormTarget(v.email || "");
+                                        }
+                                    }>{v.email}</a>}</td>
                                     <td>{v.name}</td>
                                     <td>{v.zipcode}</td>
                                     <td>{v.address}</td>
@@ -329,6 +342,17 @@ function App() {
                         {Object.entries(transfers).map(([k, v]) => (
                             <li key={k}>{v.source} → {v.target} @{format(v.timestamp, "yyyy-MM-dd HH:mm:ss")} {v.name} //{v.memo}</li>
                         ))}
+                    </ul>
+                    <h3>{CONTEST_DATA[selectedId].name} 選抜疑惑</h3>
+                    <Button className="mb-3" onClick={() => {
+                        navigator.clipboard.writeText(youngAwardUsers.map(([k, v]) => `${v.email}`).join("\n"));
+                    }}>{youngAwardUsers.length}件 コピー</Button>
+                    <ul>
+                        {youngAwardUsers
+                            .map(([k, v]) => (
+                                <li key={k}>{v.email} {v.name} ({v.birthdate})</li>
+                            ))
+                        }
                     </ul>
                 </>
             }
