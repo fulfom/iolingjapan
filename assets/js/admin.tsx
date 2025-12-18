@@ -388,7 +388,7 @@ function App() {
                                 <Form.Label>Target</Form.Label>
                                 <Form.Control type="text" required autoComplete="off" value={groupOrderEmailsText} onChange={(e) => setGroupOrderEmailsText(e.currentTarget.value)} />
                             </Form.Group>
-                            <Button variant="primary" type="submit">Submit</Button>
+                            <Button variant="primary" type="submit">{groupOrderEmails.length}件 Submit</Button>
                         </Form>
                         <Table>
                             <thead>
