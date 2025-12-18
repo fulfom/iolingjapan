@@ -9,7 +9,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { User } from "firebase/auth";
 import { format } from "date-fns";
-import { Col, Row, Table } from "react-bootstrap";
+import { Col, Row, Table, Nav } from "react-bootstrap";
 
 const CONTEST_DATA: {
     [key: string]: {
@@ -54,12 +54,17 @@ function App() {
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
     const [selectedId, setSelectedId] = useState("jol2026");
 
+    const [navtab, setNavtab] = useState("orderTransfer");
+
     // const transferFormSource = useRef<HTMLInputElement>(null);
     const transferFormName = useRef<HTMLInputElement>(null);
     const [transferFormSource, setTransferFormSource] = useState<string>("");
     const [transferFormTarget, setTransferFormTarget] = useState<string>("");
     const [searchFormZipcode, setSearchFormZipcode] = useState<string>("");
     const [searchFormName, setSearchFormName] = useState<string>("");
+
+    const [groupOrderEmailsText, setGroupOrderEmailsText] = useState<string>("");
+    const groupOrderEmails = groupOrderEmailsText.split(",").map((email) => email.trim()).filter((email) => email !== "");
 
     const transferTargetCandidates = Object.entries(users).filter(([k, v]) => (v.email?.toLowerCase() === transferFormTarget.toLowerCase()))
 
@@ -214,6 +219,27 @@ function App() {
         }
     }
 
+    const handleGroupOrder = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (user === null) {
+            alert("Not logged in");
+            return;
+        }
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.stopPropagation();
+            alert("Invalid input");
+        } else {
+            const refOrders = ref(db, `/orders/${selectedId}/`);
+            for (const email of groupOrderEmails) {
+                const key = email.replace(/\./g, "=").toLowerCase();
+                await update(refOrders, {
+                    [key]: true,
+                });
+            }
+        }
+    }
+
     return (
         <>
             <Form.Select aria-label="Select Year" value={selectedId} onChange={(e) => setSelectedId(e.target.value)}>
@@ -258,92 +284,147 @@ function App() {
             </table>
             {history && history.admin?.orderTransfer &&
                 <>
-                    <h2>オーダー付替</h2>
-                    <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
-                    <p>未申込: {checkOrders.length}件</p>
-                    <div style={{ overflowWrap: "anywhere" }}>{checkOrders.filter((v) => (
-                        transferFormSource ? v[1].toLowerCase().startsWith(transferFormSource.toLowerCase()) : true
-                    )).map((v) => (
-                        <a role="button" key={v[1]} className="me-3 text-nowrap" onClick={
-                            (e) => {
-                                setTransferFormSource(v[1]);
-                            }
-                        }>{v[1]}</a>
-                    ))}</div>
-                    <Form validated onSubmit={handleTransfer}>
-                        <Form.Group className="mb-3" controlId="transfer.source">
-                            <Form.Label>Source</Form.Label>
-                            <Form.Control type="email" required autoComplete="off" value={transferFormSource} onChange={(e) => setTransferFormSource(e.currentTarget.value)} />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="transfer.target">
-                            <Form.Label>Target</Form.Label>
-                            <Form.Control type="email" required autoComplete="off" value={transferFormTarget} onChange={(e) => setTransferFormTarget(e.currentTarget.value)} />
-                            <Form.Text className="text-muted">{transferTargetCandidates.length}件 {transferTargetCandidates.length <= 0 ? "" : !orders[transferFormTarget.replace(/\./g, "=").toLowerCase()] ? "OK" : "NG: 支払済！"} {transferTargetCandidates.map(([k, v]) => (<span key={k} role="button" onClick={(e) => { if (transferFormName.current) transferFormName.current.value = v.name }}>{v.name} {v.spot === "flag" ? "選抜" : "オープン"} {v.birthdate} {k} {v.zipcode} {v.address} {v.schoolName} {v.grade}年</span>))}</Form.Text>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="transfer.name">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control type="text" required autoComplete="off" ref={transferFormName} />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="transfer.memo">
-                            <Form.Label>Memo</Form.Label>
-                            <Form.Control type="text" autoComplete="off" />
-                        </Form.Group>
-                        <Button variant="primary" type="submit">Submit</Button>
-                    </Form>
-                    <Row className="mb-3">
-                        <Form.Group as={Col} controlId="search.zipcode">
-                            <Form.Label>zipcode</Form.Label>
-                            <Form.Control type="text" autoComplete="off" value={searchFormZipcode} onChange={(e) => setSearchFormZipcode(e.currentTarget.value)} />
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="search.name">
-                            <Form.Label>name</Form.Label>
-                            <Form.Control type="text" autoComplete="off" value={searchFormName} onChange={(e) => setSearchFormName(e.currentTarget.value)} />
-                        </Form.Group>
-                        <Form.Group as={Col} xs="12" md="auto" controlId="search.clear">
-                            <Button variant="secondary" onClick={() => {
-                                setSearchFormZipcode("");
-                                setSearchFormName("");
-                            }} >clear</Button>
-                        </Form.Group>
-                    </Row>
-                    <Table>
-                        <thead>
-                            <tr>
-                                <th>uid</th>
-                                <th>email</th>
-                                <th>name</th>
-                                <th>zipcode</th>
-                                <th>address</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {(searchFormZipcode || searchFormName) ? Object.entries(users).filter(([k, v]) => (
-                                v.zipcode && v.name &&
-                                v.zipcode.startsWith(searchFormZipcode) && v.name.includes(searchFormName)
-                            )).map(([k, v]) => (
-                                <tr key={k}>
-                                    <td>{k}</td>
-                                    <td>{<a role="button" className="me-3 text-nowrap" onClick={
-                                        (e) => {
-                                            setTransferFormTarget(v.email || "");
-                                        }
-                                    }>{v.email}</a>}</td>
-                                    <td>{v.name}</td>
-                                    <td>{v.zipcode}</td>
-                                    <td>{v.address}</td>
+                    <Nav justify variant="tabs" defaultActiveKey="orderTransfer" onSelect={(selectedKey) => {
+                        setNavtab(selectedKey || "");
+                    }}>
+                        <Nav.Item>
+                            <Nav.Link eventKey="orderTransfer">オーダー付替</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="groupOrder">グループオーダー</Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                    {navtab === "orderTransfer" && <>
+                        <h2>オーダー付替</h2>
+                        <p>{Object.entries(orders).filter(([k, v]) => (v)).length}</p>
+                        <p>未申込: {checkOrders.length}件</p>
+                        <div style={{ overflowWrap: "anywhere" }}>{checkOrders.filter((v) => (
+                            transferFormSource ? v[1].toLowerCase().startsWith(transferFormSource.toLowerCase()) : true
+                        )).map((v) => (
+                            <a role="button" key={v[1]} className="me-3 text-nowrap" onClick={
+                                (e) => {
+                                    setTransferFormSource(v[1]);
+                                }
+                            }>{v[1]}</a>
+                        ))}</div>
+                        <Form validated onSubmit={handleTransfer}>
+                            <Form.Group className="mb-3" controlId="transfer.source">
+                                <Form.Label>Source</Form.Label>
+                                <Form.Control type="email" required autoComplete="off" value={transferFormSource} onChange={(e) => setTransferFormSource(e.currentTarget.value)} />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="transfer.target">
+                                <Form.Label>Target</Form.Label>
+                                <Form.Control type="email" required autoComplete="off" value={transferFormTarget} onChange={(e) => setTransferFormTarget(e.currentTarget.value)} />
+                                <Form.Text className="text-muted">{transferTargetCandidates.length}件 {transferTargetCandidates.length <= 0 ? "" : !orders[transferFormTarget.replace(/\./g, "=").toLowerCase()] ? "OK" : "NG: 支払済！"} {transferTargetCandidates.map(([k, v]) => (<span key={k} role="button" onClick={(e) => { if (transferFormName.current) transferFormName.current.value = v.name }}>{v.name} {v.spot === "flag" ? "選抜" : "オープン"} {v.birthdate} {k} {v.zipcode} {v.address} {v.schoolName} {v.grade}年</span>))}</Form.Text>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="transfer.name">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control type="text" required autoComplete="off" ref={transferFormName} />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="transfer.memo">
+                                <Form.Label>Memo</Form.Label>
+                                <Form.Control type="text" autoComplete="off" />
+                            </Form.Group>
+                            <Button variant="primary" type="submit">Submit</Button>
+                        </Form>
+                        <Row className="mb-3">
+                            <Form.Group as={Col} controlId="search.zipcode">
+                                <Form.Label>zipcode</Form.Label>
+                                <Form.Control type="text" autoComplete="off" value={searchFormZipcode} onChange={(e) => setSearchFormZipcode(e.currentTarget.value)} />
+                            </Form.Group>
+                            <Form.Group as={Col} controlId="search.name">
+                                <Form.Label>name</Form.Label>
+                                <Form.Control type="text" autoComplete="off" value={searchFormName} onChange={(e) => setSearchFormName(e.currentTarget.value)} />
+                            </Form.Group>
+                            <Form.Group as={Col} xs="12" md="auto" controlId="search.clear">
+                                <Button variant="secondary" onClick={() => {
+                                    setSearchFormZipcode("");
+                                    setSearchFormName("");
+                                }} >clear</Button>
+                            </Form.Group>
+                        </Row>
+                        <Table>
+                            <thead>
+                                <tr>
+                                    <th>uid</th>
+                                    <th>email</th>
+                                    <th>name</th>
+                                    <th>zipcode</th>
+                                    <th>address</th>
                                 </tr>
-                            )) : <tr>
-                                <td colSpan={5}>検索条件を指定してください</td>
-                            </tr>}
-                        </tbody>
-                    </Table>
-                    <h3>{CONTEST_DATA[selectedId].name} 付替履歴</h3>
-                    <ul>
-                        {Object.entries(transfers).map(([k, v]) => (
-                            <li key={k}>{v.source} → {v.target} @{format(v.timestamp, "yyyy-MM-dd HH:mm:ss")} {v.name} //{v.memo}</li>
-                        ))}
-                    </ul>
-                    <h3>{CONTEST_DATA[selectedId].name} 選抜疑惑</h3>
+                            </thead>
+                            <tbody>
+                                {(searchFormZipcode || searchFormName) ? Object.entries(users).filter(([k, v]) => (
+                                    v.zipcode && v.name &&
+                                    v.zipcode.startsWith(searchFormZipcode) && v.name.includes(searchFormName)
+                                )).map(([k, v]) => (
+                                    <tr key={k}>
+                                        <td>{k}</td>
+                                        <td>{<a role="button" className="me-3 text-nowrap" onClick={
+                                            (e) => {
+                                                setTransferFormTarget(v.email || "");
+                                            }
+                                        }>{v.email}</a>}</td>
+                                        <td>{v.name}</td>
+                                        <td>{v.zipcode}</td>
+                                        <td>{v.address}</td>
+                                    </tr>
+                                )) : <tr>
+                                    <td colSpan={5}>検索条件を指定してください</td>
+                                </tr>}
+                            </tbody>
+                        </Table>
+                        <h3>{CONTEST_DATA[selectedId].name} 付替履歴</h3>
+                        <ul>
+                            {Object.entries(transfers).map(([k, v]) => (
+                                <li key={k}>{v.source} → {v.target} @{format(v.timestamp, "yyyy-MM-dd HH:mm:ss")} {v.name} //{v.memo}</li>
+                            ))}
+                        </ul>
+                    </>}
+                    {navtab === "groupOrder" && <>
+                        <h2>グループオーダー</h2>
+                        <Form validated onSubmit={handleGroupOrder}>
+                            <Form.Group className="mb-3" controlId="transfer.target">
+                                <Form.Label>Target</Form.Label>
+                                <Form.Control type="text" required autoComplete="off" value={groupOrderEmailsText} onChange={(e) => setGroupOrderEmailsText(e.currentTarget.value)} />
+                            </Form.Group>
+                            <Button variant="primary" type="submit">Submit</Button>
+                        </Form>
+                        <Table>
+                            <thead>
+                                <tr>
+                                    <th>status</th>
+                                    <th>email</th>
+                                    <th>uid</th>
+                                    <th>info</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {groupOrderEmailsText ? groupOrderEmails.map((email) => {
+                                    const user = Object.entries(users).find(([k, v]) => (v.email?.toLowerCase() === email.toLowerCase()));
+                                    if (!user) {
+                                        return <tr key={email}>
+                                            <td>Not found</td>
+                                            <td>{email}</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    }
+                                    const [k, v] = user;
+                                    const isPaid = orders[email.replace(/\./g, "=").toLowerCase()];
+                                    return <tr key={email}>
+                                        <td>{!isPaid ? "OK" : "NG: 支払済！"}</td>
+                                        <td>{email}</td>
+                                        <td>{k}</td>
+                                        <td>{v.name} {v.spot} {v.schoolName || ""}</td>
+                                    </tr>
+                                }) : <tr>
+                                    <td colSpan={4}>対象を指定してください</td>
+                                </tr>}
+                            </tbody>
+                        </Table>
+                    </>}
+                    <h2>{CONTEST_DATA[selectedId].name} 選抜疑惑</h2>
                     <Button className="mb-3" onClick={() => {
                         navigator.clipboard.writeText(youngAwardUsers.map(([k, v]) => `${v.email}`).join("\n"));
                     }}>{youngAwardUsers.length}件 コピー</Button>
