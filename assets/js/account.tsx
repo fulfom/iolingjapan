@@ -169,7 +169,8 @@ const statusButton = (handleModalShow: (id: string) => (void), config: contestCo
         case "demositeopen":
             return isEntried ?
                 <a href={config.demosite} className="btn btn-primary float-end" role="button"><i className="fas fa-puzzle-piece fa-fw"></i>事前準備</a> :
-                <button disabled className="btn btn-outline-dark float-end">応募終了</button>
+                <a href={config.entry} className="btn btn-primary float-end" role="button"><i className="fas fa-file-alt fa-fw"></i>応募</a>
+        // <button disabled className="btn btn-outline-dark float-end">応募終了</button>
         case "siteopen":
             return isEntried ?
                 <a href={config.site} className="btn btn-primary float-end" role="button"><i className="fas fa-puzzle-piece fa-fw"></i>競技会場</a> :
@@ -231,7 +232,7 @@ const App = () => {
             </div>
             <h5 className="text-moderate mt-1">{config.title}</h5>
             {config.detail ? <a className="card-link" href={config.detail}>詳細</a> : <></>}
-            {config.status === "entryopen" && isEntried && (config.entryui || config.entry) && <a className="card-link" href={config.entryui || config.entry}><i className="fas fa-user-edit fa-fw"></i>確認</a>}
+            {(config.status === "entryopen" || config.status === "demositeopen") && isEntried && (config.entryui || config.entry) && <a className="card-link" href={config.entryui || config.entry}><i className="fas fa-user-edit fa-fw"></i>確認</a>}
             {config.status === "siteopen" && isEntried && config.demosite && <a href={config.demosite} className="card-link" ><i className="fas fa-puzzle-piece fa-fw"></i>事前準備</a>}
             {config.record ? <a className="card-link" href={config.record}>データ</a> : <></>}
         </div> : <></>
