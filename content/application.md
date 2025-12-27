@@ -8,6 +8,10 @@ aliases = ["/past-applications/"]
 {{% simplebox "お知らせ" %}}
 
 2025年10月1日: JOL2026への応募を開始しました．  
+2025年12月22日: [応募者向け] [JOL2026事前準備ページを公開しました．接続テストなどを行ってください．](/account/)  
+<!-- 2025年12月29日: [応募者向け] [JOL2026競技会場ページを公開しました．](/account/) -->
+
+※応募者向けメールが受け取れていない方は，[応募者ページから](/account/)からメール履歴を確認してください．
 
 {{% /simplebox %}}
 
@@ -259,7 +263,7 @@ IOL2026 はルーマニアのブカレストで開かれます．
 
 ---
 
-<div class="centralize"><a class="btn btn-template-primary text-decoration-none d-block" onclick="location.href='/login/'">応募はこちら</a></div>
+<!-- <div class="centralize"><a class="btn btn-template-primary text-decoration-none d-block" onclick="location.href='/login/'">応募はこちら</a></div> -->
 
 {{< card-header title="以前の受験案内">}}
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}

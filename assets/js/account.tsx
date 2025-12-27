@@ -316,7 +316,7 @@ const App = () => {
 
     const news = useMemo(() => <div className="simple-box">
         <span className="box-title">お知らせ</span>
-        {/* {!isPaid && <p>2024/12/20: JOL2025の応募は終了しました．</p>} */}
+        {/* {!isPaid && <p>2024/12/15: JOL2025の応募は終了しました．</p>} */}
         {/* {isPaid && <p>2024/12/20: <a href="/contest/jol2025/demo/">JOL2025の事前準備ページを公開しました．</a></p>} */}
         {/* {isPaid && <p>2024/12/29: <a href="/contest/jol2025/contest/">JOL2025本番で使う競技会場ページを公開しました．</a></p>} */}
         {/* <p>2024/12/29: JOL2025は終了しました．</p> */}
@@ -390,14 +390,14 @@ const App = () => {
     }, []);
     return <div>
         {adminPortalLink}
-        {/* {isAdmin ? <a href="/contest/jol2025/contest-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2025本番Admin</a> : <></>}
-        {isAdmin ? <a href="/contest/jol2025/demo-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2025デモAdmin</a> : <></>} */}
-        {isIsPaidLoaded && isIsEntriedLoaded && !isPaid ? <>
+        {isAdmin ? <a href="/contest/jol2026/contest-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2026本番Admin</a> : <></>}
+        {isAdmin ? <a href="/contest/jol2026/demo-admin/" className="btn btn-info btn-small ms-3" role="button">JOL2026デモAdmin</a> : <></>}
+        {/* {isIsPaidLoaded && isIsEntriedLoaded && !isPaid ? <>
             {news}
             {messagePreOrder}
         </>
-            : <></>}
-        {/* {isIsPaidLoaded ? <>
+            : <></>} */}
+        {isIsPaidLoaded ? <>
             {news}
             {isPaid && emails}
             {!isPaid && message2}
@@ -407,7 +407,7 @@ const App = () => {
                 <p className="placeholder w-100"></p>
                 <p className="placeholder w-75"></p>
                 <p className="placeholder w-50"></p>
-            </div>} */}
+            </div>}
         {/* {news} */}
         {contests}
         <div className="mt-5">
