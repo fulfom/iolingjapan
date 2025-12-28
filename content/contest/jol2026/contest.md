@@ -2,7 +2,7 @@
 title = "JOL2026競技会場"
 importTSX = "js/contest/jol2026/contest.tsx"
 type="page"
-draft = true
+draft = false
 isFBInit = false
 +++
 
@@ -63,12 +63,12 @@ isFBInit = false
 
 ---
 
-<!-- TODO: 以下要更新 ☆ -->
+<!-- TODO: 以下要更新 2026OK -->
 
 ### 競技中の注意事項
 
-- 問題冊子は☆ページまであります．
-- 競技時間は120分です．問題は☆問あります．どの問題から解いても構いません．
+- 問題冊子は10ページまであります．
+- 競技時間は120分です．問題は5問あります．どの問題から解いても構いません．
 - 競技開始時刻になったら，解答用ページのリンクを開いて解答を入力してください．
 - 競技終了時刻になったら，速やかに解答を終了してください．競技終了時刻以降に入力された解答は採点されません．
 - 競技中は**資料や外部の情報源を使用してはいけません**．不正行為が発覚した場合は失格となります．
@@ -77,7 +77,7 @@ isFBInit = false
 ### 解答の注意
 
 - 解答はすべて解答用ページの指定の解答欄に入力してください．
-- 小問は全部で☆問あります．各小問には問題番号が1から☆まで振られています．問題番号に対応する解答欄に入力してください．
+- 小問は全部で56問あります．各小問には問題番号が1から56まで振られています．問題番号に対応する解答欄に入力してください．
 - 解答欄以外には何も入力しないでください．
 - 誤字・脱字がないよう注意深く入力してください．
 - 問題文の表記通りに記入してください．
@@ -158,10 +158,10 @@ isFBInit = false
 | ア) | 薬       | karu    | karu      |
 | イ) | 子ども   | ngaleke | rengaleke |
 | ウ) | 犬       | bilis   | bilis     |
-| エ) | 友人     | secheli | resecheli |
+| エ) | 少年     | buik    | rebuik     |
 | オ) | 教師     | sensei  | [ 1 ]     |
 | カ) | 車       | mlai    | [ 2 ]     |
-| キ) | 少年     | buik    | [ 3 ]     |
+| キ) | 友人     | secheli | [ 3 ] |
 {{< /table >}}
 
 空欄[ 1 ]～[ 3 ]を埋めなさい． [3点, 完答]
@@ -170,15 +170,15 @@ isFBInit = false
 
 |||||
 | ------------ | --------- | --------- | ----------------- |
-| 1. resensei | 2. mlai   | 3. rebuik | ←正解 (3点)     |
-| 1. resensei | 2. remlai | 3. rebuik | ←得点なし (0点) |
-| 1. sensei   | 2. mlai   | 3. buik   | ←得点なし (0点) |
+| 1. resensei | 2. mlai   | 3. resecheli | ←正解 (3点)     |
+| 1. resensei | 2. remlai | 3. resecheli | ←得点なし (0点) |
+| 1. sensei   | 2. mlai   | 3. secheli   | ←得点なし (0点) |
 {{< /table >}}
 {{< list class="d-sm-none" style="list-style-type: none" >}}
 
-- 1\. resensei 2. mlai   3. rebuik ←正解 (3点)
-- 1\. resensei 2. remlai 3. rebuik ←得点なし (0点)
-- 1\. sensei   2. mlai   3. buik   ←得点なし (0点)
+- 1\. resensei 2. mlai   3. resecheli ←正解 (3点): 人には re- がつく
+- 1\. resensei 2. remlai 3. resecheli ←得点なし (0点)
+- 1\. sensei   2. mlai   3. secheli   ←得点なし (0点)
 {{< /list >}}
 {{< /simplebox >}}
 
