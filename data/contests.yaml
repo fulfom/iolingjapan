@@ -229,7 +229,7 @@ upcomingContests:
     entry: "/entry/jol2026/"
     entryui: "/entry/jol2026/"
     demosite: "/contest/jol2026/demo"
-    # site: "/contest/jol2026/contest"
+    site: "/contest/jol2026/contest"
     public: true
   - id: aplo2026
     title: APLO2026
