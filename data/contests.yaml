@@ -220,8 +220,8 @@ upcomingContests:
     # record: "/record-jol/#jol2026結果"
     # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
-    status: "demositeopen" #事前準備オープン
-    # status: "siteopen" #会場オープン
+    # status: "demositeopen" #事前準備オープン
+    status: "siteopen" #会場オープン
     # status: "marking" #採点中
     # status: "resultopen" #結果公開
     # result: "/result/jol2026/"
