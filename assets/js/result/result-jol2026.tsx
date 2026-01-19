@@ -525,7 +525,7 @@ function App({ user, udb }: { user: User, udb: any }) {
         // 最優秀賞
         if (userResult.award.includes("grand")) {
             tmp.push({
-                src: `/video/jol2026-result/${userResult.spot}-best${userResult.rank}.mp4`,
+                src: `/video/jol2026-result/${userResult.spot}-best1.mp4`,
                 alt: `${userResult.spot === "flag" ? "選抜" : "オープン"}枠最優秀賞（${userResult.rank}位）`
             });
         }
