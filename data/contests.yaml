@@ -221,15 +221,15 @@ upcomingContests:
     # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
     # status: "demositeopen" #事前準備オープン
-    status: "siteopen" #会場オープン
+    # status: "siteopen" #会場オープン
     # status: "marking" #採点中
-    # status: "resultopen" #結果公開
-    # result: "/result/jol2026/"
-    # record: "/record-jol/#jol2026結果"
-    entry: "/entry/jol2026/"
-    entryui: "/entry/jol2026/"
-    demosite: "/contest/jol2026/demo"
-    site: "/contest/jol2026/contest"
+    status: "resultopen" #結果公開
+    result: "/result/jol2026/"
+    record: "/record-jol/#jol2026結果"
+    # entry: "/entry/jol2026/"
+    # entryui: "/entry/jol2026/"
+    # demosite: "/contest/jol2026/demo"
+    # site: "/contest/jol2026/contest"
     public: true
   - id: aplo2026
     title: APLO2026

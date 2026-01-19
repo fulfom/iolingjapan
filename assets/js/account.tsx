@@ -320,7 +320,7 @@ const App = () => {
         {/* {isPaid && <p>2024/12/20: <a href="/contest/jol2025/demo/">JOL2025の事前準備ページを公開しました．</a></p>} */}
         {/* {isPaid && <p>2024/12/29: <a href="/contest/jol2025/contest/">JOL2025本番で使う競技会場ページを公開しました．</a></p>} */}
         {/* <p>2024/12/29: JOL2025は終了しました．</p> */}
-        {/* <p>2025/01/19: <a href="/result/jol2025/">JOL2025結果発表</a></p> */}
+        <p>2026/01/19: <a href="/result/jol2026/">JOL2026結果発表</a></p>
     </div>, [isPaid])
 
     const message2 = useMemo(() => <div className="simple-box">
@@ -397,7 +397,7 @@ const App = () => {
             {messagePreOrder}
         </>
             : <></>} */}
-        {isIsPaidLoaded ? <>
+        {/* {isIsPaidLoaded ? <>
             {news}
             {isPaid && emails}
             {!isPaid && message2}
@@ -407,8 +407,8 @@ const App = () => {
                 <p className="placeholder w-100"></p>
                 <p className="placeholder w-75"></p>
                 <p className="placeholder w-50"></p>
-            </div>}
-        {/* {news} */}
+            </div>} */}
+        {news}
         {contests}
         <div className="mt-5">
             {user ?
