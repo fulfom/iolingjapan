@@ -238,11 +238,11 @@ upcomingContests:
     detail: "/application/"
     # entry: "/entry/aplo2026/"
     # site: "/contest/aplo2026/"
-    # record: "/record-aplo/#aplo2026結果"
+    record: "/record-aplo/#aplo2026結果"
     limited: true
-    status: "pre" #応募開始前
+    # status: "pre" #応募開始前
     # status: "entryopen" #応募開始後
-    # status: "resultopen" #結果公開
+    status: "resultopen" #結果公開
     # public: true
   - id: iol2026
     title: IOL2026
