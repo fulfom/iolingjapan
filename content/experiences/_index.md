@@ -8,6 +8,14 @@ type = "page"
 
 {{< wrap tag=div class="container" >}}
 {{< wrap tag=div class="row row-cols-1 row-cols-lg-2" >}}
+
+{{% memberCard name="相澤 遼太" ruby="あいざわ りょうた" role="IOL2025日本代表（銀賞）" href="/experiences/iol2025-1/" %}}
+
+{{< icon pen 執筆>}}2025年
+
+<button class="btn btn-small btn-template-primary">→読む</button>
+{{% /memberCard %}}
+
 <!-- 
 {{% memberCard name="大宮 隆誠" ruby="おおみや りゅうせい" role="IOL2023日本代表（金賞・世界2位・最優秀解答賞）" href="/experiences/iol2023-1/" %}}
 
