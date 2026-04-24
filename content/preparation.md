@@ -249,7 +249,7 @@ keywords = []
 - [Onling(オンライン言語学オリンピック)](https://onling.org/)
 - [UKLO(イギリス予選)](https://www.uklo.org/past-problems#problems)
 - [OzCLO(オーストラリア予選)](https://ozclo.org.au/past-problems/)
-- [NACLO(北米予選)](https://nacloweb.org/practice.php#previous_problems)
+- [NACLO(北米予選)](https://naclo.org/practice.php)
 - [AILO(アイルランド予選)](https://ailo.adaptcentre.ie/sample-puzzles/)
 - [LLO(ラトビア予選)](http://loling.lv/en/past.html)
 - [その他の国](https://ioling.org/local_organizers/)
