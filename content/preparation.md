@@ -245,15 +245,15 @@ keywords = []
 {{< list class="list-group list-group-flush list-fill-link" liclass="list-group-item" >}}
 
 - [IOL(国際言語学オリンピック)](https://ioling.org/problems/by_year)
-- [APLO(アジア太平洋言語学オリンピック)](https://aplo.asia/problems-by-year/)
+- [APLO(アジア太平洋言語学オリンピック)](https://aplo.asia/problems/problems-by-year/)
 - [Onling(オンライン言語学オリンピック)](https://onling.org/)
-- [UKLO(イギリス予選)](https://www.uklo.org/past-problems#problems)
+- [UKLO(イギリス予選)](https://www.uklo.org/past-exam-papers/)
 - [OzCLO(オーストラリア予選)](https://ozclo.org.au/past-problems/)
-- [NACLO(北米予選)](https://nacloweb.org/practice.php#previous_problems)
-- [AILO(アイルランド予選)](https://ailo.adaptcentre.ie/sample-puzzles/)
+- [NACLO(北米予選)](https://naclo.org/practice.php#previous_problems)
+- [AILO(アイルランド予選)](https://ailo.adaptcentre.ie/puzzles/)
 - [LLO(ラトビア予選)](http://loling.lv/en/past.html)
-- [その他の国](https://ioling.org/local_organizers/)
-- [IOLや各国予選の過去問保管庫(1000問以上; IDとパスワードは両方 guest)](http://tangra.cs.yale.edu/naclobase/)
+- [その他の国](https://ioling.org/countries/)
+<!-- - [IOLや各国予選の過去問保管庫(1000問以上; IDとパスワードは両方 guest)](http://tangra.cs.yale.edu/naclobase/) -->
 
 {{< /list >}}
 {{< /card-header >}}
