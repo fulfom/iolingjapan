@@ -1,7 +1,7 @@
-weight: 1
-title: "JOL2026結果発表"
-description: "<p>結果を公開しました</p>"
-link: "/record-jol/"
+# weight: 1
+# title: "JOL2026結果発表"
+# description: "<p>結果を公開しました</p>"
+# link: "/record-jol/"
 # weight: 1
 # title: "JOL2025結果発表"
 # description: "<p>結果を公開しました</p>"
@@ -30,6 +30,10 @@ link: "/record-jol/"
 # description: "<p>2023/05/03: JOL2023の過去問，解答を公開！</p>"
 # link: "/preparation/"
 
+weight: 1
+title: "IOL2026結果"
+description: "<p>第23回 ルーマニア大会 日本代表8名が参加</p><p>金3 銀1 銅2 団体努力賞1 獲得！</p>"
+link: "/record/"
 # weight: 1
 # title: "IOL2025結果"
 # description: "<p>第22回 台湾大会 日本代表8名が参加</p><p>銀4 銅2 努力賞1 団体努力賞1 獲得！</p>"
