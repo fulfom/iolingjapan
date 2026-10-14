@@ -1,5 +1,5 @@
 {{$contest := .Get 0 | default "iol"}}
-{{$data := index $.Site.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
+{{$data := index hugo.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
 <table class="table">
     <thead>
         <tr>

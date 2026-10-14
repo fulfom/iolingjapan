@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Locale }}">
 
-  {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
-  <body>
+<body>
 
     <div id="all">
 
         <header>
 
-          {{ partial "nav.html" . }}
+            {{ partial "nav.html" . }}
 
         </header>
 
@@ -25,16 +25,11 @@
                     <div class="col-lg-9" id="blog-post">
 
                         <p class="text-muted text-uppercase mb-small text-right">{{ if .Params.author }}{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
-                        
+
                         <div id="post-content">
-                          {{ .Content }}
+                            {{ .Content }}
                         </div>
                         <!-- /#post-content -->
-                        {{ if .Site.DisqusShortname }}
-                        <div id="comments">
-                            {{ template "_internal/disqus.html" . }}
-                        </div>
-                        {{ end }}
 
                     </div>
                     <!-- /#blog-post -->
@@ -71,5 +66,6 @@
 
     {{ partial "scripts.html" . }}
 
-  </body>
+</body>
+
 </html>

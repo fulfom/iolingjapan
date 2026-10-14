@@ -1,6 +1,6 @@
 {{ if isset .Site.Params "testimonials" }}
 {{ if .Site.Params.testimonials.enable }}
-{{ if gt (len .Site.Data.testimonials) 0 }}
+{{ if gt (len hugo.Data.testimonials) 0 }}
 <section class="bar background-pentagon no-mb">
     <div class="container">
         <div class="row">
@@ -10,13 +10,13 @@
                 </div>
 
                 <p class="lead">
-                  {{ .Site.Params.testimonials.subtitle | markdownify }}
+                    {{ .Site.Params.testimonials.subtitle | markdownify }}
                 </p>
 
                 <!-- *** TESTIMONIALS CAROUSEL *** -->
 
                 <ul class="owl-carousel testimonials same-height-row">
-                    {{ range .Site.Data.testimonials }}
+                    {{ range hugo.Data.testimonials }}
                     <li class="item">
                         <div class="testimonial same-height-always">
                             <div class="text">

@@ -1,7 +1,7 @@
 {{ if isset .Site.Params "clients" }}
 {{ if .Site.Params.clients.enable }}
-{{ if gt (len .Site.Data.clients.data) 0 }}
-{{$clients := .Site.Data.clients}}
+{{ if gt (len hugo.Data.clients.data) 0 }}
+{{$clients := hugo.Data.clients}}
 <section class="bar no-mb grad grad-white">
   <div class="jumbotron">
     <div class="text-center">

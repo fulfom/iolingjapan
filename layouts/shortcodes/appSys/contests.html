@@ -2,13 +2,13 @@
 <div id="account-contests" class="row">
   <div class="col-lg-6">
     <h3 id="contests">大会</h3>
-    <div id="account-upcoming-contests" class="list-group list-group-flush mb-2">{{range sort $.Site.Data.contests.upcomingContests "date" "asc"}}
+    <div id="account-upcoming-contests" class="list-group list-group-flush mb-2">{{range sort hugo.Data.contests.upcomingContests "date" "asc"}}
       {{partial "custom/appSysContest" .}}{{end}}
     </div>
   </div>
   <div class="col-lg-6">
     <h3 id="results">結果</h3>
-    <div id="account-past-contests" class="list-group list-group-flush mb-2">{{range sort $.Site.Data.contests.pastContests "date" "desc"}}
+    <div id="account-past-contests" class="list-group list-group-flush mb-2">{{range sort hugo.Data.contests.pastContests "date" "desc"}}
       {{partial "custom/appSysContest" .}}{{end}}
     </div>
   </div>

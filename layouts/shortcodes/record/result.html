@@ -1,6 +1,6 @@
 {{$year := .Get 0}}
 {{$contest := .Get 1 | default "iol"}}
-{{$data := index $.Site.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
+{{$data := index hugo.Data.records (string (delimit (slice $contest "awarded") "-" ))}}
 {{$cumulativeAward := dict}}
 {{$thisYearsAward := dict}}
 {{$thisYearsAwardedContestants := where $data "year" $year}}
@@ -9,7 +9,6 @@
   {{$cumulativeAward = merge $cumulativeAward (dict .key (len (where $tmp "year" "<=" $year )))}}
   {{$thisYearsAward = merge $thisYearsAward (dict .key (len (where $tmp "year" $year)))}}
 {{end}}
-
 <table class="table">
   <thead>
     <tr>
@@ -18,31 +17,31 @@
     </tr>
   </thead>
   <tbody>{{range sort $.Site.Params.awards "weight"}}{{$name := .name}}
-  {{range where $thisYearsAwardedContestants "award" .key}}
-  <tr class="{{.award}}">
-    <th scope="row">{{$name}}</th>
-    <td>{{.name}}</td>
-  </tr>
-  {{end}}
-  {{end}}
-  </tbody>
-</table>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">賞</th>
-      <th scope="col">今年</th>
-      <th scope="col">累計</th>
+    {{range where $thisYearsAwardedContestants "award" .key}}
+    <tr class="{{.award}}">
+      <th scope="row">{{$name}}</th>
+      <td>{{.name}}</td>
     </tr>
-  </thead>
-  <tbody>{{range sort $.Site.Params.awards "weight"}}
-  {{if ne (index $cumulativeAward .key) 0}}
-  <tr class="{{.key}}">
-    <th scope="row">{{.name}}</th>
-    <td>{{if ne (index $thisYearsAward .key) 0}}+{{index $thisYearsAward .key}}{{end}}</td>
-    <td>{{index $cumulativeAward .key}}</td>
-  </tr>
-  {{end}}
-  {{end}}
+    {{end}}
+    {{end}}
   </tbody>
-</table>
+  </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">賞</th>
+        <th scope="col">今年</th>
+        <th scope="col">累計</th>
+      </tr>
+    </thead>
+    <tbody>{{range sort $.Site.Params.awards "weight"}}
+      {{if ne (index $cumulativeAward .key) 0}}
+      <tr class="{{.key}}">
+        <th scope="row">{{.name}}</th>
+        <td>{{if ne (index $thisYearsAward .key) 0}}+{{index $thisYearsAward .key}}{{end}}</td>
+        <td>{{index $cumulativeAward .key}}</td>
+      </tr>
+      {{end}}
+      {{end}}
+    </tbody>
+  </table>
