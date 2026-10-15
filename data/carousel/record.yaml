@@ -11,6 +11,10 @@
 # description: "<p>2024/12/29: JOL2025の過去問を公開！</p>"
 # link: "/preparation/"
 
+weight: 1
+title: "JOL2027応募開始"
+description: "<p>応募締切は12月15日(水)</p>"
+link: "/application/"
 # weight: 1
 # title: "JOL2026応募開始"
 # description: "<p>応募締切は12月15日(月)</p>"
@@ -30,10 +34,10 @@
 # description: "<p>2023/05/03: JOL2023の過去問，解答を公開！</p>"
 # link: "/preparation/"
 
-weight: 1
-title: "IOL2026結果"
-description: "<p>第23回 ルーマニア大会 日本代表8名が参加</p><p>金3 銀1 銅2 団体努力賞1 獲得！</p>"
-link: "/record/"
+# weight: 1
+# title: "IOL2026結果"
+# description: "<p>第23回 ルーマニア大会 日本代表8名が参加</p><p>金3 銀1 銅2 団体努力賞1 獲得！</p>"
+# link: "/record/"
 # weight: 1
 # title: "IOL2025結果"
 # description: "<p>第22回 台湾大会 日本代表8名が参加</p><p>銀4 銅2 努力賞1 団体努力賞1 獲得！</p>"
