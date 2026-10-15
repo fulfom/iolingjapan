@@ -1,36 +1,25 @@
 +++
 title = "ログイン"
 description = ""
-importTSX = "js/login.ts"
+importTSX = "js/login.tsx"
 importCSS = ["scss/loaded.scss"]
-cdn = [
-    "https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js",
-    "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js",
-    "https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth__ja.js"
-    ]
+cdnCSS = ["https://cdn.jsdelivr.net/npm/@firebase-oss/ui-styles/dist/dist.min.css"]
 +++
 
 使用するアカウントやメールアドレスは個人識別に使われます．他の人と同じものを共有しないでください．
 
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<div id="firebaseui-auth-container"></div>
-<div id="loader"></div>
+Google アカウントでのログインを推奨します．
+
+<div id="login-app"></div>
 
 {{< simplebox "ログインに失敗する場合" >}}
-新しい OS の iPhone，iPad をお使いの場合，または Mac で新しい Safari をお使いの場合，上記のボタンからではログインに失敗する不具合が確認されています．以下の回避策をお試しください．
+Google ログインでポップアップがブロックされた場合は，ブラウザーの設定で許可してから再度お試しください．メールアドレスによるログインも利用できます．
 
-- パソコンで Chrome からログインする
-- 以下からログインする（ポップアップを許可する必要があるかもしれません）
-
-<div class="d-flex justify-content-center">
-<div id="google-auth2" class="firebaseui-idp-button"></div>
-</div>
-
-※iOS16.1以上，iPadOS 16.1以上，Mac Safari 16.1以上
+サインインリンクはメールを受信した端末で開くことになります．競技の際に使う端末でメールを受信できるようになっていなければ Google アカウントでのログインをご検討ください．
 {{< /simplebox >}}
 
 {{< simplebox "Tips" >}}
 
-どの Google アカウント/メールアドレスでログインしていたか忘れた，そんな場合は当委員会（{{< email >}} または以前のメールアドレス jolinguistics@gmail.com）からのメールを検索し，メールを受け取ったことのあるメールアドレス（またはそのメールアドレスに紐づいている Google アカウント）でログインしてみてください．
+どの Google アカウント/メールアドレスでログインしていたか忘れた，そんな場合は当委員会（{{< email >}} または以前のメールアドレス <jolinguistics@gmail.com>）からのメールを検索し，メールを受け取ったことのあるメールアドレス（またはそのメールアドレスに紐づいている Google アカウント）でログインしてみてください．
 
 {{< /simplebox >}}
