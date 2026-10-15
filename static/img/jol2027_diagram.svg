@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 960" role="img" aria-labelledby="title">
 <title id="title">IOL日本予選 選抜と表彰の全体図</title>
 <style>
+text{font-family: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;}
 .blue{fill:#087fc2}
 .red{fill:#cf0914}
 .ink{fill:#202a33}
