@@ -268,8 +268,8 @@ upcomingContests:
     # status: "siteopen" #会場オープン
     # status: "marking" #採点中
     # status: "resultopen" #結果公開
-    # entry: "/entry/jol2027/"
-    # entryui: "/entry/jol2027/"
+    entry: "/entry/jol2027/"
+    entryui: "/entry/jol2027/"
     # demosite: "/contest/jol2027/demo"
     # site: "/contest/jol2027/contest"
     public: true
