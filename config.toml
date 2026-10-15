@@ -98,7 +98,7 @@ style = "default"
 email = ""
 
 about_us = "特定非営利活動法人 国際言語学オリンピック日本委員会; 委員長 風間伸次郎; お問い合わせはこちら jol@iolingjapan.org"
-tokushoho = "[特定商取引法に基づく表記](https://iolingjapan.org/tokushoho/)"
+tokushoho = "[特定商取引法に基づく表記](/tokushoho/)"
 copyright = "国際言語学オリンピック日本委員会 問題や記事の著作権は表示があればその問題や記事の著作者に属します．特筆する場合を除き，本サイト上の問題や記事はCC-BYで配布します．"
 
 # Format dates with Go's time formatting
