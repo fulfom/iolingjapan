@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { initializeAnalytics } from "firebase/analytics";
-import { browserLocalPersistence, browserSessionPersistence, EmailAuthProvider, GoogleAuthProvider, indexedDBLocalPersistence, initializeAuth, onAuthStateChanged } from "firebase/auth"
+import { browserLocalPersistence, browserPopupRedirectResolver, browserSessionPersistence, EmailAuthProvider, GoogleAuthProvider, indexedDBLocalPersistence, initializeAuth, onAuthStateChanged } from "firebase/auth"
 import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
@@ -19,6 +19,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const analytics = initializeAnalytics(app);
 export const auth = initializeAuth(app, {
+    popupRedirectResolver: browserPopupRedirectResolver,
     persistence: [
         indexedDBLocalPersistence,
         browserLocalPersistence,

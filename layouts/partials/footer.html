@@ -1,12 +1,9 @@
 <footer id="footer">
-    <div class="container">
+    <div class="container" style="display: flow-root;">
+        <span>{{ ((i18n "about_us") | default $.Site.Params.about_us) | markdownify }}</span>
+        {{/*  右寄せ  */}}
+        <span class="float-end">{{ ((i18n "tokushoho") | default $.Site.Params.tokushoho) | markdownify }}</span>
 
-        {{ if isset .Site.Params "about_us" }}
-        <h4>{{ i18n "aboutUs" }}</h4>
-
-        {{ ((i18n "about_us") | default $.Site.Params.about_us) | markdownify }}
-
-    {{ end }}
     </div>
     <!-- /.container -->
 </footer>

@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Locale }}">
 
-  {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
-  <body>
+<body>
 
-    <div id="all">
+  <div id="all">
 
-        <header>
+    <header>
 
-          {{ partial "top.html" . }}
+      {{ partial "top.html" . }}
 
-          {{ partial "nav.html" . }}
+      {{ partial "nav.html" . }}
 
-        </header>
+    </header>
 
-        {{ partial "carousel.html" . }}
+    {{ partial "carousel.html" . }}
 
-        {{ partial "topic.html" . }}
+    {{ partial "topic.html" . }}
 
-        {{ partial "features.html" . }}
+    {{ partial "features.html" . }}
 
-        {{ partial "general.html" . }}
+    {{ partial "general.html" . }}
 
-        {{ partial "testimonials.html" . }}
+    {{ partial "testimonials.html" . }}
 
-        {{ partial "see_more.html" . }}
+    {{ partial "see_more.html" . }}
 
-        {{ partial "recent_posts.html" . }}
+    {{ partial "recent_posts.html" . }}
 
-        {{ partial "clients.html" . }}
-        
-        {{ partial "footer.html" . }}
+    {{ partial "clients.html" . }}
 
-    </div>
-    <!-- /#all -->
+    {{ partial "footer.html" . }}
 
-    {{ partial "scripts.html" . }}
+  </div>
+  <!-- /#all -->
 
-  </body>
+  {{ partial "scripts.html" . }}
+
+</body>
+
 </html>

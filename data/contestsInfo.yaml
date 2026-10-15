@@ -1,4 +1,22 @@
 - title: 日本言語学オリンピック
+  year: 2027
+  abbr: JOL
+  img: /img/logo.png
+  desc1: 2026年12月29日(水) オンライン
+  desc2: 選抜 → APLO
+- title: アジア太平洋言語学オリンピック
+  year: 2027
+  abbr: APLO
+  img: https://aplo.asia/wp-content/uploads/2019/12/APLO-LOGO.png
+  desc1: 2027年3月28日(日) 対面
+  desc2: 8名選抜 → IOL
+- title: 国際言語学オリンピック
+  year: 2027
+  abbr: IOL
+  img: /img/iol_logo.png
+  desc1: 2027年7月21～28日 タイ
+  desc2:
+- title: 日本言語学オリンピック
   year: 2026
   abbr: JOL
   img: /img/logo.png

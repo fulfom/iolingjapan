@@ -2,7 +2,7 @@
     "runOnSave.commands": [
         {
             "match": "data\\\\contests\\.yaml",
-            "command": "node .vscode\\yamlToJson.js ${file} ${workspaceFolder}\\assets\\data\\${fileBasenameNoExtension}.json",
+            "command": "docker run --rm -v ${workspaceFolder}:/app -w /app node:lts node .vscode/yamlToJson.js data/contests.yaml assets/data/${fileBasenameNoExtension}.json",
             "runIn": "backend",
             "runningStatusMessage": "jsonify ${fileBasenameNoExtension}",
         }

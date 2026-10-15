@@ -22,6 +22,33 @@ keywords = []
 
 ## 書籍
 
+{{< wrap tag=div class="container-fluid" >}}
+{{< wrap tag=div class="clearfix" >}}
+
+{{< wrap tag=div class="float-sm-start me-sm-4 col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/michi_cover.jpg" link="https://www.asakura.co.jp/detail.php?book_code=51077" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://www.asakura.co.jp/detail.php?book_code=51077" target="_blank">未知のことばを解き明かす―世界の言語でまなぶ言語分析入門―</a>
+
+{{< /wrap >}}
+
+**2026年10月28日発売の新刊！**
+
+一粒で三度おいしい言語学の入門書！ 一冊目にも，二冊目にも，三冊目にもおすすめです．
+
+- 本格的な言語学に触れたいけれど，何から読めばよいかわからない！
+- 問題の作者が言語のどんなところに関心を持っているのか知りたい！
+- ある程度言語学を勉強したことがあるけれど，体系的に整理したい！
+
+言語学オリンピックで問われるような言語分析の考え方を，世界の言語の例や練習問題を通して学ぶことができます．原理原則に立ち返りつつ，先進的な考え方も取り入れ，言語の音声・音韻・文法について体系的に整理しています．文字の分析についても1つの章を割いて解説しています．
+
+持っておいて損はありません！
+
+{{< /wrap >}}
+{{< /wrap >}}
+
 書籍発売中です！
 
 {{< wrap tag=div class="container-fluid" >}}
@@ -30,9 +57,18 @@ keywords = []
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
 <!-- markdownlint-disable MD034 -->
-{{< figure src="/img/pazugen_cover.jpg" link="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank" >}}
+{{< figure src="/img/michi_cover.jpg" link="https://www.asakura.co.jp/detail.php?book_code=51077" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank">パズルで解く世界の言語——言語学オリンピックへの招待</a>
+<a href="https://www.asakura.co.jp/detail.php?book_code=51077" target="_blank">未知のことばを解き明かす―世界の言語でまなぶ言語分析入門―</a>
+
+{{< /wrap >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
+{{< figure src="/img/pazugen_cover.jpg" link="https://www.kenkyusha.co.jp/book/b10090632.html" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://books.kenkyusha.co.jp/book/b10090632.html" target="_blank">パズルで解く世界の言語——言語学オリンピックへの招待</a>
 
 {{< /wrap >}}
 
@@ -101,6 +137,15 @@ keywords = []
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
 <!-- markdownlint-disable MD034 -->
+{{< figure src="/img/michi_cover.jpg" link="https://www.asakura.co.jp/detail.php?book_code=51077" target="_blank" >}}
+<!-- markdownlint-enable MD034 -->
+<a href="https://www.asakura.co.jp/detail.php?book_code=51077" target="_blank">未知のことばを解き明かす―世界の言語でまなぶ言語分析入門―</a>
+
+{{< /wrap >}}
+
+{{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
+
+<!-- markdownlint-disable MD034 -->
 {{< figure src="/img/prince_cover.jpg" link="https://wp.tufs.ac.jp/tufspress/books/book66/" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
 <a href="https://wp.tufs.ac.jp/tufspress/books/book66/" target="_blank">28言語で読む「星の王子さま」</a>
@@ -110,9 +155,9 @@ keywords = []
 {{< wrap tag=div class="col-6 col-sm-4 col-lg-3 col-xxl-2" >}}
 
 <!-- markdownlint-disable MD034 -->
-{{< figure src="/img/pazugen_cover.jpg" link="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank" >}}
+{{< figure src="/img/pazugen_cover.jpg" link="https://books.kenkyusha.co.jp/book/b10090632.html" target="_blank" >}}
 <!-- markdownlint-enable MD034 -->
-<a href="https://books.kenkyusha.co.jp/book/978-4-327-39442-4.html" target="_blank">パズルで解く世界の言語</a>
+<a href="https://books.kenkyusha.co.jp/book/b10090632.html" target="_blank">パズルで解く世界の言語</a>
 
 {{< /wrap >}}
 

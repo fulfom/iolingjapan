@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 960" role="img" aria-labelledby="title">
+<title id="title">IOL日本予選 選抜と表彰の全体図</title>
+<style>
+text{font-family: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;}
+.blue{fill:#087fc2}
+.red{fill:#cf0914}
+.ink{fill:#202a33}
+.frame{fill:none;stroke:#087fc2;stroke-width:3;stroke-linejoin:round}
+.divider{stroke:#d10c18;stroke-width:3}
+.guide{stroke:#aeb8bf;stroke-width:2;stroke-dasharray:2 7;stroke-linecap:round}
+.heading{font-size:40px;font-weight:700;letter-spacing:1px}
+.sub{font-size:25px;font-weight:400}
+.award{font-size:29px;font-weight:700}
+.small{font-size:22px;font-weight:400}
+</style>
+<defs>
+<marker id="arrowhead" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+<path d="M0 0 L8 4 L0 8 Z" fill="#087fc2"/>
+</marker>
+</defs>
+<rect width="1440" height="960" fill="white"/>
+<text x="260" y="77" class="blue heading" text-anchor="middle">JOL</text>
+<text x="620" y="77" class="blue heading" text-anchor="middle">APLO</text>
+<text x="980" y="77" class="blue heading" text-anchor="middle">APLO</text>
+<text x="620" y="128" class="blue sub" text-anchor="middle">独自採点</text>
+<text x="980" y="128" class="blue sub" text-anchor="middle">正規採点</text>
+<!-- JOL: y=166 to 886, thresholds at 286,406,526 -->
+<rect x="190" y="166" width="140" height="720" class="frame"/>
+<text x="260" y="190" text-anchor="middle" class="ink small">α人</text>
+<line x1="190" y1="200" x2="330" y2="200" class="frame"/>
+<line x1="190" y1="286" x2="330" y2="286" class="frame"/>
+<text x="260" y="312" text-anchor="middle" class="ink small">α人</text>
+<line x1="190" y1="322" x2="330" y2="322" class="divider"/>
+<text x="260" y="372" text-anchor="middle" class="red award">銅賞</text>
+<line x1="190" y1="406" x2="330" y2="406" class="divider"/>
+<text x="260" y="476" text-anchor="middle" class="red award">努力賞</text>
+<line x1="190" y1="526" x2="330" y2="526" class="divider"/>
+<text x="260" y="621" text-anchor="middle" class="red small">（一部）</text>
+<text x="260" y="658" text-anchor="middle" class="red small">敢闘賞</text>
+<text x="260" y="705" text-anchor="middle" class="red small">ジュニア</text>
+<text x="260" y="736" text-anchor="middle" class="red small">奨励賞</text>
+<text x="347" y="209" class="blue sub">満点に近い点</text>
+<line x1="35" y1="286" x2="190" y2="286" class="guide"/>
+<line x1="35" y1="406" x2="190" y2="406" class="guide"/>
+<line x1="35" y1="526" x2="190" y2="526" class="guide"/>
+<text x="42" y="276" class="blue sub">上位 1/6位</text>
+<text x="42" y="396" class="blue sub">上位 1/3位</text>
+<text x="42" y="516" class="blue sub">平均点</text>
+<!-- APLO 1:2, height 490 -->
+<rect x="550" y="166" width="140" height="490" class="frame"/>
+<line x1="550" y1="306" x2="690" y2="306" class="divider"/>
+<line x1="550" y1="586" x2="690" y2="586" class="divider"/>
+<text x="620" y="247" text-anchor="middle" class="red award">金賞</text>
+<text x="620" y="455" text-anchor="middle" class="red award">銀賞</text>
+<text x="620" y="629" text-anchor="middle" class="red award">銅賞</text>
+<path d="M332 166 L550 166 M690 166 L910 166 M332 322 L550 656 M690 306 L910 616" class="guide"/>
+<text x="707" y="595" class="blue sub">一定の点</text>
+<!-- Ratio annotations -->
+<line x1="525" y1="166" x2="525" y2="306" stroke="#087fc2" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+<line x1="525" y1="306" x2="525" y2="446" stroke="#087fc2" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+<line x1="525" y1="446" x2="525" y2="586" stroke="#087fc2" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+<!-- IOL -->
+<rect x="910" y="166" width="140" height="450" class="frame"/>
+<text x="980" y="215" text-anchor="middle" class="ink award">8人</text>
+<line x1="910" y1="240" x2="1050" y2="240" class="divider"/>
+<path d="M1050 205 H1130 M1118 194 L1130 205 L1118 216" class="frame"/>
+<text x="1148" y="217" class="blue heading">IOL</text>
+</svg>

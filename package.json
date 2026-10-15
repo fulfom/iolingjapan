@@ -4,13 +4,16 @@
     "bootstrap": "^5.2.0",
     "chart.js": "^4.1.1",
     "date-fns": "^3.0.0",
-    "firebase": "^9.9.4",
-    "firebaseui": "^6.0.2",
+    "firebase": "^11.0.0",
+    "@firebase-oss/ui-core": "^7.1.0",
+    "@firebase-oss/ui-react": "^7.1.0",
+    "@firebase-oss/ui-translations": "^7.1.0",
+    "@firebase-oss/ui-styles": "^7.1.0",
     "qrcode": "^1.5.1",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.5.0",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.10",
     "react-chartjs-2": "^5.0.1",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.0.0",
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.51.0",
     "react-markdown": "^8.0.3",
@@ -18,7 +21,8 @@
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "yaml": "^2.3.2"
   }
 }

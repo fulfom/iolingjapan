@@ -1,5 +1,5 @@
 {{$a := split (.Get 0) "."}}
-{{$data := $.Site.Data}}
+{{$data := hugo.Data}}
 {{range $a}}
 {{$data = index $data .}}
 {{end}}
