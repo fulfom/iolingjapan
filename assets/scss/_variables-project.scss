@@ -779,6 +779,17 @@ figure,
 p {
   img {
     width: 100%;
+  }
+}
+
+figure.img-mw-720 {
+  img {
+    max-width: 720px;
+  }
+}
+
+figure:not(.img-mw-free) {
+  img {
     max-width: 500px;
   }
 }

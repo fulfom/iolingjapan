@@ -20,7 +20,7 @@
                 <div class="row">
                     <!-- *** LEFT COLUMN *** -->
 
-                    <div class="col-lg-9" id="blog-listing-medium">
+                    <div class="col-12" id="blog-listing-medium">
 
                         {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
                         {{ range $paginator.Pages }}
@@ -83,17 +83,6 @@
 
                     <!-- *** RIGHT COLUMN ***
        _________________________________________________________ -->
-
-                    <div class="col-lg-3">
-
-                        <!-- *** MENUS AND WIDGETS *** -->
-
-                        {{ partial "sidebar.html" . }}
-
-                        <!-- *** MENUS AND FILTERS END *** -->
-
-                    </div>
-                    <!-- /.col-lg-3 -->
 
                     <!-- *** RIGHT COLUMN END *** -->
 
