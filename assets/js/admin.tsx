@@ -32,6 +32,11 @@ const CONTEST_DATA: {
         previous: "jol2025",
         name: "JOL2026",
         motivations: ["友人・先輩", "学校の先生", "家族", "塾", "YouTube", "ツイッター（X）", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"],
+    },
+    jol2027: {
+        previous: "jol2026",
+        name: "JOL2027",
+        motivations: ["友人・先輩", "学校の先生", "家族", "塾", "YouTube", "ツイッター（X）", "インスタグラム", "テレビ", "雑誌・新聞", "インターネット上のサイト", "JOL公式サイト", "JOL公式ハンドアウト", "書籍『パズルで解く世界の言語』"],
     }
 }
 
@@ -52,7 +57,7 @@ function App() {
     const [orders, setOrders] = useState<{ [key: string]: boolean }>({});
     const [transfers, setTransfers] = useState<{ [key: string]: { source: string, target: string, name: string, memo: string, timestamp: number } }>({});
     const [usersPreviousYear, setUsersPreviousYear] = useState<{ [uid: string]: UserInfo }>({});
-    const [selectedId, setSelectedId] = useState("jol2026");
+    const [selectedId, setSelectedId] = useState("jol2027");
 
     const [navtab, setNavtab] = useState("orderTransfer");
 
