@@ -248,6 +248,7 @@ function App() {
     return (
         <>
             <Form.Select aria-label="Select Year" value={selectedId} onChange={(e) => setSelectedId(e.target.value)}>
+                <option value="jol2027">JOL2027</option>
                 <option value="jol2026">JOL2026</option>
                 <option value="jol2025">JOL2025</option>
                 <option value="jol2024">JOL2024</option>
